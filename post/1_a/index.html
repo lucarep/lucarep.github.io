@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>1_A :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Intro in this assignment, I had to code a form in C# and VB.NET that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.
+Live Demo here, you can see my program in action   C# code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.Drawing.Drawing2D; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace _1_R { public partial class Form1 : System." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/post/1_a/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="1_A">
+<meta property="og:description" content="Intro in this assignment, I had to code a form in C# and VB.NET that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.
+Live Demo here, you can see my program in action   C# code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.Drawing.Drawing2D; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace _1_R { public partial class Form1 : System." />
+<meta property="og:url" content="https://lucarep.github.io/post/1_a/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/1_A.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-09-28 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="https://github.com/lucarep">My GitHub</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/post/1_a/">1_A</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-09-28 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/1_A.jpg" class="post-cover" alt="1_A" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="intro">Intro<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>in this assignment, I had to code a form in <strong>C#</strong> and <strong>VB.NET</strong> that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.</p>
+<h1 id="live-demo">Live Demo<a href="#live-demo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>here, you can see my program in action
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Z-dVPitpOpA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h1 id="c-code">C# code:<a href="#c-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> System.ComponentModel;
+<span style="color:#66d9ef">using</span> System.Data;
+<span style="color:#66d9ef">using</span> System.Drawing;
+<span style="color:#66d9ef">using</span> System.Drawing.Drawing2D;
+<span style="color:#66d9ef">using</span> System.Linq;
+<span style="color:#66d9ef">using</span> System.Text;
+<span style="color:#66d9ef">using</span> System.Threading.Tasks;
+<span style="color:#66d9ef">using</span> System.Windows.Forms;
+
+<span style="color:#66d9ef">namespace</span> _1_R
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : System.Windows.Forms.Form
+    {
+        <span style="color:#75715e">// Ball params
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> ballWidth = <span style="color:#ae81ff">50</span>;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> ballHeight = <span style="color:#ae81ff">50</span>;
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> ballX, ballY;   <span style="color:#75715e">// Position.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> ballVx, ballVy; <span style="color:#75715e">// Velocity.
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">public</span> Form1()
+        {
+            InitializeComponent();
+            Random rnd = <span style="color:#66d9ef">new</span> Random();
+            ballVx = rnd.Next(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>);
+            ballVy = rnd.Next(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>);
+            ballX = rnd.Next(<span style="color:#ae81ff">0</span>, panel1.Width - ballWidth);
+            ballY = rnd.Next(<span style="color:#ae81ff">0</span>, panel1.Height - ballHeight);
+
+            <span style="color:#75715e">// Use double buffering to reduce flicker.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">this</span>.SetStyle(
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.DoubleBuffer,
+                <span style="color:#66d9ef">true</span>);
+            <span style="color:#66d9ef">this</span>.UpdateStyles();
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+        {
+            richTextBox1.Text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>;
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+        {
+
+            timer1.Enabled = <span style="color:#66d9ef">true</span>;
+            button3.Enabled = <span style="color:#66d9ef">true</span>;
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button3_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+        {
+            timer1.Enabled = <span style="color:#66d9ef">false</span>;
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> tmrMoveBall_Tick(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+        {
+            ballX += ballVx;
+            <span style="color:#66d9ef">if</span> (ballX &lt; <span style="color:#ae81ff">0</span>)
+            {
+                ballVx = -ballVx;
+            }
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (ballX + ballWidth &gt; panel1.Width)
+            {
+                ballVx = -ballVx;
+            }
+
+            ballY += ballVy;
+            <span style="color:#66d9ef">if</span> (ballY &lt; <span style="color:#ae81ff">0</span>)
+            {
+                ballVy = -ballVy;
+            }
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (ballY + ballHeight &gt; panel1.Height)
+            {
+                ballVy = -ballVy;
+            }
+
+            Refresh();
+   
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> panel1_Paint(<span style="color:#66d9ef">object</span> sender, PaintEventArgs e)
+        {
+            
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.Clear(BackColor);
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY,
+                ballWidth, ballHeight);
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY,
+                ballWidth, ballHeight);
+            
+        }  
+    }
+}
+
+</code></pre></div><h1 id="vbnet-code">VB.NET code:<a href="#vbnet-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">Imports System
+Imports System.Drawing.Drawing2D
+Imports System.Windows.Forms
+
+Namespace <span style="color:#ae81ff">_1_</span>R
+    Public Partial Class Form1
+        Inherits System.Windows.Forms.Form
+
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> Ball <span style="color:#66d9ef">params</span>
+        Private Const ballWidth As Integer = <span style="color:#ae81ff">50</span>
+        Private Const ballHeight As Integer = <span style="color:#ae81ff">50</span>
+        Private ballX, ballY As Integer   <span style="color:#960050;background-color:#1e0010">&#39;</span> Position.
+        Private ballVx, ballVy As Integer <span style="color:#960050;background-color:#1e0010">&#39;</span> Velocity.
+        Public Sub New()
+            InitializeComponent()
+            Dim rnd As Random = New Random()
+            ballVx = rnd.Next(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>)
+            ballVy = rnd.Next(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>)
+            ballX = rnd.[Next](<span style="color:#ae81ff">0</span>, panel1.Width - ballWidth)
+            ballY = rnd.[Next](<span style="color:#ae81ff">0</span>, panel1.Height - ballHeight)
+
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> Use <span style="color:#66d9ef">double</span> buffering to reduce flicker.
+            Me.SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.UserPaint Or ControlStyles.DoubleBuffer, True)
+            Me.UpdateStyles()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            richTextBox1.Text = <span style="color:#e6db74">&#34;Hello World!&#34;</span>
+        End Sub
+
+        Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = True
+            button3.Enabled = True
+        End Sub
+
+        Private Sub button3_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = False
+        End Sub
+
+        Private Sub tmrMoveBall_Tick(ByVal sender As Object, ByVal e As EventArgs)
+            ballX += ballVx
+
+            If ballX &lt; <span style="color:#ae81ff">0</span> Then
+                ballVx = -ballVx
+            ElseIf ballX + ballWidth &gt; panel1.Width Then
+                ballVx = -ballVx
+            End If
+
+            ballY += ballVy
+
+            If ballY &lt; <span style="color:#ae81ff">0</span> Then
+                ballVy = -ballVy
+            ElseIf ballY + ballHeight &gt; panel1.Height Then
+                ballVy = -ballVy
+            End If
+
+            Refresh()
+        End Sub
+
+        Private Sub panel1_Paint(ByVal sender As Object, ByVal e As PaintEventArgs)
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+            e.Graphics.Clear(BackColor)
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY, ballWidth, ballHeight)
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY, ballWidth, ballHeight)
+        End Sub
+    End Class
+End Namespace
+
+</code></pre></div>
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://lucarep.github.io/post/1_r/">
+                <span class="button__text">1_R : LET&#39;S TALK ABOUT STATISTICS</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
