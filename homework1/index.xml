@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework1s on Luke&#39;s Statistics Blog</title>
+    <link>https://lucarep.github.io/homework1/</link>
+    <description>Recent content in Homework1s on Luke&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2021 Luca Repechini</copyright>
+    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/homework1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1_A</title>
+      <link>https://lucarep.github.io/homework1/1_a/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework1/1_a/</guid>
+      <description>Intro in this assignment, I had to code a form in C# and VB.NET that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.
+Live Demo here, you can see my program in action   C# code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.Drawing.Drawing2D; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace _1_R { public partial class Form1 : System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to code a form in &lt;strong&gt;C#&lt;/strong&gt; and &lt;strong&gt;VB.NET&lt;/strong&gt; that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Z-dVPitpOpA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.ComponentModel;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Data;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing.Drawing2D;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Linq;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Text;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Threading.Tasks;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Windows.Forms;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; _1_R
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt; : System.Windows.Forms.Form
+    {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Ball params
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballWidth = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballX, ballY;   &lt;span style=&#34;color:#75715e&#34;&gt;// Position.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballVx, ballVy; &lt;span style=&#34;color:#75715e&#34;&gt;// Velocity.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+        {
+            InitializeComponent();
+            Random rnd = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random();
+            ballVx = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+            ballVy = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+            ballX = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Width - ballWidth);
+            ballY = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Height - ballHeight);
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// Use double buffering to reduce flicker.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.SetStyle(
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.DoubleBuffer,
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.UpdateStyles();
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            richTextBox1.Text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button2_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+
+            timer1.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+            button3.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button3_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            timer1.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; tmrMoveBall_Tick(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            ballX += ballVx;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballX &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            {
+                ballVx = -ballVx;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballX + ballWidth &amp;gt; panel1.Width)
+            {
+                ballVx = -ballVx;
+            }
+
+            ballY += ballVy;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballY &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            {
+                ballVy = -ballVy;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballY + ballHeight &amp;gt; panel1.Height)
+            {
+                ballVy = -ballVy;
+            }
+
+            Refresh();
+   
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; panel1_Paint(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, PaintEventArgs e)
+        {
+            
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.Clear(BackColor);
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY,
+                ballWidth, ballHeight);
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY,
+                ballWidth, ballHeight);
+            
+        }  
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System
+Imports System.Drawing.Drawing2D
+Imports System.Windows.Forms
+
+Namespace &lt;span style=&#34;color:#ae81ff&#34;&gt;_1_&lt;/span&gt;R
+    Public Partial Class Form1
+        Inherits System.Windows.Forms.Form
+
+        &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Ball &lt;span style=&#34;color:#66d9ef&#34;&gt;params&lt;/span&gt;
+        Private Const ballWidth As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;
+        Private Const ballHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;
+        Private ballX, ballY As Integer   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Position.
+        Private ballVx, ballVy As Integer &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Velocity.
+        Public Sub New()
+            InitializeComponent()
+            Dim rnd As Random = New Random()
+            ballVx = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            ballVy = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            ballX = rnd.[Next](&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Width - ballWidth)
+            ballY = rnd.[Next](&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Height - ballHeight)
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Use &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; buffering to reduce flicker.
+            Me.SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.UserPaint Or ControlStyles.DoubleBuffer, True)
+            Me.UpdateStyles()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            richTextBox1.Text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
+        End Sub
+
+        Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = True
+            button3.Enabled = True
+        End Sub
+
+        Private Sub button3_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = False
+        End Sub
+
+        Private Sub tmrMoveBall_Tick(ByVal sender As Object, ByVal e As EventArgs)
+            ballX += ballVx
+
+            If ballX &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Then
+                ballVx = -ballVx
+            ElseIf ballX + ballWidth &amp;gt; panel1.Width Then
+                ballVx = -ballVx
+            End If
+
+            ballY += ballVy
+
+            If ballY &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Then
+                ballVy = -ballVy
+            ElseIf ballY + ballHeight &amp;gt; panel1.Height Then
+                ballVy = -ballVy
+            End If
+
+            Refresh()
+        End Sub
+
+        Private Sub panel1_Paint(ByVal sender As Object, ByVal e As PaintEventArgs)
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+            e.Graphics.Clear(BackColor)
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY, ballWidth, ballHeight)
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY, ballWidth, ballHeight)
+        End Sub
+    End Class
+End Namespace
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1SBdx-20JgMME0kulsV8DzW57xuqW1q1v/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_R : LET&#39;S TALK ABOUT STATISTICS</title>
+      <link>https://lucarep.github.io/homework1/1_r/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework1/1_r/</guid>
+      <description>What is statistics? 📊  &amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;
+ There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out analysis, interpretation, organization and presentation of this data, so informed decision can be made.</description>
+      <content>&lt;h1 id=&#34;what-is-statistics-&#34;&gt;What is statistics? 📊&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out &lt;strong&gt;analysis, interpretation, organization and presentation of this data&lt;/strong&gt;, so informed decision can be made. A trivial example that we can observe every day are the weather forecasts, to make this forecasts statisticians create computer models based on previous weather reports. But statistics is literally &lt;strong&gt;everywhere&lt;/strong&gt;, here&amp;rsquo;s an example of some of the sectors that use it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pharmaceutical Industry&lt;/li&gt;
+&lt;li&gt;Food Industry&lt;/li&gt;
+&lt;li&gt;Plants&lt;/li&gt;
+&lt;li&gt;Designer Brands&lt;/li&gt;
+&lt;li&gt;Computers&lt;/li&gt;
+&lt;li&gt;Insurance&lt;/li&gt;
+&lt;li&gt;Finance&lt;/li&gt;
+&lt;li&gt;Medicine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, in this historical moment we all know unfortunately that there&amp;rsquo;s a pandemic of &lt;strong&gt;Covid-19&lt;/strong&gt; in progress, even here the statistics play a &lt;strong&gt;key role&lt;/strong&gt;, as you can make estimates of how many contagions there may be in the future, given the current contagions. Take &lt;strong&gt;Covid vaccines&lt;/strong&gt; also as an example, did you know that pharmaceutical companies like &lt;strong&gt;Pfizer&lt;/strong&gt; employ many statisticians? Here they analyze the results conducted in preclinical research and clinical trials,
+to help then develop a vaccine that is &lt;strong&gt;safe and effective&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;is-statistics-a-science-a-branch-of-mathematics-or-both-&#34;&gt;Is statistics a science, a branch of mathematics or both? 🤔&lt;/h1&gt;
+&lt;p&gt;We can summarize the above with a quote from American Statistical Association:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Statistics is the science of learning from data, and of measuring, controlling and communicating &lt;strong&gt;uncertainty&lt;/strong&gt;.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;also, John Turkey (author of Exploratory Dat Analysis) said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Statistics is a science, not a branch of mathematics, but it uses mathematical models as essential tools.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What’s the difference?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The primary difference between the two is &lt;strong&gt;uncertainty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Consider two problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How far is it to work in miles?&lt;/li&gt;
+&lt;li&gt;How far is it to work in minutes?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first problem is a math problem because, assuming you take the same route, the answer is fixed. The second problem is a statistical problem because you will not always get the same answer due to weather or traffic conditions, how many lights you get stuck at etc., there is a level of uncertainty.&lt;/p&gt;
+&lt;p&gt;Now in order to understand statistics you do need to know probability which is a branch of mathematics (The study of finite measures that a normalized to 1). But probability is not statistics anymore than algebra is physics.&lt;/p&gt;
+&lt;h6 id=&#34;also-what-defines-a-scientific-field&#34;&gt;Also, what defines a scientific field?&lt;/h6&gt;
+&lt;p&gt;Every field of scientific inquiry is defined by &lt;strong&gt;three things&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What it studies: Statistics is the study of uncertainty. More specifically, it is the science of probability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why it studies the What: The outcomes of any and every natural process vary in random, yet understandable, ways (i.e. Natural Variation). Statistics examines and specifies these patterns of randomness. By understanding natural variation, we are able to identify occurrences of unnatural variation and seek their underlying cause.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How it studies the What: Like many sciences, mathematics is the formal language of statistics. However, it is not its only tool. Statistics also uses computers for both simulation and analysis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, many people view statistics as a branch of mathematics, in many ways this is true, because its origins lie within mathematics. However, it have evolved past that and is its own independent field of inquiry.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Aveea : What is Statistics? (and what can you do with it) 
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/M6MKQ88LpFA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kenneth Ganning (Ph.D Statistics), Thom Flottemesch (Ph.D Statistics) :  &lt;a href=&#34;https://www.quora.com/What-is-statistics-a-science-of&#34;&gt;What is statistics a science of?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

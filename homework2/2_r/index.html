@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>2_R : LET&#39;S TALK ABOUT DATA :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
+ A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/homework2/2_r/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2_R : LET&#39;S TALK ABOUT DATA">
+<meta property="og:description" content="What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
+ A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database." />
+<meta property="og:url" content="https://lucarep.github.io/homework2/2_r/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/2_R.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-10-02 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/homework2/2_r/">2_R : LET&rsquo;S TALK ABOUT DATA</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-10-02 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/2_R.jpg" class="post-cover" alt="2_R : LET&#39;S TALK ABOUT DATA" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="what-is-a-database">What is a Database?<a href="#what-is-a-database" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Our discussion of data starts here, the database, but what is actually a database?
+Citing <a href="https://www.oracle.com/database/what-is-database/">Oracle</a>:</p>
+<blockquote>
+<p>A database is an <strong>organized collection of structured information</strong>, or data, typically stored electronically in a <strong>computer system</strong>. A database is usually controlled by a database management system (<strong>DBMS</strong>). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.Data within the most common types of databases in operation today is typically modeled in <strong>rows and columns</strong> in a series of <strong>tables</strong> to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (<strong>SQL</strong>) for writing and querying data.</p>
+</blockquote>
+<p>so, now that we know what it takes to allow us to record data, we can better address how it is handled in the real world for different purposes.</p>
+<h1 id="the-data-warehouse-">The Data Warehouse :<a href="#the-data-warehouse-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>First of all, a <strong>data warehouse</strong> is a particular type of <strong>database</strong>, but there is a major difference:</p>
+<ul>
+<li>a database is built to <strong>record</strong> the data provided to it.</li>
+<li>a Data Warehouse is designed to perform data <strong>aggregations</strong> for analytical purposes.</li>
+</ul>
+<p>In other words, databases are a mathematical basis for collecting data and querying them for operational purposes. The data warehouse, on the other hand, is an analytical system of data that has strategic purposes in the <strong>planning of business processes</strong>. In addition, data warehouses are very important in data mining, artificial intelligence (AI), and machine learning.</p>
+<h1 id="what-is-a-data-mart">What is a Data Mart?<a href="#what-is-a-data-mart" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We can see the <strong>data mart</strong> as a focused version of a <strong>data warehouse</strong> described above. Specifically, citing <a href="https://www.ibm.com/cloud/learn/data-mart">IBM</a>:</p>
+<blockquote>
+<p>A data mart is a subset of a data warehouse focused on a particular line of business, department, or subject area. Data marts make specific data available to a defined group of users, which allows those users to <strong>quickly</strong> access critical insights without wasting time searching through an entire data warehouse. For example, many companies may have a data mart that aligns with a specific department in the business, such as finance, sales, or marketing.</p>
+</blockquote>
+<p>Thus, different data marts may exist depending on the areas of study we are interested in.</p>
+<h1 id="olap-and-oltp--two-useful-tools">OLAP and OLTP : two useful tools<a href="#olap-and-oltp--two-useful-tools" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We could conceptually summarize what OLAP and OLTP are with a <strong>simple question</strong>:</p>
+<blockquote>
+<ul>
+<li>in the case of OLAP we would ask &ldquo;<strong>what will happen?</strong>&rdquo;</li>
+<li>in the case of OLTP we would ask &ldquo;<strong>what is happening?</strong>&rdquo;</li>
+</ul>
+</blockquote>
+<h1 id="definition-of-olap">Definition of OLAP:<a href="#definition-of-olap" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>OLAP stands for: 
+<strong>On-Line Analytical Processsing</strong>.
+We can see it as a set of <strong>software</strong> techniques that allows to analyze a large amount of collected data and it is the basic technology of <strong>data warehouse</strong>. Companies use it to <strong>predict</strong> sales results, cost trends, results of marketing and communication campaigns, organize survey data and other similar cases. We can therefore summarize everything in the fact that the OLAP analysis system is one of the tools that can allow you to make <strong>business decisions</strong>.</p>
+<h1 id="definition-of-oltp">Definition of OLTP:<a href="#definition-of-oltp" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>OLTP stands for:
+<strong>On-Line Transaction Processsing</strong>.
+we can see it as a set of <strong>software</strong> techniques that are
+used to manage <strong>transaction-oriented</strong> applications. It is popular in financial transactions, retail sales, and customer relationship management (CRM). Booking airline tickets online, online banking, online shopping are practical examples of systems based on the use of OLTP. OLTP is used to <strong>record</strong> insertion, <strong>update</strong> and <strong>deletion</strong> of data during a transaction. So, as you can imagine these operations in order to ensure reliability must be <strong>atomic</strong>. Also, OLTP queries are simpler and shorter and thus require less time in processing and less storage space. A key aspect is:</p>
+<blockquote>
+<p><strong>we can see OLTP as the data source for OLAP.</strong></p>
+</blockquote>
+<h1 id="olap-vs-oltp">OLAP vs OLTP:<a href="#olap-vs-oltp" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<blockquote>
+<p>OLAP tools differ from OLTPs in that the former aim to find and achieve queries that are as complex as possible; the latter, on the other hand, aim to ensure integrity and security of transactions.</p>
+</blockquote>
+<p>Below is a list of other substantial differences between the two:</p>
+<ul>
+<li>OLTP is an online transaction system instead OLAP is an online data retrieval and analysis system;
+online transaction data is the data source for OLTP;</li>
+<li>OLTP&rsquo;s main operations are inserting, updating and deleting data while OLAP&rsquo;s main operation is extracting complex data for later analysis;</li>
+<li>OLAP has a long and less frequent transaction while OLTP has short but frequent transactions;
+OLTP&rsquo;s response times are much faster than OLAP as it deals with short transactions.</li>
+<li>OLAP queries are very complex compared to OLTP, as they deal with a much larger amount of data and are also more structured.</li>
+<li>OLAP databases are not changed frequently, so data integrity is not affected. OLTP databases, on the other hand, are changed frequently, so it is important to maintain data integrity.</li>
+<li>OLAP is used for planning and decision making while OLTP is used for controlling and executing key business activities.</li>
+</ul>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li>
+<p><a href="https://www.bucap.it/news/approfondimenti-tematici/gestione-del-magazzino/database-data-warehouse-principali-differenze.htm#:~:text=Il%20primo%20obiettivo%20del%20database,di%20dati%20a%20fini%20analitici.">Difference between database and data warehouse</a></p>
+</li>
+<li>
+<p><a href="https://www.businessintelligencegroup.it/olap-e-oltp-cosa-sono-e-quali-sono-le-principali-differenze/">OLAP e OLTP</a></p>
+</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

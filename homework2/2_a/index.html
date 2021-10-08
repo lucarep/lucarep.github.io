@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>2_A :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Intro in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).
+Live Demo here, you can see my program in action   C# Code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/homework2/2_a/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="2_A">
+<meta property="og:description" content="Intro in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).
+Live Demo here, you can see my program in action   C# Code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System." />
+<meta property="og:url" content="https://lucarep.github.io/homework2/2_a/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/2_A.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-10-05 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/homework2/2_a/">2_A</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-10-05 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/2_A.jpg" class="post-cover" alt="2_A" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="intro">Intro<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).</p>
+<h1 id="live-demo">Live Demo<a href="#live-demo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>here, you can see my program in action
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/PM5RLOPsxqk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h1 id="c-code">C# Code:<a href="#c-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> System.ComponentModel;
+<span style="color:#66d9ef">using</span> System.Data;
+<span style="color:#66d9ef">using</span> System.Drawing;
+<span style="color:#66d9ef">using</span> System.Linq;
+<span style="color:#66d9ef">using</span> System.Text;
+<span style="color:#66d9ef">using</span> System.Threading.Tasks;
+<span style="color:#66d9ef">using</span> System.Windows.Forms;
+
+<span style="color:#66d9ef">namespace</span> _2_A
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span> : Form
+    {
+        <span style="color:#66d9ef">public</span> Random R = <span style="color:#66d9ef">new</span> Random();
+
+        <span style="color:#66d9ef">public</span> Form1()
+        {
+            InitializeComponent();
+        }
+
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> button1_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+        {
+            <span style="color:#66d9ef">this</span>.richTextBox1.Clear();
+
+            <span style="color:#66d9ef">int</span> studentNumber = <span style="color:#ae81ff">101</span>;
+            <span style="color:#66d9ef">int</span> minHeight = <span style="color:#ae81ff">140</span>;
+            <span style="color:#66d9ef">int</span> maxHeight = <span style="color:#ae81ff">200</span>;
+
+            List&lt;Student&gt; listOfStudents = <span style="color:#66d9ef">new</span> List&lt;Student&gt;(studentNumber - <span style="color:#ae81ff">1</span>);
+
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;DATASET - Cryptography exam : Grades of students&#34;</span> + Environment.NewLine + Environment.NewLine);
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Total Count: &#34;</span> + (studentNumber - <span style="color:#ae81ff">1</span>).ToString() + Environment.NewLine + Environment.NewLine);
+
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">1</span>; i &lt; studentNumber; i++)
+            {
+                <span style="color:#66d9ef">int</span> randomNumber = R.Next(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">31</span>);
+
+                <span style="color:#66d9ef">decimal</span> randomHeight = Math.Round((<span style="color:#66d9ef">decimal</span>)R.Next(minHeight, maxHeight), <span style="color:#ae81ff">2</span>);
+
+                <span style="color:#66d9ef">this</span>.richTextBox1.AppendText((<span style="color:#e6db74">&#34;Student &#34;</span> + i.ToString() + <span style="color:#e6db74">&#34;: &#34;</span>).PadRight(<span style="color:#ae81ff">15</span>) + randomNumber.ToString().PadRight(<span style="color:#ae81ff">15</span>) + randomHeight.ToString() + Environment.NewLine);
+
+                Student s = <span style="color:#66d9ef">new</span> Student(randomNumber,randomHeight);
+
+                listOfStudents.Add(s);
+            }
+
+            <span style="color:#75715e">// OFFLINE ALGO
+</span><span style="color:#75715e"></span>
+            <span style="color:#66d9ef">decimal</span> sum = <span style="color:#ae81ff">0</span>;
+            
+            <span style="color:#66d9ef">foreach</span> (Student s <span style="color:#66d9ef">in</span> listOfStudents)
+            {
+                sum += s.gradeForCryptography;
+            }
+
+            <span style="color:#66d9ef">decimal</span> average = Math.Round(sum / (studentNumber - <span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">2</span>);
+
+            <span style="color:#75715e">// ONLINE ALGO
+</span><span style="color:#75715e"></span>
+            <span style="color:#66d9ef">double</span> currentAvg = <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">int</span> index = <span style="color:#ae81ff">0</span>;
+
+            <span style="color:#66d9ef">foreach</span> (Student s <span style="color:#66d9ef">in</span> listOfStudents)
+            {
+                index += <span style="color:#ae81ff">1</span>;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index;
+            }
+
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> + Environment.NewLine);
+
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Arithmetic mean for Grades(naive formula): &#34;</span> + average.ToString(<span style="color:#e6db74">&#34;F&#34;</span>) + Environment.NewLine);
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Arithmetic mean for Grades(online formula): &#34;</span> + currentAvg.ToString(<span style="color:#e6db74">&#34;F&#34;</span>) + Environment.NewLine);
+
+            Dictionary&lt;<span style="color:#66d9ef">int</span>, Frequencies&gt; frequencyDist = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">int</span>,Frequencies&gt;();
+
+            <span style="color:#66d9ef">foreach</span> (Student s <span style="color:#66d9ef">in</span> listOfStudents)
+            {
+                <span style="color:#66d9ef">if</span> (frequencyDist.ContainsKey(s.gradeForCryptography))
+                {
+                    frequencyDist[s.gradeForCryptography].count += <span style="color:#ae81ff">1</span>;
+                }
+                <span style="color:#66d9ef">else</span>
+                {
+                    frequencyDist.Add(s.gradeForCryptography, <span style="color:#66d9ef">new</span> Frequencies(<span style="color:#ae81ff">1</span>));
+                }
+
+                frequencyDist[s.gradeForCryptography].relativeFreq = Math.Round(frequencyDist[s.gradeForCryptography].count / (studentNumber - <span style="color:#ae81ff">1</span>),<span style="color:#ae81ff">2</span>);
+                frequencyDist[s.gradeForCryptography].precentage = frequencyDist[s.gradeForCryptography].relativeFreq * <span style="color:#ae81ff">100</span>;
+            }
+
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> + Environment.NewLine);
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Grade &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) + <span style="color:#e6db74">&#34;Frequency &#34;</span> .PadRight(<span style="color:#ae81ff">7</span>) + <span style="color:#e6db74">&#34;RFreq &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) + <span style="color:#e6db74">&#34;Percentage &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) + Environment.NewLine);
+
+            <span style="color:#66d9ef">foreach</span> (KeyValuePair&lt;<span style="color:#66d9ef">int</span>,Frequencies&gt; kvp <span style="color:#66d9ef">in</span> frequencyDist)
+            {
+                <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(kvp.Key.ToString().PadRight(<span style="color:#ae81ff">7</span>) + <span style="color:#e6db74">&#34; &#34;</span> + kvp.Value.count.ToString().PadRight(<span style="color:#ae81ff">7</span>) + <span style="color:#e6db74">&#34; &#34;</span> + kvp.Value.relativeFreq.ToString().PadRight(<span style="color:#ae81ff">7</span>) + <span style="color:#e6db74">&#34; &#34;</span> + kvp.Value.precentage.ToString() + <span style="color:#e6db74">&#34; %&#34;</span> + Environment.NewLine);
+            }
+
+            <span style="color:#66d9ef">decimal</span> intervalSize = <span style="color:#ae81ff">10</span>;
+            <span style="color:#66d9ef">decimal</span> startingEndPoint = <span style="color:#ae81ff">170</span>;
+
+            <span style="color:#75715e">//first interval
+</span><span style="color:#75715e"></span>
+            Interval myInterval = <span style="color:#66d9ef">new</span> Interval();
+            myInterval.lowerEnd = startingEndPoint;
+            myInterval.upperEnd = startingEndPoint + intervalSize;
+
+            List&lt;Interval&gt; listOfIntervals = <span style="color:#66d9ef">new</span> List&lt;Interval&gt;();
+
+            listOfIntervals.Add(myInterval);
+
+            <span style="color:#66d9ef">foreach</span>(Student s <span style="color:#66d9ef">in</span> listOfStudents)
+            {
+                Boolean studentInserted = <span style="color:#66d9ef">false</span>;
+
+                <span style="color:#66d9ef">foreach</span>(Interval i <span style="color:#66d9ef">in</span> listOfIntervals)
+                {
+                    <span style="color:#66d9ef">if</span> (s.height &gt; i.lowerEnd &amp;&amp; s.height &lt;= i.upperEnd)
+                    {
+                        i.count += <span style="color:#ae81ff">1</span>;
+                        studentInserted = <span style="color:#66d9ef">true</span>;
+                    }
+                }
+
+                <span style="color:#66d9ef">if</span>(studentInserted == <span style="color:#66d9ef">true</span>)
+                {
+                    <span style="color:#66d9ef">continue</span>;
+                }
+
+                <span style="color:#66d9ef">if</span>(s.height &lt;= listOfIntervals[<span style="color:#ae81ff">0</span>].lowerEnd)
+                {
+                    <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>)
+                    {
+                        Interval newLeftInterval = <span style="color:#66d9ef">new</span> Interval();
+                        newLeftInterval.upperEnd = listOfIntervals[<span style="color:#ae81ff">0</span>].lowerEnd;
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize;
+
+                        listOfIntervals.Insert(<span style="color:#ae81ff">0</span>, newLeftInterval);
+
+                        <span style="color:#66d9ef">if</span> (s.height &gt; newLeftInterval.lowerEnd &amp;&amp; s.height &lt;= newLeftInterval.upperEnd)
+                        {
+                            newLeftInterval.count += <span style="color:#ae81ff">1</span>;
+                            studentInserted = <span style="color:#66d9ef">true</span>;
+                            <span style="color:#66d9ef">break</span>;
+                        }
+
+                    }
+                }
+
+                <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(s.height &gt; listOfIntervals[listOfIntervals.Count - <span style="color:#ae81ff">1</span>].upperEnd)
+                {
+                    <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>)
+                    {
+                        Interval newRightInterval = <span style="color:#66d9ef">new</span> Interval();
+                        newRightInterval.lowerEnd = listOfIntervals[listOfIntervals.Count - <span style="color:#ae81ff">1</span>].upperEnd;
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize;
+
+                        listOfIntervals.Add(newRightInterval);
+
+                        <span style="color:#66d9ef">if</span> (s.height &gt; newRightInterval.lowerEnd &amp;&amp; s.height &lt;= newRightInterval.upperEnd)
+                        {
+
+                            newRightInterval.count += <span style="color:#ae81ff">1</span>;
+                            studentInserted = <span style="color:#66d9ef">true</span>;
+                            <span style="color:#66d9ef">break</span>;
+                        }
+
+                    }
+
+                }
+            }
+
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> + Environment.NewLine);
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;HEIGHT DISTRIBUTION&#34;</span> + Environment.NewLine);
+            <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Interval&#34;</span>.PadRight(<span style="color:#ae81ff">20</span>) + <span style="color:#e6db74">&#34;Count&#34;</span> + Environment.NewLine);
+
+            <span style="color:#66d9ef">foreach</span>(Interval i <span style="color:#66d9ef">in</span> listOfIntervals)
+            {
+                <span style="color:#66d9ef">this</span>.richTextBox1.AppendText(<span style="color:#e6db74">&#34;[ &#34;</span> + i.lowerEnd + <span style="color:#e6db74">&#34; &#34;</span> + i.upperEnd + <span style="color:#e6db74">&#34;] &#34;</span>.PadRight(<span style="color:#ae81ff">11</span>) + i.count + Environment.NewLine);
+            }
+        }
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Frequencies</span>
+        {
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> count;
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> relativeFreq;
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> precentage;
+
+            <span style="color:#66d9ef">public</span> Frequencies(<span style="color:#66d9ef">decimal</span> c)
+            {
+                <span style="color:#66d9ef">this</span>.count = c;
+            }
+            <span style="color:#66d9ef">public</span> Frequencies(<span style="color:#66d9ef">decimal</span> c, <span style="color:#66d9ef">decimal</span> rf, <span style="color:#66d9ef">decimal</span> p)
+            {
+                <span style="color:#66d9ef">this</span>.count = c;
+                <span style="color:#66d9ef">this</span>.relativeFreq = rf;
+                <span style="color:#66d9ef">this</span>.precentage = p;
+            }
+        }
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interval</span>
+        {
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> lowerEnd, upperEnd, count, relativeFrequency, percentage;
+
+        }
+    }
+}
+</code></pre></div><h1 id="vbnet-code">VB.NET Code:<a href="#vbnet-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">Imports System
+Imports System.Collections.Generic
+Imports System.Windows.Forms
+
+Namespace <span style="color:#ae81ff">_2_</span>A
+    Public Partial Class Form1
+        Inherits Form
+
+        Public R As Random = New Random()
+
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            Me.richTextBox1.Clear()
+            Dim studentNumber As Integer = <span style="color:#ae81ff">101</span>
+            Dim minHeight As Integer = <span style="color:#ae81ff">140</span>
+            Dim maxHeight As Integer = <span style="color:#ae81ff">200</span>
+            Dim listOfStudents As List(Of Student) = New List(Of Student)(studentNumber - <span style="color:#ae81ff">1</span>)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;DATASET - Cryptography exam : Grades of students&#34;</span> &amp; Environment.NewLine &amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Total Count: &#34;</span> &amp; (studentNumber - <span style="color:#ae81ff">1</span>).ToString() &amp; Environment.NewLine &amp; Environment.NewLine)
+
+            For i As Integer = <span style="color:#ae81ff">1</span> To studentNumber - <span style="color:#ae81ff">1</span>
+                Dim randomNumber As Integer = R.Next(<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">31</span>)
+                Dim randomHeight As Decimal = Math.Round(R.Next(minHeight, maxHeight), <span style="color:#ae81ff">2</span>)
+                Me.richTextBox1.AppendText((<span style="color:#e6db74">&#34;Student &#34;</span> &amp; i.ToString() &amp; <span style="color:#e6db74">&#34;: &#34;</span>).PadRight(<span style="color:#ae81ff">15</span>) &amp; randomNumber.ToString().PadRight(<span style="color:#ae81ff">15</span>) &amp; randomHeight.ToString() &amp; Environment.NewLine)
+                Dim s As Student = New Student(randomNumber, randomHeight)
+                listOfStudents.Add(s)
+            Next
+
+
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> OFFLINE ALGO
+
+            Dim sum As Decimal = <span style="color:#ae81ff">0</span>
+
+            For Each s As Student In listOfStudents
+                sum += s.gradeForCryptography
+            Next
+
+            Dim average As Decimal = Math.Round(sum / (studentNumber - <span style="color:#ae81ff">1</span>), <span style="color:#ae81ff">2</span>)
+
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> ONLINE ALGO
+
+            Dim currentAvg As Double = <span style="color:#ae81ff">0</span>
+            Dim index As Integer = <span style="color:#ae81ff">0</span>
+
+            For Each s As Student In listOfStudents
+                index += <span style="color:#ae81ff">1</span>
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index
+            Next
+
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> &amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Arithmetic mean for Grades(naive formula): &#34;</span> &amp; average.ToString(<span style="color:#e6db74">&#34;F&#34;</span>) &amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Arithmetic mean for Grades(online formula): &#34;</span> &amp; currentAvg.ToString(<span style="color:#e6db74">&#34;F&#34;</span>) &amp; Environment.NewLine)
+            Dim frequencyDist As Dictionary(Of Integer, Frequencies) = New Dictionary(Of Integer, Frequencies)()
+
+            For Each s As Student In listOfStudents
+
+                If frequencyDist.ContainsKey(s.gradeForCryptography) Then
+                    frequencyDist(s.gradeForCryptography).count += <span style="color:#ae81ff">1</span>
+                Else
+                    frequencyDist.Add(s.gradeForCryptography, New Frequencies(<span style="color:#ae81ff">1</span>))
+                End If
+
+                frequencyDist(s.gradeForCryptography).relativeFreq = Math.Round(frequencyDist(s.gradeForCryptography).count / (studentNumber - <span style="color:#ae81ff">1</span>), <span style="color:#ae81ff">2</span>)
+                frequencyDist(s.gradeForCryptography).precentage = frequencyDist(s.gradeForCryptography).relativeFreq * <span style="color:#ae81ff">100</span>
+            Next
+
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> &amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Grade &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) &amp; <span style="color:#e6db74">&#34;Frequency &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) &amp; <span style="color:#e6db74">&#34;RFreq &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) &amp; <span style="color:#e6db74">&#34;Percentage &#34;</span>.PadRight(<span style="color:#ae81ff">7</span>) &amp; Environment.NewLine)
+
+            For Each kvp As KeyValuePair(Of Integer, Frequencies) In frequencyDist
+                Me.richTextBox1.AppendText(kvp.Key.ToString().PadRight(<span style="color:#ae81ff">7</span>) &amp; <span style="color:#e6db74">&#34; &#34;</span> &amp; kvp.Value.count.ToString().PadRight(<span style="color:#ae81ff">7</span>) &amp; <span style="color:#e6db74">&#34; &#34;</span> &amp; kvp.Value.relativeFreq.ToString().PadRight(<span style="color:#ae81ff">7</span>) &amp; <span style="color:#e6db74">&#34; &#34;</span> &amp; kvp.Value.precentage.ToString() &amp; <span style="color:#e6db74">&#34; %&#34;</span> &amp; Environment.NewLine)
+            Next
+
+            Dim intervalSize As Decimal = <span style="color:#ae81ff">10</span>
+            Dim startingEndPoint As Decimal = <span style="color:#ae81ff">170</span>
+
+            <span style="color:#960050;background-color:#1e0010">&#39;</span>first interval
+
+            Dim myInterval As Interval = New Interval()
+            myInterval.lowerEnd = startingEndPoint
+            myInterval.upperEnd = startingEndPoint + intervalSize
+            Dim listOfIntervals As List(Of Interval) = New List(Of Interval)()
+            listOfIntervals.Add(myInterval)
+
+            For Each s As Student In listOfStudents
+                Dim studentInserted As Boolean = False
+
+                For Each i As Interval In listOfIntervals
+
+                    If s.height &gt; i.lowerEnd AndAlso s.height &lt;= i.upperEnd Then
+                        i.count += <span style="color:#ae81ff">1</span>
+                        studentInserted = True
+                    End If
+                Next
+
+                If studentInserted = True Then
+                    Continue For
+                End If
+
+                If s.height &lt;= listOfIntervals(<span style="color:#ae81ff">0</span>).lowerEnd Then
+
+                    While True
+                        Dim newLeftInterval As Interval = New Interval()
+                        newLeftInterval.upperEnd = listOfIntervals(<span style="color:#ae81ff">0</span>).lowerEnd
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize
+                        listOfIntervals.Insert(<span style="color:#ae81ff">0</span>, newLeftInterval)
+
+                        If s.height &gt; newLeftInterval.lowerEnd AndAlso s.height &lt;= newLeftInterval.upperEnd Then
+                            newLeftInterval.count += <span style="color:#ae81ff">1</span>
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                ElseIf s.height &gt; listOfIntervals(listOfIntervals.Count - <span style="color:#ae81ff">1</span>).upperEnd Then
+
+                    While True
+                        Dim newRightInterval As Interval = New Interval()
+                        newRightInterval.lowerEnd = listOfIntervals(listOfIntervals.Count - <span style="color:#ae81ff">1</span>).upperEnd
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize
+                        listOfIntervals.Add(newRightInterval)
+
+                        If s.height &gt; newRightInterval.lowerEnd AndAlso s.height &lt;= newRightInterval.upperEnd Then
+                            newRightInterval.count += <span style="color:#ae81ff">1</span>
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                End If
+            Next
+
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> &amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;HEIGHT DISTRIBUTION&#34;</span> &amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;Interval&#34;</span>.PadRight(<span style="color:#ae81ff">20</span>) &amp; <span style="color:#e6db74">&#34;Count&#34;</span> &amp; Environment.NewLine)
+
+            For Each i As Interval In listOfIntervals
+                Me.richTextBox1.AppendText(<span style="color:#e6db74">&#34;[ &#34;</span> &amp; i.lowerEnd &amp; <span style="color:#e6db74">&#34; &#34;</span> &amp; i.upperEnd &amp; <span style="color:#e6db74">&#34;] &#34;</span>.PadRight(<span style="color:#ae81ff">11</span>) &amp; i.count &amp; Environment.NewLine)
+            Next
+        End Sub
+
+        Public Class Frequencies
+            Public count As Decimal
+            Public relativeFreq As Decimal
+            Public precentage As Decimal
+
+            Public Sub New(ByVal c As Decimal)
+                count = c
+            End Sub
+
+            Public Sub New(ByVal c As Decimal, ByVal rf As Decimal, ByVal p As Decimal)
+                count = c
+                relativeFreq = rf
+                precentage = p
+            End Sub
+        End Class
+
+        Public Class Interval
+            Public lowerEnd, upperEnd, count, relativeFrequency, percentage As Decimal
+        End Class
+    End Class
+End Namespace
+</code></pre></div><h1 id="download-source-code">Download source code:<a href="#download-source-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><a href="https://drive.google.com/file/d/1yVNjPjYmsZQSsRjHFnpg4PPwOggToPB7/view?usp=sharing">click here</a> 📥</p>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

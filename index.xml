@@ -7,7 +7,1353 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3_A</title>
+      <link>https://lucarep.github.io/homework2/3_a/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/3_a/</guid>
+      <description>Intro in this assignment, I had to create an object providing a rectangular area which can be moved and resized using the mouse.
+Live Demo here, you can see my program in action   VB.NET Code: Public Class Form1 Private x, y As Integer Private Rect As New Rectangle(50, 50, 50, 50) Dim isLeftClickDown As Boolean = False Dim isRightClickDown As Boolean = False Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to create an object providing a rectangular area which can be moved and resized using the mouse.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/nUSGW7_FvgM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Public Class Form1
+    Private x, y As Integer
+    Private Rect As New Rectangle(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)
+    Dim isLeftClickDown As Boolean = False
+    Dim isRightClickDown As Boolean = False
+
+    Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Rect.Contains(e.Location) Then
+            isLeftClickDown = True
+            x = Rect.X - e.X
+            y = Rect.Y - e.Y
+        End If
+        If e.Button = Windows.Forms.MouseButtons.Right AndAlso Rect.Contains(e.Location) Then
+            isRightClickDown = True
+            x = Rect.X - e.X
+            y = Rect.Y - e.Y
+        End If
+
+    End Sub
+    Private Sub PictureBox1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseUp
+        isLeftClickDown = False
+        isRightClickDown = False
+    End Sub
+    Private Sub PictureBox1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseMove
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Rect.Contains(e.Location) Then
+            Rect.X = e.X + x
+            Rect.Y = e.Y + y
+            PictureBox1.Refresh()
+        End If
+        If isRightClickDown Then
+            Rect.Size = New Size(Rect.X + e.X, Rect.Y + e.Y)
+            PictureBox1.Refresh()
+        End If
+
+    End Sub
+
+    Private Sub PictureBox1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PictureBox1.Paint
+        e.Graphics.DrawRectangle(Pens.Red, Rect)
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1ANxn3yiQtIuQTqGfZHpJ17uSUDzOX1s8/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>3_A</title>
+      <link>https://lucarep.github.io/post/3_a/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/3_a/</guid>
+      <description>Intro in this assignment, I had to create an object providing a rectangular area which can be moved and resized using the mouse.
+Live Demo here, you can see my program in action   VB.NET Code: Public Class Form1 Private x, y As Integer Private Rect As New Rectangle(50, 50, 50, 50) Dim isLeftClickDown As Boolean = False Dim isRightClickDown As Boolean = False Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to create an object providing a rectangular area which can be moved and resized using the mouse.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/nUSGW7_FvgM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Public Class Form1
+    Private x, y As Integer
+    Private Rect As New Rectangle(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)
+    Dim isLeftClickDown As Boolean = False
+    Dim isRightClickDown As Boolean = False
+
+    Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Rect.Contains(e.Location) Then
+            isLeftClickDown = True
+            x = Rect.X - e.X
+            y = Rect.Y - e.Y
+        End If
+        If e.Button = Windows.Forms.MouseButtons.Right AndAlso Rect.Contains(e.Location) Then
+            isRightClickDown = True
+            x = Rect.X - e.X
+            y = Rect.Y - e.Y
+        End If
+
+    End Sub
+    Private Sub PictureBox1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseUp
+        isLeftClickDown = False
+        isRightClickDown = False
+    End Sub
+    Private Sub PictureBox1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseMove
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Rect.Contains(e.Location) Then
+            Rect.X = e.X + x
+            Rect.Y = e.Y + y
+            PictureBox1.Refresh()
+        End If
+        If isRightClickDown Then
+            Rect.Size = New Size(Rect.X + e.X, Rect.Y + e.Y)
+            PictureBox1.Refresh()
+        End If
+
+    End Sub
+
+    Private Sub PictureBox1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PictureBox1.Paint
+        e.Graphics.DrawRectangle(Pens.Red, Rect)
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1ANxn3yiQtIuQTqGfZHpJ17uSUDzOX1s8/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_A</title>
+      <link>https://lucarep.github.io/homework2/2_a/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/2_a/</guid>
+      <description>Intro in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).
+Live Demo here, you can see my program in action   C# Code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/PM5RLOPsxqk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.ComponentModel;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Data;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Linq;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Text;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Threading.Tasks;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Windows.Forms;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; _2_A
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt; : Form
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Random R = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random();
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+        {
+            InitializeComponent();
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.Clear();
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; studentNumber = &lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; minHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; maxHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;;
+
+            List&amp;lt;Student&amp;gt; listOfStudents = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Student&amp;gt;(studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DATASET - Cryptography exam : Grades of students&amp;#34;&lt;/span&gt; + Environment.NewLine + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Total Count: &amp;#34;&lt;/span&gt; + (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).ToString() + Environment.NewLine + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; i &amp;lt; studentNumber; i++)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; randomNumber = R.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; randomHeight = Math.Round((&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt;)R.Next(minHeight, maxHeight), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Student &amp;#34;&lt;/span&gt; + i.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;).PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) + randomNumber.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) + randomHeight.ToString() + Environment.NewLine);
+
+                Student s = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Student(randomNumber,randomHeight);
+
+                listOfStudents.Add(s);
+            }
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// OFFLINE ALGO
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; sum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+            
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                sum += s.gradeForCryptography;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; average = Math.Round(sum / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// ONLINE ALGO
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; currentAvg = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; index = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                index += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(naive formula): &amp;#34;&lt;/span&gt; + average.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(online formula): &amp;#34;&lt;/span&gt; + currentAvg.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) + Environment.NewLine);
+
+            Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, Frequencies&amp;gt; frequencyDist = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;,Frequencies&amp;gt;();
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (frequencyDist.ContainsKey(s.gradeForCryptography))
+                {
+                    frequencyDist[s.gradeForCryptography].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                {
+                    frequencyDist.Add(s.gradeForCryptography, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+                }
+
+                frequencyDist[s.gradeForCryptography].relativeFreq = Math.Round(frequencyDist[s.gradeForCryptography].count / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+                frequencyDist[s.gradeForCryptography].precentage = frequencyDist[s.gradeForCryptography].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Grade &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt; .PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (KeyValuePair&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;,Frequencies&amp;gt; kvp &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; frequencyDist)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.precentage.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; intervalSize = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; startingEndPoint = &lt;span style=&#34;color:#ae81ff&#34;&gt;170&lt;/span&gt;;
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;//first interval
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            Interval myInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+            myInterval.lowerEnd = startingEndPoint;
+            myInterval.upperEnd = startingEndPoint + intervalSize;
+
+            List&amp;lt;Interval&amp;gt; listOfIntervals = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Interval&amp;gt;();
+
+            listOfIntervals.Add(myInterval);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                Boolean studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Interval i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfIntervals)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; i.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= i.upperEnd)
+                    {
+                        i.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                        studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                    }
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(studentInserted == &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(s.height &amp;lt;= listOfIntervals[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].lowerEnd)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                    {
+                        Interval newLeftInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+                        newLeftInterval.upperEnd = listOfIntervals[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].lowerEnd;
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize;
+
+                        listOfIntervals.Insert(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, newLeftInterval);
+
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; newLeftInterval.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= newLeftInterval.upperEnd)
+                        {
+                            newLeftInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                            studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+                        }
+
+                    }
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(s.height &amp;gt; listOfIntervals[listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].upperEnd)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                    {
+                        Interval newRightInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+                        newRightInterval.lowerEnd = listOfIntervals[listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].upperEnd;
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize;
+
+                        listOfIntervals.Add(newRightInterval);
+
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; newRightInterval.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= newRightInterval.upperEnd)
+                        {
+
+                            newRightInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                            studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+                        }
+
+                    }
+
+                }
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HEIGHT DISTRIBUTION&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Interval&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Interval i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfIntervals)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[ &amp;#34;&lt;/span&gt; + i.lowerEnd + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + i.upperEnd + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;] &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;) + i.count + Environment.NewLine);
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Frequencies&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; count;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; relativeFreq;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; precentage;
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.count = c;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; rf, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; p)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.count = c;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.relativeFreq = rf;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.precentage = p;
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Interval&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; lowerEnd, upperEnd, count, relativeFrequency, percentage;
+
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System
+Imports System.Collections.Generic
+Imports System.Windows.Forms
+
+Namespace &lt;span style=&#34;color:#ae81ff&#34;&gt;_2_&lt;/span&gt;A
+    Public Partial Class Form1
+        Inherits Form
+
+        Public R As Random = New Random()
+
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            Me.richTextBox1.Clear()
+            Dim studentNumber As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;
+            Dim minHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;
+            Dim maxHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;
+            Dim listOfStudents As List(Of Student) = New List(Of Student)(studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DATASET - Cryptography exam : Grades of students&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Total Count: &amp;#34;&lt;/span&gt; &amp;amp; (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).ToString() &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+
+            For i As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; To studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                Dim randomNumber As Integer = R.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;)
+                Dim randomHeight As Decimal = Math.Round(R.Next(minHeight, maxHeight), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                Me.richTextBox1.AppendText((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Student &amp;#34;&lt;/span&gt; &amp;amp; i.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;).PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) &amp;amp; randomNumber.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) &amp;amp; randomHeight.ToString() &amp;amp; Environment.NewLine)
+                Dim s As Student = New Student(randomNumber, randomHeight)
+                listOfStudents.Add(s)
+            Next
+
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; OFFLINE ALGO
+
+            Dim sum As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+            For Each s As Student In listOfStudents
+                sum += s.gradeForCryptography
+            Next
+
+            Dim average As Decimal = Math.Round(sum / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; ONLINE ALGO
+
+            Dim currentAvg As Double = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+            Dim index As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+            For Each s As Student In listOfStudents
+                index += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(naive formula): &amp;#34;&lt;/span&gt; &amp;amp; average.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(online formula): &amp;#34;&lt;/span&gt; &amp;amp; currentAvg.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            Dim frequencyDist As Dictionary(Of Integer, Frequencies) = New Dictionary(Of Integer, Frequencies)()
+
+            For Each s As Student In listOfStudents
+
+                If frequencyDist.ContainsKey(s.gradeForCryptography) Then
+                    frequencyDist(s.gradeForCryptography).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                Else
+                    frequencyDist.Add(s.gradeForCryptography, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+                End If
+
+                frequencyDist(s.gradeForCryptography).relativeFreq = Math.Round(frequencyDist(s.gradeForCryptography).count / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                frequencyDist(s.gradeForCryptography).precentage = frequencyDist(s.gradeForCryptography).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Grade &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; Environment.NewLine)
+
+            For Each kvp As KeyValuePair(Of Integer, Frequencies) In frequencyDist
+                Me.richTextBox1.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Next
+
+            Dim intervalSize As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+            Dim startingEndPoint As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;170&lt;/span&gt;
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;first interval
+
+            Dim myInterval As Interval = New Interval()
+            myInterval.lowerEnd = startingEndPoint
+            myInterval.upperEnd = startingEndPoint + intervalSize
+            Dim listOfIntervals As List(Of Interval) = New List(Of Interval)()
+            listOfIntervals.Add(myInterval)
+
+            For Each s As Student In listOfStudents
+                Dim studentInserted As Boolean = False
+
+                For Each i As Interval In listOfIntervals
+
+                    If s.height &amp;gt; i.lowerEnd AndAlso s.height &amp;lt;= i.upperEnd Then
+                        i.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                        studentInserted = True
+                    End If
+                Next
+
+                If studentInserted = True Then
+                    Continue For
+                End If
+
+                If s.height &amp;lt;= listOfIntervals(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).lowerEnd Then
+
+                    While True
+                        Dim newLeftInterval As Interval = New Interval()
+                        newLeftInterval.upperEnd = listOfIntervals(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).lowerEnd
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize
+                        listOfIntervals.Insert(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, newLeftInterval)
+
+                        If s.height &amp;gt; newLeftInterval.lowerEnd AndAlso s.height &amp;lt;= newLeftInterval.upperEnd Then
+                            newLeftInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                ElseIf s.height &amp;gt; listOfIntervals(listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).upperEnd Then
+
+                    While True
+                        Dim newRightInterval As Interval = New Interval()
+                        newRightInterval.lowerEnd = listOfIntervals(listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).upperEnd
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize
+                        listOfIntervals.Add(newRightInterval)
+
+                        If s.height &amp;gt; newRightInterval.lowerEnd AndAlso s.height &amp;lt;= newRightInterval.upperEnd Then
+                            newRightInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                End If
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HEIGHT DISTRIBUTION&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Interval&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+
+            For Each i As Interval In listOfIntervals
+                Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[ &amp;#34;&lt;/span&gt; &amp;amp; i.lowerEnd &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; i.upperEnd &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;] &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;) &amp;amp; i.count &amp;amp; Environment.NewLine)
+            Next
+        End Sub
+
+        Public Class Frequencies
+            Public count As Decimal
+            Public relativeFreq As Decimal
+            Public precentage As Decimal
+
+            Public Sub New(ByVal c As Decimal)
+                count = c
+            End Sub
+
+            Public Sub New(ByVal c As Decimal, ByVal rf As Decimal, ByVal p As Decimal)
+                count = c
+                relativeFreq = rf
+                precentage = p
+            End Sub
+        End Class
+
+        Public Class Interval
+            Public lowerEnd, upperEnd, count, relativeFrequency, percentage As Decimal
+        End Class
+    End Class
+End Namespace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1yVNjPjYmsZQSsRjHFnpg4PPwOggToPB7/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_A</title>
+      <link>https://lucarep.github.io/post/2_a/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/2_a/</guid>
+      <description>Intro in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).
+Live Demo here, you can see my program in action   C# Code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/PM5RLOPsxqk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.ComponentModel;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Data;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Linq;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Text;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Threading.Tasks;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Windows.Forms;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; _2_A
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt; : Form
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Random R = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random();
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+        {
+            InitializeComponent();
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.Clear();
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; studentNumber = &lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; minHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; maxHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;;
+
+            List&amp;lt;Student&amp;gt; listOfStudents = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Student&amp;gt;(studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DATASET - Cryptography exam : Grades of students&amp;#34;&lt;/span&gt; + Environment.NewLine + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Total Count: &amp;#34;&lt;/span&gt; + (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).ToString() + Environment.NewLine + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; i &amp;lt; studentNumber; i++)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; randomNumber = R.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; randomHeight = Math.Round((&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt;)R.Next(minHeight, maxHeight), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Student &amp;#34;&lt;/span&gt; + i.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;).PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) + randomNumber.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) + randomHeight.ToString() + Environment.NewLine);
+
+                Student s = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Student(randomNumber,randomHeight);
+
+                listOfStudents.Add(s);
+            }
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// OFFLINE ALGO
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; sum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+            
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                sum += s.gradeForCryptography;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; average = Math.Round(sum / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// ONLINE ALGO
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; currentAvg = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; index = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                index += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(naive formula): &amp;#34;&lt;/span&gt; + average.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(online formula): &amp;#34;&lt;/span&gt; + currentAvg.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) + Environment.NewLine);
+
+            Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, Frequencies&amp;gt; frequencyDist = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;,Frequencies&amp;gt;();
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (frequencyDist.ContainsKey(s.gradeForCryptography))
+                {
+                    frequencyDist[s.gradeForCryptography].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                {
+                    frequencyDist.Add(s.gradeForCryptography, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+                }
+
+                frequencyDist[s.gradeForCryptography].relativeFreq = Math.Round(frequencyDist[s.gradeForCryptography].count / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+                frequencyDist[s.gradeForCryptography].precentage = frequencyDist[s.gradeForCryptography].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Grade &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt; .PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (KeyValuePair&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;,Frequencies&amp;gt; kvp &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; frequencyDist)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.precentage.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; intervalSize = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; startingEndPoint = &lt;span style=&#34;color:#ae81ff&#34;&gt;170&lt;/span&gt;;
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;//first interval
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            Interval myInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+            myInterval.lowerEnd = startingEndPoint;
+            myInterval.upperEnd = startingEndPoint + intervalSize;
+
+            List&amp;lt;Interval&amp;gt; listOfIntervals = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Interval&amp;gt;();
+
+            listOfIntervals.Add(myInterval);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                Boolean studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Interval i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfIntervals)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; i.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= i.upperEnd)
+                    {
+                        i.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                        studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                    }
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(studentInserted == &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(s.height &amp;lt;= listOfIntervals[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].lowerEnd)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                    {
+                        Interval newLeftInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+                        newLeftInterval.upperEnd = listOfIntervals[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].lowerEnd;
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize;
+
+                        listOfIntervals.Insert(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, newLeftInterval);
+
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; newLeftInterval.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= newLeftInterval.upperEnd)
+                        {
+                            newLeftInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                            studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+                        }
+
+                    }
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(s.height &amp;gt; listOfIntervals[listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].upperEnd)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                    {
+                        Interval newRightInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+                        newRightInterval.lowerEnd = listOfIntervals[listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].upperEnd;
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize;
+
+                        listOfIntervals.Add(newRightInterval);
+
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; newRightInterval.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= newRightInterval.upperEnd)
+                        {
+
+                            newRightInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                            studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+                        }
+
+                    }
+
+                }
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HEIGHT DISTRIBUTION&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Interval&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Interval i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfIntervals)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[ &amp;#34;&lt;/span&gt; + i.lowerEnd + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + i.upperEnd + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;] &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;) + i.count + Environment.NewLine);
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Frequencies&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; count;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; relativeFreq;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; precentage;
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.count = c;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; rf, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; p)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.count = c;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.relativeFreq = rf;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.precentage = p;
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Interval&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; lowerEnd, upperEnd, count, relativeFrequency, percentage;
+
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System
+Imports System.Collections.Generic
+Imports System.Windows.Forms
+
+Namespace &lt;span style=&#34;color:#ae81ff&#34;&gt;_2_&lt;/span&gt;A
+    Public Partial Class Form1
+        Inherits Form
+
+        Public R As Random = New Random()
+
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            Me.richTextBox1.Clear()
+            Dim studentNumber As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;
+            Dim minHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;
+            Dim maxHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;
+            Dim listOfStudents As List(Of Student) = New List(Of Student)(studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DATASET - Cryptography exam : Grades of students&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Total Count: &amp;#34;&lt;/span&gt; &amp;amp; (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).ToString() &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+
+            For i As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; To studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                Dim randomNumber As Integer = R.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;)
+                Dim randomHeight As Decimal = Math.Round(R.Next(minHeight, maxHeight), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                Me.richTextBox1.AppendText((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Student &amp;#34;&lt;/span&gt; &amp;amp; i.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;).PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) &amp;amp; randomNumber.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) &amp;amp; randomHeight.ToString() &amp;amp; Environment.NewLine)
+                Dim s As Student = New Student(randomNumber, randomHeight)
+                listOfStudents.Add(s)
+            Next
+
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; OFFLINE ALGO
+
+            Dim sum As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+            For Each s As Student In listOfStudents
+                sum += s.gradeForCryptography
+            Next
+
+            Dim average As Decimal = Math.Round(sum / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; ONLINE ALGO
+
+            Dim currentAvg As Double = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+            Dim index As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+            For Each s As Student In listOfStudents
+                index += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(naive formula): &amp;#34;&lt;/span&gt; &amp;amp; average.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(online formula): &amp;#34;&lt;/span&gt; &amp;amp; currentAvg.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            Dim frequencyDist As Dictionary(Of Integer, Frequencies) = New Dictionary(Of Integer, Frequencies)()
+
+            For Each s As Student In listOfStudents
+
+                If frequencyDist.ContainsKey(s.gradeForCryptography) Then
+                    frequencyDist(s.gradeForCryptography).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                Else
+                    frequencyDist.Add(s.gradeForCryptography, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+                End If
+
+                frequencyDist(s.gradeForCryptography).relativeFreq = Math.Round(frequencyDist(s.gradeForCryptography).count / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                frequencyDist(s.gradeForCryptography).precentage = frequencyDist(s.gradeForCryptography).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Grade &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; Environment.NewLine)
+
+            For Each kvp As KeyValuePair(Of Integer, Frequencies) In frequencyDist
+                Me.richTextBox1.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Next
+
+            Dim intervalSize As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+            Dim startingEndPoint As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;170&lt;/span&gt;
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;first interval
+
+            Dim myInterval As Interval = New Interval()
+            myInterval.lowerEnd = startingEndPoint
+            myInterval.upperEnd = startingEndPoint + intervalSize
+            Dim listOfIntervals As List(Of Interval) = New List(Of Interval)()
+            listOfIntervals.Add(myInterval)
+
+            For Each s As Student In listOfStudents
+                Dim studentInserted As Boolean = False
+
+                For Each i As Interval In listOfIntervals
+
+                    If s.height &amp;gt; i.lowerEnd AndAlso s.height &amp;lt;= i.upperEnd Then
+                        i.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                        studentInserted = True
+                    End If
+                Next
+
+                If studentInserted = True Then
+                    Continue For
+                End If
+
+                If s.height &amp;lt;= listOfIntervals(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).lowerEnd Then
+
+                    While True
+                        Dim newLeftInterval As Interval = New Interval()
+                        newLeftInterval.upperEnd = listOfIntervals(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).lowerEnd
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize
+                        listOfIntervals.Insert(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, newLeftInterval)
+
+                        If s.height &amp;gt; newLeftInterval.lowerEnd AndAlso s.height &amp;lt;= newLeftInterval.upperEnd Then
+                            newLeftInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                ElseIf s.height &amp;gt; listOfIntervals(listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).upperEnd Then
+
+                    While True
+                        Dim newRightInterval As Interval = New Interval()
+                        newRightInterval.lowerEnd = listOfIntervals(listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).upperEnd
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize
+                        listOfIntervals.Add(newRightInterval)
+
+                        If s.height &amp;gt; newRightInterval.lowerEnd AndAlso s.height &amp;lt;= newRightInterval.upperEnd Then
+                            newRightInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                End If
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HEIGHT DISTRIBUTION&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Interval&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+
+            For Each i As Interval In listOfIntervals
+                Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[ &amp;#34;&lt;/span&gt; &amp;amp; i.lowerEnd &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; i.upperEnd &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;] &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;) &amp;amp; i.count &amp;amp; Environment.NewLine)
+            Next
+        End Sub
+
+        Public Class Frequencies
+            Public count As Decimal
+            Public relativeFreq As Decimal
+            Public precentage As Decimal
+
+            Public Sub New(ByVal c As Decimal)
+                count = c
+            End Sub
+
+            Public Sub New(ByVal c As Decimal, ByVal rf As Decimal, ByVal p As Decimal)
+                count = c
+                relativeFreq = rf
+                precentage = p
+            End Sub
+        End Class
+
+        Public Class Interval
+            Public lowerEnd, upperEnd, count, relativeFrequency, percentage As Decimal
+        End Class
+    End Class
+End Namespace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1yVNjPjYmsZQSsRjHFnpg4PPwOggToPB7/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>3_R : ONLINE ALGORITHM</title>
+      <link>https://lucarep.github.io/homework2/3_r/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/3_r/</guid>
+      <description>WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
+ In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand.</description>
+      <content>&lt;h1 id=&#34;what-is-an-online-algorithm&#34;&gt;WHAT IS AN ONLINE ALGORITHM?&lt;/h1&gt;
+&lt;p&gt;Citing &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_algorithm&#34;&gt;Wikipedia&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand. (For example, selection sort requires that the entire list be given before it can sort it, while insertion sort doesn&amp;rsquo;t.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We can then summarize this definition by saying:
+an online algorithm takes as input a &lt;strong&gt;stream&lt;/strong&gt; of continuous data, while an offline algorithm attempts to solve the problem by already having all the data available from the first moment.&lt;/p&gt;
+&lt;h1 id=&#34;how-we-can-obtain-an-online-algo-for-the-arithmetic-mean&#34;&gt;HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:&lt;/h1&gt;
+&lt;p&gt;The problem of calculating the average is trivial, most of us since elementary school can solve it, however solving it with an online algorithm is a more complex task.
+Here, comes in help &lt;strong&gt;DONALD KNUTH&lt;/strong&gt; ,an American computer scientist, mathematician, and professor emeritus at Stanford University, in his book ‘&lt;strong&gt;The Art of Computer Programming&lt;/strong&gt;’ wrote an alternative formula to compute the online mean for &lt;strong&gt;huge data-stream.&lt;/strong&gt; The following is the mathematical formula he found to solve the problem:&lt;/p&gt;
+
+
+&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=x_{n}&amp;space;=&amp;space;\frac{x_{n&amp;space;-1}(n&amp;space;-1)&amp;space;&amp;plus;&amp;space;x_{n}}{n}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?x_{n}&amp;space;=&amp;space;\frac{x_{n&amp;space;-1}(n&amp;space;-1)&amp;space;&amp;plus;&amp;space;x_{n}}{n}&#34; title=&#34;x_{n} = \frac{x_{n -1}(n -1) + x_{n}}{n}&#34; /&gt;&lt;/a&gt;
+
+&lt;h3 id=&#34;kahan-summation-algorithm&#34;&gt;KAHAN SUMMATION ALGORITHM:&lt;/h3&gt;
+&lt;p&gt;A code version of the algorithm, is the following one introduced by &lt;strong&gt;KAHAN&lt;/strong&gt;, which is designed to minimize errors, this is done by keeping a separate running compensation (a variable that accumulates small errors).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;KahanSum&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;                 &lt;span style=&#34;color:#75715e&#34;&gt;// A running compensation for lost low-order bits.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// So far, so good: c is zero.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;         &lt;span style=&#34;color:#75715e&#34;&gt;// Alas, sum is big, y small, so low-order digits of y are lost.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;       &lt;span style=&#34;color:#75715e&#34;&gt;// (t - sum) cancels the high-order part of y; subtracting y recovers negative (low part of y)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;                 &lt;span style=&#34;color:#75715e&#34;&gt;// Algebraically, c should always be zero. Beware overly-aggressive optimizing compilers!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;                      &lt;span style=&#34;color:#75715e&#34;&gt;// Next time around, the lost low part will be added to y in a fresh attempt.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;why-is-an-online-algo-better-in-this-case&#34;&gt;WHY IS AN ONLINE ALGO BETTER IN THIS CASE?&lt;/h1&gt;
+&lt;p&gt;the answer to the question starts with one word &lt;strong&gt;digitalization&lt;/strong&gt;.
+We live in an increasingly connected world, where more and more applications are entrusted to &lt;strong&gt;computers&lt;/strong&gt;, so it is unthinkable to be able to store a large amount of data in RAM or hard drive and then use them later, because they take up a lot of &lt;strong&gt;space and resources&lt;/strong&gt;. That&amp;rsquo;s why we need something more efficient, so over the years the &lt;strong&gt;online&lt;/strong&gt; approach has gained more and more attention, because it allows us to save precious resources. Of course, &lt;strong&gt;it&amp;rsquo;s not all gold that glitters&lt;/strong&gt;, in fact, for problems that don&amp;rsquo;t require large amounts of data, an offline approach is preferable because it&amp;rsquo;s easier to implement and in some cases may even be more efficient.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Federica Sole, &lt;a href=&#34;https://statisticsforcs.wordpress.com/2017/10/24/best-algorithms-to-compute-the-online-data-stream-arithmetic-mean/&#34;&gt;Best algorithms to compute the “online data stream” arithmetic mean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>3_R : ONLINE ALGORITHM</title>
+      <link>https://lucarep.github.io/post/3_r/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/3_r/</guid>
+      <description>WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
+ In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand.</description>
+      <content>&lt;h1 id=&#34;what-is-an-online-algorithm&#34;&gt;WHAT IS AN ONLINE ALGORITHM?&lt;/h1&gt;
+&lt;p&gt;Citing &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_algorithm&#34;&gt;Wikipedia&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand. (For example, selection sort requires that the entire list be given before it can sort it, while insertion sort doesn&amp;rsquo;t.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We can then summarize this definition by saying:
+an online algorithm takes as input a &lt;strong&gt;stream&lt;/strong&gt; of continuous data, while an offline algorithm attempts to solve the problem by already having all the data available from the first moment.&lt;/p&gt;
+&lt;h1 id=&#34;how-we-can-obtain-an-online-algo-for-the-arithmetic-mean&#34;&gt;HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:&lt;/h1&gt;
+&lt;p&gt;The problem of calculating the average is trivial, most of us since elementary school can solve it, however solving it with an online algorithm is a more complex task.
+Here, comes in help &lt;strong&gt;DONALD KNUTH&lt;/strong&gt; ,an American computer scientist, mathematician, and professor emeritus at Stanford University, in his book ‘&lt;strong&gt;The Art of Computer Programming&lt;/strong&gt;’ wrote an alternative formula to compute the online mean for &lt;strong&gt;huge data-stream.&lt;/strong&gt; The following is the mathematical formula he found to solve the problem:&lt;/p&gt;
+
+
+&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=x_{n}&amp;space;=&amp;space;\frac{x_{n&amp;space;-1}(n&amp;space;-1)&amp;space;&amp;plus;&amp;space;x_{n}}{n}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?x_{n}&amp;space;=&amp;space;\frac{x_{n&amp;space;-1}(n&amp;space;-1)&amp;space;&amp;plus;&amp;space;x_{n}}{n}&#34; title=&#34;x_{n} = \frac{x_{n -1}(n -1) + x_{n}}{n}&#34; /&gt;&lt;/a&gt;
+
+&lt;h3 id=&#34;kahan-summation-algorithm&#34;&gt;KAHAN SUMMATION ALGORITHM:&lt;/h3&gt;
+&lt;p&gt;A code version of the algorithm, is the following one introduced by &lt;strong&gt;KAHAN&lt;/strong&gt;, which is designed to minimize errors, this is done by keeping a separate running compensation (a variable that accumulates small errors).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;KahanSum&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;                 &lt;span style=&#34;color:#75715e&#34;&gt;// A running compensation for lost low-order bits.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// So far, so good: c is zero.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;         &lt;span style=&#34;color:#75715e&#34;&gt;// Alas, sum is big, y small, so low-order digits of y are lost.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;       &lt;span style=&#34;color:#75715e&#34;&gt;// (t - sum) cancels the high-order part of y; subtracting y recovers negative (low part of y)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;                 &lt;span style=&#34;color:#75715e&#34;&gt;// Algebraically, c should always be zero. Beware overly-aggressive optimizing compilers!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;                      &lt;span style=&#34;color:#75715e&#34;&gt;// Next time around, the lost low part will be added to y in a fresh attempt.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;why-is-an-online-algo-better-in-this-case&#34;&gt;WHY IS AN ONLINE ALGO BETTER IN THIS CASE?&lt;/h1&gt;
+&lt;p&gt;the answer to the question starts with one word &lt;strong&gt;digitalization&lt;/strong&gt;.
+We live in an increasingly connected world, where more and more applications are entrusted to &lt;strong&gt;computers&lt;/strong&gt;, so it is unthinkable to be able to store a large amount of data in RAM or hard drive and then use them later, because they take up a lot of &lt;strong&gt;space and resources&lt;/strong&gt;. That&amp;rsquo;s why we need something more efficient, so over the years the &lt;strong&gt;online&lt;/strong&gt; approach has gained more and more attention, because it allows us to save precious resources. Of course, &lt;strong&gt;it&amp;rsquo;s not all gold that glitters&lt;/strong&gt;, in fact, for problems that don&amp;rsquo;t require large amounts of data, an offline approach is preferable because it&amp;rsquo;s easier to implement and in some cases may even be more efficient.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Federica Sole, &lt;a href=&#34;https://statisticsforcs.wordpress.com/2017/10/24/best-algorithms-to-compute-the-online-data-stream-arithmetic-mean/&#34;&gt;Best algorithms to compute the “online data stream” arithmetic mean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_R : LET&#39;S TALK ABOUT DATA</title>
+      <link>https://lucarep.github.io/homework2/2_r/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/2_r/</guid>
+      <description>What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
+ A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.</description>
+      <content>&lt;h1 id=&#34;what-is-a-database&#34;&gt;What is a Database?&lt;/h1&gt;
+&lt;p&gt;Our discussion of data starts here, the database, but what is actually a database?
+Citing &lt;a href=&#34;https://www.oracle.com/database/what-is-database/&#34;&gt;Oracle&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A database is an &lt;strong&gt;organized collection of structured information&lt;/strong&gt;, or data, typically stored electronically in a &lt;strong&gt;computer system&lt;/strong&gt;. A database is usually controlled by a database management system (&lt;strong&gt;DBMS&lt;/strong&gt;). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.Data within the most common types of databases in operation today is typically modeled in &lt;strong&gt;rows and columns&lt;/strong&gt; in a series of &lt;strong&gt;tables&lt;/strong&gt; to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (&lt;strong&gt;SQL&lt;/strong&gt;) for writing and querying data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;so, now that we know what it takes to allow us to record data, we can better address how it is handled in the real world for different purposes.&lt;/p&gt;
+&lt;h1 id=&#34;the-data-warehouse-&#34;&gt;The Data Warehouse :&lt;/h1&gt;
+&lt;p&gt;First of all, a &lt;strong&gt;data warehouse&lt;/strong&gt; is a particular type of &lt;strong&gt;database&lt;/strong&gt;, but there is a major difference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a database is built to &lt;strong&gt;record&lt;/strong&gt; the data provided to it.&lt;/li&gt;
+&lt;li&gt;a Data Warehouse is designed to perform data &lt;strong&gt;aggregations&lt;/strong&gt; for analytical purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other words, databases are a mathematical basis for collecting data and querying them for operational purposes. The data warehouse, on the other hand, is an analytical system of data that has strategic purposes in the &lt;strong&gt;planning of business processes&lt;/strong&gt;. In addition, data warehouses are very important in data mining, artificial intelligence (AI), and machine learning.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-data-mart&#34;&gt;What is a Data Mart?&lt;/h1&gt;
+&lt;p&gt;We can see the &lt;strong&gt;data mart&lt;/strong&gt; as a focused version of a &lt;strong&gt;data warehouse&lt;/strong&gt; described above. Specifically, citing &lt;a href=&#34;https://www.ibm.com/cloud/learn/data-mart&#34;&gt;IBM&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A data mart is a subset of a data warehouse focused on a particular line of business, department, or subject area. Data marts make specific data available to a defined group of users, which allows those users to &lt;strong&gt;quickly&lt;/strong&gt; access critical insights without wasting time searching through an entire data warehouse. For example, many companies may have a data mart that aligns with a specific department in the business, such as finance, sales, or marketing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thus, different data marts may exist depending on the areas of study we are interested in.&lt;/p&gt;
+&lt;h1 id=&#34;olap-and-oltp--two-useful-tools&#34;&gt;OLAP and OLTP : two useful tools&lt;/h1&gt;
+&lt;p&gt;We could conceptually summarize what OLAP and OLTP are with a &lt;strong&gt;simple question&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;in the case of OLAP we would ask &amp;ldquo;&lt;strong&gt;what will happen?&lt;/strong&gt;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;in the case of OLTP we would ask &amp;ldquo;&lt;strong&gt;what is happening?&lt;/strong&gt;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;definition-of-olap&#34;&gt;Definition of OLAP:&lt;/h1&gt;
+&lt;p&gt;OLAP stands for: 
+&lt;strong&gt;On-Line Analytical Processsing&lt;/strong&gt;.
+We can see it as a set of &lt;strong&gt;software&lt;/strong&gt; techniques that allows to analyze a large amount of collected data and it is the basic technology of &lt;strong&gt;data warehouse&lt;/strong&gt;. Companies use it to &lt;strong&gt;predict&lt;/strong&gt; sales results, cost trends, results of marketing and communication campaigns, organize survey data and other similar cases. We can therefore summarize everything in the fact that the OLAP analysis system is one of the tools that can allow you to make &lt;strong&gt;business decisions&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;definition-of-oltp&#34;&gt;Definition of OLTP:&lt;/h1&gt;
+&lt;p&gt;OLTP stands for:
+&lt;strong&gt;On-Line Transaction Processsing&lt;/strong&gt;.
+we can see it as a set of &lt;strong&gt;software&lt;/strong&gt; techniques that are
+used to manage &lt;strong&gt;transaction-oriented&lt;/strong&gt; applications. It is popular in financial transactions, retail sales, and customer relationship management (CRM). Booking airline tickets online, online banking, online shopping are practical examples of systems based on the use of OLTP. OLTP is used to &lt;strong&gt;record&lt;/strong&gt; insertion, &lt;strong&gt;update&lt;/strong&gt; and &lt;strong&gt;deletion&lt;/strong&gt; of data during a transaction. So, as you can imagine these operations in order to ensure reliability must be &lt;strong&gt;atomic&lt;/strong&gt;. Also, OLTP queries are simpler and shorter and thus require less time in processing and less storage space. A key aspect is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;we can see OLTP as the data source for OLAP.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;olap-vs-oltp&#34;&gt;OLAP vs OLTP:&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OLAP tools differ from OLTPs in that the former aim to find and achieve queries that are as complex as possible; the latter, on the other hand, aim to ensure integrity and security of transactions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Below is a list of other substantial differences between the two:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OLTP is an online transaction system instead OLAP is an online data retrieval and analysis system;
+online transaction data is the data source for OLTP;&lt;/li&gt;
+&lt;li&gt;OLTP&amp;rsquo;s main operations are inserting, updating and deleting data while OLAP&amp;rsquo;s main operation is extracting complex data for later analysis;&lt;/li&gt;
+&lt;li&gt;OLAP has a long and less frequent transaction while OLTP has short but frequent transactions;
+OLTP&amp;rsquo;s response times are much faster than OLAP as it deals with short transactions.&lt;/li&gt;
+&lt;li&gt;OLAP queries are very complex compared to OLTP, as they deal with a much larger amount of data and are also more structured.&lt;/li&gt;
+&lt;li&gt;OLAP databases are not changed frequently, so data integrity is not affected. OLTP databases, on the other hand, are changed frequently, so it is important to maintain data integrity.&lt;/li&gt;
+&lt;li&gt;OLAP is used for planning and decision making while OLTP is used for controlling and executing key business activities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bucap.it/news/approfondimenti-tematici/gestione-del-magazzino/database-data-warehouse-principali-differenze.htm#:~:text=Il%20primo%20obiettivo%20del%20database,di%20dati%20a%20fini%20analitici.&#34;&gt;Difference between database and data warehouse&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.businessintelligencegroup.it/olap-e-oltp-cosa-sono-e-quali-sono-le-principali-differenze/&#34;&gt;OLAP e OLTP&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_R : LET&#39;S TALK ABOUT DATA</title>
+      <link>https://lucarep.github.io/post/2_r/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/2_r/</guid>
+      <description>What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
+ A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.</description>
+      <content>&lt;h1 id=&#34;what-is-a-database&#34;&gt;What is a Database?&lt;/h1&gt;
+&lt;p&gt;Our discussion of data starts here, the database, but what is actually a database?
+Citing &lt;a href=&#34;https://www.oracle.com/database/what-is-database/&#34;&gt;Oracle&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A database is an &lt;strong&gt;organized collection of structured information&lt;/strong&gt;, or data, typically stored electronically in a &lt;strong&gt;computer system&lt;/strong&gt;. A database is usually controlled by a database management system (&lt;strong&gt;DBMS&lt;/strong&gt;). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.Data within the most common types of databases in operation today is typically modeled in &lt;strong&gt;rows and columns&lt;/strong&gt; in a series of &lt;strong&gt;tables&lt;/strong&gt; to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (&lt;strong&gt;SQL&lt;/strong&gt;) for writing and querying data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;so, now that we know what it takes to allow us to record data, we can better address how it is handled in the real world for different purposes.&lt;/p&gt;
+&lt;h1 id=&#34;the-data-warehouse-&#34;&gt;The Data Warehouse :&lt;/h1&gt;
+&lt;p&gt;First of all, a &lt;strong&gt;data warehouse&lt;/strong&gt; is a particular type of &lt;strong&gt;database&lt;/strong&gt;, but there is a major difference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a database is built to &lt;strong&gt;record&lt;/strong&gt; the data provided to it.&lt;/li&gt;
+&lt;li&gt;a Data Warehouse is designed to perform data &lt;strong&gt;aggregations&lt;/strong&gt; for analytical purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other words, databases are a mathematical basis for collecting data and querying them for operational purposes. The data warehouse, on the other hand, is an analytical system of data that has strategic purposes in the &lt;strong&gt;planning of business processes&lt;/strong&gt;. In addition, data warehouses are very important in data mining, artificial intelligence (AI), and machine learning.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-data-mart&#34;&gt;What is a Data Mart?&lt;/h1&gt;
+&lt;p&gt;We can see the &lt;strong&gt;data mart&lt;/strong&gt; as a focused version of a &lt;strong&gt;data warehouse&lt;/strong&gt; described above. Specifically, citing &lt;a href=&#34;https://www.ibm.com/cloud/learn/data-mart&#34;&gt;IBM&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A data mart is a subset of a data warehouse focused on a particular line of business, department, or subject area. Data marts make specific data available to a defined group of users, which allows those users to &lt;strong&gt;quickly&lt;/strong&gt; access critical insights without wasting time searching through an entire data warehouse. For example, many companies may have a data mart that aligns with a specific department in the business, such as finance, sales, or marketing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thus, different data marts may exist depending on the areas of study we are interested in.&lt;/p&gt;
+&lt;h1 id=&#34;olap-and-oltp--two-useful-tools&#34;&gt;OLAP and OLTP : two useful tools&lt;/h1&gt;
+&lt;p&gt;We could conceptually summarize what OLAP and OLTP are with a &lt;strong&gt;simple question&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;in the case of OLAP we would ask &amp;ldquo;&lt;strong&gt;what will happen?&lt;/strong&gt;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;in the case of OLTP we would ask &amp;ldquo;&lt;strong&gt;what is happening?&lt;/strong&gt;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;definition-of-olap&#34;&gt;Definition of OLAP:&lt;/h1&gt;
+&lt;p&gt;OLAP stands for: 
+&lt;strong&gt;On-Line Analytical Processsing&lt;/strong&gt;.
+We can see it as a set of &lt;strong&gt;software&lt;/strong&gt; techniques that allows to analyze a large amount of collected data and it is the basic technology of &lt;strong&gt;data warehouse&lt;/strong&gt;. Companies use it to &lt;strong&gt;predict&lt;/strong&gt; sales results, cost trends, results of marketing and communication campaigns, organize survey data and other similar cases. We can therefore summarize everything in the fact that the OLAP analysis system is one of the tools that can allow you to make &lt;strong&gt;business decisions&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;definition-of-oltp&#34;&gt;Definition of OLTP:&lt;/h1&gt;
+&lt;p&gt;OLTP stands for:
+&lt;strong&gt;On-Line Transaction Processsing&lt;/strong&gt;.
+we can see it as a set of &lt;strong&gt;software&lt;/strong&gt; techniques that are
+used to manage &lt;strong&gt;transaction-oriented&lt;/strong&gt; applications. It is popular in financial transactions, retail sales, and customer relationship management (CRM). Booking airline tickets online, online banking, online shopping are practical examples of systems based on the use of OLTP. OLTP is used to &lt;strong&gt;record&lt;/strong&gt; insertion, &lt;strong&gt;update&lt;/strong&gt; and &lt;strong&gt;deletion&lt;/strong&gt; of data during a transaction. So, as you can imagine these operations in order to ensure reliability must be &lt;strong&gt;atomic&lt;/strong&gt;. Also, OLTP queries are simpler and shorter and thus require less time in processing and less storage space. A key aspect is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;we can see OLTP as the data source for OLAP.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;olap-vs-oltp&#34;&gt;OLAP vs OLTP:&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OLAP tools differ from OLTPs in that the former aim to find and achieve queries that are as complex as possible; the latter, on the other hand, aim to ensure integrity and security of transactions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Below is a list of other substantial differences between the two:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OLTP is an online transaction system instead OLAP is an online data retrieval and analysis system;
+online transaction data is the data source for OLTP;&lt;/li&gt;
+&lt;li&gt;OLTP&amp;rsquo;s main operations are inserting, updating and deleting data while OLAP&amp;rsquo;s main operation is extracting complex data for later analysis;&lt;/li&gt;
+&lt;li&gt;OLAP has a long and less frequent transaction while OLTP has short but frequent transactions;
+OLTP&amp;rsquo;s response times are much faster than OLAP as it deals with short transactions.&lt;/li&gt;
+&lt;li&gt;OLAP queries are very complex compared to OLTP, as they deal with a much larger amount of data and are also more structured.&lt;/li&gt;
+&lt;li&gt;OLAP databases are not changed frequently, so data integrity is not affected. OLTP databases, on the other hand, are changed frequently, so it is important to maintain data integrity.&lt;/li&gt;
+&lt;li&gt;OLAP is used for planning and decision making while OLTP is used for controlling and executing key business activities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bucap.it/news/approfondimenti-tematici/gestione-del-magazzino/database-data-warehouse-principali-differenze.htm#:~:text=Il%20primo%20obiettivo%20del%20database,di%20dati%20a%20fini%20analitici.&#34;&gt;Difference between database and data warehouse&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.businessintelligencegroup.it/olap-e-oltp-cosa-sono-e-quali-sono-le-principali-differenze/&#34;&gt;OLAP e OLTP&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_A</title>
+      <link>https://lucarep.github.io/homework1/1_a/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework1/1_a/</guid>
+      <description>Intro in this assignment, I had to code a form in C# and VB.NET that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.
+Live Demo here, you can see my program in action   C# code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.Drawing.Drawing2D; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace _1_R { public partial class Form1 : System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to code a form in &lt;strong&gt;C#&lt;/strong&gt; and &lt;strong&gt;VB.NET&lt;/strong&gt; that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Z-dVPitpOpA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.ComponentModel;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Data;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing.Drawing2D;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Linq;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Text;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Threading.Tasks;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Windows.Forms;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; _1_R
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt; : System.Windows.Forms.Form
+    {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Ball params
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballWidth = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballX, ballY;   &lt;span style=&#34;color:#75715e&#34;&gt;// Position.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballVx, ballVy; &lt;span style=&#34;color:#75715e&#34;&gt;// Velocity.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+        {
+            InitializeComponent();
+            Random rnd = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random();
+            ballVx = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+            ballVy = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+            ballX = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Width - ballWidth);
+            ballY = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Height - ballHeight);
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// Use double buffering to reduce flicker.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.SetStyle(
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.DoubleBuffer,
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.UpdateStyles();
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            richTextBox1.Text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button2_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+
+            timer1.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+            button3.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button3_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            timer1.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; tmrMoveBall_Tick(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            ballX += ballVx;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballX &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            {
+                ballVx = -ballVx;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballX + ballWidth &amp;gt; panel1.Width)
+            {
+                ballVx = -ballVx;
+            }
+
+            ballY += ballVy;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballY &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            {
+                ballVy = -ballVy;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballY + ballHeight &amp;gt; panel1.Height)
+            {
+                ballVy = -ballVy;
+            }
+
+            Refresh();
+   
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; panel1_Paint(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, PaintEventArgs e)
+        {
+            
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.Clear(BackColor);
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY,
+                ballWidth, ballHeight);
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY,
+                ballWidth, ballHeight);
+            
+        }  
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System
+Imports System.Drawing.Drawing2D
+Imports System.Windows.Forms
+
+Namespace &lt;span style=&#34;color:#ae81ff&#34;&gt;_1_&lt;/span&gt;R
+    Public Partial Class Form1
+        Inherits System.Windows.Forms.Form
+
+        &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Ball &lt;span style=&#34;color:#66d9ef&#34;&gt;params&lt;/span&gt;
+        Private Const ballWidth As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;
+        Private Const ballHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;
+        Private ballX, ballY As Integer   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Position.
+        Private ballVx, ballVy As Integer &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Velocity.
+        Public Sub New()
+            InitializeComponent()
+            Dim rnd As Random = New Random()
+            ballVx = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            ballVy = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            ballX = rnd.[Next](&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Width - ballWidth)
+            ballY = rnd.[Next](&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Height - ballHeight)
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Use &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; buffering to reduce flicker.
+            Me.SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.UserPaint Or ControlStyles.DoubleBuffer, True)
+            Me.UpdateStyles()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            richTextBox1.Text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
+        End Sub
+
+        Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = True
+            button3.Enabled = True
+        End Sub
+
+        Private Sub button3_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = False
+        End Sub
+
+        Private Sub tmrMoveBall_Tick(ByVal sender As Object, ByVal e As EventArgs)
+            ballX += ballVx
+
+            If ballX &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Then
+                ballVx = -ballVx
+            ElseIf ballX + ballWidth &amp;gt; panel1.Width Then
+                ballVx = -ballVx
+            End If
+
+            ballY += ballVy
+
+            If ballY &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Then
+                ballVy = -ballVy
+            ElseIf ballY + ballHeight &amp;gt; panel1.Height Then
+                ballVy = -ballVy
+            End If
+
+            Refresh()
+        End Sub
+
+        Private Sub panel1_Paint(ByVal sender As Object, ByVal e As PaintEventArgs)
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+            e.Graphics.Clear(BackColor)
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY, ballWidth, ballHeight)
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY, ballWidth, ballHeight)
+        End Sub
+    End Class
+End Namespace
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1SBdx-20JgMME0kulsV8DzW57xuqW1q1v/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>1_A</title>
       <link>https://lucarep.github.io/post/1_a/</link>
@@ -193,6 +1539,80 @@ End Namespace
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1SBdx-20JgMME0kulsV8DzW57xuqW1q1v/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_R : LET&#39;S TALK ABOUT STATISTICS</title>
+      <link>https://lucarep.github.io/homework1/1_r/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework1/1_r/</guid>
+      <description>What is statistics? 📊  &amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;
+ There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out analysis, interpretation, organization and presentation of this data, so informed decision can be made.</description>
+      <content>&lt;h1 id=&#34;what-is-statistics-&#34;&gt;What is statistics? 📊&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out &lt;strong&gt;analysis, interpretation, organization and presentation of this data&lt;/strong&gt;, so informed decision can be made. A trivial example that we can observe every day are the weather forecasts, to make this forecasts statisticians create computer models based on previous weather reports. But statistics is literally &lt;strong&gt;everywhere&lt;/strong&gt;, here&amp;rsquo;s an example of some of the sectors that use it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pharmaceutical Industry&lt;/li&gt;
+&lt;li&gt;Food Industry&lt;/li&gt;
+&lt;li&gt;Plants&lt;/li&gt;
+&lt;li&gt;Designer Brands&lt;/li&gt;
+&lt;li&gt;Computers&lt;/li&gt;
+&lt;li&gt;Insurance&lt;/li&gt;
+&lt;li&gt;Finance&lt;/li&gt;
+&lt;li&gt;Medicine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, in this historical moment we all know unfortunately that there&amp;rsquo;s a pandemic of &lt;strong&gt;Covid-19&lt;/strong&gt; in progress, even here the statistics play a &lt;strong&gt;key role&lt;/strong&gt;, as you can make estimates of how many contagions there may be in the future, given the current contagions. Take &lt;strong&gt;Covid vaccines&lt;/strong&gt; also as an example, did you know that pharmaceutical companies like &lt;strong&gt;Pfizer&lt;/strong&gt; employ many statisticians? Here they analyze the results conducted in preclinical research and clinical trials,
+to help then develop a vaccine that is &lt;strong&gt;safe and effective&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;is-statistics-a-science-a-branch-of-mathematics-or-both-&#34;&gt;Is statistics a science, a branch of mathematics or both? 🤔&lt;/h1&gt;
+&lt;p&gt;We can summarize the above with a quote from American Statistical Association:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Statistics is the science of learning from data, and of measuring, controlling and communicating &lt;strong&gt;uncertainty&lt;/strong&gt;.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;also, John Turkey (author of Exploratory Dat Analysis) said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Statistics is a science, not a branch of mathematics, but it uses mathematical models as essential tools.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What’s the difference?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The primary difference between the two is &lt;strong&gt;uncertainty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Consider two problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How far is it to work in miles?&lt;/li&gt;
+&lt;li&gt;How far is it to work in minutes?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first problem is a math problem because, assuming you take the same route, the answer is fixed. The second problem is a statistical problem because you will not always get the same answer due to weather or traffic conditions, how many lights you get stuck at etc., there is a level of uncertainty.&lt;/p&gt;
+&lt;p&gt;Now in order to understand statistics you do need to know probability which is a branch of mathematics (The study of finite measures that a normalized to 1). But probability is not statistics anymore than algebra is physics.&lt;/p&gt;
+&lt;h6 id=&#34;also-what-defines-a-scientific-field&#34;&gt;Also, what defines a scientific field?&lt;/h6&gt;
+&lt;p&gt;Every field of scientific inquiry is defined by &lt;strong&gt;three things&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What it studies: Statistics is the study of uncertainty. More specifically, it is the science of probability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why it studies the What: The outcomes of any and every natural process vary in random, yet understandable, ways (i.e. Natural Variation). Statistics examines and specifies these patterns of randomness. By understanding natural variation, we are able to identify occurrences of unnatural variation and seek their underlying cause.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How it studies the What: Like many sciences, mathematics is the formal language of statistics. However, it is not its only tool. Statistics also uses computers for both simulation and analysis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, many people view statistics as a branch of mathematics, in many ways this is true, because its origins lie within mathematics. However, it have evolved past that and is its own independent field of inquiry.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Aveea : What is Statistics? (and what can you do with it) 
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/M6MKQ88LpFA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kenneth Ganning (Ph.D Statistics), Thom Flottemesch (Ph.D Statistics) :  &lt;a href=&#34;https://www.quora.com/What-is-statistics-a-science-of&#34;&gt;What is statistics a science of?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </item>
     
