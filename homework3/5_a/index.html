@@ -6,7 +6,8 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the 25 most frequent words inside, showing them in an appropriate histogram. I have purposely chosen to show only the first 25 most frequent words, because otherwise it would have been difficult to properly display all the words present, which can be many more. However, you can still see a full dictionary of the words with their relative frequency, just below the text." />
+<meta name="description" content="Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
+Live Demo here, you can see my program in action   Result VB.NET Code: Imports System.IO Imports WordCloud Public Class Form1 Dim text Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)() Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://lucarep.github.io/homework3/5_a/" />
@@ -34,7 +35,8 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="5_A : &#39;SAY WHAT AGAIN&#39;">
-<meta property="og:description" content="Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the 25 most frequent words inside, showing them in an appropriate histogram. I have purposely chosen to show only the first 25 most frequent words, because otherwise it would have been difficult to properly display all the words present, which can be many more. However, you can still see a full dictionary of the words with their relative frequency, just below the text." />
+<meta property="og:description" content="Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
+Live Demo here, you can see my program in action   Result VB.NET Code: Imports System.IO Imports WordCloud Public Class Form1 Dim text Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)() Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase." />
 <meta property="og:url" content="https://lucarep.github.io/homework3/5_a/" />
 <meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
 
@@ -172,16 +174,19 @@
 
   <div class="post-content"><div>
         <h1 id="intro">Intro<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>in this task, I&rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the 25 most frequent words inside, showing them in an appropriate histogram. I have purposely chosen to show only the first 25 most frequent words, because otherwise it would have been difficult to properly display all the words present, which can be many more. However, you can still see a full dictionary of the words with their relative frequency, just below the text.In the example shown in the video I used one of the most famous dialogues from the movie <a href="https://it.wikipedia.org/wiki/Pulp_Fiction">Pulp Fiction</a> (one of my favorites).</p>
+<p>in this task, I&rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie <a href="https://it.wikipedia.org/wiki/Pulp_Fiction">Pulp Fiction</a> (one of my favorites).</p>
 <h1 id="live-demo">Live Demo<a href="#live-demo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>here, you can see my program in action
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/1qVEH4vsNl8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/6Yp2R4KitY4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 </p>
+<h1 id="result">Result<a href="#result" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><img src="/img/WordCloud.JPG" alt="wordcloud"></p>
 <h1 id="vbnet-code">VB.NET Code:<a href="#vbnet-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">Imports System.IO
+Imports WordCloud
 
 Public Class Form1
     Dim text
@@ -244,23 +249,25 @@ Public Class Form1
         Me.RichTextBox2.AppendText(<span style="color:#e6db74">&#34;FREQUENCY OF WORDS IN TEXT&#34;</span> &amp; Environment.NewLine)
         Me.RichTextBox2.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> &amp; Environment.NewLine)
         Me.RichTextBox2.AppendText(<span style="color:#e6db74">&#34;Word&#34;</span>.PadRight(<span style="color:#ae81ff">30</span>) &amp; <span style="color:#e6db74">&#34;Frequency&#34;</span>.PadRight(<span style="color:#ae81ff">30</span>) &amp; Environment.NewLine)
-        For Each kvp As KeyValuePair(Of String, Integer) In words
-            Me.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(<span style="color:#ae81ff">30</span>) &amp; <span style="color:#e6db74">&#34; &#34;</span> &amp; kvp.Value.ToString().PadRight(<span style="color:#ae81ff">30</span>) &amp; Environment.NewLine)
-        Next
         Button3.Enabled = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Chart1.ChartAreas(<span style="color:#ae81ff">0</span>).AxisX.Interval = <span style="color:#ae81ff">1</span>
-        Me.Chart1.ChartAreas(<span style="color:#ae81ff">0</span>).AxisX.Maximum = <span style="color:#ae81ff">25</span>
-        words = words.OrderByDescending(Function(x) x.Value).ToDictionary(Function(x) x.Key, Function(x) x.Value)
+        Dim wordss As New List(Of String)
+        Dim frequency As New List(Of Integer)
         For Each kvp As KeyValuePair(Of String, Integer) In words
-            Me.Chart1.Series(<span style="color:#e6db74">&#34;Words&#34;</span>).Points.AddXY(kvp.Key.ToString(), kvp.Value)
+            wordss.Add(kvp.Key.ToString())
+            frequency.Add(kvp.Value)
+            Me.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(<span style="color:#ae81ff">30</span>) &amp; <span style="color:#e6db74">&#34; &#34;</span> &amp; kvp.Value.ToString().PadRight(<span style="color:#ae81ff">30</span>) &amp; Environment.NewLine)
         Next
+        Dim wc As New WordCloud.WordCloud(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">360</span>, True)
+        wc.Draw(wordss, frequency).Save(<span style="color:#e6db74">&#34;C:\Users\Luca\Desktop\WordCloud.JPG&#34;</span>)
+        Dim imagePath As String = <span style="color:#e6db74">&#34;C:\Users\Luca\Desktop\WordCloud.JPG&#34;</span>
+        Me.PictureBox1.Image = New Bitmap(imagePath)
     End Sub
 End Class
 </code></pre></div><h1 id="download-source-code">Download source code:<a href="#download-source-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p><a href="https://drive.google.com/file/d/1vVrHhuIO-KkoNRz5IWjWUHWRePGry72m/view?usp=sharing">click here</a> 📥</p>
+<p><a href="https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing">click here</a> 📥</p>
 
       </div></div>
 

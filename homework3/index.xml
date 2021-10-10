@@ -14,18 +14,22 @@
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework3/5_a/</guid>
-      <description>Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the 25 most frequent words inside, showing them in an appropriate histogram. I have purposely chosen to show only the first 25 most frequent words, because otherwise it would have been difficult to properly display all the words present, which can be many more. However, you can still see a full dictionary of the words with their relative frequency, just below the text.</description>
+      <description>Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
+Live Demo here, you can see my program in action   Result VB.NET Code: Imports System.IO Imports WordCloud Public Class Form1 Dim text Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)() Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.</description>
       <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
-&lt;p&gt;in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the 25 most frequent words inside, showing them in an appropriate histogram. I have purposely chosen to show only the first 25 most frequent words, because otherwise it would have been difficult to properly display all the words present, which can be many more. However, you can still see a full dictionary of the words with their relative frequency, just below the text.In the example shown in the video I used one of the most famous dialogues from the movie &lt;a href=&#34;https://it.wikipedia.org/wiki/Pulp_Fiction&#34;&gt;Pulp Fiction&lt;/a&gt; (one of my favorites).&lt;/p&gt;
+&lt;p&gt;in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie &lt;a href=&#34;https://it.wikipedia.org/wiki/Pulp_Fiction&#34;&gt;Pulp Fiction&lt;/a&gt; (one of my favorites).&lt;/p&gt;
 &lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
 &lt;p&gt;here, you can see my program in action
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/1qVEH4vsNl8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/6Yp2R4KitY4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;/p&gt;
+&lt;h1 id=&#34;result&#34;&gt;Result&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/WordCloud.JPG&#34; alt=&#34;wordcloud&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System.IO
+Imports WordCloud
 
 Public Class Form1
     Dim text
@@ -88,23 +92,25 @@ Public Class Form1
         Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FREQUENCY OF WORDS IN TEXT&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
         Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
         Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Word&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
-        For Each kvp As KeyValuePair(Of String, Integer) In words
-            Me.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
-        Next
         Button3.Enabled = True
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Chart1.ChartAreas(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).AxisX.Interval = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
-        Me.Chart1.ChartAreas(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).AxisX.Maximum = &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt;
-        words = words.OrderByDescending(Function(x) x.Value).ToDictionary(Function(x) x.Key, Function(x) x.Value)
+        Dim wordss As New List(Of String)
+        Dim frequency As New List(Of Integer)
         For Each kvp As KeyValuePair(Of String, Integer) In words
-            Me.Chart1.Series(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Words&amp;#34;&lt;/span&gt;).Points.AddXY(kvp.Key.ToString(), kvp.Value)
+            wordss.Add(kvp.Key.ToString())
+            frequency.Add(kvp.Value)
+            Me.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
         Next
+        Dim wc As New WordCloud.WordCloud(&lt;span style=&#34;color:#ae81ff&#34;&gt;480&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;360&lt;/span&gt;, True)
+        wc.Draw(wordss, frequency).Save(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;)
+        Dim imagePath As String = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;
+        Me.PictureBox1.Image = New Bitmap(imagePath)
     End Sub
 End Class
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1vVrHhuIO-KkoNRz5IWjWUHWRePGry72m/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
 </content>
     </item>
     
