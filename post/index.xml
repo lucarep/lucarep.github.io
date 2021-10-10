@@ -7,9 +7,308 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1_RA : Floating point representation</title>
+      <title>5_A : &#39;SAY WHAT AGAIN&#39;</title>
+      <link>https://lucarep.github.io/post/5_a/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/5_a/</guid>
+      <description>Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
+Live Demo here, you can see my program in action   Result VB.NET Code: Imports System.IO Imports WordCloud Public Class Form1 Dim text Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)() Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie &lt;a href=&#34;https://it.wikipedia.org/wiki/Pulp_Fiction&#34;&gt;Pulp Fiction&lt;/a&gt; (one of my favorites).&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/6Yp2R4KitY4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;result&#34;&gt;Result&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/WordCloud.JPG&#34; alt=&#34;wordcloud&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System.IO
+Imports WordCloud
+
+Public Class Form1
+    Dim text
+    Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)()
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.RichTextBox1.EnableAutoDragDrop = True
+    End Sub
+    Private Sub RichTextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragDrop
+        e.Effect = DragDropEffects.None
+
+        Me.RichTextBox1.Clear()
+        Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+
+        For Each path In files
+            Me.ProcessaFile(path)
+        Next
+    End Sub
+    Private Sub RichTextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+    Sub ProcessaFile(path As String)
+        Me.RichTextBox1.AppendText(path &amp;amp; Environment.NewLine)
+        Button2.Enabled = True
+    End Sub
+    Private Sub ButtonGetFile_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ofd As New OpenFileDialog
+        ofd.ShowDialog()
+
+        If ofd.FileName IsNot Nothing Then
+            Me.RichTextBox1.Text = ofd.FileName
+            Button2.Enabled = True
+        End If
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.RichTextBox2.Clear()
+        Dim path As String = Me.RichTextBox1.Text
+        Dim sr As New StreamReader(path)
+
+        Do
+            Dim line As String = sr.ReadLine
+            If sr.EndOfStream Then
+                Exit Do
+            End If
+            Me.RichTextBox2.AppendText(line &amp;amp; Environment.NewLine)
+        Loop
+
+        text = File.ReadAllText(path).Replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;).ToLower()
+        Dim wordsInFile = text.Split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;c)
+
+        For Each word In wordsInFile
+            If words.ContainsKey(word) Then
+                words(word) += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            Else
+                words(word) = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            End If
+        Next
+        Me.RichTextBox2.AppendText(Environment.NewLine &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FREQUENCY OF WORDS IN TEXT&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Word&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        Button3.Enabled = True
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim wordss As New List(Of String)
+        Dim frequency As New List(Of Integer)
+        For Each kvp As KeyValuePair(Of String, Integer) In words
+            wordss.Add(kvp.Key.ToString())
+            frequency.Add(kvp.Value)
+            Me.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        Next
+        Dim wc As New WordCloud.WordCloud(&lt;span style=&#34;color:#ae81ff&#34;&gt;480&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;360&lt;/span&gt;, True)
+        wc.Draw(wordss, frequency).Save(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;)
+        Dim imagePath As String = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;
+        Me.PictureBox1.Image = New Bitmap(imagePath)
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>4_A : RAMEN AND STATISTICS</title>
+      <link>https://lucarep.github.io/post/4_a/</link>
+      <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/4_a/</guid>
+      <description>Intro In this task I have created a program that takes as input a CSV file regarding some Ramen stores around the world. It is possible to visualize all the data in the file and some interesting statistics are computed, both in the case of one variable and in the case of two variables. If you want to try the program, besides downloading the source code at the end of the page, clicking here you will find the link to download the CSV file.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this task I have created a program that takes as input a CSV file regarding some Ramen stores around the world. It is possible to visualize all the data in the file and some interesting statistics are computed, both in the case of one variable and in the case of two variables.
+If you want to try the program, besides downloading the source code at the end of the page, &lt;a href=&#34;https://www.kaggle.com/residentmario/ramen-ratings&#34;&gt;clicking here&lt;/a&gt; you will find the link to download the CSV file.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/PJTa3aqo9Iw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System.IO
+Imports Microsoft.VisualBasic.FileIO
+
+Public Class Form1
+
+    Dim listOfValues As New List(Of Ramen)
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.RichTextBox1.EnableAutoDragDrop = True
+    End Sub
+    Private Sub RichTextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragDrop
+        e.Effect = DragDropEffects.None
+
+        Me.RichTextBox1.Clear()
+        Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+
+        For Each path In files
+            Me.ProcessaFile(path)
+        Next
+    End Sub
+    Private Sub RichTextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+    Sub ProcessaFile(path As String)
+        Me.RichTextBox1.AppendText(path &amp;amp; Environment.NewLine)
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim tfp As New TextFieldParser(Me.RichTextBox1.Text.Trim)
+        tfp.Delimiters = New String() {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;}
+        tfp.TextFieldType = FieldType.Delimited
+
+        Dim desc As String = tfp.ReadLine()
+        Me.RichTextBox2.AppendText(desc &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;__________________________________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+
+
+        While tfp.EndOfData = False
+            Dim fields = tfp.ReadFields()
+            Dim r As New Ramen()
+            r.numberOfReview = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            r.brand = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+            r.variety = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+            r.style = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)
+            If fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;) IsNot Nothing Then
+                r.country = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            End If
+            If String.Equals(fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unrated&amp;#34;&lt;/span&gt;) Then
+                r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;
+            Else
+                r.stars = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)
+                &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;Me.RichTextBox2.AppendText(fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            End If
+            Me.RichTextBox2.AppendText(String.Format(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{0} - {1} - {2} - {3} - {4} - {5} &amp;#34;&lt;/span&gt;, r.numberOfReview, r.brand, r.variety, r.style, r.country, r.stars) &amp;amp; Environment.NewLine)
+
+            If r IsNot Nothing Then
+                listOfValues.Add(r)
+            End If
+
+        End While
+        Button3.Enabled = True
+    End Sub
+    Private Sub ButtonGetFile_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim ofd As New OpenFileDialog
+        ofd.ShowDialog()
+
+        If ofd.FileName IsNot Nothing Then
+            Me.RichTextBox1.Text = ofd.FileName
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ARITHMETIC MEAN OF # OF REVIEWS &amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Dim totalNumber As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;2580&lt;/span&gt;
+        Dim sum As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        For Each ramen In listOfValues
+            sum += ramen.numberOfReview
+        Next
+        Dim average As Double = Math.Round(sum / (totalNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        Me.RichTextBox3.AppendText(average &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DISTRIBUTION OF RAMEN SHOPS IN COUNTRIES&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Dim frequencyDist As Dictionary(Of String, Frequencies) = New Dictionary(Of String, Frequencies)()
+        For Each r As Ramen In listOfValues
+
+            If frequencyDist.ContainsKey(r.country) Then
+                frequencyDist(r.country).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            Else
+                frequencyDist.Add(r.country, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+            End If
+
+            frequencyDist(r.country).relativeFreq = Math.Round(frequencyDist(r.country).count / (totalNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+            frequencyDist(r.country).precentage = frequencyDist(r.country).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        Next
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Country &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        For Each kvp As KeyValuePair(Of String, Frequencies) In frequencyDist
+            Me.RichTextBox3.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Next
+        Me.RichTextBox3.AppendText(Environment.NewLine &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DISTRIBUTION OF RATINGS OF RAMEN SHOPS IN JAPAN&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Dim ratingsDist As Dictionary(Of Integer, Frequencies) = New Dictionary(Of Integer, Frequencies)()
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        Dim totalNum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        For Each r As Ramen In listOfValues
+            If r.country.Equals(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Japan&amp;#34;&lt;/span&gt;) Then
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+            End If
+        Next
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Rating &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        For Each kvp As KeyValuePair(Of Integer, Frequencies) In ratingsDist
+            Me.RichTextBox3.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Next
+
+    End Sub
+End Class
+Public Class Ramen
+    Public brand, variety, style, country As String
+    Public numberOfReview As Integer
+    Public stars As Integer
+End Class
+Public Class Frequencies
+    Public count As Decimal
+    Public relativeFreq As Decimal
+    Public precentage As Decimal
+
+    Public Sub New(ByVal c As Decimal)
+        count = c
+    End Sub
+
+    Public Sub New(ByVal c As Decimal, ByVal rf As Decimal, ByVal p As Decimal)
+        count = c
+        relativeFreq = rf
+        precentage = p
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1S3xdDpb5xEbvkZqAC63H2YuIsKDgTidJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_RA : FLOATING POINT REPRESENTATION</title>
       <link>https://lucarep.github.io/post/1_ra/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
