@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
-Live Demo here, you can see my program in action   Result VB.NET Code: Imports System.IO Imports WordCloud Public Class Form1 Dim text Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)() Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase." />
+Live Demo here, you can see my program in action   Result C# Code: using System; using System.Collections; using System.Collections.Generic; using System.IO; using Microsoft." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://lucarep.github.io/post/5_a/" />
@@ -36,7 +36,7 @@ Live Demo here, you can see my program in action   Result VB.NET Code: Imports S
 <meta property="og:type" content="article" />
 <meta property="og:title" content="5_A : &#39;SAY WHAT AGAIN&#39;">
 <meta property="og:description" content="Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
-Live Demo here, you can see my program in action   Result VB.NET Code: Imports System.IO Imports WordCloud Public Class Form1 Dim text Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)() Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase." />
+Live Demo here, you can see my program in action   Result C# Code: using System; using System.Collections; using System.Collections.Generic; using System.IO; using Microsoft." />
 <meta property="og:url" content="https://lucarep.github.io/post/5_a/" />
 <meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
 
@@ -145,6 +145,7 @@ Live Demo here, you can see my program in action   Result VB.NET Code: Imports S
 </nav>
 
   
+  
 </header>
 
 
@@ -184,7 +185,118 @@ Live Demo here, you can see my program in action   Result VB.NET Code: Imports S
 </p>
 <h1 id="result">Result<a href="#result" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p><img src="/img/WordCloud.JPG" alt="wordcloud"></p>
-<h1 id="vbnet-code">VB.NET Code:<a href="#vbnet-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h1 id="c-code">C# Code:<a href="#c-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> System.IO;
+<span style="color:#66d9ef">using</span> Microsoft.VisualBasic.CompilerServices; <span style="color:#75715e">// Install-Package Microsoft.VisualBasic
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> WordCloud;
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">partial</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form1</span>
+{
+    <span style="color:#66d9ef">public</span> Form1()
+    {
+        <span style="color:#66d9ef">base</span>.Load += Form1_Load;
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">object</span> text;
+    <span style="color:#66d9ef">private</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt; words = <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt;();
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Form1_Load(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+    {
+        <span style="color:#66d9ef">this</span>.RichTextBox1.EnableAutoDragDrop = <span style="color:#66d9ef">true</span>;
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RichTextBox1_DragDrop(<span style="color:#66d9ef">object</span> sender, Global.System.Windows.Forms.DragEventArgs e)
+    {
+        e.Effect = DragDropEffects.None;
+        <span style="color:#66d9ef">this</span>.RichTextBox1.Clear();
+        <span style="color:#66d9ef">string</span>[] files = (<span style="color:#66d9ef">string</span>[])e.Data.GetData(DataFormats.FileDrop);
+        <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> path <span style="color:#66d9ef">in</span> files)
+            ProcessaFile(path);
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> RichTextBox1_DragEnter(<span style="color:#66d9ef">object</span> sender, Global.System.Windows.Forms.DragEventArgs e)
+    {
+        <span style="color:#66d9ef">if</span> (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ProcessaFile(<span style="color:#66d9ef">string</span> path)
+    {
+        <span style="color:#66d9ef">this</span>.RichTextBox1.AppendText(path + Environment.NewLine);
+        Button2.Enabled = <span style="color:#66d9ef">true</span>;
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> ButtonGetFile_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+    {
+        <span style="color:#66d9ef">var</span> ofd = <span style="color:#66d9ef">new</span> OpenFileDialog();
+        ofd.ShowDialog();
+        <span style="color:#66d9ef">if</span> (ofd.FileName <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">object</span>)
+        {
+            <span style="color:#66d9ef">this</span>.RichTextBox1.Text = ofd.FileName;
+            Button2.Enabled = <span style="color:#66d9ef">true</span>;
+        }
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Button2_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+    {
+        <span style="color:#66d9ef">this</span>.RichTextBox2.Clear();
+        <span style="color:#66d9ef">string</span> path = <span style="color:#66d9ef">this</span>.RichTextBox1.Text;
+        <span style="color:#66d9ef">var</span> sr = <span style="color:#66d9ef">new</span> StreamReader(path);
+        <span style="color:#66d9ef">do</span>
+        {
+            <span style="color:#66d9ef">string</span> line = sr.ReadLine();
+            <span style="color:#66d9ef">if</span> (sr.EndOfStream)
+            {
+                <span style="color:#66d9ef">break</span>;
+            }
+
+            <span style="color:#66d9ef">this</span>.RichTextBox2.AppendText(line + Environment.NewLine);
+        }
+        <span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>);
+        text = File.ReadAllText(path).Replace(<span style="color:#e6db74">&#34;,&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>).ToLower();
+        <span style="color:#66d9ef">var</span> wordsInFile = text.Split(<span style="color:#e6db74">&#39; &#39;</span>);
+        <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> word <span style="color:#66d9ef">in</span> (IEnumerable)wordsInFile)
+        {
+            <span style="color:#66d9ef">if</span> (words.ContainsKey(Conversions.ToString(word)))
+            {
+                words[Conversions.ToString(word)] += <span style="color:#ae81ff">1</span>;
+            }
+            <span style="color:#66d9ef">else</span>
+            {
+                words[Conversions.ToString(word)] = <span style="color:#ae81ff">1</span>;
+            }
+        }
+
+        <span style="color:#66d9ef">this</span>.RichTextBox2.AppendText(Environment.NewLine + Environment.NewLine);
+        <span style="color:#66d9ef">this</span>.RichTextBox2.AppendText(<span style="color:#e6db74">&#34;FREQUENCY OF WORDS IN TEXT&#34;</span> + Environment.NewLine);
+        <span style="color:#66d9ef">this</span>.RichTextBox2.AppendText(<span style="color:#e6db74">&#34;___________________________________&#34;</span> + Environment.NewLine);
+        <span style="color:#66d9ef">this</span>.RichTextBox2.AppendText(<span style="color:#e6db74">&#34;Word&#34;</span>.PadRight(<span style="color:#ae81ff">30</span>) + <span style="color:#e6db74">&#34;Frequency&#34;</span>.PadRight(<span style="color:#ae81ff">30</span>) + Environment.NewLine);
+        Button3.Enabled = <span style="color:#66d9ef">true</span>;
+    }
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Button3_Click(<span style="color:#66d9ef">object</span> sender, EventArgs e)
+    {
+        <span style="color:#66d9ef">var</span> wordss = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">string</span>&gt;();
+        <span style="color:#66d9ef">var</span> frequency = <span style="color:#66d9ef">new</span> List&lt;<span style="color:#66d9ef">int</span>&gt;();
+        <span style="color:#66d9ef">foreach</span> (KeyValuePair&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">int</span>&gt; kvp <span style="color:#66d9ef">in</span> words)
+        {
+            wordss.Add(kvp.Key.ToString());
+            frequency.Add(kvp.Value);
+            <span style="color:#66d9ef">this</span>.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(<span style="color:#ae81ff">30</span>) + <span style="color:#e6db74">&#34; &#34;</span> + kvp.Value.ToString().PadRight(<span style="color:#ae81ff">30</span>) + Environment.NewLine);
+        }
+
+        <span style="color:#66d9ef">var</span> wc = <span style="color:#66d9ef">new</span> WordCloud.WordCloud(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">360</span>, <span style="color:#66d9ef">true</span>);
+        wc.Draw(wordss, frequency).Save(<span style="color:#e6db74">@&#34;C:\Users\Luca\Desktop\WordCloud.JPG&#34;</span>);
+        <span style="color:#66d9ef">string</span> imagePath = <span style="color:#e6db74">@&#34;C:\Users\Luca\Desktop\WordCloud.JPG&#34;</span>;
+        <span style="color:#66d9ef">this</span>.PictureBox1.Image = <span style="color:#66d9ef">new</span> Bitmap(imagePath);
+    }
+}
+</code></pre></div><h1 id="vbnet-code">VB.NET Code:<a href="#vbnet-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">Imports System.IO
 Imports WordCloud
 
@@ -279,6 +391,13 @@ End Class
         <hr />
     </div>
     <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://lucarep.github.io/post/4_r/">
+                <span class="button__icon">←</span>
+                <span class="button__text">4_R</span>
+            </a>
+        </span>
         
         
         <span class="button next">

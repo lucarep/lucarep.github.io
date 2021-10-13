@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>4_R :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="INTRO in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&amp;rsquo;s get started!
+WHAT ARE MARGINAL DISTRIBUTION? The frequency of an category occurring (Freq(X)), it may be thought of as an unconditional frequency." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/homework3/4_r/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="4_R">
+<meta property="og:description" content="INTRO in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&amp;rsquo;s get started!
+WHAT ARE MARGINAL DISTRIBUTION? The frequency of an category occurring (Freq(X)), it may be thought of as an unconditional frequency." />
+<meta property="og:url" content="https://lucarep.github.io/homework3/4_r/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/4_R.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-10-13 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/homework3/4_r/">4_R</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-10-13 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/4_R.jpg" class="post-cover" alt="4_R" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="intro">INTRO<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes' theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&rsquo;s get started!</p>
+<h1 id="what-are-marginal-distribution">WHAT ARE MARGINAL DISTRIBUTION?<a href="#what-are-marginal-distribution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The frequency of an category occurring (Freq(X)), it may be thought of as an <strong>unconditional frequency.</strong>  It is not conditioned on another category.  Example:  the frequency that a card drawn is red (Freq(red) = 0.5).  Another example could be:  the frequency that a card drawn is a 4  (Freq(four)=1/13).</p>
+<p>$$ Freq(X) = \frac{\text{count of statistical units that fall into category X}}{\text{total count of statistical units}}$$</p>
+<h1 id="what-are-joint-frequency">WHAT ARE JOINT FREQUENCY?<a href="#what-are-joint-frequency" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Example:  the frequency that a card is a four and red =Freq(four and red) = 2/52=1/26.  (There are two red fours in a deck of 52, the 4 of hearts and the 4 of diamonds).</p>
+<p>$$ Freq(X \cap Y) = \frac{\text{counts of statistical units falling into categories X and Y}}{\text{total count of statistical units}}$$</p>
+<h1 id="what-are-conditional-distribution">WHAT ARE CONDITIONAL DISTRIBUTION?<a href="#what-are-conditional-distribution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Freq(X | Y) is the frequency of a statistical units falling into category X, given that it already falls into category Y. Example:  given that you drew a red card, what’s the frequency that it’s a four (Freq(four|red))=2/26=1/13.  So out of the 26 red cards (given a red card), there are two fours so 2/26=1/13.</p>
+<p>$$ Freq(X|Y) = \frac{Freq(X \cap Y)}{Freq(Y)}$$</p>
+<h1 id="bayes-theorem">BAYES THEOREM:<a href="#bayes-theorem" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Bayes’ theorem is an equation that allows us to manipulate conditional frequencies. For two categories, X and Y, Bayes’ theorem lets us to go from Freq(Y|X) to Freq(X|Y) if we know the marginal probabilities of the outcomes of Xand the frequency of Y, given the outcomes of X. Here is the equation for Bayes’ theorem for two categorys with two possible outcome (X and not Y). Note the inter-steps that show how the final result is reached.
+It follows just from the conditional distribution equation, where we substitute 
+Freq(X ∩Y) with Freq(Y|X)Freq(X).</p>
+<p>$$ Freq(X|Y) = \frac{Freq(X \cap Y)}{Freq(Y)} = \frac{Freq(Y|X)Freq(X)}{Freq(Y)}$$</p>
+<h1 id="what-is-statistical-independence">WHAT IS STATISTICAL INDEPENDENCE?<a href="#what-is-statistical-independence" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>$$ Pr(A|B) = Pr(A)$$</p>
+<p>we can say that A, is statistically independent of B when :</p>
+<blockquote>
+<p>whether B happens makes no difference to how often A happens.</p>
+</blockquote>
+<p>If this holds, though, then B is also independent of A :</p>
+<p>$$ Pr(B|A) = \frac{Pr(A \cap B)}{Pr(A)} = \frac{Pr(A)Pr(B)}{Pr(A)} = Pr(B)$$</p>
+<p>so we can just say “A and B are independent”.</p>
+<h3 id="note">Note<a href="#note" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Statistically independent is not the same as mutually exclusive: if A and B are mutually exclusive, then they can’t be independent, unless one of them is probability 0 to start with: 
+$$ Pr(A \cap B) = 0 = Pr(A)Pr(B)$$</p>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://sites.nicholas.duke.edu/statsreview/jmc/">https://sites.nicholas.duke.edu/statsreview/jmc/</a></li>
+<li><a href="https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf">https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
