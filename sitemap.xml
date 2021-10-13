@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lucarep.github.io/homework3/3_ra/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/post/3_ra/</loc>
+    <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://lucarep.github.io/homework3/4_r/</loc>
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -16,6 +22,12 @@
   </url><url>
     <loc>https://lucarep.github.io/post/</loc>
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/homework3/2_ra/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/post/2_ra/</loc>
+    <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lucarep.github.io/homework3/5_a/</loc>
     <lastmod>2021-10-10T00:00:00+00:00</lastmod>

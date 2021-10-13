@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>3_RA : LEARN THE ART AND PUT IT ASIDE :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="THE BASIC OF GDI&#43; n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
+Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI&#43;." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/post/3_ra/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="3_RA : LEARN THE ART AND PUT IT ASIDE">
+<meta property="og:description" content="THE BASIC OF GDI&#43; n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
+Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI&#43;." />
+<meta property="og:url" content="https://lucarep.github.io/post/3_ra/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/3_RA.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-10-13 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/post/3_ra/">3_RA : LEARN THE ART AND PUT IT ASIDE</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-10-13 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/3_RA.jpg" class="post-cover" alt="3_RA : LEARN THE ART AND PUT IT ASIDE" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="the-basic-of-gdi">THE BASIC OF GDI+<a href="#the-basic-of-gdi" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.</p>
+<p>Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+. Using GDI+, developers can easily perform drawing operations such as generating graphs or building custom controls.</p>
+<p>Whenever you create a Windows Forms (WinForms) application .NET uses(and includes) GDI+ by default. The System.Drawing namespace contains all GDI+ functionality (as well as a few sub-namespaces). GDI+ provides all the basic drawing features, such as drawing lines, curves, circles, ellipses, strings, bitmaps, and more. GDI+ also gives developers the ability to fill areas with colors, patterns, and textures. This article will explain some of the basic drawing mechanisms that GDI+ provides.</p>
+<h1 id="the-grafic-object">THE GRAFIC OBJECT<a href="#the-grafic-object" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>All GDI+ drawing is done using a Graphics object. This object has a large number of methods that encapsulate drawing operations on a drawing “canvas.” GDI+ supports a number of drawing canvases including: windows, bitmaps, and printer pages. Depending on the type of drawing canvas, the Graphics object is created or retrieved in a number of different ways. If you want to modify the contents of a bitmap file you would create a Bitmap canvas using the FromImage() method. This article will focus on one type of canvas: the window.</p>
+<p>Drawing in a WinForms-form is a somewhat peculiar task, because it is not enough to draw the graphic once. Instead, the “drawing” may have to be “refreshed” (re-drawn) whenever a window requires repainting. Repainting can happen whenever a user resizes a window or one window overlaps another window and then something brings the overlapped windows to the front.</p>
+<p>So how do you know when to start drawing? The easiest way is to listen to the Paint event that is fired by every window (or control for that matter). The Paint event is a very good choice for drawing-logic because it fires whenever you need to refresh the display, and because part of the Paint event arguments (parameters) is a handle to the Graphics object. You can access the Graphics object via the following C# code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Form1_Paint(<span style="color:#66d9ef">object</span> sender,
+System.Windows.Forms.PaintEventArgs e)
+{
+Graphics g = e.Graphics;
+}
+</code></pre></div><h1 id="simple-line-drawings">SIMPLE LINE DRAWINGS<a href="#simple-line-drawings" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>A fundamental task performed by the graphics-object, is drawing lines and curves. You can use a number of methods for this purpose.</p>
+<p>In GDI+, unlike in regular (older) GDI, drawing lines and filling areas are two entirely different operations.</p>
+<p>When you draw lines, you must consider a number of fundamental things. For example, you need to choose what kind of line to draw.. Do you want a straight line, or a curve? Do you want a simple, single line, or do you want to draw a complex line composed out of many segments? Maybe you want to draw a closed shape that forms a completely enclosed area with an identical start and end point (such as a circle, rectangle, or polygon)? Depending on the desired shape of the line, different methods are available to generate them.</p>
+<p>Less obvious than the position and shape of the line, are the parameters for a line. You might ask, “What parameters can I specify for a line?” You can specify the following parameters: attributes such as color and thickness, start and end-points, and the shape of the end of a line such as whether the line ends in a rounded or square “head” or ends in an arrow.</p>
+<p>In GDI+, lines are represented by Pen objects. Pens encapsulate all the attributes described above. GDI+ provides a number of default Pen objects, such as pens of different colors. The following code demonstrated drawing a simple straight line using different pens.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">g.DrawLine(Pens.Red,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">100</span>)
+g.DrawLine(Pens.Green,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">30</span>,<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">120</span>)
+g.DrawLine(Pens.Blue,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">140</span>)
+
+</code></pre></div><p>If you want to adjust the thickness of the used pen, you need to instantiate a custom pen object. This example generates a 5-pixel thick red pen and uses it to draw another line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">g.DrawLine( <span style="color:#ae81ff">_</span>   New Pen(Color.Red, <span style="color:#ae81ff">5</span>), <span style="color:#ae81ff">_</span>   <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">190</span>)
+</code></pre></div><p>If you play with the DrawLine() method a bit, you will discover that it has a large number of overloads, though the result of these overloads is the same. You can just take different paths to your destination. I encourage you to experiment with the different options.</p>
+<p>For instance, you can draw circles and ellipses:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">g.DrawEllipse(Pens.Red, <span style="color:#ae81ff">_</span>   <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">150</span>, <span style="color:#ae81ff">80</span>)
+</code></pre></div><p>Similarly, you can draw rectangles with this code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">g.DrawRectangle(Pens.Green, <span style="color:#ae81ff">_</span>   <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">120</span>, <span style="color:#ae81ff">60</span>)
+</code></pre></div><h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://www.codemag.com/article/0305031">https://www.codemag.com/article/0305031</a></li>
+</ul>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://lucarep.github.io/post/4_r/">
+                <span class="button__text">4_R</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -9,6 +9,52 @@
     <copyright>© 2021 Luca Repechini</copyright>
     <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/homework3/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>3_RA : LEARN THE ART AND PUT IT ASIDE</title>
+      <link>https://lucarep.github.io/homework3/3_ra/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/3_ra/</guid>
+      <description>THE BASIC OF GDI+ n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
+Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+.</description>
+      <content>&lt;h1 id=&#34;the-basic-of-gdi&#34;&gt;THE BASIC OF GDI+&lt;/h1&gt;
+&lt;p&gt;n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.&lt;/p&gt;
+&lt;p&gt;Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+. Using GDI+, developers can easily perform drawing operations such as generating graphs or building custom controls.&lt;/p&gt;
+&lt;p&gt;Whenever you create a Windows Forms (WinForms) application .NET uses(and includes) GDI+ by default. The System.Drawing namespace contains all GDI+ functionality (as well as a few sub-namespaces). GDI+ provides all the basic drawing features, such as drawing lines, curves, circles, ellipses, strings, bitmaps, and more. GDI+ also gives developers the ability to fill areas with colors, patterns, and textures. This article will explain some of the basic drawing mechanisms that GDI+ provides.&lt;/p&gt;
+&lt;h1 id=&#34;the-grafic-object&#34;&gt;THE GRAFIC OBJECT&lt;/h1&gt;
+&lt;p&gt;All GDI+ drawing is done using a Graphics object. This object has a large number of methods that encapsulate drawing operations on a drawing “canvas.” GDI+ supports a number of drawing canvases including: windows, bitmaps, and printer pages. Depending on the type of drawing canvas, the Graphics object is created or retrieved in a number of different ways. If you want to modify the contents of a bitmap file you would create a Bitmap canvas using the FromImage() method. This article will focus on one type of canvas: the window.&lt;/p&gt;
+&lt;p&gt;Drawing in a WinForms-form is a somewhat peculiar task, because it is not enough to draw the graphic once. Instead, the “drawing” may have to be “refreshed” (re-drawn) whenever a window requires repainting. Repainting can happen whenever a user resizes a window or one window overlaps another window and then something brings the overlapped windows to the front.&lt;/p&gt;
+&lt;p&gt;So how do you know when to start drawing? The easiest way is to listen to the Paint event that is fired by every window (or control for that matter). The Paint event is a very good choice for drawing-logic because it fires whenever you need to refresh the display, and because part of the Paint event arguments (parameters) is a handle to the Graphics object. You can access the Graphics object via the following C# code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Form1_Paint(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender,
+System.Windows.Forms.PaintEventArgs e)
+{
+Graphics g = e.Graphics;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;simple-line-drawings&#34;&gt;SIMPLE LINE DRAWINGS&lt;/h1&gt;
+&lt;p&gt;A fundamental task performed by the graphics-object, is drawing lines and curves. You can use a number of methods for this purpose.&lt;/p&gt;
+&lt;p&gt;In GDI+, unlike in regular (older) GDI, drawing lines and filling areas are two entirely different operations.&lt;/p&gt;
+&lt;p&gt;When you draw lines, you must consider a number of fundamental things. For example, you need to choose what kind of line to draw.. Do you want a straight line, or a curve? Do you want a simple, single line, or do you want to draw a complex line composed out of many segments? Maybe you want to draw a closed shape that forms a completely enclosed area with an identical start and end point (such as a circle, rectangle, or polygon)? Depending on the desired shape of the line, different methods are available to generate them.&lt;/p&gt;
+&lt;p&gt;Less obvious than the position and shape of the line, are the parameters for a line. You might ask, “What parameters can I specify for a line?” You can specify the following parameters: attributes such as color and thickness, start and end-points, and the shape of the end of a line such as whether the line ends in a rounded or square “head” or ends in an arrow.&lt;/p&gt;
+&lt;p&gt;In GDI+, lines are represented by Pen objects. Pens encapsulate all the attributes described above. GDI+ provides a number of default Pen objects, such as pens of different colors. The following code demonstrated drawing a simple straight line using different pens.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawLine(Pens.Red,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
+g.DrawLine(Pens.Green,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120&lt;/span&gt;)
+g.DrawLine(Pens.Blue,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to adjust the thickness of the used pen, you need to instantiate a custom pen object. This example generates a 5-pixel thick red pen and uses it to draw another line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawLine( &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   New Pen(Color.Red, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;190&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you play with the DrawLine() method a bit, you will discover that it has a large number of overloads, though the result of these overloads is the same. You can just take different paths to your destination. I encourage you to experiment with the different options.&lt;/p&gt;
+&lt;p&gt;For instance, you can draw circles and ellipses:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawEllipse(Pens.Red, &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Similarly, you can draw rectangles with this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawRectangle(Pens.Green, &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.codemag.com/article/0305031&#34;&gt;https://www.codemag.com/article/0305031&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
       <title>4_R</title>
       <link>https://lucarep.github.io/homework3/4_r/</link>
       <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
@@ -49,6 +95,72 @@ $$ Pr(A \cap B) = 0 = Pr(A)Pr(B)$$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://sites.nicholas.duke.edu/statsreview/jmc/&#34;&gt;https://sites.nicholas.duke.edu/statsreview/jmc/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf&#34;&gt;https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_RA : 50 SHADES OF DATA</title>
+      <link>https://lucarep.github.io/homework3/2_ra/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/2_ra/</guid>
+      <description>WHAT IS DATA VISUALIZATION? The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.
+Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.</description>
+      <content>&lt;h1 id=&#34;what-is-data-visualization&#34;&gt;WHAT IS DATA VISUALIZATION?&lt;/h1&gt;
+&lt;p&gt;The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.&lt;/p&gt;
+&lt;p&gt;Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.&lt;/p&gt;
+&lt;h1 id=&#34;is-it-important-to-choose-a-specific-type-of-chart-to-visualize-data&#34;&gt;IS IT IMPORTANT TO CHOOSE A SPECIFIC TYPE OF CHART TO VISUALIZE DATA?&lt;/h1&gt;
+&lt;p&gt;Short answer: &lt;strong&gt;yes&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;but-why&#34;&gt;BUT WHY?&lt;/h3&gt;
+&lt;p&gt;Well, we can say that some charts are better suited for some purposes than others and help us to better communicate what we want, let&amp;rsquo;s see some examples:&lt;/p&gt;
+&lt;h3 id=&#34;inform&#34;&gt;INFORM&lt;/h3&gt;
+&lt;p&gt;You want to convey a single important data point.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single big number&lt;/li&gt;
+&lt;li&gt;Donut chart&lt;/li&gt;
+&lt;li&gt;Pictograph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;compare&#34;&gt;COMPARE&lt;/h3&gt;
+&lt;p&gt;You want to compare categories or show composition.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bar chart&lt;/li&gt;
+&lt;li&gt;Bubble chart&lt;/li&gt;
+&lt;li&gt;Pie chart&lt;/li&gt;
+&lt;li&gt;Stacked bar chart&lt;/li&gt;
+&lt;li&gt;Bubble cloud&lt;/li&gt;
+&lt;li&gt;Treemap&lt;/li&gt;
+&lt;li&gt;Word Cloud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;change&#34;&gt;CHANGE&lt;/h3&gt;
+&lt;p&gt;You want to show change over time by location.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Line chart&lt;/li&gt;
+&lt;li&gt;Area chart&lt;/li&gt;
+&lt;li&gt;Timeline&lt;/li&gt;
+&lt;li&gt;Map chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;organize&#34;&gt;ORGANIZE&lt;/h3&gt;
+&lt;p&gt;You want to show groupings,rankings, or process.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;List&lt;/li&gt;
+&lt;li&gt;Flow chart&lt;/li&gt;
+&lt;li&gt;Venn diagram&lt;/li&gt;
+&lt;li&gt;Mind map&lt;/li&gt;
+&lt;li&gt;Pyramid&lt;/li&gt;
+&lt;li&gt;Table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;relationships&#34;&gt;RELATIONSHIPS&lt;/h3&gt;
+&lt;p&gt;You want to reveal relationships correlations or distributions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scatter plot&lt;/li&gt;
+&lt;li&gt;Histogram&lt;/li&gt;
+&lt;li&gt;Multi-Series chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://venngage.com/blog/data-visualization/&#34;&gt;https://venngage.com/blog/data-visualization/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </item>
