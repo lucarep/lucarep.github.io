@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Luke&#39;s Statistics Blog</title>
+    <link>https://lucarep.github.io/tags/research/</link>
+    <description>Recent content in Research on Luke&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2021 Luca Repechini</copyright>
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3_RA : LEARN THE ART AND PUT IT ASIDE</title>
+      <link>https://lucarep.github.io/homework3/3_ra/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/3_ra/</guid>
+      <description>THE BASIC OF GDI+ n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
+Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+.</description>
+      <content>&lt;h1 id=&#34;the-basic-of-gdi&#34;&gt;THE BASIC OF GDI+&lt;/h1&gt;
+&lt;p&gt;n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.&lt;/p&gt;
+&lt;p&gt;Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+. Using GDI+, developers can easily perform drawing operations such as generating graphs or building custom controls.&lt;/p&gt;
+&lt;p&gt;Whenever you create a Windows Forms (WinForms) application .NET uses(and includes) GDI+ by default. The System.Drawing namespace contains all GDI+ functionality (as well as a few sub-namespaces). GDI+ provides all the basic drawing features, such as drawing lines, curves, circles, ellipses, strings, bitmaps, and more. GDI+ also gives developers the ability to fill areas with colors, patterns, and textures. This article will explain some of the basic drawing mechanisms that GDI+ provides.&lt;/p&gt;
+&lt;h1 id=&#34;the-grafic-object&#34;&gt;THE GRAFIC OBJECT&lt;/h1&gt;
+&lt;p&gt;All GDI+ drawing is done using a Graphics object. This object has a large number of methods that encapsulate drawing operations on a drawing “canvas.” GDI+ supports a number of drawing canvases including: windows, bitmaps, and printer pages. Depending on the type of drawing canvas, the Graphics object is created or retrieved in a number of different ways. If you want to modify the contents of a bitmap file you would create a Bitmap canvas using the FromImage() method. This article will focus on one type of canvas: the window.&lt;/p&gt;
+&lt;p&gt;Drawing in a WinForms-form is a somewhat peculiar task, because it is not enough to draw the graphic once. Instead, the “drawing” may have to be “refreshed” (re-drawn) whenever a window requires repainting. Repainting can happen whenever a user resizes a window or one window overlaps another window and then something brings the overlapped windows to the front.&lt;/p&gt;
+&lt;p&gt;So how do you know when to start drawing? The easiest way is to listen to the Paint event that is fired by every window (or control for that matter). The Paint event is a very good choice for drawing-logic because it fires whenever you need to refresh the display, and because part of the Paint event arguments (parameters) is a handle to the Graphics object. You can access the Graphics object via the following C# code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Form1_Paint(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender,
+System.Windows.Forms.PaintEventArgs e)
+{
+Graphics g = e.Graphics;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;simple-line-drawings&#34;&gt;SIMPLE LINE DRAWINGS&lt;/h1&gt;
+&lt;p&gt;A fundamental task performed by the graphics-object, is drawing lines and curves. You can use a number of methods for this purpose.&lt;/p&gt;
+&lt;p&gt;In GDI+, unlike in regular (older) GDI, drawing lines and filling areas are two entirely different operations.&lt;/p&gt;
+&lt;p&gt;When you draw lines, you must consider a number of fundamental things. For example, you need to choose what kind of line to draw.. Do you want a straight line, or a curve? Do you want a simple, single line, or do you want to draw a complex line composed out of many segments? Maybe you want to draw a closed shape that forms a completely enclosed area with an identical start and end point (such as a circle, rectangle, or polygon)? Depending on the desired shape of the line, different methods are available to generate them.&lt;/p&gt;
+&lt;p&gt;Less obvious than the position and shape of the line, are the parameters for a line. You might ask, “What parameters can I specify for a line?” You can specify the following parameters: attributes such as color and thickness, start and end-points, and the shape of the end of a line such as whether the line ends in a rounded or square “head” or ends in an arrow.&lt;/p&gt;
+&lt;p&gt;In GDI+, lines are represented by Pen objects. Pens encapsulate all the attributes described above. GDI+ provides a number of default Pen objects, such as pens of different colors. The following code demonstrated drawing a simple straight line using different pens.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawLine(Pens.Red,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
+g.DrawLine(Pens.Green,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120&lt;/span&gt;)
+g.DrawLine(Pens.Blue,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to adjust the thickness of the used pen, you need to instantiate a custom pen object. This example generates a 5-pixel thick red pen and uses it to draw another line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawLine( &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   New Pen(Color.Red, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;190&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you play with the DrawLine() method a bit, you will discover that it has a large number of overloads, though the result of these overloads is the same. You can just take different paths to your destination. I encourage you to experiment with the different options.&lt;/p&gt;
+&lt;p&gt;For instance, you can draw circles and ellipses:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawEllipse(Pens.Red, &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Similarly, you can draw rectangles with this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawRectangle(Pens.Green, &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.codemag.com/article/0305031&#34;&gt;https://www.codemag.com/article/0305031&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>4_R</title>
+      <link>https://lucarep.github.io/homework3/4_r/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/4_r/</guid>
+      <description>INTRO in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&amp;rsquo;s get started!
+WHAT ARE MARGINAL DISTRIBUTION? The frequency of an category occurring (Freq(X)), it may be thought of as an unconditional frequency.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&amp;rsquo;s get started!&lt;/p&gt;
+&lt;h1 id=&#34;what-are-marginal-distribution&#34;&gt;WHAT ARE MARGINAL DISTRIBUTION?&lt;/h1&gt;
+&lt;p&gt;The frequency of an category occurring (Freq(X)), it may be thought of as an &lt;strong&gt;unconditional frequency.&lt;/strong&gt;  It is not conditioned on another category.  Example:  the frequency that a card drawn is red (Freq(red) = 0.5).  Another example could be:  the frequency that a card drawn is a 4  (Freq(four)=1/13).&lt;/p&gt;
+&lt;p&gt;$$ Freq(X) = \frac{\text{count of statistical units that fall into category X}}{\text{total count of statistical units}}$$&lt;/p&gt;
+&lt;h1 id=&#34;what-are-joint-frequency&#34;&gt;WHAT ARE JOINT FREQUENCY?&lt;/h1&gt;
+&lt;p&gt;Example:  the frequency that a card is a four and red =Freq(four and red) = 2/52=1/26.  (There are two red fours in a deck of 52, the 4 of hearts and the 4 of diamonds).&lt;/p&gt;
+&lt;p&gt;$$ Freq(X \cap Y) = \frac{\text{counts of statistical units falling into categories X and Y}}{\text{total count of statistical units}}$$&lt;/p&gt;
+&lt;h1 id=&#34;what-are-conditional-distribution&#34;&gt;WHAT ARE CONDITIONAL DISTRIBUTION?&lt;/h1&gt;
+&lt;p&gt;Freq(X | Y) is the frequency of a statistical units falling into category X, given that it already falls into category Y. Example:  given that you drew a red card, what’s the frequency that it’s a four (Freq(four|red))=2/26=1/13.  So out of the 26 red cards (given a red card), there are two fours so 2/26=1/13.&lt;/p&gt;
+&lt;p&gt;$$ Freq(X|Y) = \frac{Freq(X \cap Y)}{Freq(Y)}$$&lt;/p&gt;
+&lt;h1 id=&#34;bayes-theorem&#34;&gt;BAYES THEOREM:&lt;/h1&gt;
+&lt;p&gt;Bayes’ theorem is an equation that allows us to manipulate conditional frequencies. For two categories, X and Y, Bayes’ theorem lets us to go from Freq(Y|X) to Freq(X|Y) if we know the marginal probabilities of the outcomes of Xand the frequency of Y, given the outcomes of X. Here is the equation for Bayes’ theorem for two categorys with two possible outcome (X and not Y). Note the inter-steps that show how the final result is reached.
+It follows just from the conditional distribution equation, where we substitute 
+Freq(X ∩Y) with Freq(Y|X)Freq(X).&lt;/p&gt;
+&lt;p&gt;$$ Freq(X|Y) = \frac{Freq(X \cap Y)}{Freq(Y)} = \frac{Freq(Y|X)Freq(X)}{Freq(Y)}$$&lt;/p&gt;
+&lt;h1 id=&#34;what-is-statistical-independence&#34;&gt;WHAT IS STATISTICAL INDEPENDENCE?&lt;/h1&gt;
+&lt;p&gt;$$ Pr(A|B) = Pr(A)$$&lt;/p&gt;
+&lt;p&gt;we can say that A, is statistically independent of B when :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;whether B happens makes no difference to how often A happens.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If this holds, though, then B is also independent of A :&lt;/p&gt;
+&lt;p&gt;$$ Pr(B|A) = \frac{Pr(A \cap B)}{Pr(A)} = \frac{Pr(A)Pr(B)}{Pr(A)} = Pr(B)$$&lt;/p&gt;
+&lt;p&gt;so we can just say “A and B are independent”.&lt;/p&gt;
+&lt;h3 id=&#34;note&#34;&gt;Note&lt;/h3&gt;
+&lt;p&gt;Statistically independent is not the same as mutually exclusive: if A and B are mutually exclusive, then they can’t be independent, unless one of them is probability 0 to start with: 
+$$ Pr(A \cap B) = 0 = Pr(A)Pr(B)$$&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://sites.nicholas.duke.edu/statsreview/jmc/&#34;&gt;https://sites.nicholas.duke.edu/statsreview/jmc/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf&#34;&gt;https://www.stat.cmu.edu/~cshalizi/36-220/lecture-5.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_RA : 50 SHADES OF DATA</title>
+      <link>https://lucarep.github.io/homework3/2_ra/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/2_ra/</guid>
+      <description>WHAT IS DATA VISUALIZATION? The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.
+Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.</description>
+      <content>&lt;h1 id=&#34;what-is-data-visualization&#34;&gt;WHAT IS DATA VISUALIZATION?&lt;/h1&gt;
+&lt;p&gt;The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.&lt;/p&gt;
+&lt;p&gt;Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.&lt;/p&gt;
+&lt;h1 id=&#34;is-it-important-to-choose-a-specific-type-of-chart-to-visualize-data&#34;&gt;IS IT IMPORTANT TO CHOOSE A SPECIFIC TYPE OF CHART TO VISUALIZE DATA?&lt;/h1&gt;
+&lt;p&gt;Short answer: &lt;strong&gt;yes&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;but-why&#34;&gt;BUT WHY?&lt;/h3&gt;
+&lt;p&gt;Well, we can say that some charts are better suited for some purposes than others and help us to better communicate what we want, let&amp;rsquo;s see some examples:&lt;/p&gt;
+&lt;h3 id=&#34;inform&#34;&gt;INFORM&lt;/h3&gt;
+&lt;p&gt;You want to convey a single important data point.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single big number&lt;/li&gt;
+&lt;li&gt;Donut chart&lt;/li&gt;
+&lt;li&gt;Pictograph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;compare&#34;&gt;COMPARE&lt;/h3&gt;
+&lt;p&gt;You want to compare categories or show composition.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bar chart&lt;/li&gt;
+&lt;li&gt;Bubble chart&lt;/li&gt;
+&lt;li&gt;Pie chart&lt;/li&gt;
+&lt;li&gt;Stacked bar chart&lt;/li&gt;
+&lt;li&gt;Bubble cloud&lt;/li&gt;
+&lt;li&gt;Treemap&lt;/li&gt;
+&lt;li&gt;Word Cloud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;change&#34;&gt;CHANGE&lt;/h3&gt;
+&lt;p&gt;You want to show change over time by location.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Line chart&lt;/li&gt;
+&lt;li&gt;Area chart&lt;/li&gt;
+&lt;li&gt;Timeline&lt;/li&gt;
+&lt;li&gt;Map chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;organize&#34;&gt;ORGANIZE&lt;/h3&gt;
+&lt;p&gt;You want to show groupings,rankings, or process.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;List&lt;/li&gt;
+&lt;li&gt;Flow chart&lt;/li&gt;
+&lt;li&gt;Venn diagram&lt;/li&gt;
+&lt;li&gt;Mind map&lt;/li&gt;
+&lt;li&gt;Pyramid&lt;/li&gt;
+&lt;li&gt;Table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;relationships&#34;&gt;RELATIONSHIPS&lt;/h3&gt;
+&lt;p&gt;You want to reveal relationships correlations or distributions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scatter plot&lt;/li&gt;
+&lt;li&gt;Histogram&lt;/li&gt;
+&lt;li&gt;Multi-Series chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://venngage.com/blog/data-visualization/&#34;&gt;https://venngage.com/blog/data-visualization/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_RA : Floating point representation</title>
+      <link>https://lucarep.github.io/homework2/1_ra/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/1_ra/</guid>
+      <description>Rounding Errors Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:
+  Too many significant digits – The great advantage of floating point is that leading and trailing zeroes (within the range provided by the exponent) don’t need to be stored.</description>
+      <content>&lt;h1 id=&#34;rounding-errors&#34;&gt;Rounding Errors&lt;/h1&gt;
+&lt;p&gt;Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Too many significant digits – The great advantage of floating point is that leading and trailing zeroes (within the range provided by the exponent) don’t need to be stored. But if, without those, there are still more digits than the significand can store, rounding becomes necessary. In other words, if your number simply requires more precision than the format can provide, you’ll have to sacrifice some of it, which is no big surprise. For example, with a floating point format that has 3 digits in the significand, 1000 does not require rounding, and neither does 10000 or 1110 – but 1001 will have to be rounded. With the large number of significand digits available in typical floating-point formats, this may seem to be a rarely encountered problem, but if you perform a sequence of calculations, especially multiplication and division, you can very quickly reach this point.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Periodical digits – Any (irreducible) fraction where the denominator has a prime factor that does not occur in the base requires an infinite number of digits that repeat periodically after a certain point, and this can already happen for very simple fractions. For example, in decimal 1/4, 3/5 and 8/20 are finite, because 2 and 5 are the prime factors of 10. But 1/3 is not finite, nor is 2/3 or 1/7 or 5/6, because 3 and 7 are not factors of 10. Fractions with a prime factor of 5 in the denominator can be finite in base 10, but not in base 2 – the biggest source of confusion for most novice users of floating-point numbers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Non-rational numbers – Non-rational numbers cannot be represented as a regular fraction at all, and in positional notation (no matter what base) they require an infinite number of non-recurring digits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;rounding-modes&#34;&gt;Rounding Modes&lt;/h1&gt;
+&lt;p&gt;There are different methods to do rounding, and this can be very important in programming, because rounding can cause different problems in various contexts that can be addressed by using a better rounding mode. The most common rounding modes are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rounding towards zero – simply truncate the extra digits. The simplest method, but it introduces larger errors than necessary as well as a bias towards zero when dealing with mainly positive or mainly negative numbers.&lt;/li&gt;
+&lt;li&gt;Rounding half away from zero – if the truncated fraction is greater than or equal to half the base, increase the last remaining digit. This is the method generally taught in school and used by most people. It minimizes errors, but also introduces a bias (away from zero).&lt;/li&gt;
+&lt;li&gt;Rounding half to even also known as banker’s rounding – if the truncated fraction is greater than half the base, increase the last remaining digit. If it is equal to half the base, increase the digit only if that produces an even result. This minimizes errors and bias, and is therefore preferred for bookkeeping.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Towards zero&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Half Away from zero&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Half to even&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-1.6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-2.4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://floating-point-gui.de/basic/&#34;&gt;https://floating-point-gui.de/basic/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://floating-point-gui.de/errors/rounding/&#34;&gt;https://floating-point-gui.de/errors/rounding/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>3_R : ONLINE ALGORITHM</title>
+      <link>https://lucarep.github.io/homework2/3_r/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/3_r/</guid>
+      <description>WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
+ In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand.</description>
+      <content>&lt;h1 id=&#34;what-is-an-online-algorithm&#34;&gt;WHAT IS AN ONLINE ALGORITHM?&lt;/h1&gt;
+&lt;p&gt;Citing &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_algorithm&#34;&gt;Wikipedia&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand. (For example, selection sort requires that the entire list be given before it can sort it, while insertion sort doesn&amp;rsquo;t.)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We can then summarize this definition by saying:
+an online algorithm takes as input a &lt;strong&gt;stream&lt;/strong&gt; of continuous data, while an offline algorithm attempts to solve the problem by already having all the data available from the first moment.&lt;/p&gt;
+&lt;h1 id=&#34;how-we-can-obtain-an-online-algo-for-the-arithmetic-mean&#34;&gt;HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:&lt;/h1&gt;
+&lt;p&gt;The problem of calculating the average is trivial, most of us since elementary school can solve it, however solving it with an online algorithm is a more complex task.
+Here, comes in help &lt;strong&gt;DONALD KNUTH&lt;/strong&gt; ,an American computer scientist, mathematician, and professor emeritus at Stanford University, in his book ‘&lt;strong&gt;The Art of Computer Programming&lt;/strong&gt;’ wrote an alternative formula to compute the online mean for &lt;strong&gt;huge data-stream.&lt;/strong&gt; The following is the mathematical formula he found to solve the problem:&lt;/p&gt;
+
+
+&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=x_{n}&amp;space;=&amp;space;\frac{x_{n&amp;space;-1}(n&amp;space;-1)&amp;space;&amp;plus;&amp;space;x_{n}}{n}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?x_{n}&amp;space;=&amp;space;\frac{x_{n&amp;space;-1}(n&amp;space;-1)&amp;space;&amp;plus;&amp;space;x_{n}}{n}&#34; title=&#34;x_{n} = \frac{x_{n -1}(n -1) + x_{n}}{n}&#34; /&gt;&lt;/a&gt;
+
+&lt;h3 id=&#34;kahan-summation-algorithm&#34;&gt;KAHAN SUMMATION ALGORITHM:&lt;/h3&gt;
+&lt;p&gt;A code version of the algorithm, is the following one introduced by &lt;strong&gt;KAHAN&lt;/strong&gt;, which is designed to minimize errors, this is done by keeping a separate running compensation (a variable that accumulates small errors).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;KahanSum&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;                 &lt;span style=&#34;color:#75715e&#34;&gt;// A running compensation for lost low-order bits.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;input&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// So far, so good: c is zero.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;         &lt;span style=&#34;color:#75715e&#34;&gt;// Alas, sum is big, y small, so low-order digits of y are lost.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;y&lt;/span&gt;       &lt;span style=&#34;color:#75715e&#34;&gt;// (t - sum) cancels the high-order part of y; subtracting y recovers negative (low part of y)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;t&lt;/span&gt;                 &lt;span style=&#34;color:#75715e&#34;&gt;// Algebraically, c should always be zero. Beware overly-aggressive optimizing compilers!
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;next&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;                      &lt;span style=&#34;color:#75715e&#34;&gt;// Next time around, the lost low part will be added to y in a fresh attempt.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sum&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;why-is-an-online-algo-better-in-this-case&#34;&gt;WHY IS AN ONLINE ALGO BETTER IN THIS CASE?&lt;/h1&gt;
+&lt;p&gt;the answer to the question starts with one word &lt;strong&gt;digitalization&lt;/strong&gt;.
+We live in an increasingly connected world, where more and more applications are entrusted to &lt;strong&gt;computers&lt;/strong&gt;, so it is unthinkable to be able to store a large amount of data in RAM or hard drive and then use them later, because they take up a lot of &lt;strong&gt;space and resources&lt;/strong&gt;. That&amp;rsquo;s why we need something more efficient, so over the years the &lt;strong&gt;online&lt;/strong&gt; approach has gained more and more attention, because it allows us to save precious resources. Of course, &lt;strong&gt;it&amp;rsquo;s not all gold that glitters&lt;/strong&gt;, in fact, for problems that don&amp;rsquo;t require large amounts of data, an offline approach is preferable because it&amp;rsquo;s easier to implement and in some cases may even be more efficient.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Federica Sole, &lt;a href=&#34;https://statisticsforcs.wordpress.com/2017/10/24/best-algorithms-to-compute-the-online-data-stream-arithmetic-mean/&#34;&gt;Best algorithms to compute the “online data stream” arithmetic mean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_R : LET&#39;S TALK ABOUT DATA</title>
+      <link>https://lucarep.github.io/homework2/2_r/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/2_r/</guid>
+      <description>What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
+ A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.</description>
+      <content>&lt;h1 id=&#34;what-is-a-database&#34;&gt;What is a Database?&lt;/h1&gt;
+&lt;p&gt;Our discussion of data starts here, the database, but what is actually a database?
+Citing &lt;a href=&#34;https://www.oracle.com/database/what-is-database/&#34;&gt;Oracle&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A database is an &lt;strong&gt;organized collection of structured information&lt;/strong&gt;, or data, typically stored electronically in a &lt;strong&gt;computer system&lt;/strong&gt;. A database is usually controlled by a database management system (&lt;strong&gt;DBMS&lt;/strong&gt;). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.Data within the most common types of databases in operation today is typically modeled in &lt;strong&gt;rows and columns&lt;/strong&gt; in a series of &lt;strong&gt;tables&lt;/strong&gt; to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (&lt;strong&gt;SQL&lt;/strong&gt;) for writing and querying data.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;so, now that we know what it takes to allow us to record data, we can better address how it is handled in the real world for different purposes.&lt;/p&gt;
+&lt;h1 id=&#34;the-data-warehouse-&#34;&gt;The Data Warehouse :&lt;/h1&gt;
+&lt;p&gt;First of all, a &lt;strong&gt;data warehouse&lt;/strong&gt; is a particular type of &lt;strong&gt;database&lt;/strong&gt;, but there is a major difference:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a database is built to &lt;strong&gt;record&lt;/strong&gt; the data provided to it.&lt;/li&gt;
+&lt;li&gt;a Data Warehouse is designed to perform data &lt;strong&gt;aggregations&lt;/strong&gt; for analytical purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In other words, databases are a mathematical basis for collecting data and querying them for operational purposes. The data warehouse, on the other hand, is an analytical system of data that has strategic purposes in the &lt;strong&gt;planning of business processes&lt;/strong&gt;. In addition, data warehouses are very important in data mining, artificial intelligence (AI), and machine learning.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-data-mart&#34;&gt;What is a Data Mart?&lt;/h1&gt;
+&lt;p&gt;We can see the &lt;strong&gt;data mart&lt;/strong&gt; as a focused version of a &lt;strong&gt;data warehouse&lt;/strong&gt; described above. Specifically, citing &lt;a href=&#34;https://www.ibm.com/cloud/learn/data-mart&#34;&gt;IBM&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A data mart is a subset of a data warehouse focused on a particular line of business, department, or subject area. Data marts make specific data available to a defined group of users, which allows those users to &lt;strong&gt;quickly&lt;/strong&gt; access critical insights without wasting time searching through an entire data warehouse. For example, many companies may have a data mart that aligns with a specific department in the business, such as finance, sales, or marketing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thus, different data marts may exist depending on the areas of study we are interested in.&lt;/p&gt;
+&lt;h1 id=&#34;olap-and-oltp--two-useful-tools&#34;&gt;OLAP and OLTP : two useful tools&lt;/h1&gt;
+&lt;p&gt;We could conceptually summarize what OLAP and OLTP are with a &lt;strong&gt;simple question&lt;/strong&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;in the case of OLAP we would ask &amp;ldquo;&lt;strong&gt;what will happen?&lt;/strong&gt;&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;in the case of OLTP we would ask &amp;ldquo;&lt;strong&gt;what is happening?&lt;/strong&gt;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;definition-of-olap&#34;&gt;Definition of OLAP:&lt;/h1&gt;
+&lt;p&gt;OLAP stands for: 
+&lt;strong&gt;On-Line Analytical Processsing&lt;/strong&gt;.
+We can see it as a set of &lt;strong&gt;software&lt;/strong&gt; techniques that allows to analyze a large amount of collected data and it is the basic technology of &lt;strong&gt;data warehouse&lt;/strong&gt;. Companies use it to &lt;strong&gt;predict&lt;/strong&gt; sales results, cost trends, results of marketing and communication campaigns, organize survey data and other similar cases. We can therefore summarize everything in the fact that the OLAP analysis system is one of the tools that can allow you to make &lt;strong&gt;business decisions&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;definition-of-oltp&#34;&gt;Definition of OLTP:&lt;/h1&gt;
+&lt;p&gt;OLTP stands for:
+&lt;strong&gt;On-Line Transaction Processsing&lt;/strong&gt;.
+we can see it as a set of &lt;strong&gt;software&lt;/strong&gt; techniques that are
+used to manage &lt;strong&gt;transaction-oriented&lt;/strong&gt; applications. It is popular in financial transactions, retail sales, and customer relationship management (CRM). Booking airline tickets online, online banking, online shopping are practical examples of systems based on the use of OLTP. OLTP is used to &lt;strong&gt;record&lt;/strong&gt; insertion, &lt;strong&gt;update&lt;/strong&gt; and &lt;strong&gt;deletion&lt;/strong&gt; of data during a transaction. So, as you can imagine these operations in order to ensure reliability must be &lt;strong&gt;atomic&lt;/strong&gt;. Also, OLTP queries are simpler and shorter and thus require less time in processing and less storage space. A key aspect is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;we can see OLTP as the data source for OLAP.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;olap-vs-oltp&#34;&gt;OLAP vs OLTP:&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OLAP tools differ from OLTPs in that the former aim to find and achieve queries that are as complex as possible; the latter, on the other hand, aim to ensure integrity and security of transactions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Below is a list of other substantial differences between the two:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OLTP is an online transaction system instead OLAP is an online data retrieval and analysis system;
+online transaction data is the data source for OLTP;&lt;/li&gt;
+&lt;li&gt;OLTP&amp;rsquo;s main operations are inserting, updating and deleting data while OLAP&amp;rsquo;s main operation is extracting complex data for later analysis;&lt;/li&gt;
+&lt;li&gt;OLAP has a long and less frequent transaction while OLTP has short but frequent transactions;
+OLTP&amp;rsquo;s response times are much faster than OLAP as it deals with short transactions.&lt;/li&gt;
+&lt;li&gt;OLAP queries are very complex compared to OLTP, as they deal with a much larger amount of data and are also more structured.&lt;/li&gt;
+&lt;li&gt;OLAP databases are not changed frequently, so data integrity is not affected. OLTP databases, on the other hand, are changed frequently, so it is important to maintain data integrity.&lt;/li&gt;
+&lt;li&gt;OLAP is used for planning and decision making while OLTP is used for controlling and executing key business activities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bucap.it/news/approfondimenti-tematici/gestione-del-magazzino/database-data-warehouse-principali-differenze.htm#:~:text=Il%20primo%20obiettivo%20del%20database,di%20dati%20a%20fini%20analitici.&#34;&gt;Difference between database and data warehouse&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.businessintelligencegroup.it/olap-e-oltp-cosa-sono-e-quali-sono-le-principali-differenze/&#34;&gt;OLAP e OLTP&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_R : LET&#39;S TALK ABOUT STATISTICS</title>
+      <link>https://lucarep.github.io/homework1/1_r/</link>
+      <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework1/1_r/</guid>
+      <description>What is statistics? 📊  &amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;
+ There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out analysis, interpretation, organization and presentation of this data, so informed decision can be made.</description>
+      <content>&lt;h1 id=&#34;what-is-statistics-&#34;&gt;What is statistics? 📊&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out &lt;strong&gt;analysis, interpretation, organization and presentation of this data&lt;/strong&gt;, so informed decision can be made. A trivial example that we can observe every day are the weather forecasts, to make this forecasts statisticians create computer models based on previous weather reports. But statistics is literally &lt;strong&gt;everywhere&lt;/strong&gt;, here&amp;rsquo;s an example of some of the sectors that use it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pharmaceutical Industry&lt;/li&gt;
+&lt;li&gt;Food Industry&lt;/li&gt;
+&lt;li&gt;Plants&lt;/li&gt;
+&lt;li&gt;Designer Brands&lt;/li&gt;
+&lt;li&gt;Computers&lt;/li&gt;
+&lt;li&gt;Insurance&lt;/li&gt;
+&lt;li&gt;Finance&lt;/li&gt;
+&lt;li&gt;Medicine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, in this historical moment we all know unfortunately that there&amp;rsquo;s a pandemic of &lt;strong&gt;Covid-19&lt;/strong&gt; in progress, even here the statistics play a &lt;strong&gt;key role&lt;/strong&gt;, as you can make estimates of how many contagions there may be in the future, given the current contagions. Take &lt;strong&gt;Covid vaccines&lt;/strong&gt; also as an example, did you know that pharmaceutical companies like &lt;strong&gt;Pfizer&lt;/strong&gt; employ many statisticians? Here they analyze the results conducted in preclinical research and clinical trials,
+to help then develop a vaccine that is &lt;strong&gt;safe and effective&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;is-statistics-a-science-a-branch-of-mathematics-or-both-&#34;&gt;Is statistics a science, a branch of mathematics or both? 🤔&lt;/h1&gt;
+&lt;p&gt;We can summarize the above with a quote from American Statistical Association:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Statistics is the science of learning from data, and of measuring, controlling and communicating &lt;strong&gt;uncertainty&lt;/strong&gt;.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;also, John Turkey (author of Exploratory Dat Analysis) said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Statistics is a science, not a branch of mathematics, but it uses mathematical models as essential tools.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What’s the difference?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The primary difference between the two is &lt;strong&gt;uncertainty&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Consider two problems:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;How far is it to work in miles?&lt;/li&gt;
+&lt;li&gt;How far is it to work in minutes?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first problem is a math problem because, assuming you take the same route, the answer is fixed. The second problem is a statistical problem because you will not always get the same answer due to weather or traffic conditions, how many lights you get stuck at etc., there is a level of uncertainty.&lt;/p&gt;
+&lt;p&gt;Now in order to understand statistics you do need to know probability which is a branch of mathematics (The study of finite measures that a normalized to 1). But probability is not statistics anymore than algebra is physics.&lt;/p&gt;
+&lt;h6 id=&#34;also-what-defines-a-scientific-field&#34;&gt;Also, what defines a scientific field?&lt;/h6&gt;
+&lt;p&gt;Every field of scientific inquiry is defined by &lt;strong&gt;three things&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;What it studies: Statistics is the study of uncertainty. More specifically, it is the science of probability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why it studies the What: The outcomes of any and every natural process vary in random, yet understandable, ways (i.e. Natural Variation). Statistics examines and specifies these patterns of randomness. By understanding natural variation, we are able to identify occurrences of unnatural variation and seek their underlying cause.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How it studies the What: Like many sciences, mathematics is the formal language of statistics. However, it is not its only tool. Statistics also uses computers for both simulation and analysis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, many people view statistics as a branch of mathematics, in many ways this is true, because its origins lie within mathematics. However, it have evolved past that and is its own independent field of inquiry.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Aveea : What is Statistics? (and what can you do with it) 
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/M6MKQ88LpFA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kenneth Ganning (Ph.D Statistics), Thom Flottemesch (Ph.D Statistics) :  &lt;a href=&#34;https://www.quora.com/What-is-statistics-a-science-of&#34;&gt;What is statistics a science of?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

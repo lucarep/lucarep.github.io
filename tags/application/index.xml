@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Application on Luke&#39;s Statistics Blog</title>
+    <link>https://lucarep.github.io/tags/application/</link>
+    <description>Recent content in Application on Luke&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2021 Luca Repechini</copyright>
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3_RA : LEARN THE ART AND PUT IT ASIDE</title>
+      <link>https://lucarep.github.io/homework3/3_ra/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/3_ra/</guid>
+      <description>THE BASIC OF GDI+ n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
+Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+.</description>
+      <content>&lt;h1 id=&#34;the-basic-of-gdi&#34;&gt;THE BASIC OF GDI+&lt;/h1&gt;
+&lt;p&gt;n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.&lt;/p&gt;
+&lt;p&gt;Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+. Using GDI+, developers can easily perform drawing operations such as generating graphs or building custom controls.&lt;/p&gt;
+&lt;p&gt;Whenever you create a Windows Forms (WinForms) application .NET uses(and includes) GDI+ by default. The System.Drawing namespace contains all GDI+ functionality (as well as a few sub-namespaces). GDI+ provides all the basic drawing features, such as drawing lines, curves, circles, ellipses, strings, bitmaps, and more. GDI+ also gives developers the ability to fill areas with colors, patterns, and textures. This article will explain some of the basic drawing mechanisms that GDI+ provides.&lt;/p&gt;
+&lt;h1 id=&#34;the-grafic-object&#34;&gt;THE GRAFIC OBJECT&lt;/h1&gt;
+&lt;p&gt;All GDI+ drawing is done using a Graphics object. This object has a large number of methods that encapsulate drawing operations on a drawing “canvas.” GDI+ supports a number of drawing canvases including: windows, bitmaps, and printer pages. Depending on the type of drawing canvas, the Graphics object is created or retrieved in a number of different ways. If you want to modify the contents of a bitmap file you would create a Bitmap canvas using the FromImage() method. This article will focus on one type of canvas: the window.&lt;/p&gt;
+&lt;p&gt;Drawing in a WinForms-form is a somewhat peculiar task, because it is not enough to draw the graphic once. Instead, the “drawing” may have to be “refreshed” (re-drawn) whenever a window requires repainting. Repainting can happen whenever a user resizes a window or one window overlaps another window and then something brings the overlapped windows to the front.&lt;/p&gt;
+&lt;p&gt;So how do you know when to start drawing? The easiest way is to listen to the Paint event that is fired by every window (or control for that matter). The Paint event is a very good choice for drawing-logic because it fires whenever you need to refresh the display, and because part of the Paint event arguments (parameters) is a handle to the Graphics object. You can access the Graphics object via the following C# code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Form1_Paint(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender,
+System.Windows.Forms.PaintEventArgs e)
+{
+Graphics g = e.Graphics;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;simple-line-drawings&#34;&gt;SIMPLE LINE DRAWINGS&lt;/h1&gt;
+&lt;p&gt;A fundamental task performed by the graphics-object, is drawing lines and curves. You can use a number of methods for this purpose.&lt;/p&gt;
+&lt;p&gt;In GDI+, unlike in regular (older) GDI, drawing lines and filling areas are two entirely different operations.&lt;/p&gt;
+&lt;p&gt;When you draw lines, you must consider a number of fundamental things. For example, you need to choose what kind of line to draw.. Do you want a straight line, or a curve? Do you want a simple, single line, or do you want to draw a complex line composed out of many segments? Maybe you want to draw a closed shape that forms a completely enclosed area with an identical start and end point (such as a circle, rectangle, or polygon)? Depending on the desired shape of the line, different methods are available to generate them.&lt;/p&gt;
+&lt;p&gt;Less obvious than the position and shape of the line, are the parameters for a line. You might ask, “What parameters can I specify for a line?” You can specify the following parameters: attributes such as color and thickness, start and end-points, and the shape of the end of a line such as whether the line ends in a rounded or square “head” or ends in an arrow.&lt;/p&gt;
+&lt;p&gt;In GDI+, lines are represented by Pen objects. Pens encapsulate all the attributes described above. GDI+ provides a number of default Pen objects, such as pens of different colors. The following code demonstrated drawing a simple straight line using different pens.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawLine(Pens.Red,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;)
+g.DrawLine(Pens.Green,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120&lt;/span&gt;)
+g.DrawLine(Pens.Blue,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to adjust the thickness of the used pen, you need to instantiate a custom pen object. This example generates a 5-pixel thick red pen and uses it to draw another line:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawLine( &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   New Pen(Color.Red, &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;190&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you play with the DrawLine() method a bit, you will discover that it has a large number of overloads, though the result of these overloads is the same. You can just take different paths to your destination. I encourage you to experiment with the different options.&lt;/p&gt;
+&lt;p&gt;For instance, you can draw circles and ellipses:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawEllipse(Pens.Red, &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Similarly, you can draw rectangles with this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;g.DrawRectangle(Pens.Green, &lt;span style=&#34;color:#ae81ff&#34;&gt;_&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;120&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.codemag.com/article/0305031&#34;&gt;https://www.codemag.com/article/0305031&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_RA : 50 SHADES OF DATA</title>
+      <link>https://lucarep.github.io/homework3/2_ra/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/2_ra/</guid>
+      <description>WHAT IS DATA VISUALIZATION? The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.
+Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.</description>
+      <content>&lt;h1 id=&#34;what-is-data-visualization&#34;&gt;WHAT IS DATA VISUALIZATION?&lt;/h1&gt;
+&lt;p&gt;The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.&lt;/p&gt;
+&lt;p&gt;Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.&lt;/p&gt;
+&lt;h1 id=&#34;is-it-important-to-choose-a-specific-type-of-chart-to-visualize-data&#34;&gt;IS IT IMPORTANT TO CHOOSE A SPECIFIC TYPE OF CHART TO VISUALIZE DATA?&lt;/h1&gt;
+&lt;p&gt;Short answer: &lt;strong&gt;yes&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;but-why&#34;&gt;BUT WHY?&lt;/h3&gt;
+&lt;p&gt;Well, we can say that some charts are better suited for some purposes than others and help us to better communicate what we want, let&amp;rsquo;s see some examples:&lt;/p&gt;
+&lt;h3 id=&#34;inform&#34;&gt;INFORM&lt;/h3&gt;
+&lt;p&gt;You want to convey a single important data point.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Single big number&lt;/li&gt;
+&lt;li&gt;Donut chart&lt;/li&gt;
+&lt;li&gt;Pictograph&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;compare&#34;&gt;COMPARE&lt;/h3&gt;
+&lt;p&gt;You want to compare categories or show composition.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bar chart&lt;/li&gt;
+&lt;li&gt;Bubble chart&lt;/li&gt;
+&lt;li&gt;Pie chart&lt;/li&gt;
+&lt;li&gt;Stacked bar chart&lt;/li&gt;
+&lt;li&gt;Bubble cloud&lt;/li&gt;
+&lt;li&gt;Treemap&lt;/li&gt;
+&lt;li&gt;Word Cloud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;change&#34;&gt;CHANGE&lt;/h3&gt;
+&lt;p&gt;You want to show change over time by location.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Line chart&lt;/li&gt;
+&lt;li&gt;Area chart&lt;/li&gt;
+&lt;li&gt;Timeline&lt;/li&gt;
+&lt;li&gt;Map chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;organize&#34;&gt;ORGANIZE&lt;/h3&gt;
+&lt;p&gt;You want to show groupings,rankings, or process.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;List&lt;/li&gt;
+&lt;li&gt;Flow chart&lt;/li&gt;
+&lt;li&gt;Venn diagram&lt;/li&gt;
+&lt;li&gt;Mind map&lt;/li&gt;
+&lt;li&gt;Pyramid&lt;/li&gt;
+&lt;li&gt;Table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;relationships&#34;&gt;RELATIONSHIPS&lt;/h3&gt;
+&lt;p&gt;You want to reveal relationships correlations or distributions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Scatter plot&lt;/li&gt;
+&lt;li&gt;Histogram&lt;/li&gt;
+&lt;li&gt;Multi-Series chart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://venngage.com/blog/data-visualization/&#34;&gt;https://venngage.com/blog/data-visualization/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>5_A : &#39;SAY WHAT AGAIN&#39;</title>
+      <link>https://lucarep.github.io/homework3/5_a/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/5_a/</guid>
+      <description>Intro in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie Pulp Fiction (one of my favorites).
+Live Demo here, you can see my program in action   Result C# Code: using System; using System.Collections; using System.Collections.Generic; using System.IO; using Microsoft.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this task, I&amp;rsquo;ve realized a program that reads as input a text file (.txt), shows its content and computes the World Cloud.In the example shown in the video I used one of the most famous dialogues from the movie &lt;a href=&#34;https://it.wikipedia.org/wiki/Pulp_Fiction&#34;&gt;Pulp Fiction&lt;/a&gt; (one of my favorites).&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/6Yp2R4KitY4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;result&#34;&gt;Result&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/WordCloud.JPG&#34; alt=&#34;wordcloud&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.IO;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.VisualBasic.CompilerServices; &lt;span style=&#34;color:#75715e&#34;&gt;// Install-Package Microsoft.VisualBasic
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; WordCloud;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt;
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;base&lt;/span&gt;.Load += Form1_Load;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; text;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&amp;gt; words = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&amp;gt;();
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Form1_Load(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.EnableAutoDragDrop = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; RichTextBox1_DragDrop(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, Global.System.Windows.Forms.DragEventArgs e)
+    {
+        e.Effect = DragDropEffects.None;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.Clear();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;[] files = (&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;[])e.Data.GetData(DataFormats.FileDrop);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; path &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; files)
+            ProcessaFile(path);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; RichTextBox1_DragEnter(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, Global.System.Windows.Forms.DragEventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ProcessaFile(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; path)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.AppendText(path + Environment.NewLine);
+        Button2.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ButtonGetFile_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; ofd = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; OpenFileDialog();
+        ofd.ShowDialog();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ofd.FileName &lt;span style=&#34;color:#66d9ef&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt;)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.Text = ofd.FileName;
+            Button2.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+        }
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Button2_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.Clear();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; path = &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.Text;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; sr = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; StreamReader(path);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; line = sr.ReadLine();
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (sr.EndOfStream)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(line + Environment.NewLine);
+        }
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+        text = File.ReadAllText(path).Replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;).ToLower();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; wordsInFile = text.Split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; word &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; (IEnumerable)wordsInFile)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (words.ContainsKey(Conversions.ToString(word)))
+            {
+                words[Conversions.ToString(word)] += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+            {
+                words[Conversions.ToString(word)] = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(Environment.NewLine + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FREQUENCY OF WORDS IN TEXT&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Word&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) + Environment.NewLine);
+        Button3.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Button3_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; wordss = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;&amp;gt;();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; frequency = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&amp;gt;();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (KeyValuePair&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&amp;gt; kvp &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; words)
+        {
+            wordss.Add(kvp.Key.ToString());
+            frequency.Add(kvp.Value);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) + Environment.NewLine);
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; wc = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; WordCloud.WordCloud(&lt;span style=&#34;color:#ae81ff&#34;&gt;480&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;360&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+        wc.Draw(wordss, frequency).Save(&lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; imagePath = &lt;span style=&#34;color:#e6db74&#34;&gt;@&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.PictureBox1.Image = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Bitmap(imagePath);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System.IO
+Imports WordCloud
+
+Public Class Form1
+    Dim text
+    Dim words As Dictionary(Of String, Integer) = New Dictionary(Of String, Integer)()
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.RichTextBox1.EnableAutoDragDrop = True
+    End Sub
+    Private Sub RichTextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragDrop
+        e.Effect = DragDropEffects.None
+
+        Me.RichTextBox1.Clear()
+        Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+
+        For Each path In files
+            Me.ProcessaFile(path)
+        Next
+    End Sub
+    Private Sub RichTextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+    Sub ProcessaFile(path As String)
+        Me.RichTextBox1.AppendText(path &amp;amp; Environment.NewLine)
+        Button2.Enabled = True
+    End Sub
+    Private Sub ButtonGetFile_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ofd As New OpenFileDialog
+        ofd.ShowDialog()
+
+        If ofd.FileName IsNot Nothing Then
+            Me.RichTextBox1.Text = ofd.FileName
+            Button2.Enabled = True
+        End If
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.RichTextBox2.Clear()
+        Dim path As String = Me.RichTextBox1.Text
+        Dim sr As New StreamReader(path)
+
+        Do
+            Dim line As String = sr.ReadLine
+            If sr.EndOfStream Then
+                Exit Do
+            End If
+            Me.RichTextBox2.AppendText(line &amp;amp; Environment.NewLine)
+        Loop
+
+        text = File.ReadAllText(path).Replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;).ToLower()
+        Dim wordsInFile = text.Split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt;c)
+
+        For Each word In wordsInFile
+            If words.ContainsKey(word) Then
+                words(word) += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            Else
+                words(word) = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            End If
+        Next
+        Me.RichTextBox2.AppendText(Environment.NewLine &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;FREQUENCY OF WORDS IN TEXT&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Word&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        Button3.Enabled = True
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim wordss As New List(Of String)
+        Dim frequency As New List(Of Integer)
+        For Each kvp As KeyValuePair(Of String, Integer) In words
+            wordss.Add(kvp.Key.ToString())
+            frequency.Add(kvp.Value)
+            Me.RichTextBox2.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        Next
+        Dim wc As New WordCloud.WordCloud(&lt;span style=&#34;color:#ae81ff&#34;&gt;480&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;360&lt;/span&gt;, True)
+        wc.Draw(wordss, frequency).Save(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;)
+        Dim imagePath As String = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\Users\Luca\Desktop\WordCloud.JPG&amp;#34;&lt;/span&gt;
+        Me.PictureBox1.Image = New Bitmap(imagePath)
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>4_A : RAMEN AND STATISTICS</title>
+      <link>https://lucarep.github.io/homework3/4_a/</link>
+      <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework3/4_a/</guid>
+      <description>Intro In this task I have created a program that takes as input a CSV file regarding some Ramen stores around the world. It is possible to visualize all the data in the file and some interesting statistics are computed, both in the case of one variable and in the case of two variables. If you want to try the program, besides downloading the source code at the end of the page, clicking here you will find the link to download the CSV file.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this task I have created a program that takes as input a CSV file regarding some Ramen stores around the world. It is possible to visualize all the data in the file and some interesting statistics are computed, both in the case of one variable and in the case of two variables.
+If you want to try the program, besides downloading the source code at the end of the page, &lt;a href=&#34;https://www.kaggle.com/residentmario/ramen-ratings&#34;&gt;clicking here&lt;/a&gt; you will find the link to download the CSV file.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/PJTa3aqo9Iw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.VisualBasic.CompilerServices; &lt;span style=&#34;color:#75715e&#34;&gt;// Install-Package Microsoft.VisualBasic
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; Microsoft.VisualBasic.FileIO; &lt;span style=&#34;color:#75715e&#34;&gt;// Install-Package Microsoft.VisualBasic
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt;
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;base&lt;/span&gt;.Load += Form1_Load;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; List&amp;lt;Ramen&amp;gt; listOfValues = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Ramen&amp;gt;();
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Form1_Load(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.EnableAutoDragDrop = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; RichTextBox1_DragDrop(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, Global.System.Windows.Forms.DragEventArgs e)
+    {
+        e.Effect = DragDropEffects.None;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.Clear();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;[] files = (&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;[])e.Data.GetData(DataFormats.FileDrop);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; path &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; files)
+            ProcessaFile(path);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; RichTextBox1_DragEnter(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, Global.System.Windows.Forms.DragEventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ProcessaFile(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; path)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.AppendText(path + Environment.NewLine);
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; tfp = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; TextFieldParser(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.Text.Trim);
+        tfp.Delimiters = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;[] { &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt; };
+        tfp.TextFieldType = FieldType.Delimited;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; desc = tfp.ReadLine();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(desc + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;__________________________________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (tfp.EndOfData == &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; fields = tfp.ReadFields();
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; r = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Ramen();
+            r.numberOfReview = Conversions.ToInteger(fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]);
+            r.brand = fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;];
+            r.variety = fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;];
+            r.style = fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;];
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;] &lt;span style=&#34;color:#66d9ef&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt;)
+            {
+                r.country = fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;];
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;.Equals(fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;], &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unrated&amp;#34;&lt;/span&gt;))
+            {
+                r.stars = (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;)Math.Round(&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;);
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+            {
+                r.stars = Conversions.ToInteger(fields[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;]);
+                &lt;span style=&#34;color:#75715e&#34;&gt;// Me.RichTextBox2.AppendText(fields(5) &amp;amp; Environment.NewLine)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox2.AppendText(&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;.Format(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{0} - {1} - {2} - {3} - {4} - {5} &amp;#34;&lt;/span&gt;, r.numberOfReview, r.brand, r.variety, r.style, r.country, r.stars) + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r &lt;span style=&#34;color:#66d9ef&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt;)
+            {
+                listOfValues.Add(r);
+            }
+        }
+
+        Button3.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; ButtonGetFile_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; ofd = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; OpenFileDialog();
+        ofd.ShowDialog();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ofd.FileName &lt;span style=&#34;color:#66d9ef&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt;)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox1.Text = ofd.FileName;
+        }
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; Button3_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ARITHMETIC MEAN OF # OF REVIEWS &amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; totalNumber = &lt;span style=&#34;color:#ae81ff&#34;&gt;2580&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; sum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; ramen &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfValues)
+            sum += ramen.numberOfReview;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; average = Math.Round(sum / (&lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt;)(totalNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(average + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DISTRIBUTION OF RAMEN SHOPS IN COUNTRIES&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; frequencyDist = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, Frequencies&amp;gt;();
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Ramen r &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfValues)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (frequencyDist.ContainsKey(r.country))
+            {
+                frequencyDist[r.country].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+            {
+                frequencyDist.Add(r.country, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m));
+            }
+
+            frequencyDist[r.country].relativeFreq = Math.Round(frequencyDist[r.country].count / (totalNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+            frequencyDist[r.country].precentage = frequencyDist[r.country].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;m;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Country &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (KeyValuePair&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;, Frequencies&amp;gt; kvp &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; frequencyDist)
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.precentage.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(Environment.NewLine + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DISTRIBUTION OF RATINGS OF RAMEN SHOPS IN JAPAN&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; ratingsDist = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, Frequencies&amp;gt;();
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;m));
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;m));
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;m));
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;m));
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;m));
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; totalNum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Ramen r &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfValues)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r.country.Equals(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Japan&amp;#34;&lt;/span&gt;))
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r.stars == &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)
+                {
+                    ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r.stars == &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+                {
+                    ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r.stars == &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)
+                {
+                    ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r.stars == &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                {
+                    ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (r.stars == &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+                {
+                    ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;m;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+            }
+        }
+
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;].relativeFreq = Math.Round(ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;].count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;].precentage = ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;m;
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;].relativeFreq = Math.Round(ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;].count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;].precentage = ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;m;
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;].relativeFreq = Math.Round(ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;].count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;].precentage = ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;m;
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;].relativeFreq = Math.Round(ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;].count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;].precentage = ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;m;
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].relativeFreq = Math.Round(ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+        ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].precentage = ratingsDist[&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;m;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Rating &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + Environment.NewLine);
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (KeyValuePair&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, Frequencies&amp;gt; kvp &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; ratingsDist)
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.RichTextBox3.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.precentage.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; + Environment.NewLine);
+    }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Ramen&lt;/span&gt;
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt; brand, variety, style, country;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; numberOfReview;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; stars;
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Frequencies&lt;/span&gt;
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; count;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; relativeFreq;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; precentage;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c)
+    {
+        count = c;
+    }
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; rf, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; p)
+    {
+        count = c;
+        relativeFreq = rf;
+        precentage = p;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System.IO
+Imports Microsoft.VisualBasic.FileIO
+
+Public Class Form1
+
+    Dim listOfValues As New List(Of Ramen)
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.RichTextBox1.EnableAutoDragDrop = True
+    End Sub
+    Private Sub RichTextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragDrop
+        e.Effect = DragDropEffects.None
+
+        Me.RichTextBox1.Clear()
+        Dim files() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+
+        For Each path In files
+            Me.ProcessaFile(path)
+        Next
+    End Sub
+    Private Sub RichTextBox1_DragEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles RichTextBox1.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+    Sub ProcessaFile(path As String)
+        Me.RichTextBox1.AppendText(path &amp;amp; Environment.NewLine)
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim tfp As New TextFieldParser(Me.RichTextBox1.Text.Trim)
+        tfp.Delimiters = New String() {&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;}
+        tfp.TextFieldType = FieldType.Delimited
+
+        Dim desc As String = tfp.ReadLine()
+        Me.RichTextBox2.AppendText(desc &amp;amp; Environment.NewLine)
+        Me.RichTextBox2.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;__________________________________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+
+
+        While tfp.EndOfData = False
+            Dim fields = tfp.ReadFields()
+            Dim r As New Ramen()
+            r.numberOfReview = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            r.brand = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+            r.variety = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+            r.style = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;)
+            If fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;) IsNot Nothing Then
+                r.country = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            End If
+            If String.Equals(fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;), &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unrated&amp;#34;&lt;/span&gt;) Then
+                r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;
+            Else
+                r.stars = fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)
+                &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;Me.RichTextBox2.AppendText(fields(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            End If
+            Me.RichTextBox2.AppendText(String.Format(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{0} - {1} - {2} - {3} - {4} - {5} &amp;#34;&lt;/span&gt;, r.numberOfReview, r.brand, r.variety, r.style, r.country, r.stars) &amp;amp; Environment.NewLine)
+
+            If r IsNot Nothing Then
+                listOfValues.Add(r)
+            End If
+
+        End While
+        Button3.Enabled = True
+    End Sub
+    Private Sub ButtonGetFile_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim ofd As New OpenFileDialog
+        ofd.ShowDialog()
+
+        If ofd.FileName IsNot Nothing Then
+            Me.RichTextBox1.Text = ofd.FileName
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ARITHMETIC MEAN OF # OF REVIEWS &amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Dim totalNumber As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;2580&lt;/span&gt;
+        Dim sum As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        For Each ramen In listOfValues
+            sum += ramen.numberOfReview
+        Next
+        Dim average As Double = Math.Round(sum / (totalNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        Me.RichTextBox3.AppendText(average &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DISTRIBUTION OF RAMEN SHOPS IN COUNTRIES&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Dim frequencyDist As Dictionary(Of String, Frequencies) = New Dictionary(Of String, Frequencies)()
+        For Each r As Ramen In listOfValues
+
+            If frequencyDist.ContainsKey(r.country) Then
+                frequencyDist(r.country).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            Else
+                frequencyDist.Add(r.country, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+            End If
+
+            frequencyDist(r.country).relativeFreq = Math.Round(frequencyDist(r.country).count / (totalNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+            frequencyDist(r.country).precentage = frequencyDist(r.country).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        Next
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Country &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        For Each kvp As KeyValuePair(Of String, Frequencies) In frequencyDist
+            Me.RichTextBox3.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Next
+        Me.RichTextBox3.AppendText(Environment.NewLine &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DISTRIBUTION OF RATINGS OF RAMEN SHOPS IN JAPAN&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Dim ratingsDist As Dictionary(Of Integer, Frequencies) = New Dictionary(Of Integer, Frequencies)()
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        ratingsDist.Add(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;))
+        Dim totalNum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        For Each r As Ramen In listOfValues
+            If r.country.Equals(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Japan&amp;#34;&lt;/span&gt;) Then
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+                If r.stars = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; Then
+                    ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                    totalNum += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                End If
+            End If
+        Next
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).relativeFreq = Math.Round(ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).count / (totalNum - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+        ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).precentage = ratingsDist(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+        Me.RichTextBox3.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Rating &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; Environment.NewLine)
+        For Each kvp As KeyValuePair(Of Integer, Frequencies) In ratingsDist
+            Me.RichTextBox3.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+        Next
+
+    End Sub
+End Class
+Public Class Ramen
+    Public brand, variety, style, country As String
+    Public numberOfReview As Integer
+    Public stars As Integer
+End Class
+Public Class Frequencies
+    Public count As Decimal
+    Public relativeFreq As Decimal
+    Public precentage As Decimal
+
+    Public Sub New(ByVal c As Decimal)
+        count = c
+    End Sub
+
+    Public Sub New(ByVal c As Decimal, ByVal rf As Decimal, ByVal p As Decimal)
+        count = c
+        relativeFreq = rf
+        precentage = p
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1S3xdDpb5xEbvkZqAC63H2YuIsKDgTidJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_RA : Floating point representation</title>
+      <link>https://lucarep.github.io/homework2/1_ra/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/1_ra/</guid>
+      <description>Rounding Errors Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:
+  Too many significant digits – The great advantage of floating point is that leading and trailing zeroes (within the range provided by the exponent) don’t need to be stored.</description>
+      <content>&lt;h1 id=&#34;rounding-errors&#34;&gt;Rounding Errors&lt;/h1&gt;
+&lt;p&gt;Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Too many significant digits – The great advantage of floating point is that leading and trailing zeroes (within the range provided by the exponent) don’t need to be stored. But if, without those, there are still more digits than the significand can store, rounding becomes necessary. In other words, if your number simply requires more precision than the format can provide, you’ll have to sacrifice some of it, which is no big surprise. For example, with a floating point format that has 3 digits in the significand, 1000 does not require rounding, and neither does 10000 or 1110 – but 1001 will have to be rounded. With the large number of significand digits available in typical floating-point formats, this may seem to be a rarely encountered problem, but if you perform a sequence of calculations, especially multiplication and division, you can very quickly reach this point.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Periodical digits – Any (irreducible) fraction where the denominator has a prime factor that does not occur in the base requires an infinite number of digits that repeat periodically after a certain point, and this can already happen for very simple fractions. For example, in decimal 1/4, 3/5 and 8/20 are finite, because 2 and 5 are the prime factors of 10. But 1/3 is not finite, nor is 2/3 or 1/7 or 5/6, because 3 and 7 are not factors of 10. Fractions with a prime factor of 5 in the denominator can be finite in base 10, but not in base 2 – the biggest source of confusion for most novice users of floating-point numbers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Non-rational numbers – Non-rational numbers cannot be represented as a regular fraction at all, and in positional notation (no matter what base) they require an infinite number of non-recurring digits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;rounding-modes&#34;&gt;Rounding Modes&lt;/h1&gt;
+&lt;p&gt;There are different methods to do rounding, and this can be very important in programming, because rounding can cause different problems in various contexts that can be addressed by using a better rounding mode. The most common rounding modes are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rounding towards zero – simply truncate the extra digits. The simplest method, but it introduces larger errors than necessary as well as a bias towards zero when dealing with mainly positive or mainly negative numbers.&lt;/li&gt;
+&lt;li&gt;Rounding half away from zero – if the truncated fraction is greater than or equal to half the base, increase the last remaining digit. This is the method generally taught in school and used by most people. It minimizes errors, but also introduces a bias (away from zero).&lt;/li&gt;
+&lt;li&gt;Rounding half to even also known as banker’s rounding – if the truncated fraction is greater than half the base, increase the last remaining digit. If it is equal to half the base, increase the digit only if that produces an even result. This minimizes errors and bias, and is therefore preferred for bookkeeping.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Towards zero&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Half Away from zero&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Half to even&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-1.6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-2.4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://floating-point-gui.de/basic/&#34;&gt;https://floating-point-gui.de/basic/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://floating-point-gui.de/errors/rounding/&#34;&gt;https://floating-point-gui.de/errors/rounding/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>3_A</title>
+      <link>https://lucarep.github.io/homework2/3_a/</link>
+      <pubDate>Wed, 06 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/3_a/</guid>
+      <description>Intro in this assignment, I had to create an object providing a rectangular area which can be moved and resized using the mouse.
+Live Demo here, you can see my program in action   VB.NET Code: Public Class Form1 Private x, y As Integer Private Rect As New Rectangle(50, 50, 50, 50) Dim isLeftClickDown As Boolean = False Dim isRightClickDown As Boolean = False Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to create an object providing a rectangular area which can be moved and resized using the mouse.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/nUSGW7_FvgM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Public Class Form1
+    Private x, y As Integer
+    Private Rect As New Rectangle(&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;)
+    Dim isLeftClickDown As Boolean = False
+    Dim isRightClickDown As Boolean = False
+
+    Private Sub PictureBox1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Rect.Contains(e.Location) Then
+            isLeftClickDown = True
+            x = Rect.X - e.X
+            y = Rect.Y - e.Y
+        End If
+        If e.Button = Windows.Forms.MouseButtons.Right AndAlso Rect.Contains(e.Location) Then
+            isRightClickDown = True
+            x = Rect.X - e.X
+            y = Rect.Y - e.Y
+        End If
+
+    End Sub
+    Private Sub PictureBox1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseUp
+        isLeftClickDown = False
+        isRightClickDown = False
+    End Sub
+    Private Sub PictureBox1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PictureBox1.MouseMove
+        If e.Button = Windows.Forms.MouseButtons.Left AndAlso Rect.Contains(e.Location) Then
+            Rect.X = e.X + x
+            Rect.Y = e.Y + y
+            PictureBox1.Refresh()
+        End If
+        If isRightClickDown Then
+            Rect.Size = New Size(Rect.X + e.X, Rect.Y + e.Y)
+            PictureBox1.Refresh()
+        End If
+
+    End Sub
+
+    Private Sub PictureBox1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PictureBox1.Paint
+        e.Graphics.DrawRectangle(Pens.Red, Rect)
+    End Sub
+End Class
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1ANxn3yiQtIuQTqGfZHpJ17uSUDzOX1s8/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>2_A</title>
+      <link>https://lucarep.github.io/homework2/2_a/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework2/2_a/</guid>
+      <description>Intro in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).
+Live Demo here, you can see my program in action   C# Code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to code a demonstrative program which computes the online arithmetic mean (if it&amp;rsquo;s a numeric variable) and an algo to compute the distribution for a discrete variable and for a continuous variable (can use values simulated with RANDOM object).&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/PM5RLOPsxqk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.ComponentModel;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Data;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Linq;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Text;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Threading.Tasks;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Windows.Forms;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; _2_A
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt; : Form
+    {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Random R = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random();
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+        {
+            InitializeComponent();
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.Clear();
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; studentNumber = &lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; minHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; maxHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;;
+
+            List&amp;lt;Student&amp;gt; listOfStudents = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Student&amp;gt;(studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DATASET - Cryptography exam : Grades of students&amp;#34;&lt;/span&gt; + Environment.NewLine + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Total Count: &amp;#34;&lt;/span&gt; + (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).ToString() + Environment.NewLine + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; i &amp;lt; studentNumber; i++)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; randomNumber = R.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; randomHeight = Math.Round((&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt;)R.Next(minHeight, maxHeight), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Student &amp;#34;&lt;/span&gt; + i.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;).PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) + randomNumber.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) + randomHeight.ToString() + Environment.NewLine);
+
+                Student s = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Student(randomNumber,randomHeight);
+
+                listOfStudents.Add(s);
+            }
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// OFFLINE ALGO
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; sum = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+            
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                sum += s.gradeForCryptography;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; average = Math.Round(sum / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// ONLINE ALGO
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; currentAvg = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; index = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                index += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(naive formula): &amp;#34;&lt;/span&gt; + average.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(online formula): &amp;#34;&lt;/span&gt; + currentAvg.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) + Environment.NewLine);
+
+            Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;, Frequencies&amp;gt; frequencyDist = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Dictionary&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;,Frequencies&amp;gt;();
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (frequencyDist.ContainsKey(s.gradeForCryptography))
+                {
+                    frequencyDist[s.gradeForCryptography].count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                }
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                {
+                    frequencyDist.Add(s.gradeForCryptography, &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;));
+                }
+
+                frequencyDist[s.gradeForCryptography].relativeFreq = Math.Round(frequencyDist[s.gradeForCryptography].count / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;),&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;);
+                frequencyDist[s.gradeForCryptography].precentage = frequencyDist[s.gradeForCryptography].relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;;
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Grade &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt; .PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt; (KeyValuePair&amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;,Frequencies&amp;gt; kvp &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; frequencyDist)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + kvp.Value.precentage.ToString() + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; intervalSize = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; startingEndPoint = &lt;span style=&#34;color:#ae81ff&#34;&gt;170&lt;/span&gt;;
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;//first interval
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+            Interval myInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+            myInterval.lowerEnd = startingEndPoint;
+            myInterval.upperEnd = startingEndPoint + intervalSize;
+
+            List&amp;lt;Interval&amp;gt; listOfIntervals = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; List&amp;lt;Interval&amp;gt;();
+
+            listOfIntervals.Add(myInterval);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Student s &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfStudents)
+            {
+                Boolean studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Interval i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfIntervals)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; i.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= i.upperEnd)
+                    {
+                        i.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                        studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                    }
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(studentInserted == &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;continue&lt;/span&gt;;
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(s.height &amp;lt;= listOfIntervals[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].lowerEnd)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                    {
+                        Interval newLeftInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+                        newLeftInterval.upperEnd = listOfIntervals[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;].lowerEnd;
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize;
+
+                        listOfIntervals.Insert(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, newLeftInterval);
+
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; newLeftInterval.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= newLeftInterval.upperEnd)
+                        {
+                            newLeftInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                            studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+                        }
+
+                    }
+                }
+
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(s.height &amp;gt; listOfIntervals[listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].upperEnd)
+                {
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;)
+                    {
+                        Interval newRightInterval = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Interval();
+                        newRightInterval.lowerEnd = listOfIntervals[listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;].upperEnd;
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize;
+
+                        listOfIntervals.Add(newRightInterval);
+
+                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (s.height &amp;gt; newRightInterval.lowerEnd &amp;amp;&amp;amp; s.height &amp;lt;= newRightInterval.upperEnd)
+                        {
+
+                            newRightInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+                            studentInserted = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+                            &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;
+                        }
+
+                    }
+
+                }
+            }
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HEIGHT DISTRIBUTION&amp;#34;&lt;/span&gt; + Environment.NewLine);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Interval&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; + Environment.NewLine);
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;foreach&lt;/span&gt;(Interval i &lt;span style=&#34;color:#66d9ef&#34;&gt;in&lt;/span&gt; listOfIntervals)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[ &amp;#34;&lt;/span&gt; + i.lowerEnd + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; + i.upperEnd + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;] &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;) + i.count + Environment.NewLine);
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Frequencies&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; count;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; relativeFreq;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; precentage;
+
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.count = c;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Frequencies(&lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; c, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; rf, &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; p)
+            {
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.count = c;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.relativeFreq = rf;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.precentage = p;
+            }
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Interval&lt;/span&gt;
+        {
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;decimal&lt;/span&gt; lowerEnd, upperEnd, count, relativeFrequency, percentage;
+
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System
+Imports System.Collections.Generic
+Imports System.Windows.Forms
+
+Namespace &lt;span style=&#34;color:#ae81ff&#34;&gt;_2_&lt;/span&gt;A
+    Public Partial Class Form1
+        Inherits Form
+
+        Public R As Random = New Random()
+
+        Public Sub New()
+            InitializeComponent()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            Me.richTextBox1.Clear()
+            Dim studentNumber As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;101&lt;/span&gt;
+            Dim minHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt;
+            Dim maxHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;
+            Dim listOfStudents As List(Of Student) = New List(Of Student)(studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;DATASET - Cryptography exam : Grades of students&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Total Count: &amp;#34;&lt;/span&gt; &amp;amp; (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).ToString() &amp;amp; Environment.NewLine &amp;amp; Environment.NewLine)
+
+            For i As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; To studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                Dim randomNumber As Integer = R.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt;)
+                Dim randomHeight As Decimal = Math.Round(R.Next(minHeight, maxHeight), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                Me.richTextBox1.AppendText((&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Student &amp;#34;&lt;/span&gt; &amp;amp; i.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;: &amp;#34;&lt;/span&gt;).PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) &amp;amp; randomNumber.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt;) &amp;amp; randomHeight.ToString() &amp;amp; Environment.NewLine)
+                Dim s As Student = New Student(randomNumber, randomHeight)
+                listOfStudents.Add(s)
+            Next
+
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; OFFLINE ALGO
+
+            Dim sum As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+            For Each s As Student In listOfStudents
+                sum += s.gradeForCryptography
+            Next
+
+            Dim average As Decimal = Math.Round(sum / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; ONLINE ALGO
+
+            Dim currentAvg As Double = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+            Dim index As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+
+            For Each s As Student In listOfStudents
+                index += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                currentAvg = currentAvg + (s.gradeForCryptography - currentAvg) / index
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(naive formula): &amp;#34;&lt;/span&gt; &amp;amp; average.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Arithmetic mean for Grades(online formula): &amp;#34;&lt;/span&gt; &amp;amp; currentAvg.ToString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;F&amp;#34;&lt;/span&gt;) &amp;amp; Environment.NewLine)
+            Dim frequencyDist As Dictionary(Of Integer, Frequencies) = New Dictionary(Of Integer, Frequencies)()
+
+            For Each s As Student In listOfStudents
+
+                If frequencyDist.ContainsKey(s.gradeForCryptography) Then
+                    frequencyDist(s.gradeForCryptography).count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                Else
+                    frequencyDist.Add(s.gradeForCryptography, New Frequencies(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+                End If
+
+                frequencyDist(s.gradeForCryptography).relativeFreq = Math.Round(frequencyDist(s.gradeForCryptography).count / (studentNumber - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;), &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+                frequencyDist(s.gradeForCryptography).precentage = frequencyDist(s.gradeForCryptography).relativeFreq * &lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Grade &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Frequency &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RFreq &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Percentage &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; Environment.NewLine)
+
+            For Each kvp As KeyValuePair(Of Integer, Frequencies) In frequencyDist
+                Me.richTextBox1.AppendText(kvp.Key.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.count.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.relativeFreq.ToString().PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; kvp.Value.precentage.ToString() &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; %&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Next
+
+            Dim intervalSize As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+            Dim startingEndPoint As Decimal = &lt;span style=&#34;color:#ae81ff&#34;&gt;170&lt;/span&gt;
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;first interval
+
+            Dim myInterval As Interval = New Interval()
+            myInterval.lowerEnd = startingEndPoint
+            myInterval.upperEnd = startingEndPoint + intervalSize
+            Dim listOfIntervals As List(Of Interval) = New List(Of Interval)()
+            listOfIntervals.Add(myInterval)
+
+            For Each s As Student In listOfStudents
+                Dim studentInserted As Boolean = False
+
+                For Each i As Interval In listOfIntervals
+
+                    If s.height &amp;gt; i.lowerEnd AndAlso s.height &amp;lt;= i.upperEnd Then
+                        i.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                        studentInserted = True
+                    End If
+                Next
+
+                If studentInserted = True Then
+                    Continue For
+                End If
+
+                If s.height &amp;lt;= listOfIntervals(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).lowerEnd Then
+
+                    While True
+                        Dim newLeftInterval As Interval = New Interval()
+                        newLeftInterval.upperEnd = listOfIntervals(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;).lowerEnd
+                        newLeftInterval.lowerEnd = newLeftInterval.upperEnd - intervalSize
+                        listOfIntervals.Insert(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, newLeftInterval)
+
+                        If s.height &amp;gt; newLeftInterval.lowerEnd AndAlso s.height &amp;lt;= newLeftInterval.upperEnd Then
+                            newLeftInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                ElseIf s.height &amp;gt; listOfIntervals(listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).upperEnd Then
+
+                    While True
+                        Dim newRightInterval As Interval = New Interval()
+                        newRightInterval.lowerEnd = listOfIntervals(listOfIntervals.Count - &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;).upperEnd
+                        newRightInterval.upperEnd = newRightInterval.lowerEnd + intervalSize
+                        listOfIntervals.Add(newRightInterval)
+
+                        If s.height &amp;gt; newRightInterval.lowerEnd AndAlso s.height &amp;lt;= newRightInterval.upperEnd Then
+                            newRightInterval.count += &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+                            studentInserted = True
+                            Exit While
+                        End If
+                    End While
+                End If
+            Next
+
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;___________________________________&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HEIGHT DISTRIBUTION&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+            Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Interval&amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;) &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Count&amp;#34;&lt;/span&gt; &amp;amp; Environment.NewLine)
+
+            For Each i As Interval In listOfIntervals
+                Me.richTextBox1.AppendText(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[ &amp;#34;&lt;/span&gt; &amp;amp; i.lowerEnd &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34; &amp;#34;&lt;/span&gt; &amp;amp; i.upperEnd &amp;amp; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;] &amp;#34;&lt;/span&gt;.PadRight(&lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;) &amp;amp; i.count &amp;amp; Environment.NewLine)
+            Next
+        End Sub
+
+        Public Class Frequencies
+            Public count As Decimal
+            Public relativeFreq As Decimal
+            Public precentage As Decimal
+
+            Public Sub New(ByVal c As Decimal)
+                count = c
+            End Sub
+
+            Public Sub New(ByVal c As Decimal, ByVal rf As Decimal, ByVal p As Decimal)
+                count = c
+                relativeFreq = rf
+                precentage = p
+            End Sub
+        End Class
+
+        Public Class Interval
+            Public lowerEnd, upperEnd, count, relativeFrequency, percentage As Decimal
+        End Class
+    End Class
+End Namespace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1yVNjPjYmsZQSsRjHFnpg4PPwOggToPB7/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>1_A</title>
+      <link>https://lucarep.github.io/homework1/1_a/</link>
+      <pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework1/1_a/</guid>
+      <description>Intro in this assignment, I had to code a form in C# and VB.NET that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.
+Live Demo here, you can see my program in action   C# code: using System; using System.Collections.Generic; using System.ComponentModel; using System.Data; using System.Drawing; using System.Drawing.Drawing2D; using System.Linq; using System.Text; using System.Threading.Tasks; using System.Windows.Forms; namespace _1_R { public partial class Form1 : System.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this assignment, I had to code a form in &lt;strong&gt;C#&lt;/strong&gt; and &lt;strong&gt;VB.NET&lt;/strong&gt; that firstly by pressing a button would show a text, secondly another button would animate a little ball in a rectangle.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/Z-dVPitpOpA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;c-code&#34;&gt;C# code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.ComponentModel;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Data;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Drawing.Drawing2D;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Linq;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Text;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Threading.Tasks;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;using&lt;/span&gt; System.Windows.Forms;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;namespace&lt;/span&gt; _1_R
+{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;partial&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Form1&lt;/span&gt; : System.Windows.Forms.Form
+    {
+        &lt;span style=&#34;color:#75715e&#34;&gt;// Ball params
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballWidth = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballHeight = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballX, ballY;   &lt;span style=&#34;color:#75715e&#34;&gt;// Position.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ballVx, ballVy; &lt;span style=&#34;color:#75715e&#34;&gt;// Velocity.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; Form1()
+        {
+            InitializeComponent();
+            Random rnd = &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random();
+            ballVx = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+            ballVy = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;);
+            ballX = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Width - ballWidth);
+            ballY = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Height - ballHeight);
+
+            &lt;span style=&#34;color:#75715e&#34;&gt;// Use double buffering to reduce flicker.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.SetStyle(
+                ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.UserPaint |
+                ControlStyles.DoubleBuffer,
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.UpdateStyles();
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button1_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            richTextBox1.Text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button2_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+
+            timer1.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+            button3.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; button3_Click(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            timer1.Enabled = &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; tmrMoveBall_Tick(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, EventArgs e)
+        {
+            ballX += ballVx;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballX &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            {
+                ballVx = -ballVx;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballX + ballWidth &amp;gt; panel1.Width)
+            {
+                ballVx = -ballVx;
+            }
+
+            ballY += ballVy;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballY &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;)
+            {
+                ballVy = -ballVy;
+            }
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (ballY + ballHeight &amp;gt; panel1.Height)
+            {
+                ballVy = -ballVy;
+            }
+
+            Refresh();
+   
+        }
+
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; panel1_Paint(&lt;span style=&#34;color:#66d9ef&#34;&gt;object&lt;/span&gt; sender, PaintEventArgs e)
+        {
+            
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            e.Graphics.Clear(BackColor);
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY,
+                ballWidth, ballHeight);
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY,
+                ballWidth, ballHeight);
+            
+        }  
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET code:&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;Imports System
+Imports System.Drawing.Drawing2D
+Imports System.Windows.Forms
+
+Namespace &lt;span style=&#34;color:#ae81ff&#34;&gt;_1_&lt;/span&gt;R
+    Public Partial Class Form1
+        Inherits System.Windows.Forms.Form
+
+        &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Ball &lt;span style=&#34;color:#66d9ef&#34;&gt;params&lt;/span&gt;
+        Private Const ballWidth As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;
+        Private Const ballHeight As Integer = &lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;
+        Private ballX, ballY As Integer   &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Position.
+        Private ballVx, ballVy As Integer &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Velocity.
+        Public Sub New()
+            InitializeComponent()
+            Dim rnd As Random = New Random()
+            ballVx = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            ballVy = rnd.Next(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;)
+            ballX = rnd.[Next](&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Width - ballWidth)
+            ballY = rnd.[Next](&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, panel1.Height - ballHeight)
+
+            &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt; Use &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; buffering to reduce flicker.
+            Me.SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.UserPaint Or ControlStyles.DoubleBuffer, True)
+            Me.UpdateStyles()
+        End Sub
+
+        Private Sub button1_Click(ByVal sender As Object, ByVal e As EventArgs)
+            richTextBox1.Text = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;
+        End Sub
+
+        Private Sub button2_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = True
+            button3.Enabled = True
+        End Sub
+
+        Private Sub button3_Click(ByVal sender As Object, ByVal e As EventArgs)
+            timer1.Enabled = False
+        End Sub
+
+        Private Sub tmrMoveBall_Tick(ByVal sender As Object, ByVal e As EventArgs)
+            ballX += ballVx
+
+            If ballX &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Then
+                ballVx = -ballVx
+            ElseIf ballX + ballWidth &amp;gt; panel1.Width Then
+                ballVx = -ballVx
+            End If
+
+            ballY += ballVy
+
+            If ballY &amp;lt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; Then
+                ballVy = -ballVy
+            ElseIf ballY + ballHeight &amp;gt; panel1.Height Then
+                ballVy = -ballVy
+            End If
+
+            Refresh()
+        End Sub
+
+        Private Sub panel1_Paint(ByVal sender As Object, ByVal e As PaintEventArgs)
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias
+            e.Graphics.Clear(BackColor)
+            e.Graphics.FillEllipse(Brushes.Blue, ballX, ballY, ballWidth, ballHeight)
+            e.Graphics.DrawEllipse(Pens.Black, ballX, ballY, ballWidth, ballHeight)
+        End Sub
+    End Class
+End Namespace
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1SBdx-20JgMME0kulsV8DzW57xuqW1q1v/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
