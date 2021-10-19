@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>5_R :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location. They are also classed as summary statistics. The mean (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the median and the mode." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/post/5_r/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="5_R">
+<meta property="og:description" content="INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location. They are also classed as summary statistics. The mean (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the median and the mode." />
+<meta property="og:url" content="https://lucarep.github.io/post/5_r/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/5_R.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-10-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="/homework4">Homework 4</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="/homework4">Homework 4</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/post/5_r/">5_R</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-10-19 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/5_R.jpg" class="post-cover" alt="5_R" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="introduction-to-central-tendency">INTRODUCTION TO CENTRAL TENDENCY<a href="#introduction-to-central-tendency" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>A measure of central tendency is a single value that <strong>attempts to describe a set of data by identifying the central position within that set of data</strong>. As such, measures of central tendency are sometimes called measures of <strong>central location</strong>. They are also classed as <strong>summary statistics</strong>. The <strong>mean</strong> (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the <strong>median</strong> and the <strong>mode</strong>.</p>
+<h1 id="so-why-there-are-so-many-ways-to-measure-central-tendency-">SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔<a href="#so-why-there-are-so-many-ways-to-measure-central-tendency-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The mean, median and mode are all <strong>valid</strong> measures of central tendency, but under different conditions, some measures of central tendency become more <strong>appropriate</strong> to use than others. In the following sections, we will look at the mean, mode and median, and learn how to calculate them and under what conditions they are most appropriate to be used.</p>
+<h1 id="arithmetic-mean">ARITHMETIC MEAN<a href="#arithmetic-mean" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The mean (or average) is the most popular and well known measure of central tendency. It can be used with both <strong>discrete and continuous data</strong>, although its use is most <strong>often with continuous data</strong>. The mean is equal to the sum of all the values in the data set divided by the number of values in the data set. So, if we have n values  the sample mean, is:
+$$  \overline{x} = \frac{x_{1} + x_{2} + &hellip; + x_{n}}{n}$$</p>
+<p>You may have noticed that the above formula refers to the <strong>sample mean</strong>. So, why have we called it a sample mean? This is because, in statistics, samples and populations have very different meanings and these differences are very important, even if, in the case of the mean, they are calculated in the same way. To acknowledge that we are calculating the population mean and not the sample mean, we use the Greek lower case letter &ldquo;mu&rdquo;, denoted as:</p>
+<p>$$ \mu = \frac{\sum x}{n}$$</p>
+<h6 id="when-not-to-use-the-mean">When not to use the mean:<a href="#when-not-to-use-the-mean" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>The mean has one main disadvantage: it is particularly susceptible to the influence of outliers. These are values that are unusual compared to the rest of the data set by being especially small or large in numerical value.</p>
+<h1 id="median">MEDIAN<a href="#median" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The median is the middle score for a set of data that has been arranged in <strong>order of magnitude</strong>. The median is <strong>less affected by outliers and skewed data</strong>. In order to calculate the median, suppose we have the data below:</p>
+<table>
+<thead>
+<tr>
+<th>65</th>
+<th>55</th>
+<th>89</th>
+<th>56</th>
+<th>35</th>
+<th>14</th>
+<th>56</th>
+<th>55</th>
+<th>87</th>
+<th>45</th>
+<th>92</th>
+</tr>
+</thead>
+</table>
+<p>We first need to rearrange that data into order of magnitude (smallest first):</p>
+<table>
+<thead>
+<tr>
+<th>14</th>
+<th>35</th>
+<th>45</th>
+<th>55</th>
+<th>55</th>
+<th><strong>56</strong></th>
+<th>56</th>
+<th>65</th>
+<th>87</th>
+<th>89</th>
+<th>92</th>
+</tr>
+</thead>
+</table>
+<p>Our median mark is the middle mark - in this case, 56. It is the middle mark because there are 5 scores <strong>before</strong> it and 5 scores <strong>after</strong> it.</p>
+<h1 id="mode">MODE<a href="#mode" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The mode is the most frequent score in our data set. On a histogram it represents the highest bar in a bar chart or histogram. You can, therefore, sometimes consider the mode as being the most popular option. An example of a mode is presented below:</p>
+<p><img src="/img/mode-1.png" alt="mode"></p>
+<p>Normally, the mode is used for categorical data where we wish to know which is the most common category.</p>
+<h1 id="introduction-to-dispersion">INTRODUCTION TO DISPERSION<a href="#introduction-to-dispersion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Dispersion in statistics is a way of describing how spread out a set of data is. When a data set has a large value, the values in the set are widely scattered; when it is small the items in the set are tightly clustered. Very basically, this set of data has a small value:</p>
+<p>$$1,2,2,3,3,4$$</p>
+<p>and this set has a wider one:</p>
+<p>$$0,1,20,30,40,100$$</p>
+<p>The spread of a data set can be described by a range of descriptive statistics including <strong>variance, standard deviation, and interquartile range</strong>. Spread can also be shown in graphs: <strong>dot plots, boxplots, and stem and leaf plots</strong> have a greater distance with samples that have a larger dispersion and vice versa.</p>
+<h1 id="standard-deviation">STANDARD DEVIATION<a href="#standard-deviation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>probably the most common measure. It tells you how spread out numbers are from the mean:
+$$ \sigma = \sqrt{\frac{\sum|x - \overline{x}|^{2}}{n}}$$</p>
+<h1 id="variance">VARIANCE<a href="#variance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The variance has a similar meaning to the standard deviation, however in some cases it is easier to calculate because it does not use the square root:</p>
+<p>$$ \sigma^{2} = \sqrt{\frac{\sum|x - \overline{x}|}{n}}$$</p>
+<h1 id="introduction-to-distance">INTRODUCTION TO DISTANCE<a href="#introduction-to-distance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Citing Wikipedia:</p>
+<blockquote>
+<p>In statistics, probability theory, and information theory, a statistical distance quantifies the distance between two statistical objects, which can be two random variables, or two probability distributions or samples, or the distance can be between an individual sample point and a population or a wider sample of points.</p>
+</blockquote>
+<p>the concept of distance is very important in <strong>machine learning</strong>, however, contrary to what you might think from the definition there is no single concept of distance, but there are several types that we will see below.</p>
+<h1 id="minkowski-distance">MINKOWSKI DISTANCE<a href="#minkowski-distance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>According to Wikipedia:</p>
+<blockquote>
+<p>“A Normed vector space is a vector space on which a norm is defined.” 
+Suppose A is a vector space then a norm on A is a real-valued function ||A||which satisfies below conditions:</p>
+</blockquote>
+<ul>
+<li>Zero Vector: Zero vector will have zero length.</li>
+<li>Scalar Factor: The direction of the vector doesn’t change when you multiply it with a positive number though its length will be changed.</li>
+<li>Triangle Inequality: If the distance is a norm then the calculated distance between two points will always be a straight line.</li>
+</ul>
+<p>The distance can be calculated using the below formula:</p>
+<p>$$ (\sum_{i = 1}^{n} |x_{i} - y_{i}|^p)^\frac{1}{p}$$</p>
+<p>Minkowski distance is a generalized distance metric. We can manipulate the above formula by substituting ‘p’ to calculate the distance between two data points in different ways. Thus, Minkowski Distance is also known as <strong>Lp norm distance</strong>.</p>
+<p>Some common values of ‘p’ are:</p>
+<ul>
+<li>p = 1, Manhattan Distance</li>
+<li>p = 2, Euclidean Distance</li>
+<li>p = infinity, Chebychev Distance</li>
+</ul>
+<h1 id="manhattan-distance">MANHATTAN DISTANCE:<a href="#manhattan-distance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We use Manhattan distance, also known as <strong>city block distance</strong>, or <strong>taxicab geometry</strong> if we need to calculate the distance between two data points in a grid-like path. Manhattan distance metric can be understood with the help of a simple example.</p>
+<p><img src="/img/manhattan.png" alt="Manhattan"></p>
+<p>In the above picture, imagine each cell to be a building, and the grid lines to be roads. Now if I want to travel from Point A to Point B marked in the image and follow the red or the yellow path. We see that the path is not straight and there are turns. In this case, we use the Manhattan distance metric to calculate the distance walked.
+We can get the equation for Manhattan distance by substituting p = 1 in the Minkowski distance formula. The formula is:</p>
+<p>$$ d = \sum_{i = 1}^{n} |x_{i} - y_{i}|$$</p>
+<h6 id="when-is-manhattan-distance-metric-preferred-in-ml">When is Manhattan distance metric preferred in ML?<a href="#when-is-manhattan-distance-metric-preferred-in-ml" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>Manhattan Distance is preferred over the Euclidean distance metric as the dimension of the data increases. This occurs due to something known as the ‘curse of dimensionality’.</p>
+<h1 id="euclidean-distance">EUCLIDEAN DISTANCE:<a href="#euclidean-distance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Euclidean distance is the straight line distance between 2 data points in a plane.</p>
+<p><img src="/img/euclidean.png" alt="Euclidean"></p>
+<p>It is calculated using the Minkowski Distance formula by setting ‘p’ value to 2, thus, also known as the L2 norm distance metric. The formula is:</p>
+<p>$$d = \sqrt{\sum_{i = 1}^{n} |x_{i} - y_{i}|^2}$$</p>
+<p>This formula is similar to the Pythagorean theorem formula, Thus it is also known as the <strong>Pythagorean Theorem</strong>.</p>
+<h1 id="hamming-distance">HAMMING DISTANCE<a href="#hamming-distance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Hamming distance is a metric for comparing two binary data strings. While comparing two binary strings of equal length, Hamming distance is the number of bit positions in which the two bits are different.
+The Hamming distance between two strings, a and b is denoted as d(a,b).
+In order to calculate the Hamming distance between two strings, and, we perform their XOR operation, (a ⊕ b), and then count the total number of 1s in the resultant string.
+Suppose there are two strings 11011001 and 10011101.
+11011001 ⊕ 10011101 = 01000100. Since, this contains two 1s, the Hamming distance, d(11011001, 10011101) = 2.</p>
+<h1 id="cosine-distance">COSINE DISTANCE<a href="#cosine-distance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Cosine distance &amp; Cosine Similarity metric is mainly used to find similarities between two data points. As the cosine distance between the data points increases, the cosine similarity, or the amount of similarity decreases, and vice versa. Thus, Points closer to each other are more similar than points that are far away from each other. Cosine similarity is given by Cos θ, and cosine distance is 1- Cos θ.</p>
+<h6 id="where-is-it-used">Where is it used?<a href="#where-is-it-used" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>Cosine metric is mainly used in Collaborative Filtering based recommendation systems to offer future recommendations to users.
+Taking the example of a movie recommendation system, Suppose one user (User #1) has watched movies like The Fault in our Stars, and The Notebook, which are of romantic genres, and another user (User #2) has watched movies like The Proposal, and Notting Hill, which are also of romantic genres. So the recommendation system will use this data to recommend User #1 to see The Proposal, and Notting Hill as User #1 and User #2 both prefer the romantic genre and its likely that User #1 will like to watch another romantic genre movie and not a horror one.
+Similarly, Suppose User #1 loves to watch movies based on horror, and User #2 loves the romance genre. In this case, User #2 won’t be suggested to watch a horror movie as there is no similarity between the romantic genre and the horror genre.</p>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php">https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php</a></li>
+<li><a href="https://www.statisticshowto.com/dispersion/">https://www.statisticshowto.com/dispersion/</a></li>
+<li><a href="https://medium.com/@kunal_gohrani/different-types-of-distance-metrics-used-in-machine-learning-e9928c5e26c7">https://medium.com/@kunal_gohrani/different-types-of-distance-metrics-used-in-machine-learning-e9928c5e26c7</a></li>
+</ul>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://lucarep.github.io/post/4_ra/">
+                <span class="button__text">4_RA</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

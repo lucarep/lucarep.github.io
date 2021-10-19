@@ -7,7 +7,221 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5_R</title>
+      <link>https://lucarep.github.io/homework4/5_r/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework4/5_r/</guid>
+      <description>INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location. They are also classed as summary statistics. The mean (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the median and the mode.</description>
+      <content>&lt;h1 id=&#34;introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/h1&gt;
+&lt;p&gt;A measure of central tendency is a single value that &lt;strong&gt;attempts to describe a set of data by identifying the central position within that set of data&lt;/strong&gt;. As such, measures of central tendency are sometimes called measures of &lt;strong&gt;central location&lt;/strong&gt;. They are also classed as &lt;strong&gt;summary statistics&lt;/strong&gt;. The &lt;strong&gt;mean&lt;/strong&gt; (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the &lt;strong&gt;median&lt;/strong&gt; and the &lt;strong&gt;mode&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;so-why-there-are-so-many-ways-to-measure-central-tendency-&#34;&gt;SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔&lt;/h1&gt;
+&lt;p&gt;The mean, median and mode are all &lt;strong&gt;valid&lt;/strong&gt; measures of central tendency, but under different conditions, some measures of central tendency become more &lt;strong&gt;appropriate&lt;/strong&gt; to use than others. In the following sections, we will look at the mean, mode and median, and learn how to calculate them and under what conditions they are most appropriate to be used.&lt;/p&gt;
+&lt;h1 id=&#34;arithmetic-mean&#34;&gt;ARITHMETIC MEAN&lt;/h1&gt;
+&lt;p&gt;The mean (or average) is the most popular and well known measure of central tendency. It can be used with both &lt;strong&gt;discrete and continuous data&lt;/strong&gt;, although its use is most &lt;strong&gt;often with continuous data&lt;/strong&gt;. The mean is equal to the sum of all the values in the data set divided by the number of values in the data set. So, if we have n values  the sample mean, is:
+$$  \overline{x} = \frac{x_{1} + x_{2} + &amp;hellip; + x_{n}}{n}$$&lt;/p&gt;
+&lt;p&gt;You may have noticed that the above formula refers to the &lt;strong&gt;sample mean&lt;/strong&gt;. So, why have we called it a sample mean? This is because, in statistics, samples and populations have very different meanings and these differences are very important, even if, in the case of the mean, they are calculated in the same way. To acknowledge that we are calculating the population mean and not the sample mean, we use the Greek lower case letter &amp;ldquo;mu&amp;rdquo;, denoted as:&lt;/p&gt;
+&lt;p&gt;$$ \mu = \frac{\sum x}{n}$$&lt;/p&gt;
+&lt;h6 id=&#34;when-not-to-use-the-mean&#34;&gt;When not to use the mean:&lt;/h6&gt;
+&lt;p&gt;The mean has one main disadvantage: it is particularly susceptible to the influence of outliers. These are values that are unusual compared to the rest of the data set by being especially small or large in numerical value.&lt;/p&gt;
+&lt;h1 id=&#34;median&#34;&gt;MEDIAN&lt;/h1&gt;
+&lt;p&gt;The median is the middle score for a set of data that has been arranged in &lt;strong&gt;order of magnitude&lt;/strong&gt;. The median is &lt;strong&gt;less affected by outliers and skewed data&lt;/strong&gt;. In order to calculate the median, suppose we have the data below:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;65&lt;/th&gt;
+&lt;th&gt;55&lt;/th&gt;
+&lt;th&gt;89&lt;/th&gt;
+&lt;th&gt;56&lt;/th&gt;
+&lt;th&gt;35&lt;/th&gt;
+&lt;th&gt;14&lt;/th&gt;
+&lt;th&gt;56&lt;/th&gt;
+&lt;th&gt;55&lt;/th&gt;
+&lt;th&gt;87&lt;/th&gt;
+&lt;th&gt;45&lt;/th&gt;
+&lt;th&gt;92&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+&lt;p&gt;We first need to rearrange that data into order of magnitude (smallest first):&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;14&lt;/th&gt;
+&lt;th&gt;35&lt;/th&gt;
+&lt;th&gt;45&lt;/th&gt;
+&lt;th&gt;55&lt;/th&gt;
+&lt;th&gt;55&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;56&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;56&lt;/th&gt;
+&lt;th&gt;65&lt;/th&gt;
+&lt;th&gt;87&lt;/th&gt;
+&lt;th&gt;89&lt;/th&gt;
+&lt;th&gt;92&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+&lt;p&gt;Our median mark is the middle mark - in this case, 56. It is the middle mark because there are 5 scores &lt;strong&gt;before&lt;/strong&gt; it and 5 scores &lt;strong&gt;after&lt;/strong&gt; it.&lt;/p&gt;
+&lt;h1 id=&#34;mode&#34;&gt;MODE&lt;/h1&gt;
+&lt;p&gt;The mode is the most frequent score in our data set. On a histogram it represents the highest bar in a bar chart or histogram. You can, therefore, sometimes consider the mode as being the most popular option. An example of a mode is presented below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/mode-1.png&#34; alt=&#34;mode&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Normally, the mode is used for categorical data where we wish to know which is the most common category.&lt;/p&gt;
+&lt;h1 id=&#34;introduction-to-dispersion&#34;&gt;INTRODUCTION TO DISPERSION&lt;/h1&gt;
+&lt;p&gt;Dispersion in statistics is a way of describing how spread out a set of data is. When a data set has a large value, the values in the set are widely scattered; when it is small the items in the set are tightly clustered. Very basically, this set of data has a small value:&lt;/p&gt;
+&lt;p&gt;$$1,2,2,3,3,4$$&lt;/p&gt;
+&lt;p&gt;and this set has a wider one:&lt;/p&gt;
+&lt;p&gt;$$0,1,20,30,40,100$$&lt;/p&gt;
+&lt;p&gt;The spread of a data set can be described by a range of descriptive statistics including &lt;strong&gt;variance, standard deviation, and interquartile range&lt;/strong&gt;. Spread can also be shown in graphs: &lt;strong&gt;dot plots, boxplots, and stem and leaf plots&lt;/strong&gt; have a greater distance with samples that have a larger dispersion and vice versa.&lt;/p&gt;
+&lt;h1 id=&#34;standard-deviation&#34;&gt;STANDARD DEVIATION&lt;/h1&gt;
+&lt;p&gt;probably the most common measure. It tells you how spread out numbers are from the mean:
+$$ \sigma = \sqrt{\frac{\sum|x - \overline{x}|^{2}}{n}}$$&lt;/p&gt;
+&lt;h1 id=&#34;variance&#34;&gt;VARIANCE&lt;/h1&gt;
+&lt;p&gt;The variance has a similar meaning to the standard deviation, however in some cases it is easier to calculate because it does not use the square root:&lt;/p&gt;
+&lt;p&gt;$$ \sigma^{2} = \sqrt{\frac{\sum|x - \overline{x}|}{n}}$$&lt;/p&gt;
+&lt;h1 id=&#34;introduction-to-distance&#34;&gt;INTRODUCTION TO DISTANCE&lt;/h1&gt;
+&lt;p&gt;Citing Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In statistics, probability theory, and information theory, a statistical distance quantifies the distance between two statistical objects, which can be two random variables, or two probability distributions or samples, or the distance can be between an individual sample point and a population or a wider sample of points.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;the concept of distance is very important in &lt;strong&gt;machine learning&lt;/strong&gt;, however, contrary to what you might think from the definition there is no single concept of distance, but there are several types that we will see below.&lt;/p&gt;
+&lt;h1 id=&#34;minkowski-distance&#34;&gt;MINKOWSKI DISTANCE&lt;/h1&gt;
+&lt;p&gt;According to Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“A Normed vector space is a vector space on which a norm is defined.” 
+Suppose A is a vector space then a norm on A is a real-valued function ||A||which satisfies below conditions:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Zero Vector: Zero vector will have zero length.&lt;/li&gt;
+&lt;li&gt;Scalar Factor: The direction of the vector doesn’t change when you multiply it with a positive number though its length will be changed.&lt;/li&gt;
+&lt;li&gt;Triangle Inequality: If the distance is a norm then the calculated distance between two points will always be a straight line.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The distance can be calculated using the below formula:&lt;/p&gt;
+&lt;p&gt;$$ (\sum_{i = 1}^{n} |x_{i} - y_{i}|^p)^\frac{1}{p}$$&lt;/p&gt;
+&lt;p&gt;Minkowski distance is a generalized distance metric. We can manipulate the above formula by substituting ‘p’ to calculate the distance between two data points in different ways. Thus, Minkowski Distance is also known as &lt;strong&gt;Lp norm distance&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Some common values of ‘p’ are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;p = 1, Manhattan Distance&lt;/li&gt;
+&lt;li&gt;p = 2, Euclidean Distance&lt;/li&gt;
+&lt;li&gt;p = infinity, Chebychev Distance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;manhattan-distance&#34;&gt;MANHATTAN DISTANCE:&lt;/h1&gt;
+&lt;p&gt;We use Manhattan distance, also known as &lt;strong&gt;city block distance&lt;/strong&gt;, or &lt;strong&gt;taxicab geometry&lt;/strong&gt; if we need to calculate the distance between two data points in a grid-like path. Manhattan distance metric can be understood with the help of a simple example.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/manhattan.png&#34; alt=&#34;Manhattan&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the above picture, imagine each cell to be a building, and the grid lines to be roads. Now if I want to travel from Point A to Point B marked in the image and follow the red or the yellow path. We see that the path is not straight and there are turns. In this case, we use the Manhattan distance metric to calculate the distance walked.
+We can get the equation for Manhattan distance by substituting p = 1 in the Minkowski distance formula. The formula is:&lt;/p&gt;
+&lt;p&gt;$$ d = \sum_{i = 1}^{n} |x_{i} - y_{i}|$$&lt;/p&gt;
+&lt;h6 id=&#34;when-is-manhattan-distance-metric-preferred-in-ml&#34;&gt;When is Manhattan distance metric preferred in ML?&lt;/h6&gt;
+&lt;p&gt;Manhattan Distance is preferred over the Euclidean distance metric as the dimension of the data increases. This occurs due to something known as the ‘curse of dimensionality’.&lt;/p&gt;
+&lt;h1 id=&#34;euclidean-distance&#34;&gt;EUCLIDEAN DISTANCE:&lt;/h1&gt;
+&lt;p&gt;Euclidean distance is the straight line distance between 2 data points in a plane.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/euclidean.png&#34; alt=&#34;Euclidean&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It is calculated using the Minkowski Distance formula by setting ‘p’ value to 2, thus, also known as the L2 norm distance metric. The formula is:&lt;/p&gt;
+&lt;p&gt;$$d = \sqrt{\sum_{i = 1}^{n} |x_{i} - y_{i}|^2}$$&lt;/p&gt;
+&lt;p&gt;This formula is similar to the Pythagorean theorem formula, Thus it is also known as the &lt;strong&gt;Pythagorean Theorem&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;hamming-distance&#34;&gt;HAMMING DISTANCE&lt;/h1&gt;
+&lt;p&gt;Hamming distance is a metric for comparing two binary data strings. While comparing two binary strings of equal length, Hamming distance is the number of bit positions in which the two bits are different.
+The Hamming distance between two strings, a and b is denoted as d(a,b).
+In order to calculate the Hamming distance between two strings, and, we perform their XOR operation, (a ⊕ b), and then count the total number of 1s in the resultant string.
+Suppose there are two strings 11011001 and 10011101.
+11011001 ⊕ 10011101 = 01000100. Since, this contains two 1s, the Hamming distance, d(11011001, 10011101) = 2.&lt;/p&gt;
+&lt;h1 id=&#34;cosine-distance&#34;&gt;COSINE DISTANCE&lt;/h1&gt;
+&lt;p&gt;Cosine distance &amp;amp; Cosine Similarity metric is mainly used to find similarities between two data points. As the cosine distance between the data points increases, the cosine similarity, or the amount of similarity decreases, and vice versa. Thus, Points closer to each other are more similar than points that are far away from each other. Cosine similarity is given by Cos θ, and cosine distance is 1- Cos θ.&lt;/p&gt;
+&lt;h6 id=&#34;where-is-it-used&#34;&gt;Where is it used?&lt;/h6&gt;
+&lt;p&gt;Cosine metric is mainly used in Collaborative Filtering based recommendation systems to offer future recommendations to users.
+Taking the example of a movie recommendation system, Suppose one user (User #1) has watched movies like The Fault in our Stars, and The Notebook, which are of romantic genres, and another user (User #2) has watched movies like The Proposal, and Notting Hill, which are also of romantic genres. So the recommendation system will use this data to recommend User #1 to see The Proposal, and Notting Hill as User #1 and User #2 both prefer the romantic genre and its likely that User #1 will like to watch another romantic genre movie and not a horror one.
+Similarly, Suppose User #1 loves to watch movies based on horror, and User #2 loves the romance genre. In this case, User #2 won’t be suggested to watch a horror movie as there is no similarity between the romantic genre and the horror genre.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php&#34;&gt;https://statistics.laerd.com/statistical-guides/measures-central-tendency-mean-mode-median.php&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statisticshowto.com/dispersion/&#34;&gt;https://www.statisticshowto.com/dispersion/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@kunal_gohrani/different-types-of-distance-metrics-used-in-machine-learning-e9928c5e26c7&#34;&gt;https://medium.com/@kunal_gohrani/different-types-of-distance-metrics-used-in-machine-learning-e9928c5e26c7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>4_RA</title>
+      <link>https://lucarep.github.io/homework4/4_ra/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework4/4_ra/</guid>
+      <description>WHAT IS A WINDOW? We can see a window like a region used for displaying a particular object.
+WHAT IS A VIEWPORT? Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got normalized. so what we do is mapping a part of the screen to display an object. In other words, world coordinate gets translated into device coordinate to fit in it&amp;rsquo;s relative perspective.</description>
+      <content>&lt;h1 id=&#34;what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/h1&gt;
+&lt;p&gt;We can see a window like a region used for displaying a particular object.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-viewport&#34;&gt;WHAT IS A VIEWPORT?&lt;/h1&gt;
+&lt;p&gt;Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got &lt;strong&gt;normalized&lt;/strong&gt;.
+so what we do is mapping a part of the screen to display an object. In other words, world coordinate gets translated into device coordinate to fit in it&amp;rsquo;s relative perspective.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-window-to-viewport-transformation&#34;&gt;WHAT IS WINDOW TO VIEWPORT TRANSFORMATION?&lt;/h1&gt;
+&lt;p&gt;in essence the process described a moment ago, that is, transforming coordinates of the world into those of the device. In most cases the size of an object mapped in the viewport is &lt;strong&gt;smaller&lt;/strong&gt; than the window, but there are cases where we have &lt;strong&gt;larger&lt;/strong&gt; dimensions than the window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/viewport.png&#34; alt=&#34;Viewport&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;c-program-from-window-to-to-viewport-transformation&#34;&gt;C PROGRAM FROM WINDOW TO TO VIEWPORT TRANSFORMATION&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;graphics.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;conio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; ()
+{
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; W_xmax, W_ymax, W_xmin, W_ymin;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; V_xmax, V_ymax, V_xmin, V_ymin;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt; sx, sy;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x, x1, x2, y, y1, y2;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; gr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DETECT, gm;
+  initgraph (&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;gr, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;gm, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;TURBOC3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;BGI&amp;#34;&lt;/span&gt;);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;****** Window to Viewport ***********&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Enter the coordinates for triangle &lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; x and y = &amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;x, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;y);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; x1 and y1 = &amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;x1, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;y1);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; x2 and y2 = &amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;x2, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;y2);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Please enter Window coordinates &lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; First enter XMax, YMax =&amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_xmax, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_ymax);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; Now, enter XMin, YMin =&amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_xmin, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_ymin);
+  cleardevice ();
+  delay (&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;);      
+  &lt;span style=&#34;color:#75715e&#34;&gt;//Window 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  rectangle (W_xmin, W_ymin, W_xmax, W_ymax);
+  outtextxy (W_xmin, W_ymin &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Window&amp;#34;&lt;/span&gt;);  
+  &lt;span style=&#34;color:#75715e&#34;&gt;//drawing a triangle 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  line (x, y, x1, y1);
+  line (x1, y1, x2, y2);
+  line (x2, y2, x, y);  
+  &lt;span style=&#34;color:#75715e&#34;&gt;// viewport 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;;
+  V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;;
+  V_xmax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;550&lt;/span&gt;;
+  V_ymax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;350&lt;/span&gt;;
+  rectangle (V_xmin, V_ymin, V_xmax, V_ymax);
+  outtextxy (V_xmin, V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Viewport&amp;#34;&lt;/span&gt;);  
+  &lt;span style=&#34;color:#75715e&#34;&gt;// calculatng Sx and Sy 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  sx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) (V_xmax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; V_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (W_xmax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin);
+  sy &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) (V_ymax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; V_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (W_ymax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin);
+  x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((x &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sx);
+  x1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((x1 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sx);
+  x2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((x2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sx);
+  y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((y &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sy);
+  y1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((y1 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sy);
+  y2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((y2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sy);
+  &lt;span style=&#34;color:#75715e&#34;&gt;// drawing triangle 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  line (x, y, x1, y1);
+  line (x1, y1, x2, y2);
+  line (x2, y2, x, y);
+  getch ();
+  closegraph ();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.javatpoint.com/computer-graphics-window-to-viewport-co-ordinate-transformation&#34;&gt;https://www.javatpoint.com/computer-graphics-window-to-viewport-co-ordinate-transformation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://programmerbay.com/program-to-implement-window-to-viewport-transformation/&#34;&gt;https://programmerbay.com/program-to-implement-window-to-viewport-transformation/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>3_RA : LEARN THE ART AND PUT IT ASIDE</title>
       <link>https://lucarep.github.io/homework3/3_ra/</link>

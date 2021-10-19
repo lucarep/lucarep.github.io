@@ -7,7 +7,87 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4_RA</title>
+      <link>https://lucarep.github.io/homework4/4_ra/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework4/4_ra/</guid>
+      <description>WHAT IS A WINDOW? We can see a window like a region used for displaying a particular object.
+WHAT IS A VIEWPORT? Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got normalized. so what we do is mapping a part of the screen to display an object. In other words, world coordinate gets translated into device coordinate to fit in it&amp;rsquo;s relative perspective.</description>
+      <content>&lt;h1 id=&#34;what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/h1&gt;
+&lt;p&gt;We can see a window like a region used for displaying a particular object.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-a-viewport&#34;&gt;WHAT IS A VIEWPORT?&lt;/h1&gt;
+&lt;p&gt;Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got &lt;strong&gt;normalized&lt;/strong&gt;.
+so what we do is mapping a part of the screen to display an object. In other words, world coordinate gets translated into device coordinate to fit in it&amp;rsquo;s relative perspective.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-window-to-viewport-transformation&#34;&gt;WHAT IS WINDOW TO VIEWPORT TRANSFORMATION?&lt;/h1&gt;
+&lt;p&gt;in essence the process described a moment ago, that is, transforming coordinates of the world into those of the device. In most cases the size of an object mapped in the viewport is &lt;strong&gt;smaller&lt;/strong&gt; than the window, but there are cases where we have &lt;strong&gt;larger&lt;/strong&gt; dimensions than the window.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/viewport.png&#34; alt=&#34;Viewport&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;c-program-from-window-to-to-viewport-transformation&#34;&gt;C PROGRAM FROM WINDOW TO TO VIEWPORT TRANSFORMATION&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;graphics.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;conio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt; ()
+{
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; W_xmax, W_ymax, W_xmin, W_ymin;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; V_xmax, V_ymax, V_xmin, V_ymin;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt; sx, sy;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x, x1, x2, y, y1, y2;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; gr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; DETECT, gm;
+  initgraph (&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;gr, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;gm, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;TURBOC3&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;BGI&amp;#34;&lt;/span&gt;);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;****** Window to Viewport ***********&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Enter the coordinates for triangle &lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; x and y = &amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;x, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;y);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; x1 and y1 = &amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;x1, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;y1);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; x2 and y2 = &amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;x2, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;y2);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Please enter Window coordinates &lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; First enter XMax, YMax =&amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_xmax, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_ymax);
+  printf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; Now, enter XMin, YMin =&amp;#34;&lt;/span&gt;);
+  scanf (&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%d %d&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_xmin, &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;W_ymin);
+  cleardevice ();
+  delay (&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;);      
+  &lt;span style=&#34;color:#75715e&#34;&gt;//Window 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  rectangle (W_xmin, W_ymin, W_xmax, W_ymax);
+  outtextxy (W_xmin, W_ymin &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Window&amp;#34;&lt;/span&gt;);  
+  &lt;span style=&#34;color:#75715e&#34;&gt;//drawing a triangle 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  line (x, y, x1, y1);
+  line (x1, y1, x2, y2);
+  line (x2, y2, x, y);  
+  &lt;span style=&#34;color:#75715e&#34;&gt;// viewport 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;;
+  V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt;;
+  V_xmax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;550&lt;/span&gt;;
+  V_ymax &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;350&lt;/span&gt;;
+  rectangle (V_xmin, V_ymin, V_xmax, V_ymax);
+  outtextxy (V_xmin, V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Viewport&amp;#34;&lt;/span&gt;);  
+  &lt;span style=&#34;color:#75715e&#34;&gt;// calculatng Sx and Sy 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  sx &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) (V_xmax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; V_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (W_xmax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin);
+  sy &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) (V_ymax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; V_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;/&lt;/span&gt; (W_ymax &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin);
+  x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((x &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sx);
+  x1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((x1 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sx);
+  x2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_xmin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((x2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_xmin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sx);
+  y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((y &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sy);
+  y1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((y1 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sy);
+  y2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; V_ymin &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;float&lt;/span&gt;) ((y2 &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; W_ymin) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; sy);
+  &lt;span style=&#34;color:#75715e&#34;&gt;// drawing triangle 
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  line (x, y, x1, y1);
+  line (x1, y1, x2, y2);
+  line (x2, y2, x, y);
+  getch ();
+  closegraph ();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.javatpoint.com/computer-graphics-window-to-viewport-co-ordinate-transformation&#34;&gt;https://www.javatpoint.com/computer-graphics-window-to-viewport-co-ordinate-transformation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://programmerbay.com/program-to-implement-window-to-viewport-transformation/&#34;&gt;https://programmerbay.com/program-to-implement-window-to-viewport-transformation/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>3_RA : LEARN THE ART AND PUT IT ASIDE</title>
       <link>https://lucarep.github.io/homework3/3_ra/</link>
