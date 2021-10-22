@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5_R</title>
       <link>https://lucarep.github.io/post/5_r/</link>
-      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/post/5_r/</guid>
       <description>INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location. They are also classed as summary statistics. The mean (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the median and the mode.</description>
@@ -139,6 +139,22 @@ Similarly, Suppose User #1 loves to watch movies based on horror, and User #2 lo
 &lt;li&gt;&lt;a href=&#34;https://www.statisticshowto.com/dispersion/&#34;&gt;https://www.statisticshowto.com/dispersion/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/@kunal_gohrani/different-types-of-distance-metrics-used-in-machine-learning-e9928c5e26c7&#34;&gt;https://medium.com/@kunal_gohrani/different-types-of-distance-metrics-used-in-machine-learning-e9928c5e26c7&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>6_A</title>
+      <link>https://lucarep.github.io/post/6_a/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/6_a/</guid>
+      <description>Intro In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.
+VB.NET Code: Download source code: click here 📥</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
 </content>
     </item>
     

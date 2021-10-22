@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6_A</title>
+      <link>https://lucarep.github.io/homework4/6_a/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework4/6_a/</guid>
+      <description>Intro In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.
+VB.NET Code: Download source code: click here 📥</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.&lt;/p&gt;
+&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>4_RA</title>
       <link>https://lucarep.github.io/homework4/4_ra/</link>
