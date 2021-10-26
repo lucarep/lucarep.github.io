@@ -149,12 +149,18 @@ Similarly, Suppose User #1 loves to watch movies based on horror, and User #2 lo
       
       <guid>https://lucarep.github.io/homework4/6_a/</guid>
       <description>Intro In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.
-VB.NET Code: Download source code: click here 📥</description>
+Live Demo here, you can see my program in action   Download source code: click here 📥</description>
       <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 &lt;p&gt;In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.&lt;/p&gt;
-&lt;h1 id=&#34;vbnet-code&#34;&gt;VB.NET Code:&lt;/h1&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/zmX__Tc2nXs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/15gUGMDWvsEc9yn3AxjUJT8vU44WKyhLJ/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1QkOaFlt7AdJAIMKEgD_RmBFW0_o8jqM3/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
 </content>
     </item>
     
