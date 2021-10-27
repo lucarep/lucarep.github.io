@@ -7,7 +7,204 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Thu, 21 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5_RA</title>
+      <link>https://lucarep.github.io/post/5_ra/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/5_ra/</guid>
+      <description>Table of Contents
+ WHAT IS A RANDOM VARIABLE? WHY THEY ARE IMPORTANT? HOW WE CAN GENERATE RANDOM NUMBERS? PSEUDO RANDOM TRUE RANDOM UNIFORM RANDOM GENERATOR - Credits  WHAT IS A RANDOM VARIABLE? Informally is a variable that is described as a variable whose values depend on outcomes of a random phenomenon. In formal a random variable is understood as a measurable function defined on a probability space that maps from the sample space to the real numbers.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-random-variable&#34;&gt;WHAT IS A RANDOM VARIABLE?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#why-they-are-important&#34;&gt;WHY THEY ARE IMPORTANT?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-we-can-generate-random-numbers&#34;&gt;HOW WE CAN GENERATE RANDOM NUMBERS?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pseudo-random&#34;&gt;PSEUDO RANDOM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#true-random&#34;&gt;TRUE RANDOM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#uniform-random-generator&#34;&gt;UNIFORM RANDOM GENERATOR&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-a-random-variable&#34;&gt;WHAT IS A RANDOM VARIABLE?&lt;/h1&gt;
+&lt;p&gt;Informally is a variable that is described as a variable whose values depend on outcomes of a random phenomenon. In formal a random variable is understood as a measurable function defined on a probability space that maps from the sample space to the real numbers.
+So the random variable is defined as a function, that must be measurable, which performs the mapping of the outcomes of a random process to a numeric value. Also, keep in mind that random variables can be both discrete or continuous.&lt;/p&gt;
+&lt;h1 id=&#34;why-they-are-important&#34;&gt;WHY THEY ARE IMPORTANT?&lt;/h1&gt;
+&lt;p&gt;Up until now we have always discussed problems where you made observations and then collected data, why do we now need random numbers? Well, there is a large class of experimental problems that require a large number of random digits and normal deviates of high quality. These applications are called Monte Carlo methods.&lt;/p&gt;
+&lt;h1 id=&#34;how-we-can-generate-random-numbers&#34;&gt;HOW WE CAN GENERATE RANDOM NUMBERS?&lt;/h1&gt;
+&lt;p&gt;For a person, generating a random number is quite trivial, however for a computer there is no such concept, in this sense there are two categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pseudo Random Number Generator (PRNG)&lt;/li&gt;
+&lt;li&gt;True Random Number Generator (TRNG)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;pseudo-random&#34;&gt;PSEUDO RANDOM&lt;/h1&gt;
+&lt;p&gt;Software-generated random numbers only are pseudorandom. They are not truly random because the computer uses an algorithm based on a distribution, and are not secure because they rely on deterministic, predictable algorithms. Since a seed number can be set to replicate the “random” numbers generated, it is possible to predict the numbers if the seed is known. Pseudorandom number generation in everyday tools such as Python and Excel are based on the Mersenne Twister algorithm.&lt;/p&gt;
+&lt;p&gt;An example use of PRNGs is in key stream generation. Stream ciphers, such as Chacha, encrypt plaintext messages by applying an encryption algorithm with a pseudorandom cipher digit stream (keystream). Keystreams of some block cipher modes, such as AES CTR (counter) mode, act as a stream cipher and can also be regarded as pseudorandom number generation.&lt;/p&gt;
+&lt;h1 id=&#34;true-random&#34;&gt;TRUE RANDOM&lt;/h1&gt;
+&lt;p&gt;For truly random numbers, the computer must use some external physical variable that is unpredictable, such as radioactive decay of isotopes or airwave static, rather than by an algorithm. At the quantum level, subatomic particles have completely random behavior, making them ideal variables of an unpredictable system. Most higher end microcontrollers have TRNG sources, which wolfSSL can use as a direct random source or as a seed for our PRNG. Intel RDRAND, a silicon-based TRNG, is supported by wolfSSL. he problem with them was the bandwidth - the amount of entropy they could generate wasn&amp;rsquo;t very high so they were used for seeds of pseudorandom algorithms.&lt;/p&gt;
+&lt;h1 id=&#34;uniform-random-generator&#34;&gt;UNIFORM RANDOM GENERATOR&lt;/h1&gt;
+&lt;p&gt;The binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes–no question, and each with its own Boolean-valued outcome: success/yes (with probability p) or failure/no(with probability q = 1 − p).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pseudo_binomial&lt;/span&gt;(n&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;,p&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    binom &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(size):
+        t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;perf_counter()
+        seed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;float(str(t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;int(t))[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:]))
+        U &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pseudo_uniform(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n,seed&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;seed)
+        Y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (U &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; p)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;astype(int)
+        binom&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum(Y))
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; binom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Bernoulli distribution, (a special case of the binomial distribution where a single trial is conducted (so n would be 1 for such a binomial distribution)).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pseudo_bernoulli&lt;/span&gt;(p&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;perf_counter()
+    seed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;float(str(t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;int(t))[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:]))
+    B &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pseudo_uniform(seed&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;seed,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;size)
+    B &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (B&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;p)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;astype(int)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; B
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event. The Poisson distribution can also be used for the number of events in other specified intervals such as distance, area or volume.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pseudo_poisson&lt;/span&gt;(alpha,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    poisson &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(size):
+        t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;perf_counter()
+        seed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;float(str(t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;int(t))[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:]))
+        U &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pseudo_uniform(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;alpha,seed&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;seed)
+        X,P,i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; P &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exp(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;alpha):
+            P &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; U[i]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;P
+            x&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            i&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+        poisson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(X)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array(poisson)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wolfssl.com/true-random-vs-pseudorandom-number-generation/&#34;&gt;https://www.wolfssl.com/true-random-vs-pseudorandom-number-generation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://softwareengineering.stackexchange.com/questions/109724/how-do-random-number-generators-work&#34;&gt;https://softwareengineering.stackexchange.com/questions/109724/how-do-random-number-generators-work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/how-to-generate-random-variables-from-scratch-no-library-used-4b71eb3c8dc7&#34;&gt;https://towardsdatascience.com/how-to-generate-random-variables-from-scratch-no-library-used-4b71eb3c8dc7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>7_R : BAYES&#39; THEOREM</title>
+      <link>https://lucarep.github.io/post/7_r/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/7_r/</guid>
+      <description>Table of Contents
+ INTRO - BUT, WHY? A BIT OF MATH AN EXAMPLE: NOW, BACK TO SEARCH ENGINES. BAYESIAN VS FREQUENTIST - LET&amp;rsquo;S SEE WHY - Credits  INTRO Bayes&#39; Theorem, is certainly one of the most important ever discovered, the reason, is that even today we use it in many different areas. Take for example a common search on the internet: &amp;ldquo;movie automatic shoe laces&amp;rdquo; the search engine will show us results also of the movie &amp;ldquo;Back to the Future&amp;rdquo;.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;
+- &lt;a href=&#34;#but-why&#34;&gt;BUT, WHY?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#a-bit-of-math&#34;&gt;A BIT OF MATH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-example&#34;&gt;AN EXAMPLE:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#now-back-to-search-engines&#34;&gt;NOW, BACK TO SEARCH ENGINES.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bayesian-vs-frequentist&#34;&gt;BAYESIAN VS FREQUENTIST&lt;/a&gt;
+- &lt;a href=&#34;#lets-see-why&#34;&gt;LET&amp;rsquo;S SEE WHY&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;Bayes&#39; Theorem, is certainly one of the most important ever discovered, the reason, is that even today we use it in many different areas. Take for example a common search on the internet:
+&amp;ldquo;movie automatic shoe laces&amp;rdquo;
+the search engine will show us results also of the movie &amp;ldquo;Back to the Future&amp;rdquo;.&lt;/p&gt;
+&lt;h5 id=&#34;but-why&#34;&gt;BUT, WHY?&lt;/h5&gt;
+&lt;p&gt;I mean, the search engine doesn&amp;rsquo;t look at the movie, right? Well yes, but actually no, in the sense, it knows because many others have previously watched it and then analyzes the previous queries to understand what others are probably looking for, all this is calculated thanks to Bayes&#39; Theorem&lt;/p&gt;
+&lt;h1 id=&#34;a-bit-of-math&#34;&gt;A BIT OF MATH&lt;/h1&gt;
+&lt;p&gt;Bayes&#39; Theorem is a way of finding a probability when we know certain other probabilities. The formula is:
+$$ P(A|B) = \frac{P(A)P(B|A)}{P(B)}$$&lt;/p&gt;
+&lt;p&gt;Which tells us:
+how often A happens given that B happens, written P(A|B)&lt;/p&gt;
+&lt;p&gt;When we know:
+how often B happens given that A happens, written P(B|A), and how likely A is on its own, written P(A)
+and how likely B is on its own, written P(B)&lt;/p&gt;
+&lt;h1 id=&#34;an-example&#34;&gt;AN EXAMPLE:&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;dangerous fires are rare (1%)&lt;/li&gt;
+&lt;li&gt;but smoke is fairly common (10%) due to barbecues&lt;/li&gt;
+&lt;li&gt;and 90% of dangerous fires make smoke&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can then discover the probability of dangerous Fire when there is Smoke:
+$$ P(Fire|Smoke) = \frac{P(Fire)P(Smoke|Fire)}{P(Smoke)} = \frac{0.01 \cdot 0.9}{0.1} = 0.09$$&lt;/p&gt;
+&lt;p&gt;So it is still worth checking out any smoke to be sure.&lt;/p&gt;
+&lt;h1 id=&#34;now-back-to-search-engines&#34;&gt;NOW, BACK TO SEARCH ENGINES.&lt;/h1&gt;
+&lt;p&gt;Search Engines take this idea and scale it up a lot (plus some other tricks).
+It makes them look like they can read your mind!
+It can also be used for mail filters, music recommendation services and more.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;now you can guess why it is so important, but to be explicit, we can say that it allows us to draw conclusions about the population by knowing the sample.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;bayesian-vs-frequentist&#34;&gt;BAYESIAN VS FREQUENTIST&lt;/h1&gt;
+&lt;p&gt;We begin our study with a simple question:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What is the probability that the coin in my palm is heads?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since the coin lands I already know the answer, but you still don&amp;rsquo;t, the answer you give will tell us if you are more inclined towards Bayesian or Frequentist thinking.&lt;/p&gt;
+&lt;h5 id=&#34;lets-see-why&#34;&gt;LET&amp;rsquo;S SEE WHY&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Frequentist: “There’s no probability about it. I may not know the answer, but that doesn’t change the fact that if the coin is heads up, the probability is 100%, and if the coin is tails up, the probability is 0%.”&lt;/li&gt;
+&lt;li&gt;Bayesian: “For me, the probability is 50%! For you, it’s whatever it is for you.”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can summarize the above, with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Frequentist: The parameter is not a random variable.&lt;/li&gt;
+&lt;li&gt;Bayesian: The parameter is a random variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s look at another example that I think is very clear:&lt;/p&gt;
+&lt;p&gt;Imagine this situation, I&amp;rsquo;m at home and I misplace my phone, to find it I use the app to make it beeping and the phone starts doing it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Frequentist Reasoning: I can hear the phone beeping. I also have a mental model which helps me identify the area from which the sound is coming. Therefore, upon hearing the beep, I infer the area of my home I must search to locate the phone&lt;/li&gt;
+&lt;li&gt;Bayesian Reasoning: I can hear the phone beeping. Now, apart from a mental model which helps me identify the area from which the sound is coming from, I also know the locations where I have misplaced the phone in the past. So, I combine my inferences using the beeps and my prior information about the locations I have misplaced the phone in the past to identify an area I must search to locate the phone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.mathsisfun.com/data/bayes-theorem.html&#34;&gt;https://www.mathsisfun.com/data/bayes-theorem.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/statistics-are-you-bayesian-or-frequentist-4943f953f21b&#34;&gt;https://towardsdatascience.com/statistics-are-you-bayesian-or-frequentist-4943f953f21b&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english&#34;&gt;https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>6_R</title>
+      <link>https://lucarep.github.io/post/6_r/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/6_r/</guid>
+      <description>Table of Contents
+ INTRO REAL WORLD EXAMPLES - BUT, WHY? WHAT ROLE DO PROBABILITY DISTRIBUTIONS PLAY IN STATISTICAL INFERENCE? SOME EXAMPLES: - Credits  INTRO When we collect data, we often also collect errors so, this implies some sort of chance or random variation, in this, probability plays a fundamental role, so it is important to understand how to apply it
+REAL WORLD EXAMPLES As we can imagine from the initial premise, statistics and probability are broadly related.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#real-world-examples&#34;&gt;REAL WORLD EXAMPLES&lt;/a&gt;
+- &lt;a href=&#34;#but-why&#34;&gt;BUT, WHY?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-role-do-probability-distributions-play-in-statistical-inference&#34;&gt;WHAT ROLE DO PROBABILITY DISTRIBUTIONS PLAY IN STATISTICAL INFERENCE?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#some-examples&#34;&gt;SOME EXAMPLES:&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;When we collect data, we often also collect errors so, this implies some sort of chance or random variation, 
+in this, &lt;strong&gt;probability&lt;/strong&gt; plays a fundamental role, so it is important to understand how to apply it&lt;/p&gt;
+&lt;h1 id=&#34;real-world-examples&#34;&gt;REAL WORLD EXAMPLES&lt;/h1&gt;
+&lt;p&gt;As we can imagine from the initial premise, statistics and probability are broadly related. Take for example a scientist who performs a measurement, the result of this measurement has a certain amount of chance associated with it.&lt;/p&gt;
+&lt;h5 id=&#34;but-why&#34;&gt;BUT, WHY?&lt;/h5&gt;
+&lt;p&gt;Well, we consider for example electrical noise in the instrumentation used, small fluctuations in environmental conditions and also human error. The scientist therefore, cannot expect to receive the same result from measurements in every case, even an anthropologist when considering a small group of people compared to a large population, will have some random variations that must be taken into account in the study.&lt;/p&gt;
+&lt;h1 id=&#34;what-role-do-probability-distributions-play-in-statistical-inference&#34;&gt;WHAT ROLE DO PROBABILITY DISTRIBUTIONS PLAY IN STATISTICAL INFERENCE?&lt;/h1&gt;
+&lt;p&gt;Randomization is important for collecting data, the idea that the possible observations are known but it&amp;rsquo;s yet unknown which possibility will prevail. What will happen, depends on probability. The probability is the proportion of the number of times that a certain observation is prevalent in a long sequence of similar observations. The fact that the sequence is long, is important, because the longer the sequence, the more accurate the probability. Then the sample proportion becomes more like the population proportion. Probabilities can also be measured in percentages (such as 70%) instead of proportions (such as 0.7). A specific branch within statistics deals with subjective probabilities, called &lt;strong&gt;Bayesian statistics&lt;/strong&gt;. However, most of statistics is about regular probabilities.
+A probability is written like P(A), where P is the probability and A is an outcome. If two outcomes are possible and they exclude each other, then the chance that B happens is 1- P(A).&lt;/p&gt;
+&lt;h1 id=&#34;some-examples&#34;&gt;SOME EXAMPLES:&lt;/h1&gt;
+&lt;p&gt;magine research about people&amp;rsquo;s favorite colors, whether this is mostly red and blue. Again the assumption is made that the possibilities exclude each other without overlapping. The chance that someone&amp;rsquo;s favorite color is red (A) or blue (B), is P(A of B) = P (A) + P (B).
+Next, imagine research that encompasses multiple questions. The research seeks to investigate how many married people have kids. Then you can multiply the chance that someone is married (A) with the chance that someone has kids (B).The formula for this is: P(A and B) = P(A) * P(B if also A). Because there is a connection between A and B, this is called a conditional probability.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.universalclass.com/articles/math/what-is-probability-in-statistics.htm&#34;&gt;https://www.universalclass.com/articles/math/what-is-probability-in-statistics.htm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.worldsupporter.org/en/chapter/65146-what-role-do-probability-distributions-play-statistical-inference-chapter-4&#34;&gt;https://www.worldsupporter.org/en/chapter/65146-what-role-do-probability-distributions-play-statistical-inference-chapter-4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>5_R</title>
       <link>https://lucarep.github.io/post/5_r/</link>
