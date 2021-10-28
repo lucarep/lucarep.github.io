@@ -14,8 +14,30 @@
       <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework4/5_r/</guid>
-      <description>INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location. They are also classed as summary statistics. The mean (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the median and the mode.</description>
-      <content>&lt;h1 id=&#34;introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/h1&gt;
+      <description>Table of Contents
+ INTRODUCTION TO CENTRAL TENDENCY SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔 ARITHMETIC MEAN - When not to use the mean: MEDIAN MODE INTRODUCTION TO DISPERSION STANDARD DEVIATION VARIANCE INTRODUCTION TO DISTANCE MINKOWSKI DISTANCE MANHATTAN DISTANCE: - When is Manhattan distance metric preferred in ML? EUCLIDEAN DISTANCE: HAMMING DISTANCE COSINE DISTANCE - Where is it used? - Credits  INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#so-why-there-are-so-many-ways-to-measure-central-tendency-&#34;&gt;SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#arithmetic-mean&#34;&gt;ARITHMETIC MEAN&lt;/a&gt;
+- &lt;a href=&#34;#when-not-to-use-the-mean&#34;&gt;When not to use the mean:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#median&#34;&gt;MEDIAN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mode&#34;&gt;MODE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-dispersion&#34;&gt;INTRODUCTION TO DISPERSION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#standard-deviation&#34;&gt;STANDARD DEVIATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#variance&#34;&gt;VARIANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-distance&#34;&gt;INTRODUCTION TO DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#minkowski-distance&#34;&gt;MINKOWSKI DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#manhattan-distance&#34;&gt;MANHATTAN DISTANCE:&lt;/a&gt;
+- &lt;a href=&#34;#when-is-manhattan-distance-metric-preferred-in-ml&#34;&gt;When is Manhattan distance metric preferred in ML?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#euclidean-distance&#34;&gt;EUCLIDEAN DISTANCE:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hamming-distance&#34;&gt;HAMMING DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cosine-distance&#34;&gt;COSINE DISTANCE&lt;/a&gt;
+- &lt;a href=&#34;#where-is-it-used&#34;&gt;Where is it used?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/h1&gt;
 &lt;p&gt;A measure of central tendency is a single value that &lt;strong&gt;attempts to describe a set of data by identifying the central position within that set of data&lt;/strong&gt;. As such, measures of central tendency are sometimes called measures of &lt;strong&gt;central location&lt;/strong&gt;. They are also classed as &lt;strong&gt;summary statistics&lt;/strong&gt;. The &lt;strong&gt;mean&lt;/strong&gt; (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the &lt;strong&gt;median&lt;/strong&gt; and the &lt;strong&gt;mode&lt;/strong&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;so-why-there-are-so-many-ways-to-measure-central-tendency-&#34;&gt;SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔&lt;/h1&gt;
 &lt;p&gt;The mean, median and mode are all &lt;strong&gt;valid&lt;/strong&gt; measures of central tendency, but under different conditions, some measures of central tendency become more &lt;strong&gt;appropriate&lt;/strong&gt; to use than others. In the following sections, we will look at the mean, mode and median, and learn how to calculate them and under what conditions they are most appropriate to be used.&lt;/p&gt;
@@ -148,9 +170,16 @@ Similarly, Suppose User #1 loves to watch movies based on horror, and User #2 lo
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework4/6_a/</guid>
-      <description>Intro In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.
+      <description>Table of Contents
+ Intro Live Demo Download source code:  Intro In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.
 Live Demo here, you can see my program in action   Download source code: click here 📥</description>
-      <content>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 &lt;p&gt;In this assignement I had to expand the previous program that manipulated CSV files, adding a scatter plot, a histogram and a contingency table. Everything was done dynamically by inserting the graphs in viewport.&lt;/p&gt;
 &lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
 &lt;p&gt;here, you can see my program in action
@@ -170,9 +199,18 @@ Live Demo here, you can see my program in action   Download source code: click h
       <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework4/4_ra/</guid>
-      <description>WHAT IS A WINDOW? We can see a window like a region used for displaying a particular object.
-WHAT IS A VIEWPORT? Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got normalized. so what we do is mapping a part of the screen to display an object. In other words, world coordinate gets translated into device coordinate to fit in it&amp;rsquo;s relative perspective.</description>
-      <content>&lt;h1 id=&#34;what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/h1&gt;
+      <description>Table of Contents
+ WHAT IS A WINDOW? WHAT IS A VIEWPORT? WHAT IS WINDOW TO VIEWPORT TRANSFORMATION? C PROGRAM FROM WINDOW TO TO VIEWPORT TRANSFORMATION - Credits  WHAT IS A WINDOW? We can see a window like a region used for displaying a particular object.
+WHAT IS A VIEWPORT? Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got normalized.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-viewport&#34;&gt;WHAT IS A VIEWPORT?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-window-to-viewport-transformation&#34;&gt;WHAT IS WINDOW TO VIEWPORT TRANSFORMATION?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#c-program-from-window-to-to-viewport-transformation&#34;&gt;C PROGRAM FROM WINDOW TO TO VIEWPORT TRANSFORMATION&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/h1&gt;
 &lt;p&gt;We can see a window like a region used for displaying a particular object.&lt;/p&gt;
 &lt;h1 id=&#34;what-is-a-viewport&#34;&gt;WHAT IS A VIEWPORT?&lt;/h1&gt;
 &lt;p&gt;Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got &lt;strong&gt;normalized&lt;/strong&gt;.

@@ -6,8 +6,9 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
- In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand." />
+<meta name="description" content="Table of Contents
+ WHAT IS AN ONLINE ALGORITHM? HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:  KAHAN SUMMATION ALGORITHM:   WHY IS AN ONLINE ALGO BETTER IN THIS CASE? - Credits  WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
+ In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://lucarep.github.io/post/3_r/" />
@@ -35,8 +36,9 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="3_R : ONLINE ALGORITHM">
-<meta property="og:description" content="WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
- In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand." />
+<meta property="og:description" content="Table of Contents
+ WHAT IS AN ONLINE ALGORITHM? HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:  KAHAN SUMMATION ALGORITHM:   WHY IS AN ONLINE ALGO BETTER IN THIS CASE? - Credits  WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
+ In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start." />
 <meta property="og:url" content="https://lucarep.github.io/post/3_r/" />
 <meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
 
@@ -193,7 +195,18 @@
   
 
   <div class="post-content"><div>
-        <h1 id="what-is-an-online-algorithm">WHAT IS AN ONLINE ALGORITHM?<a href="#what-is-an-online-algorithm" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+        <p>Table of Contents</p>
+<ul>
+<li><a href="#what-is-an-online-algorithm">WHAT IS AN ONLINE ALGORITHM?</a></li>
+<li><a href="#how-we-can-obtain-an-online-algo-for-the-arithmetic-mean">HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:</a>
+<ul>
+<li><a href="#kahan-summation-algorithm">KAHAN SUMMATION ALGORITHM:</a></li>
+</ul>
+</li>
+<li><a href="#why-is-an-online-algo-better-in-this-case">WHY IS AN ONLINE ALGO BETTER IN THIS CASE?</a>
+- <a href="#credits">Credits</a></li>
+</ul>
+<h1 id="what-is-an-online-algorithm">WHAT IS AN ONLINE ALGORITHM?<a href="#what-is-an-online-algorithm" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <p>Citing <a href="https://en.wikipedia.org/wiki/Online_algorithm">Wikipedia</a>:</p>
 <blockquote>
 <p>In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand. (For example, selection sort requires that the entire list be given before it can sort it, while insertion sort doesn&rsquo;t.)</p>

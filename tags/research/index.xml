@@ -14,8 +14,30 @@
       <pubDate>Thu, 21 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework4/5_r/</guid>
-      <description>INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data. As such, measures of central tendency are sometimes called measures of central location. They are also classed as summary statistics. The mean (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the median and the mode.</description>
-      <content>&lt;h1 id=&#34;introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/h1&gt;
+      <description>Table of Contents
+ INTRODUCTION TO CENTRAL TENDENCY SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔 ARITHMETIC MEAN - When not to use the mean: MEDIAN MODE INTRODUCTION TO DISPERSION STANDARD DEVIATION VARIANCE INTRODUCTION TO DISTANCE MINKOWSKI DISTANCE MANHATTAN DISTANCE: - When is Manhattan distance metric preferred in ML? EUCLIDEAN DISTANCE: HAMMING DISTANCE COSINE DISTANCE - Where is it used? - Credits  INTRODUCTION TO CENTRAL TENDENCY A measure of central tendency is a single value that attempts to describe a set of data by identifying the central position within that set of data.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#so-why-there-are-so-many-ways-to-measure-central-tendency-&#34;&gt;SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#arithmetic-mean&#34;&gt;ARITHMETIC MEAN&lt;/a&gt;
+- &lt;a href=&#34;#when-not-to-use-the-mean&#34;&gt;When not to use the mean:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#median&#34;&gt;MEDIAN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#mode&#34;&gt;MODE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-dispersion&#34;&gt;INTRODUCTION TO DISPERSION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#standard-deviation&#34;&gt;STANDARD DEVIATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#variance&#34;&gt;VARIANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#introduction-to-distance&#34;&gt;INTRODUCTION TO DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#minkowski-distance&#34;&gt;MINKOWSKI DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#manhattan-distance&#34;&gt;MANHATTAN DISTANCE:&lt;/a&gt;
+- &lt;a href=&#34;#when-is-manhattan-distance-metric-preferred-in-ml&#34;&gt;When is Manhattan distance metric preferred in ML?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#euclidean-distance&#34;&gt;EUCLIDEAN DISTANCE:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hamming-distance&#34;&gt;HAMMING DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cosine-distance&#34;&gt;COSINE DISTANCE&lt;/a&gt;
+- &lt;a href=&#34;#where-is-it-used&#34;&gt;Where is it used?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;introduction-to-central-tendency&#34;&gt;INTRODUCTION TO CENTRAL TENDENCY&lt;/h1&gt;
 &lt;p&gt;A measure of central tendency is a single value that &lt;strong&gt;attempts to describe a set of data by identifying the central position within that set of data&lt;/strong&gt;. As such, measures of central tendency are sometimes called measures of &lt;strong&gt;central location&lt;/strong&gt;. They are also classed as &lt;strong&gt;summary statistics&lt;/strong&gt;. The &lt;strong&gt;mean&lt;/strong&gt; (often called the average) is most likely the measure of central tendency that you are most familiar with, but there are others, such as the &lt;strong&gt;median&lt;/strong&gt; and the &lt;strong&gt;mode&lt;/strong&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;so-why-there-are-so-many-ways-to-measure-central-tendency-&#34;&gt;SO, WHY THERE ARE SO MANY WAYS TO MEASURE CENTRAL TENDENCY? 🤔&lt;/h1&gt;
 &lt;p&gt;The mean, median and mode are all &lt;strong&gt;valid&lt;/strong&gt; measures of central tendency, but under different conditions, some measures of central tendency become more &lt;strong&gt;appropriate&lt;/strong&gt; to use than others. In the following sections, we will look at the mean, mode and median, and learn how to calculate them and under what conditions they are most appropriate to be used.&lt;/p&gt;
@@ -148,9 +170,18 @@ Similarly, Suppose User #1 loves to watch movies based on horror, and User #2 lo
       <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework4/4_ra/</guid>
-      <description>WHAT IS A WINDOW? We can see a window like a region used for displaying a particular object.
-WHAT IS A VIEWPORT? Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got normalized. so what we do is mapping a part of the screen to display an object. In other words, world coordinate gets translated into device coordinate to fit in it&amp;rsquo;s relative perspective.</description>
-      <content>&lt;h1 id=&#34;what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/h1&gt;
+      <description>Table of Contents
+ WHAT IS A WINDOW? WHAT IS A VIEWPORT? WHAT IS WINDOW TO VIEWPORT TRANSFORMATION? C PROGRAM FROM WINDOW TO TO VIEWPORT TRANSFORMATION - Credits  WHAT IS A WINDOW? We can see a window like a region used for displaying a particular object.
+WHAT IS A VIEWPORT? Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got normalized.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-viewport&#34;&gt;WHAT IS A VIEWPORT?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-window-to-viewport-transformation&#34;&gt;WHAT IS WINDOW TO VIEWPORT TRANSFORMATION?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#c-program-from-window-to-to-viewport-transformation&#34;&gt;C PROGRAM FROM WINDOW TO TO VIEWPORT TRANSFORMATION&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-a-window&#34;&gt;WHAT IS A WINDOW?&lt;/h1&gt;
 &lt;p&gt;We can see a window like a region used for displaying a particular object.&lt;/p&gt;
 &lt;h1 id=&#34;what-is-a-viewport&#34;&gt;WHAT IS A VIEWPORT?&lt;/h1&gt;
 &lt;p&gt;Each device has it&amp;rsquo;s own coordinate, so, we can see a viewport as a device coordinate after it got &lt;strong&gt;normalized&lt;/strong&gt;.
@@ -228,9 +259,17 @@ so what we do is mapping a part of the screen to display an object. In other wor
       <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework3/3_ra/</guid>
-      <description>THE BASIC OF GDI+ n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
-Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+.</description>
-      <content>&lt;h1 id=&#34;the-basic-of-gdi&#34;&gt;THE BASIC OF GDI+&lt;/h1&gt;
+      <description>Table of Contents
+ THE BASIC OF GDI+ THE GRAFIC OBJECT SIMPLE LINE DRAWINGS - Credits  THE BASIC OF GDI+ n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.
+Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-basic-of-gdi&#34;&gt;THE BASIC OF GDI+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-grafic-object&#34;&gt;THE GRAFIC OBJECT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#simple-line-drawings&#34;&gt;SIMPLE LINE DRAWINGS&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;the-basic-of-gdi&#34;&gt;THE BASIC OF GDI+&lt;/h1&gt;
 &lt;p&gt;n graphical user interfaces such as Microsoft Windows, drawing on the screen is an important task.&lt;/p&gt;
 &lt;p&gt;Everything displayed on the screen is based on simple drawing operations. Often, environments such as Visual Basic abstract those drawing operations away from the developer. However, the same drawing operations still take place under the hood. In Visual Studio .NET, developers have easy access to that drawing functionality whenever they need it through a technology called GDI+. Using GDI+, developers can easily perform drawing operations such as generating graphs or building custom controls.&lt;/p&gt;
 &lt;p&gt;Whenever you create a Windows Forms (WinForms) application .NET uses(and includes) GDI+ by default. The System.Drawing namespace contains all GDI+ functionality (as well as a few sub-namespaces). GDI+ provides all the basic drawing features, such as drawing lines, curves, circles, ellipses, strings, bitmaps, and more. GDI+ also gives developers the ability to fill areas with colors, patterns, and textures. This article will explain some of the basic drawing mechanisms that GDI+ provides.&lt;/p&gt;
@@ -274,9 +313,23 @@ g.DrawLine(Pens.Blue,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&
       <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework3/4_r/</guid>
-      <description>INTRO in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&amp;rsquo;s get started!
-WHAT ARE MARGINAL DISTRIBUTION? The frequency of an category occurring (Freq(X)), it may be thought of as an unconditional frequency.</description>
-      <content>&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+      <description>Table of Contents
+ INTRO WHAT ARE MARGINAL DISTRIBUTION? WHAT ARE JOINT FREQUENCY? WHAT ARE CONDITIONAL DISTRIBUTION? BAYES THEOREM: WHAT IS STATISTICAL INDEPENDENCE?  Note - Credits    INTRO in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-are-marginal-distribution&#34;&gt;WHAT ARE MARGINAL DISTRIBUTION?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-are-joint-frequency&#34;&gt;WHAT ARE JOINT FREQUENCY?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-are-conditional-distribution&#34;&gt;WHAT ARE CONDITIONAL DISTRIBUTION?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#bayes-theorem&#34;&gt;BAYES THEOREM:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-statistical-independence&#34;&gt;WHAT IS STATISTICAL INDEPENDENCE?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#note&#34;&gt;Note&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
 &lt;p&gt;in this post we will talk about what are marginal, joint and conditional distributions. later we will discuss how to use Bayes&#39; theorem using relative frequencies. Finally, we will explain the concept of statistical independence and why, in case of independence, the relative joint frequencies are equal to the products of the corresponding marginal frequencies. So, let&amp;rsquo;s get started!&lt;/p&gt;
 &lt;h1 id=&#34;what-are-marginal-distribution&#34;&gt;WHAT ARE MARGINAL DISTRIBUTION?&lt;/h1&gt;
 &lt;p&gt;The frequency of an category occurring (Freq(X)), it may be thought of as an &lt;strong&gt;unconditional frequency.&lt;/strong&gt;  It is not conditioned on another category.  Example:  the frequency that a card drawn is red (Freq(red) = 0.5).  Another example could be:  the frequency that a card drawn is a 4  (Freq(four)=1/13).&lt;/p&gt;
@@ -319,9 +372,25 @@ $$ Pr(A \cap B) = 0 = Pr(A)Pr(B)$$&lt;/p&gt;
       <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework3/2_ra/</guid>
-      <description>WHAT IS DATA VISUALIZATION? The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.
-Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.</description>
-      <content>&lt;h1 id=&#34;what-is-data-visualization&#34;&gt;WHAT IS DATA VISUALIZATION?&lt;/h1&gt;
+      <description>Table of Contents
+ WHAT IS DATA VISUALIZATION? IS IT IMPORTANT TO CHOOSE A SPECIFIC TYPE OF CHART TO VISUALIZE DATA?  BUT WHY? INFORM COMPARE CHANGE ORGANIZE RELATIONSHIPS - Credits    WHAT IS DATA VISUALIZATION? The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.
+Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-data-visualization&#34;&gt;WHAT IS DATA VISUALIZATION?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#is-it-important-to-choose-a-specific-type-of-chart-to-visualize-data&#34;&gt;IS IT IMPORTANT TO CHOOSE A SPECIFIC TYPE OF CHART TO VISUALIZE DATA?&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#but-why&#34;&gt;BUT WHY?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#inform&#34;&gt;INFORM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#compare&#34;&gt;COMPARE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#change&#34;&gt;CHANGE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#organize&#34;&gt;ORGANIZE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#relationships&#34;&gt;RELATIONSHIPS&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-data-visualization&#34;&gt;WHAT IS DATA VISUALIZATION?&lt;/h1&gt;
 &lt;p&gt;The human mind is very receptive to visual information. That’s why data visualization is a powerful tool for communication.&lt;/p&gt;
 &lt;p&gt;Data visualization is the visual presentation of data or information. The goal of data visualization is to communicate data or information clearly and effectively to readers. Typically, data is visualized in the form of a chart, infographic, diagram or map. Charts use visual symbols like line, bars, dots, slices, and icons to represent data points.&lt;/p&gt;
 &lt;h1 id=&#34;is-it-important-to-choose-a-specific-type-of-chart-to-visualize-data&#34;&gt;IS IT IMPORTANT TO CHOOSE A SPECIFIC TYPE OF CHART TO VISUALIZE DATA?&lt;/h1&gt;
@@ -385,9 +454,16 @@ Data visualization is the visual presentation of data or information. The goal o
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework2/1_ra/</guid>
-      <description>Rounding Errors Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:
+      <description>Table of Contents
+ Rounding Errors Rounding Modes - Credits  Rounding Errors Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:
   Too many significant digits – The great advantage of floating point is that leading and trailing zeroes (within the range provided by the exponent) don’t need to be stored.</description>
-      <content>&lt;h1 id=&#34;rounding-errors&#34;&gt;Rounding Errors&lt;/h1&gt;
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#rounding-errors&#34;&gt;Rounding Errors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rounding-modes&#34;&gt;Rounding Modes&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;rounding-errors&#34;&gt;Rounding Errors&lt;/h1&gt;
 &lt;p&gt;Because floating-point numbers have a limited number of digits, they cannot represent all real numbers accurately: when there are more digits than the format allows, the leftover ones are omitted – the number is rounded. There are three reasons why this can be necessary:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -470,9 +546,21 @@ Data visualization is the visual presentation of data or information. The goal o
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework2/3_r/</guid>
-      <description>WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
- In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand.</description>
-      <content>&lt;h1 id=&#34;what-is-an-online-algorithm&#34;&gt;WHAT IS AN ONLINE ALGORITHM?&lt;/h1&gt;
+      <description>Table of Contents
+ WHAT IS AN ONLINE ALGORITHM? HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:  KAHAN SUMMATION ALGORITHM:   WHY IS AN ONLINE ALGO BETTER IN THIS CASE? - Credits  WHAT IS AN ONLINE ALGORITHM? Citing Wikipedia:
+ In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-an-online-algorithm&#34;&gt;WHAT IS AN ONLINE ALGORITHM?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-we-can-obtain-an-online-algo-for-the-arithmetic-mean&#34;&gt;HOW WE CAN OBTAIN AN ONLINE ALGO FOR THE ARITHMETIC MEAN:&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#kahan-summation-algorithm&#34;&gt;KAHAN SUMMATION ALGORITHM:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#why-is-an-online-algo-better-in-this-case&#34;&gt;WHY IS AN ONLINE ALGO BETTER IN THIS CASE?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-an-online-algorithm&#34;&gt;WHAT IS AN ONLINE ALGORITHM?&lt;/h1&gt;
 &lt;p&gt;Citing &lt;a href=&#34;https://en.wikipedia.org/wiki/Online_algorithm&#34;&gt;Wikipedia&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start. In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output an answer which solves the problem at hand. (For example, selection sort requires that the entire list be given before it can sort it, while insertion sort doesn&amp;rsquo;t.)&lt;/p&gt;
@@ -515,9 +603,21 @@ We live in an increasingly connected world, where more and more applications are
       <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework2/2_r/</guid>
-      <description>What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
- A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.</description>
-      <content>&lt;h1 id=&#34;what-is-a-database&#34;&gt;What is a Database?&lt;/h1&gt;
+      <description>Table of Contents
+ What is a Database? The Data Warehouse : What is a Data Mart? OLAP and OLTP : two useful tools Definition of OLAP: Definition of OLTP: OLAP vs OLTP: - Credits  What is a Database? Our discussion of data starts here, the database, but what is actually a database? Citing Oracle:
+ A database is an organized collection of structured information, or data, typically stored electronically in a computer system.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-database&#34;&gt;What is a Database?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-data-warehouse-&#34;&gt;The Data Warehouse :&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-data-mart&#34;&gt;What is a Data Mart?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#olap-and-oltp--two-useful-tools&#34;&gt;OLAP and OLTP : two useful tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#definition-of-olap&#34;&gt;Definition of OLAP:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#definition-of-oltp&#34;&gt;Definition of OLTP:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#olap-vs-oltp&#34;&gt;OLAP vs OLTP:&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-a-database&#34;&gt;What is a Database?&lt;/h1&gt;
 &lt;p&gt;Our discussion of data starts here, the database, but what is actually a database?
 Citing &lt;a href=&#34;https://www.oracle.com/database/what-is-database/&#34;&gt;Oracle&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -591,9 +691,17 @@ OLTP&amp;rsquo;s response times are much faster than OLAP as it deals with short
       <pubDate>Mon, 27 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework1/1_r/</guid>
-      <description>What is statistics? 📊  &amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;
+      <description>Table of Contents
+ What is statistics? 📊 Is statistics a science, a branch of mathematics or both? 🤔 - Also, what defines a scientific field? - Credits  What is statistics? 📊  &amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;
  There are tons of data out there and all those numbers alone don&amp;rsquo;t make much sense, this is where the statistics comes in, in statistics we carry out analysis, interpretation, organization and presentation of this data, so informed decision can be made.</description>
-      <content>&lt;h1 id=&#34;what-is-statistics-&#34;&gt;What is statistics? 📊&lt;/h1&gt;
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-statistics-&#34;&gt;What is statistics? 📊&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#is-statistics-a-science-a-branch-of-mathematics-or-both-&#34;&gt;Is statistics a science, a branch of mathematics or both? 🤔&lt;/a&gt;
+- &lt;a href=&#34;#also-what-defines-a-scientific-field&#34;&gt;Also, what defines a scientific field?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-statistics-&#34;&gt;What is statistics? 📊&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;If a 30 year old man has his head in an oven and his feet in ice, a statistician would say that on average he feels fine.&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
