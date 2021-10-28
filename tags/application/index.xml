@@ -7,7 +7,112 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5_RA</title>
+      <link>https://lucarep.github.io/homework5/5_ra/</link>
+      <pubDate>Thu, 28 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework5/5_ra/</guid>
+      <description>Table of Contents
+ WHAT IS A RANDOM VARIABLE? WHY THEY ARE IMPORTANT? HOW WE CAN GENERATE RANDOM NUMBERS? PSEUDO RANDOM TRUE RANDOM UNIFORM RANDOM GENERATOR - Credits  WHAT IS A RANDOM VARIABLE? Informally is a variable that is described as a variable whose values depend on outcomes of a random phenomenon. In formal a random variable is understood as a measurable function defined on a probability space that maps from the sample space to the real numbers.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-a-random-variable&#34;&gt;WHAT IS A RANDOM VARIABLE?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#why-they-are-important&#34;&gt;WHY THEY ARE IMPORTANT?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-we-can-generate-random-numbers&#34;&gt;HOW WE CAN GENERATE RANDOM NUMBERS?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pseudo-random&#34;&gt;PSEUDO RANDOM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#true-random&#34;&gt;TRUE RANDOM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#uniform-random-generator&#34;&gt;UNIFORM RANDOM GENERATOR&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-a-random-variable&#34;&gt;WHAT IS A RANDOM VARIABLE?&lt;/h1&gt;
+&lt;p&gt;Informally is a variable that is described as a variable whose values depend on outcomes of a random phenomenon. In formal a random variable is understood as a measurable function defined on a probability space that maps from the sample space to the real numbers.
+So the random variable is defined as a function, that must be measurable, which performs the mapping of the outcomes of a random process to a numeric value. Also, keep in mind that random variables can be both discrete or continuous.&lt;/p&gt;
+&lt;h1 id=&#34;why-they-are-important&#34;&gt;WHY THEY ARE IMPORTANT?&lt;/h1&gt;
+&lt;p&gt;Up until now we have always discussed problems where you made observations and then collected data, why do we now need random numbers? Well, there is a large class of experimental problems that require a large number of random digits and normal deviates of high quality. These applications are called Monte Carlo methods.&lt;/p&gt;
+&lt;h1 id=&#34;how-we-can-generate-random-numbers&#34;&gt;HOW WE CAN GENERATE RANDOM NUMBERS?&lt;/h1&gt;
+&lt;p&gt;For a person, generating a random number is quite trivial, however for a computer there is no such concept, in this sense there are two categories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pseudo Random Number Generator (PRNG)&lt;/li&gt;
+&lt;li&gt;True Random Number Generator (TRNG)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;pseudo-random&#34;&gt;PSEUDO RANDOM&lt;/h1&gt;
+&lt;p&gt;Software-generated random numbers only are pseudorandom. They are not truly random because the computer uses an algorithm based on a distribution, and are not secure because they rely on deterministic, predictable algorithms. Since a seed number can be set to replicate the “random” numbers generated, it is possible to predict the numbers if the seed is known. Pseudorandom number generation in everyday tools such as Python and Excel are based on the Mersenne Twister algorithm.&lt;/p&gt;
+&lt;p&gt;An example use of PRNGs is in key stream generation. Stream ciphers, such as Chacha, encrypt plaintext messages by applying an encryption algorithm with a pseudorandom cipher digit stream (keystream). Keystreams of some block cipher modes, such as AES CTR (counter) mode, act as a stream cipher and can also be regarded as pseudorandom number generation.&lt;/p&gt;
+&lt;h1 id=&#34;true-random&#34;&gt;TRUE RANDOM&lt;/h1&gt;
+&lt;p&gt;For truly random numbers, the computer must use some external physical variable that is unpredictable, such as radioactive decay of isotopes or airwave static, rather than by an algorithm. At the quantum level, subatomic particles have completely random behavior, making them ideal variables of an unpredictable system. Most higher end microcontrollers have TRNG sources, which wolfSSL can use as a direct random source or as a seed for our PRNG. Intel RDRAND, a silicon-based TRNG, is supported by wolfSSL. he problem with them was the bandwidth - the amount of entropy they could generate wasn&amp;rsquo;t very high so they were used for seeds of pseudorandom algorithms.&lt;/p&gt;
+&lt;h1 id=&#34;uniform-random-generator&#34;&gt;UNIFORM RANDOM GENERATOR&lt;/h1&gt;
+&lt;p&gt;The binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes–no question, and each with its own Boolean-valued outcome: success/yes (with probability p) or failure/no(with probability q = 1 − p).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pseudo_binomial&lt;/span&gt;(n&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;,p&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    binom &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(size):
+        t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;perf_counter()
+        seed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;float(str(t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;int(t))[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:]))
+        U &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pseudo_uniform(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;n,seed&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;seed)
+        Y &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (U &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; p)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;astype(int)
+        binom&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;sum(Y))
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; binom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Bernoulli distribution, (a special case of the binomial distribution where a single trial is conducted (so n would be 1 for such a binomial distribution)).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pseudo_bernoulli&lt;/span&gt;(p&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;perf_counter()
+    seed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;float(str(t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;int(t))[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:]))
+    B &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pseudo_uniform(seed&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;seed,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;size)
+    B &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (B&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt;p)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;astype(int)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; B
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event. The Poisson distribution can also be used for the number of events in other specified intervals such as distance, area or volume.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pseudo_poisson&lt;/span&gt;(alpha,size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+    poisson &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; _ &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(size):
+        t &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; time&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;perf_counter()
+        seed &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;float(str(t&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;int(t))[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;:]))
+        U &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pseudo_uniform(size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;alpha,seed&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;seed)
+        X,P,i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; P &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;exp(&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;alpha):
+            P &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; U[i]&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;P
+            x&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+            i&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+        poisson&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(X)
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;array(poisson)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wolfssl.com/true-random-vs-pseudorandom-number-generation/&#34;&gt;https://www.wolfssl.com/true-random-vs-pseudorandom-number-generation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://softwareengineering.stackexchange.com/questions/109724/how-do-random-number-generators-work&#34;&gt;https://softwareengineering.stackexchange.com/questions/109724/how-do-random-number-generators-work&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/how-to-generate-random-variables-from-scratch-no-library-used-4b71eb3c8dc7&#34;&gt;https://towardsdatascience.com/how-to-generate-random-variables-from-scratch-no-library-used-4b71eb3c8dc7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>7_A</title>
+      <link>https://lucarep.github.io/homework5/7_a/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework5/7_a/</guid>
+      <description>Table of Contents
+ Intro Live Demo Download source code:  Intro this program expands the functionalities of homework 6_A by adding the possibility to visualize the regression line.
+Live Demo here, you can see my program in action   Download source code: click here 📥</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;this program expands the functionalities of homework 6_A by adding the possibility to visualize the regression line.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/x3IWChEwVpQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1NcbaKQIm3w_o_RNUjtz0w7YdvjfROfwv/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>6_A</title>
       <link>https://lucarep.github.io/homework4/6_a/</link>

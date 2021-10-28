@@ -85,6 +85,35 @@ So the random variable is defined as a function, that must be measurable, which 
     </item>
     
     <item>
+      <title>7_A</title>
+      <link>https://lucarep.github.io/post/7_a/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/7_a/</guid>
+      <description>Table of Contents
+ Intro Live Demo Download source code:  Intro this program expands the functionalities of homework 6_A by adding the possibility to visualize the regression line.
+Live Demo here, you can see my program in action   Download source code: click here 📥</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;this program expands the functionalities of homework 6_A by adding the possibility to visualize the regression line.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/x3IWChEwVpQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1NcbaKQIm3w_o_RNUjtz0w7YdvjfROfwv/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
       <title>7_R : BAYES&#39; THEOREM</title>
       <link>https://lucarep.github.io/post/7_r/</link>
       <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
