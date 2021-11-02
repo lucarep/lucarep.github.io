@@ -7,7 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8_A</title>
+      <link>https://lucarep.github.io/homework6/8_a/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework6/8_a/</guid>
+      <description>Intro Live Demo Download source code:  Intro in this program I have developed a simulator of the law of large numbers, using as random variables the sum of random variables obtained with the distribution of Bernoulli. The program offers among other things, a viewport with graphs that can be resized and moved at will. It is also possible to observe that as N and M increase, the lines converge to p, so have fun experimenting.</description>
+      <content>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this program I have developed a simulator of the law of large numbers, using as random variables the sum of random variables obtained with the distribution of Bernoulli. The program offers among other things, a viewport with graphs that can be resized and moved at will. It is also possible to observe that as N and M increase, the lines converge to p, so have fun experimenting.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/j5bLG8Ym7kc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1z_Sd_-lV9_AFLbF5lHuF9WvKm98JkM60/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>5_RA</title>
       <link>https://lucarep.github.io/homework5/5_ra/</link>

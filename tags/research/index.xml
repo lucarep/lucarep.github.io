@@ -7,7 +7,63 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Thu, 28 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8_R : TO INFINITY AND BEYOND</title>
+      <link>https://lucarep.github.io/homework6/8_r/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework6/8_r/</guid>
+      <description>WHAT IS THE LAW OF LARGE NUMBERS(LLN)? WEAK LAW OF LARGE NUMBERS: STRONG LAW OF LARGE NUMBERS: WHAT IS THE CENTRAL LIMIT THEOREM? - Credits  WHAT IS THE LAW OF LARGE NUMBERS(LLN)? In probability theory, the law of large numbers (LLN) is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.</description>
+      <content>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-the-law-of-large-numberslln&#34;&gt;WHAT IS THE LAW OF LARGE NUMBERS(LLN)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#weak-law-of-large-numbers&#34;&gt;WEAK LAW OF LARGE NUMBERS:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#strong-law-of-large-numbers&#34;&gt;STRONG LAW OF LARGE NUMBERS:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-the-central-limit-theorem&#34;&gt;WHAT IS THE CENTRAL LIMIT THEOREM?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-the-law-of-large-numberslln&#34;&gt;WHAT IS THE LAW OF LARGE NUMBERS(LLN)?&lt;/h1&gt;
+&lt;p&gt;In probability theory, the law of large numbers (LLN) is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.&lt;/p&gt;
+&lt;p&gt;The LLN is important because it guarantees stable long-term results for the averages of some random events. For example, while a casino may lose money in a single spin of the roulette wheel, its earnings will tend towards a predictable percentage over a large number of spins. Any winning streak by a player will eventually be overcome by the parameters of the game. It is important to remember that the law only applies (as the name indicates) when a large number of observations is considered. There is no principle that a small number of observations will coincide with the expected value or that a streak of one value will immediately be “balanced” by the others (see the gambler’s fallacy).&lt;/p&gt;
+&lt;p&gt;What if I told you that there are two different laws of large numbers?&lt;/p&gt;
+&lt;h1 id=&#34;weak-law-of-large-numbers&#34;&gt;WEAK LAW OF LARGE NUMBERS:&lt;/h1&gt;
+&lt;p&gt;The weak law of large numbers states that the sample average converges in probability towards the expected value:&lt;/p&gt;
+&lt;p&gt;$$ \overline{X_{n}} \rightarrow \mu $$
+When:
+$$ n \rightarrow \infty $$&lt;/p&gt;
+&lt;p&gt;That is, for any positive number ε:&lt;/p&gt;
+&lt;p&gt;$$ lim_{n \rightarrow \infty} Pr(|\overline{X_{n}} - \mu| &amp;gt; \epsilon) = 0$$&lt;/p&gt;
+&lt;p&gt;Interpreting this result, the weak law states that for any nonzero margin specified, no matter how small, with a sufficiently large sample there will be a very high probability that the average of the observations will be close to the expected value; that is, within the margin.&lt;/p&gt;
+&lt;h1 id=&#34;strong-law-of-large-numbers&#34;&gt;STRONG LAW OF LARGE NUMBERS:&lt;/h1&gt;
+&lt;p&gt;The strong law of large numbers states that the sample average converges almost surely to the expected value:&lt;/p&gt;
+&lt;p&gt;$$ \overline{X_{n}} \rightarrow \mu $$
+When:
+$$ n \rightarrow \infty $$&lt;/p&gt;
+&lt;p&gt;That is:&lt;/p&gt;
+&lt;p&gt;$$ Pr(lim_{n \rightarrow \infty} \overline{X_{n}} = \mu) = 1$$&lt;/p&gt;
+&lt;p&gt;What this means is that the probability that, as the number of trials n goes to infinity, the average of the observations converges to the expected value, is equal to one.&lt;/p&gt;
+&lt;p&gt;Almost sure convergence is also called strong convergence of random variables. This version is called the strong law because random variables which converge strongly (almost surely) are guaranteed to converge weakly (in probability). However the weak law is known to hold in certain conditions where the strong law does not hold and then the convergence is only weak (in probability).&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-central-limit-theorem&#34;&gt;WHAT IS THE CENTRAL LIMIT THEOREM?&lt;/h1&gt;
+&lt;p&gt;In probability theory, the central limit theorem (CLT) establishes that, in many situations, when independent random variables are added, their properly normalised sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed. The theorem is a key concept in probability theory because it implies that probabilistic and statistical methods that work for normal distributions can be applicable to many problems involving other types of distributions.&lt;/p&gt;
+&lt;p&gt;If: $$ X_{1},X_{2},&amp;hellip;X_{n}$$ are random samples each of size n taken from a population with overall mean μ and
+finite variance and if X is the sample mean, the limiting form of the distribution of:&lt;/p&gt;
+&lt;p&gt;$$ Z = (\frac{\overline{X_{n}} - \mu}{\frac{\sigma}{\sqrt{n}}})$$&lt;/p&gt;
+&lt;p&gt;as:
+$$ n \to \infty $$
+is the standard normal distribution.&lt;/p&gt;
+&lt;p&gt;For example, suppose that a sample is obtained containing many observations, each observation being randomly generated in a way that does not depend on the values of the other observations, and that the arithmetic mean of the observed values is computed. If this procedure is performed many times, the central limit theorem says that the probability distribution of the average will closely approximate a normal distribution. A simple example of this is that if one flips a coin many times, the probability of getting a given number of heads will approach a normal distribution, with the mean equal to half the total number of flips. At the limit of an infinite number of flips, it will equal a normal distribution.&lt;/p&gt;
+&lt;p&gt;The central limit theorem has several variants. In its common form, the random variables must be identically distributed. In variants, convergence of the mean to the normal distribution also occurs for non-identical distributions or for non-independent observations, if they comply with certain conditions.&lt;/p&gt;
+&lt;p&gt;Whatever the form of the population distribution, the sampling distribution tends to a Gaussian, and its dispersion is given by the Central Limit Theorem.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Law_of_large_numbers&#34;&gt;https://en.wikipedia.org/wiki/Law_of_large_numbers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Expected_value&#34;&gt;https://en.wikipedia.org/wiki/Expected_value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Central_limit_theorem&#34;&gt;https://en.wikipedia.org/wiki/Central_limit_theorem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>5_RA</title>
       <link>https://lucarep.github.io/homework5/5_ra/</link>
