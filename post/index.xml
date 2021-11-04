@@ -7,7 +7,215 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6_RA</title>
+      <link>https://lucarep.github.io/post/6_ra/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/6_ra/</guid>
+      <description>Table of Contents
+ THE RUNNING MEDIAN JAVA ALGORITHM  THE RUNNING MEDIAN As we have already seen in the previous dedicated article,the median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than the value.
+ If we keep each number in a sorted sequence then cost of single entry is O(n) and finding median is O(n).</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-running-median&#34;&gt;THE RUNNING MEDIAN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#java-algorithm&#34;&gt;JAVA ALGORITHM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;the-running-median&#34;&gt;THE RUNNING MEDIAN&lt;/h1&gt;
+&lt;p&gt;As we have already seen in the previous dedicated article,the median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than the value.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If we keep each number in a sorted sequence then cost of single entry is O(n) and finding median is O(n).
+A slight modification can be done by keeping the middle pointer and adjusting it based on the insertion on its left side and right side. In that case finding median after insertion is O(1). But the overall cost for finding median still remains O(n) as insertion in sorted sequence is necessary after each number is entered.&lt;/li&gt;
+&lt;li&gt;We can keep two heaps which divides the entered number in two almost equal halves. Half of the number would be greater than the median and the rest would be lesser. The upper half will be maintained in a min heap and the lower half will be maintained in a max heap. In this arrangement we can find out in O(1) time whether a new number would go to the upper half or lower half. All we need to do is to compare the new number with the head of two heaps. After deciding we can insert in a heap in O(log n) time. After this insertion if the heaps are unbalanced, we can just move from one heap to another. which is again of O(log n) complexity. And now we can find the median in O(1) time. If two heaps contain same number of elements then median is the average of the head of two heaps. If one is greater, then median is the head of the larger heap.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;java-algorithm&#34;&gt;JAVA ALGORITHM&lt;/h1&gt;
+&lt;p&gt;Here, I found an algorithm in Java that can calculate the Running Median:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Comparator&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Random&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+ 
+ 
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;RunningMedian&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+    PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;RunningMedian&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;(&lt;/span&gt;
+          20&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Comparator&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;()&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+ 
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;@Override&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compare&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Integer o1&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; Integer o2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+ 
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;o1&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;compareTo&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;o2&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+ 
+        &lt;span style=&#34;color:#f92672&#34;&gt;});&lt;/span&gt;
+        upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;();&lt;/span&gt;
+        upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MAX_VALUE&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MIN_VALUE&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getMedian&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; num&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//adding the number to proper heap
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())&lt;/span&gt;
+                upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//balancing the heaps
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()-&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()==&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+            lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;poll&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;());&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()-&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()==&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+            upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;poll&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;());&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//returning the median
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()==&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()+&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())/&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()&amp;gt;&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        Random random&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+        RunningMedian runningMedian&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; RunningMedian&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+        System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;num\tmedian&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;50&lt;span style=&#34;color:#f92672&#34;&gt;;++&lt;/span&gt;i&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; num&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nextInt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;100&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\t&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;
+              runningMedian&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getMedian&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;));&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    </item>
+    
+    <item>
+      <title>8_A</title>
+      <link>https://lucarep.github.io/post/8_a/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/8_a/</guid>
+      <description>Table of Contents
+ Intro Live Demo Download source code:  Intro in this program I have developed a simulator of the law of large numbers, using as random variables the sum of random variables obtained with the distribution of Bernoulli. The program offers among other things, a viewport with graphs that can be resized and moved at will. It is also possible to observe that as N and M increase, the lines converge to p, so have fun experimenting.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;in this program I have developed a simulator of the law of large numbers, using as random variables the sum of random variables obtained with the distribution of Bernoulli. The program offers among other things, a viewport with graphs that can be resized and moved at will. It is also possible to observe that as N and M increase, the lines converge to p, so have fun experimenting.&lt;/p&gt;
+&lt;h1 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h1&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/j5bLG8Ym7kc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1z_Sd_-lV9_AFLbF5lHuF9WvKm98JkM60/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>8_R : TO INFINITY AND BEYOND</title>
+      <link>https://lucarep.github.io/post/8_r/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/8_r/</guid>
+      <description>Table of Contents
+ WHAT IS THE LAW OF LARGE NUMBERS(LLN)? WEAK LAW OF LARGE NUMBERS: STRONG LAW OF LARGE NUMBERS: WHAT IS THE CENTRAL LIMIT THEOREM? CONVERGENCE OF THE BINOMIAL TO THE NORMAL - Credits  WHAT IS THE LAW OF LARGE NUMBERS(LLN)? In probability theory, the law of large numbers (LLN) is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-the-law-of-large-numberslln&#34;&gt;WHAT IS THE LAW OF LARGE NUMBERS(LLN)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#weak-law-of-large-numbers&#34;&gt;WEAK LAW OF LARGE NUMBERS:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#strong-law-of-large-numbers&#34;&gt;STRONG LAW OF LARGE NUMBERS:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-the-central-limit-theorem&#34;&gt;WHAT IS THE CENTRAL LIMIT THEOREM?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#convergence-of-the-binomial-to-the-normal&#34;&gt;CONVERGENCE OF THE BINOMIAL TO THE NORMAL&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;what-is-the-law-of-large-numberslln&#34;&gt;WHAT IS THE LAW OF LARGE NUMBERS(LLN)?&lt;/h1&gt;
+&lt;p&gt;In probability theory, the law of large numbers (LLN) is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.&lt;/p&gt;
+&lt;p&gt;The LLN is important because it guarantees stable long-term results for the averages of some random events. For example, while a casino may lose money in a single spin of the roulette wheel, its earnings will tend towards a predictable percentage over a large number of spins. Any winning streak by a player will eventually be overcome by the parameters of the game. It is important to remember that the law only applies (as the name indicates) when a large number of observations is considered. There is no principle that a small number of observations will coincide with the expected value or that a streak of one value will immediately be “balanced” by the others (see the gambler’s fallacy).&lt;/p&gt;
+&lt;p&gt;What if I told you that there are two different laws of large numbers?&lt;/p&gt;
+&lt;h1 id=&#34;weak-law-of-large-numbers&#34;&gt;WEAK LAW OF LARGE NUMBERS:&lt;/h1&gt;
+&lt;p&gt;The weak law of large numbers states that the sample average converges in probability towards the expected value:&lt;/p&gt;
+&lt;p&gt;$$ \overline{X_{n}} \rightarrow \mu $$
+When:
+$$ n \rightarrow \infty $$&lt;/p&gt;
+&lt;p&gt;That is, for any positive number ε:&lt;/p&gt;
+&lt;p&gt;$$ lim_{n \rightarrow \infty} Pr(|\overline{X_{n}} - \mu| &amp;gt; \epsilon) = 0$$&lt;/p&gt;
+&lt;p&gt;Interpreting this result, the weak law states that for any nonzero margin specified, no matter how small, with a sufficiently large sample there will be a very high probability that the average of the observations will be close to the expected value; that is, within the margin.&lt;/p&gt;
+&lt;h1 id=&#34;strong-law-of-large-numbers&#34;&gt;STRONG LAW OF LARGE NUMBERS:&lt;/h1&gt;
+&lt;p&gt;The strong law of large numbers states that the sample average converges almost surely to the expected value:&lt;/p&gt;
+&lt;p&gt;$$ \overline{X_{n}} \rightarrow \mu $$
+When:
+$$ n \rightarrow \infty $$&lt;/p&gt;
+&lt;p&gt;That is:&lt;/p&gt;
+&lt;p&gt;$$ Pr(lim_{n \rightarrow \infty} \overline{X_{n}} = \mu) = 1$$&lt;/p&gt;
+&lt;p&gt;What this means is that the probability that, as the number of trials n goes to infinity, the average of the observations converges to the expected value, is equal to one.&lt;/p&gt;
+&lt;p&gt;Almost sure convergence is also called strong convergence of random variables. This version is called the strong law because random variables which converge strongly (almost surely) are guaranteed to converge weakly (in probability). However the weak law is known to hold in certain conditions where the strong law does not hold and then the convergence is only weak (in probability).&lt;/p&gt;
+&lt;h1 id=&#34;what-is-the-central-limit-theorem&#34;&gt;WHAT IS THE CENTRAL LIMIT THEOREM?&lt;/h1&gt;
+&lt;p&gt;In probability theory, the central limit theorem (CLT) establishes that, in many situations, when independent random variables are added, their properly normalised sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed. The theorem is a key concept in probability theory because it implies that probabilistic and statistical methods that work for normal distributions can be applicable to many problems involving other types of distributions.&lt;/p&gt;
+&lt;p&gt;If: $$ X_{1},X_{2},&amp;hellip;X_{n}$$ are random samples each of size n taken from a population with overall mean μ and
+finite variance and if X is the sample mean, the limiting form of the distribution of:&lt;/p&gt;
+&lt;p&gt;$$ Z = (\frac{\overline{X_{n}} - \mu}{\frac{\sigma}{\sqrt{n}}})$$&lt;/p&gt;
+&lt;p&gt;as:
+$$ n \to \infty $$
+is the standard normal distribution.&lt;/p&gt;
+&lt;p&gt;For example, suppose that a sample is obtained containing many observations, each observation being randomly generated in a way that does not depend on the values of the other observations, and that the arithmetic mean of the observed values is computed. If this procedure is performed many times, the central limit theorem says that the probability distribution of the average will closely approximate a normal distribution. A simple example of this is that if one flips a coin many times, the probability of getting a given number of heads will approach a normal distribution, with the mean equal to half the total number of flips. At the limit of an infinite number of flips, it will equal a normal distribution.&lt;/p&gt;
+&lt;p&gt;The central limit theorem has several variants. In its common form, the random variables must be identically distributed. In variants, convergence of the mean to the normal distribution also occurs for non-identical distributions or for non-independent observations, if they comply with certain conditions.&lt;/p&gt;
+&lt;p&gt;Whatever the form of the population distribution, the sampling distribution tends to a Gaussian, and its dispersion is given by the Central Limit Theorem.&lt;/p&gt;
+&lt;h1 id=&#34;convergence-of-the-binomial-to-the-normal&#34;&gt;CONVERGENCE OF THE BINOMIAL TO THE NORMAL&lt;/h1&gt;
+&lt;p&gt;first of all, we have to talk about the de Moivre-Laplace theorem, which is a special case of the central limit theorem; it tells us that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The binomial distribution can be approximated to a normal distribution, under some conditions&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Consider a series of n independent trials, each resulting in one of two possible outcomes, a success with probability:
+$$(0 &amp;lt; p &amp;lt; 1)$$
+and failure with probability:
+$$q = (1 - p)$$
+Let &lt;em&gt;Xn&lt;/em&gt; denote the number of success in these &lt;em&gt;n&lt;/em&gt; trials.
+Then the random variable &lt;em&gt;Xn&lt;/em&gt;, is said to have binomial distribution with parameters &lt;em&gt;n&lt;/em&gt; and &lt;em&gt;p, b(n,p)&lt;/em&gt;.So, the probability density function(pdf) of &lt;em&gt;Xn&lt;/em&gt; is given by:
+$$P(X) = \frac{n!}{(n - X)!X!} \cdot (p)^{X}\cdot(q)^{n - X}$$
+The mean and variance of the binomial r.v. &lt;em&gt;Xn&lt;/em&gt; are given, respectively, by:
+$$ E[X_{n}] = \mu = np $$
+$$ Var[X_{n}] = \sigma^{2} = nqp = np(1-p)$$
+For sufficently large *n*, the following random variable has a standard normal distribution:
+$$z = \frac{\chi - \mu}{\sigma} = N(0,1)$$
+That is:
+The general form of Normal distribution probability density function is:
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^{2}}$$
+For a binomial distribution, as *n* grows large, for *k* in the neighborhood of *np* we can approximate:
+$$\binom{n}{k}p^{k}q^{n - k} \approx \frac{1}{\sqrt{2\pi npq}}e^{-\frac{(k - np)^{2}}{2npq}}$$
+$$p + q = 1, p,q &amp;gt; 0$$
+in the sense that the ratio of the left-hand side to the right-hand side converges to:
+$$1 \text{ as } n \to \infty$$
+In conclusion:
+The normal distribution is generally considered to be a pretty good approximation for the binomial distribution when *np ≥ 5 and n(1 – p) ≥ 5*.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Law_of_large_numbers&#34;&gt;https://en.wikipedia.org/wiki/Law_of_large_numbers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Expected_value&#34;&gt;https://en.wikipedia.org/wiki/Expected_value&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Central_limit_theorem&#34;&gt;https://en.wikipedia.org/wiki/Central_limit_theorem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/&#34;&gt;https://www.statisticshowto.com/probability-and-statistics/binomial-theorem/binomial-distribution-formula/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.real-statistics.com/binomial-and-related-distributions/relationship-binomial-and-normal-distributions/&#34;&gt;https://www.real-statistics.com/binomial-and-related-distributions/relationship-binomial-and-normal-distributions/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>5_RA</title>
       <link>https://lucarep.github.io/post/5_ra/</link>

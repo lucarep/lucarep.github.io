@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lucarep.github.io/homework6/6_ra/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/post/6_ra/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/homework6/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/post/</loc>
+    <lastmod>2021-11-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://lucarep.github.io/homework6/8_a/</loc>
+    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://lucarep.github.io/post/8_a/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lucarep.github.io/homework6/8_r/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://lucarep.github.io/post/8_r/</loc>
+    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://lucarep.github.io/tags/application/</loc>
-    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lucarep.github.io/homework6/</loc>
-    <lastmod>2021-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lucarep.github.io/</loc>
     <lastmod>2021-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lucarep.github.io/tags/research/</loc>
@@ -42,9 +57,6 @@
     <lastmod>2021-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lucarep.github.io/post/7_r/</loc>
-    <lastmod>2021-10-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lucarep.github.io/post/</loc>
     <lastmod>2021-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://lucarep.github.io/homework5/6_r/</loc>

@@ -14,8 +14,10 @@
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://lucarep.github.io/homework6/8_a/</guid>
-      <description>Intro Live Demo Download source code:  Intro in this program I have developed a simulator of the law of large numbers, using as random variables the sum of random variables obtained with the distribution of Bernoulli. The program offers among other things, a viewport with graphs that can be resized and moved at will. It is also possible to observe that as N and M increase, the lines converge to p, so have fun experimenting.</description>
-      <content>&lt;ul&gt;
+      <description>Table of Contents
+ Intro Live Demo Download source code:  Intro in this program I have developed a simulator of the law of large numbers, using as random variables the sum of random variables obtained with the distribution of Bernoulli. The program offers among other things, a viewport with graphs that can be resized and moved at will. It is also possible to observe that as N and M increase, the lines converge to p, so have fun experimenting.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
