@@ -7,7 +7,177 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7_RA : MONKEYS AND SHAKESPEARE</title>
+      <link>https://lucarep.github.io/homework7/7_ra/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework7/7_ra/</guid>
+      <description>Table of contents
+ INTRO WHAT IS RANDOM WALK? WHERE WE CAN FIND IT IN REAL LIFE? HOW WE CAN UNDERSTAND IT BETTER WITH A SIMPLE EXAMPLE ROOT-MEAN-SQUARE DISTANCE LET&amp;rsquo;S TALK ABOUT THE MONKEYS&amp;hellip; DONSKER&amp;rsquo;S INVARIANCE PRINCIPLE - Credits  INTRO We can begin our journey in this post, with the following question:
+ What do Shakespeare and monkeys have in common?
+ We will answer this question later, for now let&amp;rsquo;s just introduce the concept of random walk.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-random-walk&#34;&gt;WHAT IS RANDOM WALK?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#where-we-can-find-it-in-real-life&#34;&gt;WHERE WE CAN FIND IT IN REAL LIFE?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-we-can-understand-it-better-with-a-simple-example&#34;&gt;HOW WE CAN UNDERSTAND IT BETTER WITH A SIMPLE EXAMPLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#root-mean-square-distance&#34;&gt;ROOT-MEAN-SQUARE DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#lets-talk-about-the-monkeys&#34;&gt;LET&amp;rsquo;S TALK ABOUT THE MONKEYS&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#donskers-invariance-principle&#34;&gt;DONSKER&amp;rsquo;S INVARIANCE PRINCIPLE&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;We can begin our journey in this post, with the following question:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What do Shakespeare and monkeys have in common?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We will answer this question later, for now let&amp;rsquo;s just introduce the concept of random walk.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-random-walk&#34;&gt;WHAT IS RANDOM WALK?&lt;/h1&gt;
+&lt;p&gt;A random walk refers to any process in which there is no observable pattern or trend; that is, where the movements of an object, or the values taken by a certain variable, are completely random.&lt;/p&gt;
+&lt;h1 id=&#34;where-we-can-find-it-in-real-life&#34;&gt;WHERE WE CAN FIND IT IN REAL LIFE?&lt;/h1&gt;
+&lt;p&gt;Certain real-life scenarios that could be modeled as random walks could be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The path traced by a molecule as it moves through a liquid or a gas&lt;/li&gt;
+&lt;li&gt;The price of a stock as it moves up and down&lt;/li&gt;
+&lt;li&gt;The financial status of a gambler at the roulette wheel in Las Vegas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;how-we-can-understand-it-better-with-a-simple-example&#34;&gt;HOW WE CAN UNDERSTAND IT BETTER WITH A SIMPLE EXAMPLE&lt;/h1&gt;
+&lt;p&gt;To illustrate the concept of random walk a bit further, let’s look at the simplest random walk: a random walk along on the integer number line. Now, we&amp;rsquo;re going to do a little experiment. Imagine you are standing on zero. You flip a fair coin, and if it lands on heads, you will take one step (one unit) to the right. However, if the coin lands tails, you will take one step to the left, again, one unit. Therefore, with each coin toss there is a 50% chance you will move to the right, and a 50% chance you move to the left. Let&amp;rsquo;s imagine we flipped the coin 10 times and got:
+$$HHHTHHTTTT$$
+This would generate the following random walk:
+$$right, right, right, left, right, right, left, left, left, left$$
+We can illustrate it as follows:
+&lt;img src=&#34;https://lucarep.github.io/img/ranndwalk.png&#34; alt=&#34;ranwalk&#34;&gt;
+In this case, we happen to end up back where we started: at zero. This random walk happened to work out that way, but it need not have dropped us off where we began. However, it turns out that because the probabilities of moving right or left are equal, we have a symmetrical random walk, where we will, on average, end up back where we started, at zero.&lt;/p&gt;
+&lt;h1 id=&#34;root-mean-square-distance&#34;&gt;ROOT-MEAN-SQUARE DISTANCE&lt;/h1&gt;
+&lt;p&gt;It has been found empirically that for a random walk after n steps, we will find ourselves approximately:
+$$\sqrt{n}$$ 
+away from the initial zero point.
+So, for example, if we have 49,100,256 steps we can expect to be this distance far away from zero:
+$$ 7,10,16 $$&lt;/p&gt;
+&lt;h1 id=&#34;lets-talk-about-the-monkeys&#34;&gt;LET&amp;rsquo;S TALK ABOUT THE MONKEYS&amp;hellip;&lt;/h1&gt;
+&lt;p&gt;From the discussion on root-mean-square distance, we see that as n gets larger, we expect to get further and further from the origin. In fact, for an infinite number of random walks with an infinitely large number of steps, we will end up visiting every number on the number line.
+So, this in practice mean that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given an ininite number of monkeys, typewriters and time, some of those apes will outdo Shakespeare.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/monkeys.gif&#34; alt=&#34;Monkeys&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;donskers-invariance-principle&#34;&gt;DONSKER&amp;rsquo;S INVARIANCE PRINCIPLE&lt;/h1&gt;
+&lt;p&gt;Let:
+$$\xi_{1},&amp;hellip;,\xi_{n}$$
+be i.i.d random variables with mean 0 and variance:
+$$\sigma^{2}$$
+Then we have for X:
+$$(X_{t}^{(n)},t \geq 0) \implies (B_{t},t \geq 0)$$
+In C, where:
+$$ (B_{t},t \geq 0) $$
+Is a standard Brownian motion.
+This theorem, was first given by Monroe Donsker in (1951). In the paper, he gave the motivation for studying such an invariance principle. Here, you can see an illustration the theorem at work for the simple random walk case. What this plot really shows is the convergence of our rescaled random walk to a Brownian motion sample path.
+&lt;img src=&#34;https://lucarep.github.io/img/donsker.gif&#34; alt=&#34;Donsker&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://magoosh.com/statistics/what-is-random-walk-theory/&#34;&gt;https://magoosh.com/statistics/what-is-random-walk-theory/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://people.cam.cornell.edu/amt269/DonskerSimulate.html&#34;&gt;https://people.cam.cornell.edu/amt269/DonskerSimulate.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>6_RA</title>
+      <link>https://lucarep.github.io/homework6/6_ra/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework6/6_ra/</guid>
+      <description>Table of Contents
+ THE RUNNING MEDIAN JAVA ALGORITHM  THE RUNNING MEDIAN As we have already seen in the previous dedicated article,the median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than the value.
+ If we keep each number in a sorted sequence then cost of single entry is O(n) and finding median is O(n).</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#the-running-median&#34;&gt;THE RUNNING MEDIAN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#java-algorithm&#34;&gt;JAVA ALGORITHM&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;the-running-median&#34;&gt;THE RUNNING MEDIAN&lt;/h1&gt;
+&lt;p&gt;As we have already seen in the previous dedicated article,the median of a set of integers is the midpoint value of the data set for which an equal number of integers are less than and greater than the value.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If we keep each number in a sorted sequence then cost of single entry is O(n) and finding median is O(n).
+A slight modification can be done by keeping the middle pointer and adjusting it based on the insertion on its left side and right side. In that case finding median after insertion is O(1). But the overall cost for finding median still remains O(n) as insertion in sorted sequence is necessary after each number is entered.&lt;/li&gt;
+&lt;li&gt;We can keep two heaps which divides the entered number in two almost equal halves. Half of the number would be greater than the median and the rest would be lesser. The upper half will be maintained in a min heap and the lower half will be maintained in a max heap. In this arrangement we can find out in O(1) time whether a new number would go to the upper half or lower half. All we need to do is to compare the new number with the head of two heaps. After deciding we can insert in a heap in O(log n) time. After this insertion if the heaps are unbalanced, we can just move from one heap to another. which is again of O(log n) complexity. And now we can find the median in O(1) time. If two heaps contain same number of elements then median is the average of the head of two heaps. If one is greater, then median is the head of the larger heap.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;java-algorithm&#34;&gt;JAVA ALGORITHM&lt;/h1&gt;
+&lt;p&gt;Here, I found an algorithm in Java that can calculate the Running Median:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Comparator&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Random&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+ 
+ 
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;RunningMedian&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+    PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+    PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;RunningMedian&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;(&lt;/span&gt;
+          20&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Comparator&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;()&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+ 
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;@Override&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compare&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Integer o1&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; Integer o2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+ 
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;o1&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;compareTo&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;o2&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+ 
+        &lt;span style=&#34;color:#f92672&#34;&gt;});&lt;/span&gt;
+        upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; PriorityQueue&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;();&lt;/span&gt;
+        upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MAX_VALUE&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;MIN_VALUE&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getMedian&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; num&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//adding the number to proper heap
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())&lt;/span&gt;
+                upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//balancing the heaps
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()-&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()==&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+            lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;poll&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;());&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()-&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()==&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+            upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;poll&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;());&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;//returning the median
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()==&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()+&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())/&lt;/span&gt;2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()&amp;gt;&lt;/span&gt;lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;())&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; upperQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; lowerQueue&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;peek&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+        Random random&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Random&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+        RunningMedian runningMedian&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; RunningMedian&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+        System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;num\tmedian&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;i&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;50&lt;span style=&#34;color:#f92672&#34;&gt;;++&lt;/span&gt;i&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; num&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;random&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;nextInt&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;100&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;print&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\t&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+            System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;
+              runningMedian&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getMedian&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;num&lt;span style=&#34;color:#f92672&#34;&gt;));&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+ 
+    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    </item>
+    
     <item>
       <title>8_R : TO INFINITY AND BEYOND</title>
       <link>https://lucarep.github.io/homework6/8_r/</link>

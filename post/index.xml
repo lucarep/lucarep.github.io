@@ -7,7 +7,152 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Thu, 04 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7_RA : MONKEYS AND SHAKESPEARE</title>
+      <link>https://lucarep.github.io/post/7_ra/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/7_ra/</guid>
+      <description>Table of contents
+ INTRO WHAT IS RANDOM WALK? WHERE WE CAN FIND IT IN REAL LIFE? HOW WE CAN UNDERSTAND IT BETTER WITH A SIMPLE EXAMPLE ROOT-MEAN-SQUARE DISTANCE LET&amp;rsquo;S TALK ABOUT THE MONKEYS&amp;hellip; DONSKER&amp;rsquo;S INVARIANCE PRINCIPLE - Credits  INTRO We can begin our journey in this post, with the following question:
+ What do Shakespeare and monkeys have in common?
+ We will answer this question later, for now let&amp;rsquo;s just introduce the concept of random walk.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-random-walk&#34;&gt;WHAT IS RANDOM WALK?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#where-we-can-find-it-in-real-life&#34;&gt;WHERE WE CAN FIND IT IN REAL LIFE?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#how-we-can-understand-it-better-with-a-simple-example&#34;&gt;HOW WE CAN UNDERSTAND IT BETTER WITH A SIMPLE EXAMPLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#root-mean-square-distance&#34;&gt;ROOT-MEAN-SQUARE DISTANCE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#lets-talk-about-the-monkeys&#34;&gt;LET&amp;rsquo;S TALK ABOUT THE MONKEYS&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#donskers-invariance-principle&#34;&gt;DONSKER&amp;rsquo;S INVARIANCE PRINCIPLE&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;We can begin our journey in this post, with the following question:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What do Shakespeare and monkeys have in common?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We will answer this question later, for now let&amp;rsquo;s just introduce the concept of random walk.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-random-walk&#34;&gt;WHAT IS RANDOM WALK?&lt;/h1&gt;
+&lt;p&gt;A random walk refers to any process in which there is no observable pattern or trend; that is, where the movements of an object, or the values taken by a certain variable, are completely random.&lt;/p&gt;
+&lt;h1 id=&#34;where-we-can-find-it-in-real-life&#34;&gt;WHERE WE CAN FIND IT IN REAL LIFE?&lt;/h1&gt;
+&lt;p&gt;Certain real-life scenarios that could be modeled as random walks could be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The path traced by a molecule as it moves through a liquid or a gas&lt;/li&gt;
+&lt;li&gt;The price of a stock as it moves up and down&lt;/li&gt;
+&lt;li&gt;The financial status of a gambler at the roulette wheel in Las Vegas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;how-we-can-understand-it-better-with-a-simple-example&#34;&gt;HOW WE CAN UNDERSTAND IT BETTER WITH A SIMPLE EXAMPLE&lt;/h1&gt;
+&lt;p&gt;To illustrate the concept of random walk a bit further, let’s look at the simplest random walk: a random walk along on the integer number line. Now, we&amp;rsquo;re going to do a little experiment. Imagine you are standing on zero. You flip a fair coin, and if it lands on heads, you will take one step (one unit) to the right. However, if the coin lands tails, you will take one step to the left, again, one unit. Therefore, with each coin toss there is a 50% chance you will move to the right, and a 50% chance you move to the left. Let&amp;rsquo;s imagine we flipped the coin 10 times and got:
+$$HHHTHHTTTT$$
+This would generate the following random walk:
+$$right, right, right, left, right, right, left, left, left, left$$
+We can illustrate it as follows:
+&lt;img src=&#34;https://lucarep.github.io/img/ranndwalk.png&#34; alt=&#34;ranwalk&#34;&gt;
+In this case, we happen to end up back where we started: at zero. This random walk happened to work out that way, but it need not have dropped us off where we began. However, it turns out that because the probabilities of moving right or left are equal, we have a symmetrical random walk, where we will, on average, end up back where we started, at zero.&lt;/p&gt;
+&lt;h1 id=&#34;root-mean-square-distance&#34;&gt;ROOT-MEAN-SQUARE DISTANCE&lt;/h1&gt;
+&lt;p&gt;It has been found empirically that for a random walk after n steps, we will find ourselves approximately:
+$$\sqrt{n}$$ 
+away from the initial zero point.
+So, for example, if we have 49,100,256 steps we can expect to be this distance far away from zero:
+$$ 7,10,16 $$&lt;/p&gt;
+&lt;h1 id=&#34;lets-talk-about-the-monkeys&#34;&gt;LET&amp;rsquo;S TALK ABOUT THE MONKEYS&amp;hellip;&lt;/h1&gt;
+&lt;p&gt;From the discussion on root-mean-square distance, we see that as n gets larger, we expect to get further and further from the origin. In fact, for an infinite number of random walks with an infinitely large number of steps, we will end up visiting every number on the number line.
+So, this in practice mean that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given an ininite number of monkeys, typewriters and time, some of those apes will outdo Shakespeare.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/monkeys.gif&#34; alt=&#34;Monkeys&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;donskers-invariance-principle&#34;&gt;DONSKER&amp;rsquo;S INVARIANCE PRINCIPLE&lt;/h1&gt;
+&lt;p&gt;Let:
+$$\xi_{1},&amp;hellip;,\xi_{n}$$
+be i.i.d random variables with mean 0 and variance:
+$$\sigma^{2}$$
+Then we have for X:
+$$(X_{t}^{(n)},t \geq 0) \implies (B_{t},t \geq 0)$$
+In C, where:
+$$ (B_{t},t \geq 0) $$
+Is a standard Brownian motion.
+This theorem, was first given by Monroe Donsker in (1951). In the paper, he gave the motivation for studying such an invariance principle. Here, you can see an illustration the theorem at work for the simple random walk case. What this plot really shows is the convergence of our rescaled random walk to a Brownian motion sample path.
+&lt;img src=&#34;https://lucarep.github.io/img/donsker.gif&#34; alt=&#34;Donsker&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://magoosh.com/statistics/what-is-random-walk-theory/&#34;&gt;https://magoosh.com/statistics/what-is-random-walk-theory/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://people.cam.cornell.edu/amt269/DonskerSimulate.html&#34;&gt;https://people.cam.cornell.edu/amt269/DonskerSimulate.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>9_A</title>
+      <link>https://lucarep.github.io/post/9_a/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/9_a/</guid>
+      <description>Table of Contents
+ Intro 9_A_1  Live Demo   9_A_2  Live Demo   Changelog Download source code:  Intro This homework is divided into two parts. In the first one, a simulator has been realized to visualize the Glivenko-Cantelli theorem, in the second one, a Random Walk simulator has been realized.
+9_A_1 Citing Wikipedia:
+ The Glivenko-Cantelli theorem shows that the empirical distribution function of a one-dimensional random variable converges, with probability 1 uniformly in x, to the actual distribution function.</description>
+      <content>&lt;p&gt;Table of Contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#9_a_1&#34;&gt;9_A_1&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#9_a_2&#34;&gt;9_A_2&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo-1&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#changelog&#34;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;This homework is divided into two parts. In the first one, a simulator has been realized to visualize the Glivenko-Cantelli theorem, in the second one, a Random Walk simulator has been realized.&lt;/p&gt;
+&lt;h1 id=&#34;9_a_1&#34;&gt;9_A_1&lt;/h1&gt;
+&lt;p&gt;Citing Wikipedia:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Glivenko-Cantelli theorem shows that the empirical distribution function of a one-dimensional random variable converges, with probability 1 uniformly in &lt;em&gt;x&lt;/em&gt;, to the actual distribution function.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The theorem was formulated in 1933 by Valerij Ivanovič Glivenko and Francesco Paolo Cantelli.&lt;/p&gt;
+&lt;p&gt;What I did here, was, simulate this behavior just described&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/gyY_1i6Bk1Y&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;9_a_2&#34;&gt;9_A_2&lt;/h1&gt;
+&lt;p&gt;In this second task, I made a Random Walk simulator, which is very useful in real cases like in finance. What I did specifically was to realize sample paths of jump processes which at each time considered t = 1, &amp;hellip;, n perform jumps computed as:&lt;/p&gt;
+&lt;p&gt;$$ \sigma \sqrt{\frac{1}{n} \cdot Z(t)} $$
+$$ N(0,1) \text{random variable}$$&lt;/p&gt;
+&lt;p&gt;What can be observed, as n increases, is that instead of converging towards a specific value, the variables become more and more sparse with respect to the initial value.&lt;/p&gt;
+&lt;h3 id=&#34;live-demo-1&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/vmcq5TJQ86g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;changelog&#34;&gt;Changelog&lt;/h1&gt;
+&lt;p&gt;The following features and improvements have also been introduced to the program:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Much faster algorithm to compute and display the result&lt;/li&gt;
+&lt;li&gt;UI reorganized and optimized for the new features introduced&lt;/li&gt;
+&lt;li&gt;Removed mouse events because they did not meet expected quality standards&lt;/li&gt;
+&lt;li&gt;Bug fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1aILNnG7rwV8O1foxY0D8XEHxgXSGlZBT/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>6_RA</title>
       <link>https://lucarep.github.io/post/6_ra/</link>

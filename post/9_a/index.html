@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>9_A :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table of Contents
+ Intro 9_A_1  Live Demo   9_A_2  Live Demo   Changelog Download source code:  Intro This homework is divided into two parts. In the first one, a simulator has been realized to visualize the Glivenko-Cantelli theorem, in the second one, a Random Walk simulator has been realized.
+9_A_1 Citing Wikipedia:
+ The Glivenko-Cantelli theorem shows that the empirical distribution function of a one-dimensional random variable converges, with probability 1 uniformly in x, to the actual distribution function." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/post/9_a/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="9_A">
+<meta property="og:description" content="Table of Contents
+ Intro 9_A_1  Live Demo   9_A_2  Live Demo   Changelog Download source code:  Intro This homework is divided into two parts. In the first one, a simulator has been realized to visualize the Glivenko-Cantelli theorem, in the second one, a Random Walk simulator has been realized.
+9_A_1 Citing Wikipedia:
+ The Glivenko-Cantelli theorem shows that the empirical distribution function of a one-dimensional random variable converges, with probability 1 uniformly in x, to the actual distribution function." />
+<meta property="og:url" content="https://lucarep.github.io/post/9_a/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/9_A.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-11-08 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="/homework4">Homework 4</a></li>
+              
+            
+              
+                <li><a href="/homework5">Homework 5</a></li>
+              
+            
+              
+                <li><a href="/homework6">Homework 6</a></li>
+              
+            
+              
+                <li><a href="/homework7">Homework 7</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="/homework4">Homework 4</a></li>
+      
+    
+      
+        <li><a href="/homework5">Homework 5</a></li>
+      
+    
+      
+        <li><a href="/homework6">Homework 6</a></li>
+      
+    
+      
+        <li><a href="/homework7">Homework 7</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/post/9_a/">9_A</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-11-08 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/9_A.jpg" class="post-cover" alt="9_A" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Table of Contents</p>
+<ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#9_a_1">9_A_1</a>
+<ul>
+<li><a href="#live-demo">Live Demo</a></li>
+</ul>
+</li>
+<li><a href="#9_a_2">9_A_2</a>
+<ul>
+<li><a href="#live-demo-1">Live Demo</a></li>
+</ul>
+</li>
+<li><a href="#changelog">Changelog</a></li>
+<li><a href="#download-source-code">Download source code:</a></li>
+</ul>
+<h1 id="intro">Intro<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>This homework is divided into two parts. In the first one, a simulator has been realized to visualize the Glivenko-Cantelli theorem, in the second one, a Random Walk simulator has been realized.</p>
+<h1 id="9_a_1">9_A_1<a href="#9_a_1" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Citing Wikipedia:</p>
+<blockquote>
+<p>The Glivenko-Cantelli theorem shows that the empirical distribution function of a one-dimensional random variable converges, with probability 1 uniformly in <em>x</em>, to the actual distribution function.</p>
+</blockquote>
+<p>The theorem was formulated in 1933 by Valerij Ivanovič Glivenko and Francesco Paolo Cantelli.</p>
+<p>What I did here, was, simulate this behavior just described</p>
+<h3 id="live-demo">Live Demo<a href="#live-demo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>here, you can see my program in action
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/gyY_1i6Bk1Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h1 id="9_a_2">9_A_2<a href="#9_a_2" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>In this second task, I made a Random Walk simulator, which is very useful in real cases like in finance. What I did specifically was to realize sample paths of jump processes which at each time considered t = 1, &hellip;, n perform jumps computed as:</p>
+<p>$$ \sigma \sqrt{\frac{1}{n} \cdot Z(t)} $$
+$$ N(0,1) \text{random variable}$$</p>
+<p>What can be observed, as n increases, is that instead of converging towards a specific value, the variables become more and more sparse with respect to the initial value.</p>
+<h3 id="live-demo-1">Live Demo<a href="#live-demo-1" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>here, you can see my program in action
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/vmcq5TJQ86g" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h1 id="changelog">Changelog<a href="#changelog" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The following features and improvements have also been introduced to the program:</p>
+<ul>
+<li>Much faster algorithm to compute and display the result</li>
+<li>UI reorganized and optimized for the new features introduced</li>
+<li>Removed mouse events because they did not meet expected quality standards</li>
+<li>Bug fixes</li>
+</ul>
+<h1 id="download-source-code">Download source code:<a href="#download-source-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p><a href="https://drive.google.com/file/d/1aILNnG7rwV8O1foxY0D8XEHxgXSGlZBT/view?usp=sharing">click here</a> 📥</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://lucarep.github.io/post/7_ra/">
+                <span class="button__icon">←</span>
+                <span class="button__text">7_RA : MONKEYS AND SHAKESPEARE</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://lucarep.github.io/post/6_ra/">
+                <span class="button__text">6_RA</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
