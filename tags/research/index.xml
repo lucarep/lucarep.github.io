@@ -7,7 +7,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Mon, 08 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>9_R : HISTORY OF THE NORMAL DISTRIBUTION</title>
+      <link>https://lucarep.github.io/homework7/9_r/</link>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework7/9_r/</guid>
+      <description>Table of contents
+ BINOMIAL DISTRIBUTION DE MOIVRE AND GAMBLERS THE NORMAL CURVE GAUSS AND THE NORMAL DISTRIBUTION LAPLACE AND THE CENTRAL LIMIT THEOREM HUMANS AFTER ALL - Credits  BINOMIAL DISTRIBUTION Our story begins here, with the binomial distribution, 0 and 1 have not only played an important role in the history of computer science, but, also in the history of probability and statistics. We know about this distribution, which is useful for giving us answers to questions like this:</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#binomial-distribution&#34;&gt;BINOMIAL DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#de-moivre-and-gamblers&#34;&gt;DE MOIVRE AND GAMBLERS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-normal-curve&#34;&gt;THE NORMAL CURVE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#gauss-and-the-normal-distribution&#34;&gt;GAUSS AND THE NORMAL DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#laplace-and-the-central-limit-theorem&#34;&gt;LAPLACE AND THE CENTRAL LIMIT THEOREM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#humans-after-all&#34;&gt;HUMANS AFTER ALL&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;binomial-distribution&#34;&gt;BINOMIAL DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;Our story begins here, with the binomial distribution, 0 and 1 have not only played an important role in the history of computer science, but, also in the history of probability and statistics. We know about this distribution, which is useful for giving us answers to questions like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If a flair coin is flipped 100 times, what is the probability of getting 60 or more heads?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For this then there is a formula:
+$$ P(X) = \frac{N!}{x!(N - x)!}\pi^{x}(1 - \pi)^{N - x} $$&lt;/p&gt;
+&lt;p&gt;More specifically:
+$$P(60) + P(61) + P(62) &amp;hellip; P(N)$$&lt;/p&gt;
+&lt;p&gt;There is however a big problem with this formula, before the advent of computers (and even today), calculating factorial numbers was very expensive, so a better formula was needed.&lt;/p&gt;
+&lt;h1 id=&#34;de-moivre-and-gamblers&#34;&gt;DE MOIVRE AND GAMBLERS&lt;/h1&gt;
+&lt;p&gt;Abraham de Moivre, among other things was a consulant to gamblers, what he noticed was that as the number of events increased, the distribution could be approximated to a smooth curve. de Moivre understood then, that if he had found the formula for this curve, he would have been able to find the probability for problems like the one described just now, in much less time. This, therefore, is exactly what he did and that curve, today is called normal curve.&lt;/p&gt;
+&lt;h1 id=&#34;the-normal-curve&#34;&gt;THE NORMAL CURVE&lt;/h1&gt;
+&lt;p&gt;Many natural phenomena are approximated this way:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Astronomical observations&lt;/li&gt;
+&lt;li&gt;Mathematics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One of the first applications of the curve, was to remedy errors of approximations made in astronomical observations, errors were present because of imperfect instruments and imperfect people. Galileo Galilei in the seventeenth century, noted that these errors were symmetrical, in addition to the fact that small errors were more frequent than large errors.&lt;/p&gt;
+&lt;h1 id=&#34;gauss-and-the-normal-distribution&#34;&gt;GAUSS AND THE NORMAL DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;Gauss was the first to discover the normal distribution, The general form of its probability density function is:
+$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x - \mu}{\sigma})^{2}}$$
+The parameter: $$\mu$$  is the mean or expectation of the distribution (and also its median and mode), while the parameter: $$\sigma$$  is its standard deviation. The variance of the distribution is: $$\sigma^2$$ A random variable with a Gaussian distribution is said to be normally distributed, and is called a normal deviate.&lt;/p&gt;
+&lt;h1 id=&#34;laplace-and-the-central-limit-theorem&#34;&gt;LAPLACE AND THE CENTRAL LIMIT THEOREM&lt;/h1&gt;
+&lt;p&gt;The same distribution was discovered by Laplace in 1778. From here he derived the central limit theorem (which we discussed in some previous posts), what he proved, is that even if a distribution is not normal, the sample mean, can be approximated as such.&lt;/p&gt;
+&lt;h1 id=&#34;humans-after-all&#34;&gt;HUMANS AFTER ALL&lt;/h1&gt;
+&lt;p&gt;Quètelet was the first to apply the normal distribution to human characteristics; in fact, he noted that some traits such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;height&lt;/li&gt;
+&lt;li&gt;weight&lt;/li&gt;
+&lt;li&gt;strength
+were normally distributed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=BXof869EC68&#34;&gt;https://www.youtube.com/watch?v=BXof869EC68&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Normal_distribution&#34;&gt;https://en.wikipedia.org/wiki/Normal_distribution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>7_RA : MONKEYS AND SHAKESPEARE</title>
       <link>https://lucarep.github.io/homework7/7_ra/</link>
