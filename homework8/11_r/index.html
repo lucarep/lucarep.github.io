@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>11_R :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table of contents
+ DEFINITION OF RANKING RANKING IN STATISTICS AN EXAMPLE RANK CORRELATION KENDALL RANK CORRELATION SPEARMAN RANK CORRELATION WHERE WE CAN USE IT? - Credits  DEFINITION OF RANKING A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. In mathematics, this is known as a weak order or total preorder of objects." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/homework8/11_r/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="11_R">
+<meta property="og:description" content="Table of contents
+ DEFINITION OF RANKING RANKING IN STATISTICS AN EXAMPLE RANK CORRELATION KENDALL RANK CORRELATION SPEARMAN RANK CORRELATION WHERE WE CAN USE IT? - Credits  DEFINITION OF RANKING A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. In mathematics, this is known as a weak order or total preorder of objects." />
+<meta property="og:url" content="https://lucarep.github.io/homework8/11_r/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/11_R.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-11-13 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="/homework4">Homework 4</a></li>
+              
+            
+              
+                <li><a href="/homework5">Homework 5</a></li>
+              
+            
+              
+                <li><a href="/homework6">Homework 6</a></li>
+              
+            
+              
+                <li><a href="/homework7">Homework 7</a></li>
+              
+            
+              
+                <li><a href="/homework8">Homework 8</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="/homework4">Homework 4</a></li>
+      
+    
+      
+        <li><a href="/homework5">Homework 5</a></li>
+      
+    
+      
+        <li><a href="/homework6">Homework 6</a></li>
+      
+    
+      
+        <li><a href="/homework7">Homework 7</a></li>
+      
+    
+      
+        <li><a href="/homework8">Homework 8</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/homework8/11_r/">11_R</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-11-13 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://lucarep.github.io/tags/research/">Research</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="https://lucarep.github.io/img/11_R.jpg" class="post-cover" alt="11_R" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Table of contents</p>
+<ul>
+<li><a href="#definition-of-ranking">DEFINITION OF RANKING</a></li>
+<li><a href="#ranking-in-statistics">RANKING IN STATISTICS</a></li>
+<li><a href="#an-example">AN EXAMPLE</a></li>
+<li><a href="#rank-correlation">RANK CORRELATION</a></li>
+<li><a href="#kendall-rank-correlation">KENDALL RANK CORRELATION</a></li>
+<li><a href="#spearman-rank-correlation">SPEARMAN RANK CORRELATION</a></li>
+<li><a href="#where-we-can-use-it">WHERE WE CAN USE IT?</a>
+- <a href="#credits">Credits</a></li>
+</ul>
+<h1 id="definition-of-ranking">DEFINITION OF RANKING<a href="#definition-of-ranking" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. 
+<img src="/img/rank.gif" alt="rank">
+In mathematics, this is known as a weak order or total preorder of objects. It is not necessarily a total order of objects because two different objects can have the same ranking. The rankings themselves are totally ordered. For example, materials are totally preordered by hardness, while degrees of hardness are totally ordered. If two items are the same in rank it is considered a tie.
+There are several ways to solve a tie, one of them is to average all rankings of equal values that generate one of it.</p>
+<h1 id="ranking-in-statistics">RANKING IN STATISTICS<a href="#ranking-in-statistics" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>In statistics, ranking is the data transformation in which numerical or ordinal values are replaced by their rank when the data are sorted.</p>
+<h1 id="an-example">AN EXAMPLE<a href="#an-example" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Imagine that you have a sample consisting of four elements, and suppose that these are their measured values:
+$$ 3.4, 5.1, 2.6, 7.3$$
+The ranks of those numbers would be:
+$$ 2,3,1,4 $$
+the reason is that 3.4 is the second smallest value in the sample, 5.1 the third and so on.
+But ranks does not apply only to numbers, imagine that we have the ordinal data:
+$$\text{hot},\text{cold},\text{warm}$$
+We can rank them as:
+$$3,1,2$$
+In these examples, the ranks are assigned to values in ascending order. (In some other cases, descending ranks are used.) Ranks are related to the indexed list of order statistics (which we have already discussed in the previous post).</p>
+<h1 id="rank-correlation">RANK CORRELATION<a href="#rank-correlation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>A rank correlation is any of several statistics that measure an ordinal association(the relationship between rankings of different ordinal variables or different rankings of the same variable). A rank correlation coefficient measures the degree of similarity between two rankings, and can be used to assess the significance of the relation between them.</p>
+<h1 id="kendall-rank-correlation">KENDALL RANK CORRELATION<a href="#kendall-rank-correlation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.  If we consider two samples, a and b, where each sample size is n, we know that the total number of pairings with a b is n(n-1)/2.  The following formula is used to calculate the value of Kendall rank correlation:</p>
+<p>$$ \tau = \frac{n_{c} - n_{d}}{\frac{1}{2}n(n - 1)}$$</p>
+<p>Where:</p>
+<p>$$ n_{c} = \text{number of concordant}$$
+$$ n_{d} = \text{number of discordant}$$</p>
+<p>In other words:</p>
+<ul>
+<li>Concordant: Ordered in the same way</li>
+<li>Discordant: Ordered differently</li>
+</ul>
+<h1 id="spearman-rank-correlation">SPEARMAN RANK CORRELATION<a href="#spearman-rank-correlation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Spearman rank correlation is a non-parametric test that is used to measure the degree of association between two variables.  The Spearman rank correlation test does not carry any assumptions about the distribution of the data and is the appropriate correlation analysis when the variables are measured on a scale that is at least ordinal.
+The following formula is used to calculate the Spearman rank correlation:</p>
+<p>$$ \rho = 1 - \frac{\sum d_{i}^2}{n(n^{2} - 1)}$$</p>
+<p>Where:</p>
+<p>$$ \rho = \text{Spearman rank correlation}$$
+$$ d_{i} = \text{the difference between the ranks of corresponding variables}$$
+$$n = \text{number of observations}$$</p>
+<h1 id="where-we-can-use-it">WHERE WE CAN USE IT?<a href="#where-we-can-use-it" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We can use it to answer questions like this:</p>
+<ul>
+<li>Is there a statistically significant relationship between participants’ level of education (high school, bachelor’s, or graduate degree) and their starting salary?</li>
+<li>Is there a statistically significant relationship between horse’s finishing position a race and horse’s age?</li>
+</ul>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ranking">https://en.wikipedia.org/wiki/Ranking</a></li>
+<li><a href="https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/correlation-pearson-kendall-spearman/">https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/correlation-pearson-kendall-spearman/</a></li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

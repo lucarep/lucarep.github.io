@@ -7,7 +7,455 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Wed, 10 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8_RA: POISSON AND DITTO</title>
+      <link>https://lucarep.github.io/homework8/8_ra/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework8/8_ra/</guid>
+      <description>Table of contents
+ INTRO POISSON CAN BE NORMAL POISSON CAN BE UNIFORM POISSON CAN BE EXPONENTIAL CONCLUSIONS  INTRO If Poisson&amp;rsquo;s distribution were lumped in with a Pokemon, this would probably be&amp;hellip; Ditto. The reason why, for those unfamiliar with Games Freak&amp;rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&amp;rsquo;s see why.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#poisson-can-be-normal&#34;&gt;POISSON CAN BE NORMAL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#poisson-can-be-uniform&#34;&gt;POISSON CAN BE UNIFORM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#poisson-can-be-exponential&#34;&gt;POISSON CAN BE EXPONENTIAL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusions&#34;&gt;CONCLUSIONS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;If Poisson&amp;rsquo;s distribution were lumped in with a Pokemon, this would probably be&amp;hellip; Ditto.
+&lt;img src=&#34;https://lucarep.github.io/img/ditto.gif&#34; alt=&#34;ditto&#34;&gt;
+The reason why, for those unfamiliar with Games Freak&amp;rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&amp;rsquo;s see why.&lt;/p&gt;
+&lt;h1 id=&#34;poisson-can-be-normal&#34;&gt;POISSON CAN BE NORMAL&lt;/h1&gt;
+&lt;p&gt;If we notice the histograms of the application shown in post 11_A, we can see that as n increases, the distribution tends to the normal distribution.&lt;/p&gt;
+&lt;h1 id=&#34;poisson-can-be-uniform&#34;&gt;POISSON CAN BE UNIFORM&lt;/h1&gt;
+&lt;p&gt;If we take in analysis another histogram of the application, that is the one representing the distribution of the distance of the individual jumps from the origin, what we can observe, is that the distribution in question is referable to a uniform distribution.&lt;/p&gt;
+&lt;h1 id=&#34;poisson-can-be-exponential&#34;&gt;POISSON CAN BE EXPONENTIAL&lt;/h1&gt;
+&lt;p&gt;Okay, the last case, let&amp;rsquo;s look at the histogram representing the distance between two consecutive jumps. What we observe is an exponential trend, then an exponential distribution, however the reason is easily explained. The jumps represent successes, the possibility of having a success in a short period compared to the previous one is relatively higher than having one in a very long period.&lt;/p&gt;
+&lt;h1 id=&#34;conclusions&#34;&gt;CONCLUSIONS&lt;/h1&gt;
+&lt;p&gt;What we have learned from this analysis, is that the dsitribution of Poisson can take on various guises depending on what you observe, do not you find that after all it is a bit similar to Ditto?&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>8_RA: POISSON AND DITTO</title>
+      <link>https://lucarep.github.io/post/8_ra/</link>
+      <pubDate>Wed, 17 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/8_ra/</guid>
+      <description>Table of contents
+ INTRO POISSON CAN BE NORMAL POISSON CAN BE UNIFORM POISSON CAN BE EXPONENTIAL CONCLUSIONS  INTRO If Poisson&amp;rsquo;s distribution were lumped in with a Pokemon, this would probably be&amp;hellip; Ditto. The reason why, for those unfamiliar with Games Freak&amp;rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&amp;rsquo;s see why.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#poisson-can-be-normal&#34;&gt;POISSON CAN BE NORMAL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#poisson-can-be-uniform&#34;&gt;POISSON CAN BE UNIFORM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#poisson-can-be-exponential&#34;&gt;POISSON CAN BE EXPONENTIAL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusions&#34;&gt;CONCLUSIONS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;If Poisson&amp;rsquo;s distribution were lumped in with a Pokemon, this would probably be&amp;hellip; Ditto.
+&lt;img src=&#34;https://lucarep.github.io/img/ditto.gif&#34; alt=&#34;ditto&#34;&gt;
+The reason why, for those unfamiliar with Games Freak&amp;rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&amp;rsquo;s see why.&lt;/p&gt;
+&lt;h1 id=&#34;poisson-can-be-normal&#34;&gt;POISSON CAN BE NORMAL&lt;/h1&gt;
+&lt;p&gt;If we notice the histograms of the application shown in post 11_A, we can see that as n increases, the distribution tends to the normal distribution.&lt;/p&gt;
+&lt;h1 id=&#34;poisson-can-be-uniform&#34;&gt;POISSON CAN BE UNIFORM&lt;/h1&gt;
+&lt;p&gt;If we take in analysis another histogram of the application, that is the one representing the distribution of the distance of the individual jumps from the origin, what we can observe, is that the distribution in question is referable to a uniform distribution.&lt;/p&gt;
+&lt;h1 id=&#34;poisson-can-be-exponential&#34;&gt;POISSON CAN BE EXPONENTIAL&lt;/h1&gt;
+&lt;p&gt;Okay, the last case, let&amp;rsquo;s look at the histogram representing the distance between two consecutive jumps. What we observe is an exponential trend, then an exponential distribution, however the reason is easily explained. The jumps represent successes, the possibility of having a success in a short period compared to the previous one is relatively higher than having one in a very long period.&lt;/p&gt;
+&lt;h1 id=&#34;conclusions&#34;&gt;CONCLUSIONS&lt;/h1&gt;
+&lt;p&gt;What we have learned from this analysis, is that the dsitribution of Poisson can take on various guises depending on what you observe, do not you find that after all it is a bit similar to Ditto?&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>11_A</title>
+      <link>https://lucarep.github.io/homework8/11_a/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework8/11_a/</guid>
+      <description>Table of contents
+ Intro  Live Demo   Changelog Download source code:  Intro In this new update to the simulator, has been added a new stochastic process having to do with the Poisson distribution, but I do not dwell much in this description, because much is explained in more detail in the post 8_RA.
+Live Demo here, you can see my program in action   Changelog The following features and improvements have also been introduced to the program:</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#changelog&#34;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this new update to the simulator, has been added a new stochastic process having to do with the Poisson distribution, but I do not dwell much in this description, because much is explained in more detail in the post 8_RA.&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/snzaMYfeWnA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;changelog&#34;&gt;Changelog&lt;/h1&gt;
+&lt;p&gt;The following features and improvements have also been introduced to the program:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UI reorganized and optimized for the new features introduced&lt;/li&gt;
+&lt;li&gt;Histograms are now displayed better&lt;/li&gt;
+&lt;li&gt;Bug fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1GhiUiKPguw7iHF0DeD4o4EdT57GDmI4Z/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>11_A</title>
+      <link>https://lucarep.github.io/post/11_a/</link>
+      <pubDate>Tue, 16 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/11_a/</guid>
+      <description>Table of contents
+ Intro  Live Demo   Changelog Download source code:  Intro In this new update to the simulator, has been added a new stochastic process having to do with the Poisson distribution, but I do not dwell much in this description, because much is explained in more detail in the post 8_RA.
+Live Demo here, you can see my program in action   Changelog The following features and improvements have also been introduced to the program:</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#changelog&#34;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this new update to the simulator, has been added a new stochastic process having to do with the Poisson distribution, but I do not dwell much in this description, because much is explained in more detail in the post 8_RA.&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/snzaMYfeWnA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;changelog&#34;&gt;Changelog&lt;/h1&gt;
+&lt;p&gt;The following features and improvements have also been introduced to the program:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UI reorganized and optimized for the new features introduced&lt;/li&gt;
+&lt;li&gt;Histograms are now displayed better&lt;/li&gt;
+&lt;li&gt;Bug fixes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1GhiUiKPguw7iHF0DeD4o4EdT57GDmI4Z/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>10_A</title>
+      <link>https://lucarep.github.io/homework8/10_a/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework8/10_a/</guid>
+      <description>Table of contents
+ Intro  Live Demo   Download source code:  Intro WIP
+Live Demo here, you can see my program in action
+Download source code: click here 📥</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;WIP&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1GhiUiKPguw7iHF0DeD4o4EdT57GDmI4Z/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>10_A</title>
+      <link>https://lucarep.github.io/post/10_a/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/10_a/</guid>
+      <description>Table of contents
+ Intro  Live Demo   Download source code:  Intro WIP
+Live Demo here, you can see my program in action
+Download source code: click here 📥</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;WIP&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1GhiUiKPguw7iHF0DeD4o4EdT57GDmI4Z/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>10_R</title>
+      <link>https://lucarep.github.io/homework8/10_r/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework8/10_r/</guid>
+      <description>Table of contents
+ INTRO ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS UNIFORM DISTRIBUTION AN EXAMPLE PROBABILITY DENSITY - Credits  INTRO In statistics, the kth order statistic of a statistical sample is equal to its kth-smallest value. Together with rank statistics, order statistics are among the most fundamental tools in non-parametric statistics and inference.
+ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS Yes, I&amp;rsquo;m not quoting George Orwell at random, the reason is that in order statistics, there are much more important numbers than others within the dataset.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#all-values-are-important-but-some-some-values-are-more-important-than-others&#34;&gt;ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#uniform-distribution&#34;&gt;UNIFORM DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-example&#34;&gt;AN EXAMPLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#probability-density&#34;&gt;PROBABILITY DENSITY&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;In statistics, the kth order statistic of a statistical sample is equal to its kth-smallest value. Together with rank statistics, order statistics are among the most fundamental tools in non-parametric statistics and inference.&lt;/p&gt;
+&lt;h1 id=&#34;all-values-are-important-but-some-some-values-are-more-important-than-others&#34;&gt;ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS&lt;/h1&gt;
+&lt;p&gt;Yes, I&amp;rsquo;m not quoting George Orwell at random, the reason is that in order statistics, there are much more important numbers than others within the dataset. 
+These values are the minimum, the maximum, the one in the middle(which in this case also represents the median)and other quantiles of the sample.&lt;/p&gt;
+&lt;h1 id=&#34;uniform-distribution&#34;&gt;UNIFORM DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;When using probability theory to analyze order statistics of random samples from a continuous distribution, the cumulative distribution function is used to reduce the analysis to the case of order statistics of the uniform distribution.&lt;/p&gt;
+&lt;h1 id=&#34;an-example&#34;&gt;AN EXAMPLE&lt;/h1&gt;
+&lt;p&gt;The order statistic as I see it is easier to understand with an example, so let&amp;rsquo;s look at one.
+Imagine that you have a sample consisting of four elements, and suppose that these are their measured values:
+$$6,9,3,8$$
+Well, what we need to do now to get an order statistic, is trivially put them in order. 
+&lt;img src=&#34;https://lucarep.github.io/img/annoyed.gif&#34; alt=&#34;annoyed&#34;&gt;&lt;/p&gt;
+&lt;p&gt;What we get then is:
+$$3,6,8,9$$
+The order statistic is then denoted as:
+$$x_{(1)} = 3, x_{(2)} = 6, x_{(3)} = 8, x_{(4)} = 9$$
+Where, the first order statistic (or smallest order statistic) is always the minimum of the sample:
+$$X_{(1)} = min(X_{1},&amp;hellip;,X_{n}) $$
+Similarly, for a sample of size n, the nth order statistic (or largest order statistic) is the maximum, that is:
+$$X_{(n)} = max(X_{1},&amp;hellip;,X_{n}) $$
+Very interesting, is also the sample range defined as the difference between the maximum and minimum. It is a function of the order statistics:
+$$\text{Range}(X_{1},&amp;hellip;,X_{n}) = X_{(n)} - X_{(1)}$$&lt;/p&gt;
+&lt;h1 id=&#34;probability-density&#34;&gt;PROBABILITY DENSITY&lt;/h1&gt;
+&lt;p&gt;The PDF, by definition, for X(k) is:
+$$\lim_{dx \to 0} \frac{p(X_{(1)}\in(x,x + dx))}{dx}$$&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Order_statistic&#34;&gt;https://en.wikipedia.org/wiki/Order_statistic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>10_R</title>
+      <link>https://lucarep.github.io/post/10_r/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/10_r/</guid>
+      <description>Table of contents
+ INTRO ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS UNIFORM DISTRIBUTION AN EXAMPLE PROBABILITY DENSITY - Credits  INTRO In statistics, the kth order statistic of a statistical sample is equal to its kth-smallest value. Together with rank statistics, order statistics are among the most fundamental tools in non-parametric statistics and inference.
+ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS Yes, I&amp;rsquo;m not quoting George Orwell at random, the reason is that in order statistics, there are much more important numbers than others within the dataset.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#all-values-are-important-but-some-some-values-are-more-important-than-others&#34;&gt;ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#uniform-distribution&#34;&gt;UNIFORM DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-example&#34;&gt;AN EXAMPLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#probability-density&#34;&gt;PROBABILITY DENSITY&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;In statistics, the kth order statistic of a statistical sample is equal to its kth-smallest value. Together with rank statistics, order statistics are among the most fundamental tools in non-parametric statistics and inference.&lt;/p&gt;
+&lt;h1 id=&#34;all-values-are-important-but-some-some-values-are-more-important-than-others&#34;&gt;ALL VALUES ARE IMPORTANT, BUT SOME SOME VALUES ARE MORE IMPORTANT THAN OTHERS&lt;/h1&gt;
+&lt;p&gt;Yes, I&amp;rsquo;m not quoting George Orwell at random, the reason is that in order statistics, there are much more important numbers than others within the dataset. 
+These values are the minimum, the maximum, the one in the middle(which in this case also represents the median)and other quantiles of the sample.&lt;/p&gt;
+&lt;h1 id=&#34;uniform-distribution&#34;&gt;UNIFORM DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;When using probability theory to analyze order statistics of random samples from a continuous distribution, the cumulative distribution function is used to reduce the analysis to the case of order statistics of the uniform distribution.&lt;/p&gt;
+&lt;h1 id=&#34;an-example&#34;&gt;AN EXAMPLE&lt;/h1&gt;
+&lt;p&gt;The order statistic as I see it is easier to understand with an example, so let&amp;rsquo;s look at one.
+Imagine that you have a sample consisting of four elements, and suppose that these are their measured values:
+$$6,9,3,8$$
+Well, what we need to do now to get an order statistic, is trivially put them in order. 
+&lt;img src=&#34;https://lucarep.github.io/img/annoyed.gif&#34; alt=&#34;annoyed&#34;&gt;&lt;/p&gt;
+&lt;p&gt;What we get then is:
+$$3,6,8,9$$
+The order statistic is then denoted as:
+$$x_{(1)} = 3, x_{(2)} = 6, x_{(3)} = 8, x_{(4)} = 9$$
+Where, the first order statistic (or smallest order statistic) is always the minimum of the sample:
+$$X_{(1)} = min(X_{1},&amp;hellip;,X_{n}) $$
+Similarly, for a sample of size n, the nth order statistic (or largest order statistic) is the maximum, that is:
+$$X_{(n)} = max(X_{1},&amp;hellip;,X_{n}) $$
+Very interesting, is also the sample range defined as the difference between the maximum and minimum. It is a function of the order statistics:
+$$\text{Range}(X_{1},&amp;hellip;,X_{n}) = X_{(n)} - X_{(1)}$$&lt;/p&gt;
+&lt;h1 id=&#34;probability-density&#34;&gt;PROBABILITY DENSITY&lt;/h1&gt;
+&lt;p&gt;The PDF, by definition, for X(k) is:
+$$\lim_{dx \to 0} \frac{p(X_{(1)}\in(x,x + dx))}{dx}$$&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Order_statistic&#34;&gt;https://en.wikipedia.org/wiki/Order_statistic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>11_R</title>
+      <link>https://lucarep.github.io/homework8/11_r/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework8/11_r/</guid>
+      <description>Table of contents
+ DEFINITION OF RANKING RANKING IN STATISTICS AN EXAMPLE RANK CORRELATION KENDALL RANK CORRELATION SPEARMAN RANK CORRELATION WHERE WE CAN USE IT? - Credits  DEFINITION OF RANKING A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. In mathematics, this is known as a weak order or total preorder of objects.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#definition-of-ranking&#34;&gt;DEFINITION OF RANKING&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ranking-in-statistics&#34;&gt;RANKING IN STATISTICS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-example&#34;&gt;AN EXAMPLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rank-correlation&#34;&gt;RANK CORRELATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kendall-rank-correlation&#34;&gt;KENDALL RANK CORRELATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#spearman-rank-correlation&#34;&gt;SPEARMAN RANK CORRELATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#where-we-can-use-it&#34;&gt;WHERE WE CAN USE IT?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;definition-of-ranking&#34;&gt;DEFINITION OF RANKING&lt;/h1&gt;
+&lt;p&gt;A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. 
+&lt;img src=&#34;https://lucarep.github.io/img/rank.gif&#34; alt=&#34;rank&#34;&gt;
+In mathematics, this is known as a weak order or total preorder of objects. It is not necessarily a total order of objects because two different objects can have the same ranking. The rankings themselves are totally ordered. For example, materials are totally preordered by hardness, while degrees of hardness are totally ordered. If two items are the same in rank it is considered a tie.
+There are several ways to solve a tie, one of them is to average all rankings of equal values that generate one of it.&lt;/p&gt;
+&lt;h1 id=&#34;ranking-in-statistics&#34;&gt;RANKING IN STATISTICS&lt;/h1&gt;
+&lt;p&gt;In statistics, ranking is the data transformation in which numerical or ordinal values are replaced by their rank when the data are sorted.&lt;/p&gt;
+&lt;h1 id=&#34;an-example&#34;&gt;AN EXAMPLE&lt;/h1&gt;
+&lt;p&gt;Imagine that you have a sample consisting of four elements, and suppose that these are their measured values:
+$$ 3.4, 5.1, 2.6, 7.3$$
+The ranks of those numbers would be:
+$$ 2,3,1,4 $$
+the reason is that 3.4 is the second smallest value in the sample, 5.1 the third and so on.
+But ranks does not apply only to numbers, imagine that we have the ordinal data:
+$$\text{hot},\text{cold},\text{warm}$$
+We can rank them as:
+$$3,1,2$$
+In these examples, the ranks are assigned to values in ascending order. (In some other cases, descending ranks are used.) Ranks are related to the indexed list of order statistics (which we have already discussed in the previous post).&lt;/p&gt;
+&lt;h1 id=&#34;rank-correlation&#34;&gt;RANK CORRELATION&lt;/h1&gt;
+&lt;p&gt;A rank correlation is any of several statistics that measure an ordinal association(the relationship between rankings of different ordinal variables or different rankings of the same variable). A rank correlation coefficient measures the degree of similarity between two rankings, and can be used to assess the significance of the relation between them.&lt;/p&gt;
+&lt;h1 id=&#34;kendall-rank-correlation&#34;&gt;KENDALL RANK CORRELATION&lt;/h1&gt;
+&lt;p&gt;Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.  If we consider two samples, a and b, where each sample size is n, we know that the total number of pairings with a b is n(n-1)/2.  The following formula is used to calculate the value of Kendall rank correlation:&lt;/p&gt;
+&lt;p&gt;$$ \tau = \frac{n_{c} - n_{d}}{\frac{1}{2}n(n - 1)}$$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;p&gt;$$ n_{c} = \text{number of concordant}$$
+$$ n_{d} = \text{number of discordant}$$&lt;/p&gt;
+&lt;p&gt;In other words:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Concordant: Ordered in the same way&lt;/li&gt;
+&lt;li&gt;Discordant: Ordered differently&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;spearman-rank-correlation&#34;&gt;SPEARMAN RANK CORRELATION&lt;/h1&gt;
+&lt;p&gt;Spearman rank correlation is a non-parametric test that is used to measure the degree of association between two variables.  The Spearman rank correlation test does not carry any assumptions about the distribution of the data and is the appropriate correlation analysis when the variables are measured on a scale that is at least ordinal.
+The following formula is used to calculate the Spearman rank correlation:&lt;/p&gt;
+&lt;p&gt;$$ \rho = 1 - \frac{\sum d_{i}^2}{n(n^{2} - 1)}$$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;p&gt;$$ \rho = \text{Spearman rank correlation}$$
+$$ d_{i} = \text{the difference between the ranks of corresponding variables}$$
+$$n = \text{number of observations}$$&lt;/p&gt;
+&lt;h1 id=&#34;where-we-can-use-it&#34;&gt;WHERE WE CAN USE IT?&lt;/h1&gt;
+&lt;p&gt;We can use it to answer questions like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is there a statistically significant relationship between participants’ level of education (high school, bachelor’s, or graduate degree) and their starting salary?&lt;/li&gt;
+&lt;li&gt;Is there a statistically significant relationship between horse’s finishing position a race and horse’s age?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Ranking&#34;&gt;https://en.wikipedia.org/wiki/Ranking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/correlation-pearson-kendall-spearman/&#34;&gt;https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/correlation-pearson-kendall-spearman/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>11_R</title>
+      <link>https://lucarep.github.io/post/11_r/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/post/11_r/</guid>
+      <description>Table of contents
+ DEFINITION OF RANKING RANKING IN STATISTICS AN EXAMPLE RANK CORRELATION KENDALL RANK CORRELATION SPEARMAN RANK CORRELATION WHERE WE CAN USE IT? - Credits  DEFINITION OF RANKING A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. In mathematics, this is known as a weak order or total preorder of objects.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#definition-of-ranking&#34;&gt;DEFINITION OF RANKING&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ranking-in-statistics&#34;&gt;RANKING IN STATISTICS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#an-example&#34;&gt;AN EXAMPLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rank-correlation&#34;&gt;RANK CORRELATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kendall-rank-correlation&#34;&gt;KENDALL RANK CORRELATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#spearman-rank-correlation&#34;&gt;SPEARMAN RANK CORRELATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#where-we-can-use-it&#34;&gt;WHERE WE CAN USE IT?&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;definition-of-ranking&#34;&gt;DEFINITION OF RANKING&lt;/h1&gt;
+&lt;p&gt;A ranking is a relationship between a set of items such that, for any two items, the first is either ‘ranked higher than’, ‘ranked lower than’ or ‘ranked equal to’ the second. 
+&lt;img src=&#34;https://lucarep.github.io/img/rank.gif&#34; alt=&#34;rank&#34;&gt;
+In mathematics, this is known as a weak order or total preorder of objects. It is not necessarily a total order of objects because two different objects can have the same ranking. The rankings themselves are totally ordered. For example, materials are totally preordered by hardness, while degrees of hardness are totally ordered. If two items are the same in rank it is considered a tie.
+There are several ways to solve a tie, one of them is to average all rankings of equal values that generate one of it.&lt;/p&gt;
+&lt;h1 id=&#34;ranking-in-statistics&#34;&gt;RANKING IN STATISTICS&lt;/h1&gt;
+&lt;p&gt;In statistics, ranking is the data transformation in which numerical or ordinal values are replaced by their rank when the data are sorted.&lt;/p&gt;
+&lt;h1 id=&#34;an-example&#34;&gt;AN EXAMPLE&lt;/h1&gt;
+&lt;p&gt;Imagine that you have a sample consisting of four elements, and suppose that these are their measured values:
+$$ 3.4, 5.1, 2.6, 7.3$$
+The ranks of those numbers would be:
+$$ 2,3,1,4 $$
+the reason is that 3.4 is the second smallest value in the sample, 5.1 the third and so on.
+But ranks does not apply only to numbers, imagine that we have the ordinal data:
+$$\text{hot},\text{cold},\text{warm}$$
+We can rank them as:
+$$3,1,2$$
+In these examples, the ranks are assigned to values in ascending order. (In some other cases, descending ranks are used.) Ranks are related to the indexed list of order statistics (which we have already discussed in the previous post).&lt;/p&gt;
+&lt;h1 id=&#34;rank-correlation&#34;&gt;RANK CORRELATION&lt;/h1&gt;
+&lt;p&gt;A rank correlation is any of several statistics that measure an ordinal association(the relationship between rankings of different ordinal variables or different rankings of the same variable). A rank correlation coefficient measures the degree of similarity between two rankings, and can be used to assess the significance of the relation between them.&lt;/p&gt;
+&lt;h1 id=&#34;kendall-rank-correlation&#34;&gt;KENDALL RANK CORRELATION&lt;/h1&gt;
+&lt;p&gt;Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.  If we consider two samples, a and b, where each sample size is n, we know that the total number of pairings with a b is n(n-1)/2.  The following formula is used to calculate the value of Kendall rank correlation:&lt;/p&gt;
+&lt;p&gt;$$ \tau = \frac{n_{c} - n_{d}}{\frac{1}{2}n(n - 1)}$$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;p&gt;$$ n_{c} = \text{number of concordant}$$
+$$ n_{d} = \text{number of discordant}$$&lt;/p&gt;
+&lt;p&gt;In other words:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Concordant: Ordered in the same way&lt;/li&gt;
+&lt;li&gt;Discordant: Ordered differently&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;spearman-rank-correlation&#34;&gt;SPEARMAN RANK CORRELATION&lt;/h1&gt;
+&lt;p&gt;Spearman rank correlation is a non-parametric test that is used to measure the degree of association between two variables.  The Spearman rank correlation test does not carry any assumptions about the distribution of the data and is the appropriate correlation analysis when the variables are measured on a scale that is at least ordinal.
+The following formula is used to calculate the Spearman rank correlation:&lt;/p&gt;
+&lt;p&gt;$$ \rho = 1 - \frac{\sum d_{i}^2}{n(n^{2} - 1)}$$&lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;p&gt;$$ \rho = \text{Spearman rank correlation}$$
+$$ d_{i} = \text{the difference between the ranks of corresponding variables}$$
+$$n = \text{number of observations}$$&lt;/p&gt;
+&lt;h1 id=&#34;where-we-can-use-it&#34;&gt;WHERE WE CAN USE IT?&lt;/h1&gt;
+&lt;p&gt;We can use it to answer questions like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is there a statistically significant relationship between participants’ level of education (high school, bachelor’s, or graduate degree) and their starting salary?&lt;/li&gt;
+&lt;li&gt;Is there a statistically significant relationship between horse’s finishing position a race and horse’s age?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Ranking&#34;&gt;https://en.wikipedia.org/wiki/Ranking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/correlation-pearson-kendall-spearman/&#34;&gt;https://www.statisticssolutions.com/free-resources/directory-of-statistical-analyses/correlation-pearson-kendall-spearman/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>9_R : HISTORY OF THE NORMAL DISTRIBUTION</title>
       <link>https://lucarep.github.io/homework7/9_r/</link>
