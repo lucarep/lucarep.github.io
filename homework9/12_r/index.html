@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>12_R : ATOMS EXISTS, HERE&#39;S WHY :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table of contents
+ INTRO THE KINETIC THEORY OF MATTER EINSTEIN AND SEALS BROWNIAN MOTION IN STATISTICS WHY IT IS IMPORTANT - Credits  INTRO Brownian Motion is useful among other things to confirm a very important thing, the existence of atoms. Imagine you are in a dark room the air is still and bright lights are coming out of the window, you will have noticed that there are dust particles floating in the air." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/homework9/12_r/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="12_R : ATOMS EXISTS, HERE&#39;S WHY">
+<meta property="og:description" content="Table of contents
+ INTRO THE KINETIC THEORY OF MATTER EINSTEIN AND SEALS BROWNIAN MOTION IN STATISTICS WHY IT IS IMPORTANT - Credits  INTRO Brownian Motion is useful among other things to confirm a very important thing, the existence of atoms. Imagine you are in a dark room the air is still and bright lights are coming out of the window, you will have noticed that there are dust particles floating in the air." />
+<meta property="og:url" content="https://lucarep.github.io/homework9/12_r/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/12_R.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-11-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="/homework4">Homework 4</a></li>
+              
+            
+              
+                <li><a href="/homework5">Homework 5</a></li>
+              
+            
+              
+                <li><a href="/homework6">Homework 6</a></li>
+              
+            
+              
+                <li><a href="/homework7">Homework 7</a></li>
+              
+            
+              
+                <li><a href="/homework8">Homework 8</a></li>
+              
+            
+              
+                <li><a href="/homework9">Homework 9</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="/homework4">Homework 4</a></li>
+      
+    
+      
+        <li><a href="/homework5">Homework 5</a></li>
+      
+    
+      
+        <li><a href="/homework6">Homework 6</a></li>
+      
+    
+      
+        <li><a href="/homework7">Homework 7</a></li>
+      
+    
+      
+        <li><a href="/homework8">Homework 8</a></li>
+      
+    
+      
+        <li><a href="/homework9">Homework 9</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/homework9/12_r/">12_R : ATOMS EXISTS, HERE&rsquo;S WHY</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-11-19 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://lucarep.github.io/tags/research/">Research</a>&nbsp;
+    
+  </span>
+  
+
+  
+    <img src="https://lucarep.github.io/img/12_R.jpg" class="post-cover" alt="12_R : ATOMS EXISTS, HERE&#39;S WHY" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Table of contents</p>
+<ul>
+<li><a href="#intro">INTRO</a></li>
+<li><a href="#the-kinetic-theory-of-matter">THE KINETIC THEORY OF MATTER</a></li>
+<li><a href="#einstein-and-seals">EINSTEIN AND SEALS</a></li>
+<li><a href="#brownian-motion-in-statistics">BROWNIAN MOTION IN STATISTICS</a></li>
+<li><a href="#why-it-is-important">WHY IT IS IMPORTANT</a>
+- <a href="#credits">Credits</a></li>
+</ul>
+<h1 id="intro">INTRO<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Brownian Motion is useful among other things to confirm a very important thing, the existence of atoms. Imagine you are in a dark room the air is still and bright lights are coming out of the window, you will have noticed that there are dust particles floating in the air. These particles are very interesting, because they move randomly, if you noticed they don&rsquo;t all go down, but they move in all directions, the reason for this is that they are surrounded by a gas that obviously you can&rsquo;t see. You can imagine these dust particles as so many billiard balls being hit. The first person to observe this effect was Robert Brown. 
+<img src="/img/pool.gif" alt="pool"></p>
+<h1 id="the-kinetic-theory-of-matter">THE KINETIC THEORY OF MATTER<a href="#the-kinetic-theory-of-matter" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Brown however had a problem, he had observed this phenomenon, understanding that it was not related to biology, but rather to physics, however he could not give an answer as to why it occurred. The answer came a century later with the Kinetic Thoery of Matter, thanks to scientists such as:</p>
+<ul>
+<li>J.C. Maxwell</li>
+<li>L. Boltzmann</li>
+<li>R.J.E Clausius
+Who stated that:</li>
+</ul>
+<blockquote>
+<p>&ldquo;All matter consists of atoms or molecules constantly in motion&rdquo;.</p>
+</blockquote>
+<h1 id="einstein-and-seals">EINSTEIN AND SEALS<a href="#einstein-and-seals" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Einstein, in 1905 explained this motion in detail, accurately predicting the random motions of particles that can be observed directly under a microscope. In 1908, he published a second paper on Brownian motion adding details over the first, including a way to test his theory.  This was crucial, because, thanks to this scientists could prove the existence of atoms and molecules. Also, he derived the size of atoms based on how brownian particles move, in other words it was like :</p>
+<blockquote>
+<p>&ldquo;Guessing the size of a seal, by observing how icebergs move near it&rdquo;</p>
+</blockquote>
+<p><img src="/img/seal.gif" alt="seal"></p>
+<h1 id="brownian-motion-in-statistics">BROWNIAN MOTION IN STATISTICS<a href="#brownian-motion-in-statistics" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Brownian motion in statistics is a Levy process, from which we derive certain properties such as:</p>
+<ul>
+<li>Stationary increments (i.e. increments that depend only on delta)</li>
+<li>Independent increments</li>
+<li>Continuity in probability</li>
+<li>Increments has the N(0,delta(t)) distribution</li>
+<li><em>X0 = 0</em></li>
+</ul>
+<h1 id="why-it-is-important">WHY IT IS IMPORTANT<a href="#why-it-is-important" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Well, we can see Brownian motion somewhat as the convergence for the Central Limit Theorem of random variables to the Normal distribution, but we will explore this in more detail in the next post. It is also important in real-world scenarios, such as finance, in which it can simulate market fluctuations.</p>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=4m5JnJBq2AU">https://www.youtube.com/watch?v=4m5JnJBq2AU</a></li>
+<li><a href="https://www.youtube.com/watch?v=i7tQLjGZR0A">https://www.youtube.com/watch?v=i7tQLjGZR0A</a></li>
+<li>Tommaso Gastaldi&rsquo;s lecture (<a href="https://www.youtube.com/watch?v=i7tQLjGZR0A">https://www.youtube.com/watch?v=i7tQLjGZR0A</a>)</li>
+</ul>
+
+      </div></div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

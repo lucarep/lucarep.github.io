@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework9s on Luke&#39;s Statistics Blog</title>
+    <link>https://lucarep.github.io/homework9/</link>
+    <description>Recent content in Homework9s on Luke&#39;s Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2021 Luca Repechini</copyright>
+    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/homework9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12_R : ATOMS EXISTS, HERE&#39;S WHY</title>
+      <link>https://lucarep.github.io/homework9/12_r/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/12_r/</guid>
+      <description>Table of contents
+ INTRO THE KINETIC THEORY OF MATTER EINSTEIN AND SEALS BROWNIAN MOTION IN STATISTICS WHY IT IS IMPORTANT - Credits  INTRO Brownian Motion is useful among other things to confirm a very important thing, the existence of atoms. Imagine you are in a dark room the air is still and bright lights are coming out of the window, you will have noticed that there are dust particles floating in the air.</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#the-kinetic-theory-of-matter&#34;&gt;THE KINETIC THEORY OF MATTER&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#einstein-and-seals&#34;&gt;EINSTEIN AND SEALS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#brownian-motion-in-statistics&#34;&gt;BROWNIAN MOTION IN STATISTICS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#why-it-is-important&#34;&gt;WHY IT IS IMPORTANT&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;Brownian Motion is useful among other things to confirm a very important thing, the existence of atoms. Imagine you are in a dark room the air is still and bright lights are coming out of the window, you will have noticed that there are dust particles floating in the air. These particles are very interesting, because they move randomly, if you noticed they don&amp;rsquo;t all go down, but they move in all directions, the reason for this is that they are surrounded by a gas that obviously you can&amp;rsquo;t see. You can imagine these dust particles as so many billiard balls being hit. The first person to observe this effect was Robert Brown. 
+&lt;img src=&#34;https://lucarep.github.io/img/pool.gif&#34; alt=&#34;pool&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;the-kinetic-theory-of-matter&#34;&gt;THE KINETIC THEORY OF MATTER&lt;/h1&gt;
+&lt;p&gt;Brown however had a problem, he had observed this phenomenon, understanding that it was not related to biology, but rather to physics, however he could not give an answer as to why it occurred. The answer came a century later with the Kinetic Thoery of Matter, thanks to scientists such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;J.C. Maxwell&lt;/li&gt;
+&lt;li&gt;L. Boltzmann&lt;/li&gt;
+&lt;li&gt;R.J.E Clausius
+Who stated that:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;All matter consists of atoms or molecules constantly in motion&amp;rdquo;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;einstein-and-seals&#34;&gt;EINSTEIN AND SEALS&lt;/h1&gt;
+&lt;p&gt;Einstein, in 1905 explained this motion in detail, accurately predicting the random motions of particles that can be observed directly under a microscope. In 1908, he published a second paper on Brownian motion adding details over the first, including a way to test his theory.  This was crucial, because, thanks to this scientists could prove the existence of atoms and molecules. Also, he derived the size of atoms based on how brownian particles move, in other words it was like :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Guessing the size of a seal, by observing how icebergs move near it&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/seal.gif&#34; alt=&#34;seal&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;brownian-motion-in-statistics&#34;&gt;BROWNIAN MOTION IN STATISTICS&lt;/h1&gt;
+&lt;p&gt;Brownian motion in statistics is a Levy process, from which we derive certain properties such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stationary increments (i.e. increments that depend only on delta)&lt;/li&gt;
+&lt;li&gt;Independent increments&lt;/li&gt;
+&lt;li&gt;Continuity in probability&lt;/li&gt;
+&lt;li&gt;Increments has the N(0,delta(t)) distribution&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;X0 = 0&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;why-it-is-important&#34;&gt;WHY IT IS IMPORTANT&lt;/h1&gt;
+&lt;p&gt;Well, we can see Brownian motion somewhat as the convergence for the Central Limit Theorem of random variables to the Normal distribution, but we will explore this in more detail in the next post. It is also important in real-world scenarios, such as finance, in which it can simulate market fluctuations.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=4m5JnJBq2AU&#34;&gt;https://www.youtube.com/watch?v=4m5JnJBq2AU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=i7tQLjGZR0A&#34;&gt;https://www.youtube.com/watch?v=i7tQLjGZR0A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Tommaso Gastaldi&amp;rsquo;s lecture (&lt;a href=&#34;https://www.youtube.com/watch?v=i7tQLjGZR0A&#34;&gt;https://www.youtube.com/watch?v=i7tQLjGZR0A&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lucarep.github.io/homework9/13_r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/13_r/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>
