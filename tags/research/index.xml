@@ -7,7 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>13_R</title>
+      <link>https://lucarep.github.io/homework9/13_r/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/13_r/</guid>
+      <description>INTRO We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:
+ &amp;ldquo;Repetita iuvant&amp;rdquo;
+ So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.
+BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Repetita iuvant&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.&lt;/p&gt;
+&lt;h1 id=&#34;brownian-motion-as-a-limit-for-random-walk&#34;&gt;BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK&lt;/h1&gt;
+&lt;p&gt;One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk.
+Let:
+$$\epsilon_{1},\epsilon_{2}&amp;hellip;$$
+Be a sequence of random variables, independent and identically distributed, with mean equal to 0 and variance equal to 1.
+For each:
+$$n \geq 1$$
+You define a continuos-time stochastic process by:
+$$W_{n}(t) = \frac{1}{\sqrt{n}}\sum_{1 \leq j \leq |nt|} \epsilon_{j}$$
+This is a random step function with jumps of size:
+$$[\frac{1}{\sqrt{n}},-\frac{1}{\sqrt{n}}]$$
+at times:
+$$\frac{k}{n}$$
+Where:
+$$k \in Z$$
+Since the random variables are independent, the increments are independent. Moreover for large *n* the distribution of:
+$$W_{n}(t + s) - W_{n}(s)$$
+is close to the Normal(0,t), by the Central limit theorem.&lt;/p&gt;
+&lt;h1 id=&#34;why-is-it-important&#34;&gt;WHY IS IT IMPORTANT?&lt;/h1&gt;
+&lt;p&gt;First, it explains, why the Wiener process arises so commonly in nature. Many stochastic process behave, at least for long stretches of time, like random walks with small but frequent jumps.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The argument above suggests that such processes will look, at least approximately, and on the appropriate time scale, like Brownian motion.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;second, it suggests that many important “statistics” of the random walk will have limiiting distributions, and that the limiting distributions will be the distributions of the corresponding statistics of Brownian motion. The simplest instance of this principle is the central limit theorem.&lt;/p&gt;
+&lt;h1 id=&#34;extension-of-the-clt-the-donskers-theorem&#34;&gt;EXTENSION OF THE CLT, THE DONSKER&amp;rsquo;S THEOREM&lt;/h1&gt;
+&lt;p&gt;In its modern form, Donsker&amp;rsquo;s invariance principle states that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As random variables taking values in the Skorokhod space D [0,1] (The set of all càdlàg functions from E to M is often denoted by D(E,M) and is called Skorokhod space), the random function W(n) converges in distribution to a standard Brownian motion.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://galton.uchicago.edu/~lalley/Courses/313/BrownianMotionCurrent.pdf&#34;&gt;https://galton.uchicago.edu/~lalley/Courses/313/BrownianMotionCurrent.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Donsker%27s_theorem&#34;&gt;https://en.wikipedia.org/wiki/Donsker%27s_theorem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>12_R : ATOMS EXISTS, HERE&#39;S WHY</title>
       <link>https://lucarep.github.io/homework9/12_r/</link>

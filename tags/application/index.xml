@@ -7,7 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Wed, 17 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12_A</title>
+      <link>https://lucarep.github.io/homework9/12_a/</link>
+      <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/12_a/</guid>
+      <description>Table of contents
+ Intro  Live Demo   Download source code:  Intro In this new update to the simulator, has been added what represents probably, the most important stochastic process, that is, the Brownian motion. Calculated in this way: $$P(t) = P(t-1) + \text{Random step}(t), \text{for t }=1,&amp;hellip;,n$$ Where the Random Step(t) is: $$\sigma \cdot \sqrt{\frac{1}{n}} \cdot Z(t)$$ Where Z(t) is a N(0,1) random variable.
+Live Demo here, you can see my program in action   Download source code: click here 📥</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this new update to the simulator, has been added what represents probably, the most important stochastic process, that is, the Brownian motion. Calculated in this way:
+$$P(t) = P(t-1) + \text{Random step}(t), \text{for t }=1,&amp;hellip;,n$$
+Where the Random Step(t) is:
+$$\sigma \cdot \sqrt{\frac{1}{n}} \cdot Z(t)$$
+Where Z(t) is a N(0,1) random variable.&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/eEaUJYj2b9g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1Of7kG7AaH00PjJ5S1sv4l7kdo82fikkF/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>8_RA: POISSON AND DITTO</title>
       <link>https://lucarep.github.io/homework8/8_ra/</link>
@@ -81,10 +117,10 @@ Live Demo here, you can see my program in action   Changelog The following featu
     
     <item>
       <title>10_A</title>
-      <link>https://lucarep.github.io/homework8/10_a/</link>
+      <link>https://lucarep.github.io/post/10_a/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://lucarep.github.io/homework8/10_a/</guid>
+      <guid>https://lucarep.github.io/post/10_a/</guid>
       <description>Table of contents
  Intro  Live Demo   Download source code:  Intro In this program I used a uniform distribution with values between 0 and 1, to extract m paths, each of which is of size n and plot both the above distribution, but, also the first-order and last-order statistics
 Live Demo here, you can see my program in action   Download source code: click here 📥</description>

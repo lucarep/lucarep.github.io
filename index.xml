@@ -7,7 +7,97 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Fri, 19 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>12_A</title>
+      <link>https://lucarep.github.io/homework9/12_a/</link>
+      <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/12_a/</guid>
+      <description>Table of contents
+ Intro  Live Demo   Download source code:  Intro In this new update to the simulator, has been added what represents probably, the most important stochastic process, that is, the Brownian motion. Calculated in this way: $$P(t) = P(t-1) + \text{Random step}(t), \text{for t }=1,&amp;hellip;,n$$ Where the Random Step(t) is: $$\sigma \cdot \sqrt{\frac{1}{n}} \cdot Z(t)$$ Where Z(t) is a N(0,1) random variable.
+Live Demo here, you can see my program in action   Download source code: click here 📥</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this new update to the simulator, has been added what represents probably, the most important stochastic process, that is, the Brownian motion. Calculated in this way:
+$$P(t) = P(t-1) + \text{Random step}(t), \text{for t }=1,&amp;hellip;,n$$
+Where the Random Step(t) is:
+$$\sigma \cdot \sqrt{\frac{1}{n}} \cdot Z(t)$$
+Where Z(t) is a N(0,1) random variable.&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/eEaUJYj2b9g&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1Of7kG7AaH00PjJ5S1sv4l7kdo82fikkF/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>13_R</title>
+      <link>https://lucarep.github.io/homework9/13_r/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/13_r/</guid>
+      <description>INTRO We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:
+ &amp;ldquo;Repetita iuvant&amp;rdquo;
+ So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.
+BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk.</description>
+      <content>&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Repetita iuvant&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.&lt;/p&gt;
+&lt;h1 id=&#34;brownian-motion-as-a-limit-for-random-walk&#34;&gt;BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK&lt;/h1&gt;
+&lt;p&gt;One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk.
+Let:
+$$\epsilon_{1},\epsilon_{2}&amp;hellip;$$
+Be a sequence of random variables, independent and identically distributed, with mean equal to 0 and variance equal to 1.
+For each:
+$$n \geq 1$$
+You define a continuos-time stochastic process by:
+$$W_{n}(t) = \frac{1}{\sqrt{n}}\sum_{1 \leq j \leq |nt|} \epsilon_{j}$$
+This is a random step function with jumps of size:
+$$[\frac{1}{\sqrt{n}},-\frac{1}{\sqrt{n}}]$$
+at times:
+$$\frac{k}{n}$$
+Where:
+$$k \in Z$$
+Since the random variables are independent, the increments are independent. Moreover for large *n* the distribution of:
+$$W_{n}(t + s) - W_{n}(s)$$
+is close to the Normal(0,t), by the Central limit theorem.&lt;/p&gt;
+&lt;h1 id=&#34;why-is-it-important&#34;&gt;WHY IS IT IMPORTANT?&lt;/h1&gt;
+&lt;p&gt;First, it explains, why the Wiener process arises so commonly in nature. Many stochastic process behave, at least for long stretches of time, like random walks with small but frequent jumps.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The argument above suggests that such processes will look, at least approximately, and on the appropriate time scale, like Brownian motion.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;second, it suggests that many important “statistics” of the random walk will have limiiting distributions, and that the limiting distributions will be the distributions of the corresponding statistics of Brownian motion. The simplest instance of this principle is the central limit theorem.&lt;/p&gt;
+&lt;h1 id=&#34;extension-of-the-clt-the-donskers-theorem&#34;&gt;EXTENSION OF THE CLT, THE DONSKER&amp;rsquo;S THEOREM&lt;/h1&gt;
+&lt;p&gt;In its modern form, Donsker&amp;rsquo;s invariance principle states that:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;As random variables taking values in the Skorokhod space D [0,1] (The set of all càdlàg functions from E to M is often denoted by D(E,M) and is called Skorokhod space), the random function W(n) converges in distribution to a standard Brownian motion.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://galton.uchicago.edu/~lalley/Courses/313/BrownianMotionCurrent.pdf&#34;&gt;https://galton.uchicago.edu/~lalley/Courses/313/BrownianMotionCurrent.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Donsker%27s_theorem&#34;&gt;https://en.wikipedia.org/wiki/Donsker%27s_theorem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>12_R : ATOMS EXISTS, HERE&#39;S WHY</title>
       <link>https://lucarep.github.io/homework9/12_r/</link>
@@ -247,9 +337,8 @@ Live Demo here, you can see my program in action   Download source code: click h
       
       <guid>https://lucarep.github.io/post/10_a/</guid>
       <description>Table of contents
- Intro  Live Demo   Download source code:  Intro WIP
-Live Demo here, you can see my program in action
-Download source code: click here 📥</description>
+ Intro  Live Demo   Download source code:  Intro In this program I used a uniform distribution with values between 0 and 1, to extract m paths, each of which is of size n and plot both the above distribution, but, also the first-order and last-order statistics
+Live Demo here, you can see my program in action   Download source code: click here 📥</description>
       <content>&lt;p&gt;Table of contents&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
@@ -260,9 +349,14 @@ Download source code: click here 📥</description>
 &lt;li&gt;&lt;a href=&#34;#download-source-code&#34;&gt;Download source code:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
-&lt;p&gt;WIP&lt;/p&gt;
+&lt;p&gt;In this program I used a uniform distribution with values between 0 and 1, to extract m paths, each of which is of size n and plot both the above distribution, but, also the first-order and last-order statistics&lt;/p&gt;
 &lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
-&lt;p&gt;here, you can see my program in action&lt;/p&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/AHJTPJNuqSI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h1 id=&#34;download-source-code&#34;&gt;Download source code:&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://drive.google.com/file/d/1GhiUiKPguw7iHF0DeD4o4EdT57GDmI4Z/view?usp=sharing&#34;&gt;click here&lt;/a&gt; 📥&lt;/p&gt;
 </content>
@@ -6029,16 +6123,6 @@ to help then develop a vaccine that is &lt;strong&gt;safe and effective&lt;/stro
 &lt;p&gt;&lt;img src=&#34;https://lucarep.github.io/img/LukeNFT.jpg&#34; alt=&#34;NFT&#34;&gt;&lt;/p&gt;
 &lt;p&gt;My name is Luca, I&amp;rsquo;m a computer engineer and currently a CyberSecurity student at la Sapienza, previously i was a computer engineering student also at la Sapienza. This blog is hosted with GitHub pages and made with Hugo a framework for building websites. The main topic of the blog is statistics (as you can imagine from the title of the website), here i will post all my assigned homework, I hope you will find the research posted here useful. Also, if you&amp;rsquo;re interested about my other past projects, I invite you to check out my &lt;a href=&#34;https://github.com/lucarep&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </content>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://lucarep.github.io/homework9/13_r/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lucarep.github.io/homework9/13_r/</guid>
-      <description></description>
-      <content></content>
     </item>
     
   </channel>

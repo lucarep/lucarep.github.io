@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   
-    <title> :: Luke&#39;s Statistics Blog</title>
+    <title>13_R :: Luke&#39;s Statistics Blog</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
+<meta name="description" content="INTRO We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:
+ &amp;ldquo;Repetita iuvant&amp;rdquo;
+ So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.
+BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://lucarep.github.io/homework9/13_r/" />
@@ -33,18 +36,21 @@
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="">
-<meta property="og:description" content="" />
+<meta property="og:title" content="13_R">
+<meta property="og:description" content="INTRO We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:
+ &amp;ldquo;Repetita iuvant&amp;rdquo;
+ So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.
+BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk." />
 <meta property="og:url" content="https://lucarep.github.io/homework9/13_r/" />
 <meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
 
-  
-    <meta property="og:image" content="https://lucarep.github.io/img/favicon/orange.png">
-  
+  <meta property="og:image" content="https://lucarep.github.io/img/12_R.jpg">
 
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
+
+  <meta property="article:published_time" content="2021-11-21 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -192,6 +198,17 @@
 
   
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
 </header>
 
 
@@ -199,19 +216,76 @@
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://lucarep.github.io/homework9/13_r/"></a></h1>
+    <a href="https://lucarep.github.io/homework9/13_r/">13_R</a></h1>
   <div class="post-meta">
     
+      <span class="post-date">
+        2021-11-21 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
     
   </div>
 
   
+  <span class="post-tags">
+    
+    #<a href="https://lucarep.github.io/tags/research/">Research</a>&nbsp;
+    
+  </span>
+  
 
+  
+    <img src="https://lucarep.github.io/img/12_R.jpg" class="post-cover" alt="13_R" />
   
 
   
 
-  <div class="post-content"></div>
+  <div class="post-content"><div>
+        <h1 id="intro">INTRO<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We have already seen in post 12_R, the definition of Brownian motion (also called Wiener process), however as the ancient Romans also said:</p>
+<blockquote>
+<p>&ldquo;Repetita iuvant&rdquo;</p>
+</blockquote>
+<p>So, in short, we can say that the Brownian motion is a standard process (one-dimensional) and stochastic, indexed with non-negative real numbers denoted by t.</p>
+<h1 id="brownian-motion-as-a-limit-for-random-walk">BROWNIAN MOTION AS A LIMIT FOR RANDOM WALK<a href="#brownian-motion-as-a-limit-for-random-walk" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>One of several reasons, which makes the Brownian motion so important in probability theory is that it represents, in a sense, a limit for a rescaled random walk.
+Let:
+$$\epsilon_{1},\epsilon_{2}&hellip;$$
+Be a sequence of random variables, independent and identically distributed, with mean equal to 0 and variance equal to 1.
+For each:
+$$n \geq 1$$
+You define a continuos-time stochastic process by:
+$$W_{n}(t) = \frac{1}{\sqrt{n}}\sum_{1 \leq j \leq |nt|} \epsilon_{j}$$
+This is a random step function with jumps of size:
+$$[\frac{1}{\sqrt{n}},-\frac{1}{\sqrt{n}}]$$
+at times:
+$$\frac{k}{n}$$
+Where:
+$$k \in Z$$
+Since the random variables are independent, the increments are independent. Moreover for large *n* the distribution of:
+$$W_{n}(t + s) - W_{n}(s)$$
+is close to the Normal(0,t), by the Central limit theorem.</p>
+<h1 id="why-is-it-important">WHY IS IT IMPORTANT?<a href="#why-is-it-important" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>First, it explains, why the Wiener process arises so commonly in nature. Many stochastic process behave, at least for long stretches of time, like random walks with small but frequent jumps.</p>
+<blockquote>
+<p>The argument above suggests that such processes will look, at least approximately, and on the appropriate time scale, like Brownian motion.</p>
+</blockquote>
+<p>second, it suggests that many important “statistics” of the random walk will have limiiting distributions, and that the limiting distributions will be the distributions of the corresponding statistics of Brownian motion. The simplest instance of this principle is the central limit theorem.</p>
+<h1 id="extension-of-the-clt-the-donskers-theorem">EXTENSION OF THE CLT, THE DONSKER&rsquo;S THEOREM<a href="#extension-of-the-clt-the-donskers-theorem" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>In its modern form, Donsker&rsquo;s invariance principle states that:</p>
+<blockquote>
+<p>As random variables taking values in the Skorokhod space D [0,1] (The set of all càdlàg functions from E to M is often denoted by D(E,M) and is called Skorokhod space), the random function W(n) converges in distribution to a standard Brownian motion.</p>
+</blockquote>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://galton.uchicago.edu/~lalley/Courses/313/BrownianMotionCurrent.pdf">https://galton.uchicago.edu/~lalley/Courses/313/BrownianMotionCurrent.pdf</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Donsker%27s_theorem">https://en.wikipedia.org/wiki/Donsker%27s_theorem</a></li>
+</ul>
+
+      </div></div>
 
   
 
