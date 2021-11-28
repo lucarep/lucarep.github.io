@@ -7,7 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2021 Luca Repechini</copyright>
-    <lastBuildDate>Mon, 22 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://lucarep.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>13_A</title>
+      <link>https://lucarep.github.io/homework9/13_a/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/13_a/</guid>
+      <description> Intro  Live Demo    Intro In this application, I created a representation through histograms for the following distributions:
+ Realizations taken from a Normal(0,1) Realizations taken from an Exponential[N(0,1)] Realizations taken from a Square[N(0,1)] Realizations taken from a Square[N(0,1)] divided by another Square[N(0,1)]  Further details regarding the application will be discussed in the next post (9_RA).
+Live Demo here, you can see my program in action   </description>
+      <content>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Intro&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#live-demo&#34;&gt;Live Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+&lt;p&gt;In this application, I created a representation through histograms for the following distributions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Realizations taken from a Normal(0,1)&lt;/li&gt;
+&lt;li&gt;Realizations taken from an Exponential[N(0,1)]&lt;/li&gt;
+&lt;li&gt;Realizations taken from a Square[N(0,1)]&lt;/li&gt;
+&lt;li&gt;Realizations taken from a Square[N(0,1)] divided by another Square[N(0,1)]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further details regarding the application will be discussed in the next post (9_RA).&lt;/p&gt;
+&lt;h3 id=&#34;live-demo&#34;&gt;Live Demo&lt;/h3&gt;
+&lt;p&gt;here, you can see my program in action
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/K6bxNNGEMz8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>12_A</title>
       <link>https://lucarep.github.io/homework9/12_a/</link>

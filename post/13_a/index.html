@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   
-    <title>8_RA: POISSON AND DITTO :: Luke&#39;s Statistics Blog</title>
+    <title>13_A :: Luke&#39;s Statistics Blog</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Table of contents
- INTRO POISSON CAN BE NORMAL POISSON CAN BE UNIFORM POISSON CAN BE EXPONENTIAL CONCLUSIONS  INTRO If Poisson&amp;rsquo;s distribution were lumped in with a Pokemon, this would probably be&amp;hellip; Ditto. The reason why, for those unfamiliar with Games Freak&amp;rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&amp;rsquo;s see why." />
+<meta name="description" content=" Intro  Live Demo    Intro In this application, I created a representation through histograms for the following distributions:
+ Realizations taken from a Normal(0,1) Realizations taken from an Exponential[N(0,1)] Realizations taken from a Square[N(0,1)] Realizations taken from a Square[N(0,1)] divided by another Square[N(0,1)]  Further details regarding the application will be discussed in the next post (9_RA).
+Live Demo here, you can see my program in action   " />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://lucarep.github.io/post/8_ra/" />
+<link rel="canonical" href="https://lucarep.github.io/post/13_a/" />
 
 
 
@@ -34,19 +35,20 @@
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="8_RA: POISSON AND DITTO">
-<meta property="og:description" content="Table of contents
- INTRO POISSON CAN BE NORMAL POISSON CAN BE UNIFORM POISSON CAN BE EXPONENTIAL CONCLUSIONS  INTRO If Poisson&amp;rsquo;s distribution were lumped in with a Pokemon, this would probably be&amp;hellip; Ditto. The reason why, for those unfamiliar with Games Freak&amp;rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&amp;rsquo;s see why." />
-<meta property="og:url" content="https://lucarep.github.io/post/8_ra/" />
+<meta property="og:title" content="13_A">
+<meta property="og:description" content=" Intro  Live Demo    Intro In this application, I created a representation through histograms for the following distributions:
+ Realizations taken from a Normal(0,1) Realizations taken from an Exponential[N(0,1)] Realizations taken from a Square[N(0,1)] Realizations taken from a Square[N(0,1)] divided by another Square[N(0,1)]  Further details regarding the application will be discussed in the next post (9_RA).
+Live Demo here, you can see my program in action   " />
+<meta property="og:url" content="https://lucarep.github.io/post/13_a/" />
 <meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
 
-  <meta property="og:image" content="https://lucarep.github.io/img/8_RA.jpg">
+  <meta property="og:image" content="https://lucarep.github.io/img/13_A.jpg">
 
 <meta property="og:image:width" content="2048">
 <meta property="og:image:height" content="1024">
 
 
-  <meta property="article:published_time" content="2021-11-17 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2021-11-26 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -212,11 +214,11 @@
     
 <div class="post">
   <h1 class="post-title">
-    <a href="https://lucarep.github.io/post/8_ra/">8_RA: POISSON AND DITTO</a></h1>
+    <a href="https://lucarep.github.io/post/13_a/">13_A</a></h1>
   <div class="post-meta">
     
       <span class="post-date">
-        2021-11-17 
+        2021-11-26 
       </span>
     
     
@@ -227,32 +229,35 @@
   
 
   
-    <img src="https://lucarep.github.io/img/8_RA.jpg" class="post-cover" alt="8_RA: POISSON AND DITTO" />
+    <img src="https://lucarep.github.io/img/13_A.jpg" class="post-cover" alt="13_A" />
   
 
   
 
   <div class="post-content"><div>
-        <p>Table of contents</p>
+        <ul>
+<li><a href="#intro">Intro</a>
 <ul>
-<li><a href="#intro">INTRO</a></li>
-<li><a href="#poisson-can-be-normal">POISSON CAN BE NORMAL</a></li>
-<li><a href="#poisson-can-be-uniform">POISSON CAN BE UNIFORM</a></li>
-<li><a href="#poisson-can-be-exponential">POISSON CAN BE EXPONENTIAL</a></li>
-<li><a href="#conclusions">CONCLUSIONS</a></li>
+<li><a href="#live-demo">Live Demo</a></li>
 </ul>
-<h1 id="intro">INTRO<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>If Poisson&rsquo;s distribution were lumped in with a Pokemon, this would probably be&hellip; Ditto.
-<img src="/img/ditto.gif" alt="ditto">
-The reason why, for those unfamiliar with Games Freak&rsquo;s popular franchise is relatively simple. This pokemon is peculiar, because it can take on the appearance of all others. In a certain way this also applies to the distribution of Poisson, let&rsquo;s see why.</p>
-<h1 id="poisson-can-be-normal">POISSON CAN BE NORMAL<a href="#poisson-can-be-normal" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>If we notice the histograms of the application shown in post 11_A, we can see that as n increases, the distribution tends to the normal distribution.</p>
-<h1 id="poisson-can-be-uniform">POISSON CAN BE UNIFORM<a href="#poisson-can-be-uniform" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>If we take in analysis another histogram of the application, that is the one representing the distribution of the distance of the individual jumps from the origin, what we can observe, is that the distribution in question is referable to a uniform distribution.</p>
-<h1 id="poisson-can-be-exponential">POISSON CAN BE EXPONENTIAL<a href="#poisson-can-be-exponential" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>Okay, the last case, let&rsquo;s look at the histogram representing the distance between two consecutive jumps. What we observe is an exponential trend, then an exponential distribution, however the reason is easily explained. The jumps represent successes, the possibility of having a success in a short period compared to the previous one is relatively higher than having one in a very long period.</p>
-<h1 id="conclusions">CONCLUSIONS<a href="#conclusions" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>What we have learned from this analysis, is that the dsitribution of Poisson can take on various guises depending on what you observe, do not you find that after all it is a bit similar to Ditto?</p>
+</li>
+</ul>
+<h1 id="intro">Intro<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>In this application, I created a representation through histograms for the following distributions:</p>
+<ul>
+<li>Realizations taken from a Normal(0,1)</li>
+<li>Realizations taken from an Exponential[N(0,1)]</li>
+<li>Realizations taken from a Square[N(0,1)]</li>
+<li>Realizations taken from a Square[N(0,1)] divided by another Square[N(0,1)]</li>
+</ul>
+<p>Further details regarding the application will be discussed in the next post (9_RA).</p>
+<h3 id="live-demo">Live Demo<a href="#live-demo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>here, you can see my program in action
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/K6bxNNGEMz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
 
       </div></div>
 
@@ -265,17 +270,10 @@ The reason why, for those unfamiliar with Games Freak&rsquo;s popular franchise 
     </div>
     <div class="pagination__buttons">
         
-        <span class="button previous">
-            <a href="https://lucarep.github.io/post/12_r/">
-                <span class="button__icon">←</span>
-                <span class="button__text">12_R : ATOMS EXISTS, HERE&#39;S WHY</span>
-            </a>
-        </span>
-        
         
         <span class="button next">
-            <a href="https://lucarep.github.io/post/11_a/">
-                <span class="button__text">11_A</span>
+            <a href="https://lucarep.github.io/post/12_a/">
+                <span class="button__text">12_A</span>
                 <span class="button__icon">→</span>
             </a>
         </span>
