@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>9_RA :: Luke&#39;s Statistics Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Table of contents
+ INTRO NORMAL DISTRIBUTION LOG-NORMAL DISTRIBUTION CHI-SQUARED DISTRIBUTION RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS - Credits  INTRO In the application made in post 13_A, we saw numerous distributions, let&amp;rsquo;s now see in more detail a description of each.
+NORMAL DISTRIBUTION We&amp;rsquo;ve previously discussed normal distribution and its history in a blog post. However, in short to recap, it is a continuous probability distribution that is often used as a first approximation to describe real-valued random variables that tend to concentrate around a single mean value" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://lucarep.github.io/post/9_ra/" />
+
+
+
+
+<link rel="stylesheet" href="https://lucarep.github.io/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://lucarep.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://lucarep.github.io/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="9_RA">
+<meta property="og:description" content="Table of contents
+ INTRO NORMAL DISTRIBUTION LOG-NORMAL DISTRIBUTION CHI-SQUARED DISTRIBUTION RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS - Credits  INTRO In the application made in post 13_A, we saw numerous distributions, let&amp;rsquo;s now see in more detail a description of each.
+NORMAL DISTRIBUTION We&amp;rsquo;ve previously discussed normal distribution and its history in a blog post. However, in short to recap, it is a continuous probability distribution that is often used as a first approximation to describe real-valued random variables that tend to concentrate around a single mean value" />
+<meta property="og:url" content="https://lucarep.github.io/post/9_ra/" />
+<meta property="og:site_name" content="Luke&#39;s Statistics Blog" />
+
+  <meta property="og:image" content="https://lucarep.github.io/img/9_RA.jpg">
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2021-11-26 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Luke&#39;s Statistics Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/homework1">Homework 1</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">Show more ▾</li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/homework2">Homework 2</a></li>
+              
+            
+              
+                <li><a href="/homework3">Homework 3</a></li>
+              
+            
+              
+                <li><a href="/homework4">Homework 4</a></li>
+              
+            
+              
+                <li><a href="/homework5">Homework 5</a></li>
+              
+            
+              
+                <li><a href="/homework6">Homework 6</a></li>
+              
+            
+              
+                <li><a href="/homework7">Homework 7</a></li>
+              
+            
+              
+                <li><a href="/homework8">Homework 8</a></li>
+              
+            
+              
+                <li><a href="/homework9">Homework 9</a></li>
+              
+            
+              
+                <li><a href="https://github.com/lucarep">My GitHub</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/homework1">Homework 1</a></li>
+      
+    
+      
+        <li><a href="/homework2">Homework 2</a></li>
+      
+    
+      
+        <li><a href="/homework3">Homework 3</a></li>
+      
+    
+      
+        <li><a href="/homework4">Homework 4</a></li>
+      
+    
+      
+        <li><a href="/homework5">Homework 5</a></li>
+      
+    
+      
+        <li><a href="/homework6">Homework 6</a></li>
+      
+    
+      
+        <li><a href="/homework7">Homework 7</a></li>
+      
+    
+      
+        <li><a href="/homework8">Homework 8</a></li>
+      
+    
+      
+        <li><a href="/homework9">Homework 9</a></li>
+      
+    
+      
+        <li><a href="https://github.com/lucarep">My GitHub</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://lucarep.github.io/post/9_ra/">9_RA</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2021-11-26 
+      </span>
+    
+    
+    <span class="post-author">:: Luca</span>
+    
+  </div>
+
+  
+
+  
+    <img src="https://lucarep.github.io/img/9_RA.jpg" class="post-cover" alt="9_RA" />
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>Table of contents</p>
+<ul>
+<li><a href="#intro">INTRO</a></li>
+<li><a href="#normal-distribution">NORMAL DISTRIBUTION</a></li>
+<li><a href="#log-normal-distribution">LOG-NORMAL DISTRIBUTION</a></li>
+<li><a href="#chi-squared-distribution">CHI-SQUARED DISTRIBUTION</a></li>
+<li><a href="#ratio-between-two-chi-squared-distributions">RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS</a>
+- <a href="#credits">Credits</a></li>
+</ul>
+<h1 id="intro">INTRO<a href="#intro" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>In the application made in post 13_A, we saw numerous distributions, let&rsquo;s now see in more detail a description of each.</p>
+<h1 id="normal-distribution">NORMAL DISTRIBUTION<a href="#normal-distribution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>We&rsquo;ve previously discussed normal distribution and its history in a blog post. However, in short to recap, it is a continuous probability distribution that is often used as a first approximation to describe real-valued random variables that tend to concentrate around a single mean value</p>
+<h1 id="log-normal-distribution">LOG-NORMAL DISTRIBUTION<a href="#log-normal-distribution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Lognormal distribution plays an important role in probabilistic design because negative values of engineering phenomena are sometimes physically impossible. Typical uses of lognormal distribution are found in descriptions of fatigue failure, failure rates, and other phenomena involving a large range of data. The lognormal distribution of a random variable X with expected value μX and standard deviation σX is denoted LN(μX,σX) and is defined as:
+$$ fx(x) = \frac{2}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}(\frac{ln(x) - \sigma}{\sigma})^2}$$
+in which fX(x) is the PDF of the random variable X.</p>
+<h1 id="chi-squared-distribution">CHI-SQUARED DISTRIBUTION<a href="#chi-squared-distribution" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>A chi-square distribution is a continuous distribution with  degrees of freedom. It is used to describe the distribution of a sum of squared random variables. It is also used to test the goodness of fit of a distribution of data, whether data series are independent, and for estimating confidences surrounding variance and standard deviation for a random variable from a normal distribution. Additionally, chi-square distribution is a special case of the gamma distribution.</p>
+<h1 id="ratio-between-two-chi-squared-distributions">RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS<a href="#ratio-between-two-chi-squared-distributions" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The last distribution we saw is a ratio between two chi-squared distributions, which can also be seen as an absolutely continuous probability distribution called beta prime distribution.</p>
+<h6 id="credits">Credits<a href="#credits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h6>
+<p>I want to thank and mention some resources that I found particularly helpful in the writing of this post:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Normal_distribution">https://en.wikipedia.org/wiki/Normal_distribution</a></li>
+<li><a href="https://www.sciencedirect.com/topics/engineering/lognormal-distribution">https://www.sciencedirect.com/topics/engineering/lognormal-distribution</a></li>
+<li><a href="https://www.sciencedirect.com/topics/mathematics/chi-square-distribution">https://www.sciencedirect.com/topics/mathematics/chi-square-distribution</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Beta_prime_distribution">https://en.wikipedia.org/wiki/Beta_prime_distribution</a></li>
+</ul>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://lucarep.github.io/post/13_a/">
+                <span class="button__icon">←</span>
+                <span class="button__text">13_A</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="https://lucarep.github.io/post/12_a/">
+                <span class="button__text">12_A</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>© 2021 Luca Repechini</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://lucarep.github.io/assets/main.js"></script>
+<script src="https://lucarep.github.io/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

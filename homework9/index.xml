@@ -44,6 +44,47 @@ Live Demo here, you can see my program in action   </description>
     </item>
     
     <item>
+      <title>9_RA</title>
+      <link>https://lucarep.github.io/homework9/9_ra/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://lucarep.github.io/homework9/9_ra/</guid>
+      <description>Table of contents
+ INTRO NORMAL DISTRIBUTION LOG-NORMAL DISTRIBUTION CHI-SQUARED DISTRIBUTION RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS - Credits  INTRO In the application made in post 13_A, we saw numerous distributions, let&amp;rsquo;s now see in more detail a description of each.
+NORMAL DISTRIBUTION We&amp;rsquo;ve previously discussed normal distribution and its history in a blog post. However, in short to recap, it is a continuous probability distribution that is often used as a first approximation to describe real-valued random variables that tend to concentrate around a single mean value</description>
+      <content>&lt;p&gt;Table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;INTRO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#normal-distribution&#34;&gt;NORMAL DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#log-normal-distribution&#34;&gt;LOG-NORMAL DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#chi-squared-distribution&#34;&gt;CHI-SQUARED DISTRIBUTION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ratio-between-two-chi-squared-distributions&#34;&gt;RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS&lt;/a&gt;
+- &lt;a href=&#34;#credits&#34;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;intro&#34;&gt;INTRO&lt;/h1&gt;
+&lt;p&gt;In the application made in post 13_A, we saw numerous distributions, let&amp;rsquo;s now see in more detail a description of each.&lt;/p&gt;
+&lt;h1 id=&#34;normal-distribution&#34;&gt;NORMAL DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;We&amp;rsquo;ve previously discussed normal distribution and its history in a blog post. However, in short to recap, it is a continuous probability distribution that is often used as a first approximation to describe real-valued random variables that tend to concentrate around a single mean value&lt;/p&gt;
+&lt;h1 id=&#34;log-normal-distribution&#34;&gt;LOG-NORMAL DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;Lognormal distribution plays an important role in probabilistic design because negative values of engineering phenomena are sometimes physically impossible. Typical uses of lognormal distribution are found in descriptions of fatigue failure, failure rates, and other phenomena involving a large range of data. The lognormal distribution of a random variable X with expected value μX and standard deviation σX is denoted LN(μX,σX) and is defined as:
+$$ fx(x) = \frac{2}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}(\frac{ln(x) - \sigma}{\sigma})^2}$$
+in which fX(x) is the PDF of the random variable X.&lt;/p&gt;
+&lt;h1 id=&#34;chi-squared-distribution&#34;&gt;CHI-SQUARED DISTRIBUTION&lt;/h1&gt;
+&lt;p&gt;A chi-square distribution is a continuous distribution with  degrees of freedom. It is used to describe the distribution of a sum of squared random variables. It is also used to test the goodness of fit of a distribution of data, whether data series are independent, and for estimating confidences surrounding variance and standard deviation for a random variable from a normal distribution. Additionally, chi-square distribution is a special case of the gamma distribution.&lt;/p&gt;
+&lt;h1 id=&#34;ratio-between-two-chi-squared-distributions&#34;&gt;RATIO BETWEEN TWO CHI-SQUARED DISTRIBUTIONS&lt;/h1&gt;
+&lt;p&gt;The last distribution we saw is a ratio between two chi-squared distributions, which can also be seen as an absolutely continuous probability distribution called beta prime distribution.&lt;/p&gt;
+&lt;h6 id=&#34;credits&#34;&gt;Credits&lt;/h6&gt;
+&lt;p&gt;I want to thank and mention some resources that I found particularly helpful in the writing of this post:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Normal_distribution&#34;&gt;https://en.wikipedia.org/wiki/Normal_distribution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sciencedirect.com/topics/engineering/lognormal-distribution&#34;&gt;https://www.sciencedirect.com/topics/engineering/lognormal-distribution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sciencedirect.com/topics/mathematics/chi-square-distribution&#34;&gt;https://www.sciencedirect.com/topics/mathematics/chi-square-distribution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Beta_prime_distribution&#34;&gt;https://en.wikipedia.org/wiki/Beta_prime_distribution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
       <title>12_A</title>
       <link>https://lucarep.github.io/homework9/12_a/</link>
       <pubDate>Mon, 22 Nov 2021 00:00:00 +0000</pubDate>
